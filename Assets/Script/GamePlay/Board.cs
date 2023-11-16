@@ -132,13 +132,43 @@ public class Board : MonoBehaviour
        
        
     }
+    //use in hint 
+    public int CountAndCheckCellEmptyAround(Vector2Int pos,List<Vector2Int> posEmpty)
+    {
+        bool hasError = false;
+        int numCellEffect = 0;
+        Cell CellCurrent = cells[pos.x][pos.y];
+        
+        foreach (Vector2Int d in direction)
+        {
+            Vector2Int posNext = pos + d;
+            if (!CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            Cell cellNext = cells[posNext.x][posNext.y];
+            if (  cellNext.statusCell == StatusCell.DoubleClick)
+            {
 
+                return 100;
+            }
+            if (posEmpty.Contains(posNext))
+            {
+                numCellEffect += 1;
+            }
+            
+        }
+        return posEmpty.Count - numCellEffect;
+
+
+    }
 
     public void CheckRegion(Cell cell)
     {
         List<bool> check = new List<bool>(new bool[sizeBoard * sizeBoard]);
         Vector2Int numCell = CountCellEmpty(cell.pos, cell.region, check);
         check = new List<bool>(new bool[sizeBoard * sizeBoard]);
+
         if (numCell.x  + numCell.y< 2  || numCell.y>=3)
         {
             HighLightRegion(cell.pos, cell.region, check, false);
@@ -149,6 +179,8 @@ public class Board : MonoBehaviour
         }
     }
 
+
+    // x is cell smpty, y is  cell star
     public Vector2Int CountCellEmpty(Vector2Int pos, int region,List<bool> Check )
     {
         Cell cellCurent = cells[pos.x][pos.y];
@@ -184,7 +216,7 @@ public class Board : MonoBehaviour
             {
                 if(cells[i][j].statusCell== StatusCell.DoubleClick)
                 {
-                    if(!GameConfig.instance.dataBoard.CheckPosCorrect(cells[i][j].pos)){
+                    if(!GameConfig.instance.dataBoard.CheckPosCorrectStar(cells[i][j].pos)){
                         Debug.Log("ko dung");
                         return false;
                     }

@@ -49,7 +49,7 @@ public class DataBoard : ScriptableObject
         return subRegions[x][y];
          
     }
-    public bool CheckPosCorrect(Vector2Int pos)
+    public bool CheckPosCorrectStar(Vector2Int pos)
     {
         posCorrectStar = new List<Vector2Int>();
         if (posCorrectStar.Count == 0)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public enum StatusCell
 {
@@ -250,6 +251,27 @@ public class Cell :MonoBehaviour
 
             inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f * region, 255);
         }
+    }
+
+    public void ShowHint(bool isStar)
+    {
+
+        if (isStar)
+        {
+            inCellBgr.color = Color.green;
+        }
+        else {
+            inCellBgr.color = Color.yellow;
+        }
+        StartCoroutine(ShowHintInDuration(2));
+    }
+    IEnumerator ShowHintInDuration(int time)
+    {
+
+        
+        yield return new WaitForSeconds(time);
+        inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f * region, 255);
+
     }
     #endregion
 

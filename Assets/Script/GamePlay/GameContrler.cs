@@ -7,11 +7,14 @@ public class GameContrler : MonoBehaviour
     public static GameContrler instance;
     public List<HistoryAction> historyActions; 
     public List<HistoryAction> ReActions; 
+    public Tutorial tutorial;
+    public Board board;
     private void Awake()
     {
         instance = this;
         historyActions = new List<HistoryAction>();
         ReActions = new List<HistoryAction>();
+        tutorial = new Tutorial();
     }
     // Start is called before the first frame update
     void Start()
@@ -68,6 +71,11 @@ public class GameContrler : MonoBehaviour
                 history.cell.DoubleClick(true);
             }
         }
+    }
+    public void Hint()
+    {
+        HintMesage  hintMesage= tutorial.Hint(board);
+        hintMesage.ShowHint(board);
     }
 }
  
