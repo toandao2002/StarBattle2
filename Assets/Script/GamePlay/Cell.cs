@@ -21,7 +21,9 @@ public enum NameError
 }
 
 public class Cell :MonoBehaviour  
-{ 
+{
+    // only use in make level;
+    public Board boardMakeLevel;
     public Sprite star;
     public Sprite dot;
     public  StatusCell statusCell;
@@ -303,5 +305,65 @@ public class Cell :MonoBehaviour
         pos = p;
     }
 
+
+
+
+
+    #region makeLevel
+
+    public void MoveSetRegion()
+    {
+        if (!MakeLevelController.instance.modeSetRegion) return;
+        SetRegion(MakeLevelController.instance.GetRegion());
+        Vector2Int pos = GetPos();
+        Cell l = boardMakeLevel.GetCellByPos(pos.x, pos.y - 1);
+        Cell t = boardMakeLevel.GetCellByPos(pos.x - 1, pos.y);
+        Cell r = boardMakeLevel.GetCellByPos(pos.x, pos.y + 1);
+        Cell b = boardMakeLevel.GetCellByPos(pos.x + 1, pos.y);
+        InitCell(l, t, r, b, boardMakeLevel);
+        ReSetShowRegionForCell(l);
+        ReSetShowRegionForCell(t);
+        ReSetShowRegionForCell(r);
+        ReSetShowRegionForCell(b);
+    }
+    
+    public void SetStar()
+    {
+        if (MakeLevelController.instance.modeSetRegion) return;
+
+        if (statusCell == StatusCell.DoubleClick)
+        {
+            statusCell = StatusCell.None;
+            Icon.color = new Color32(255, 255, 255, 0);
+        }
+        else
+        {
+            statusCell = StatusCell.DoubleClick;
+            Icon.color = new Color32(255, 255, 255, 255);
+            Icon.sprite = star;
+        }
        
+        Check();
+
+        if (board.CheckWin())
+        {
+            MyEvent.GameWin?.Invoke();
+        }
+    }
+
+    
+    public void ReSetShowRegionForCell(Cell cell)
+    {
+        if (cell == null) return;
+        Vector2Int pos = cell.GetPos();
+        Cell l = boardMakeLevel.GetCellByPos(pos.x, pos.y - 1);
+        Cell t = boardMakeLevel.GetCellByPos(pos.x - 1, pos.y);
+        Cell r = boardMakeLevel.GetCellByPos(pos.x, pos.y + 1);
+        Cell b = boardMakeLevel.GetCellByPos(pos.x + 1, pos.y);
+        cell.InitCell(l, t, r, b, boardMakeLevel);
+    }
+
+    #endregion
+
+
 }

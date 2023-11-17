@@ -10,9 +10,11 @@ public enum TypeGame
 }
 [CreateAssetMenu(fileName = "Level", menuName = "Data/Level", order = 1)]
 
+[System.Serializable]
 public class Level : ScriptableObject
 {
     public TypeGame typeGame;
     public DataBoard dataBoard;
+    
    
 }

@@ -8,6 +8,7 @@ public class Board : MonoBehaviour
     public List<Cell> cellsRaw;
     public List<List<Cell>> cells;
     public int sizeBoard;
+    public bool isModeMakeLevel;
     List<Vector2Int> direction = new List<Vector2Int>() {
         new Vector2Int(0,-1),  //l
         new Vector2Int(-1,-1),  //l-t
@@ -21,12 +22,53 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitBoard();
+        if (isModeMakeLevel)
+        {
+            InitBoardMakeLevel();
+        }
+        else 
+            InitBoard();
+    }
+    public void InitBoardMakeLevel()
+    {
+        GameContrler.instance.ResetNewGame();
+        title.SetLevel(GameConfig.instance.GetCurrentLevel() + 1);
+        cells = new List<List<Cell>>();
+
+        for (int i = 0; i < sizeBoard; i++)
+        {
+            cells.Add(new List<Cell>());
+            for (int j = 0; j < sizeBoard; j++)
+            {
+                Cell cell = cellsRaw[i * sizeBoard + j];
+                cell.ResetStatus();
+
+                cells[i].Add(cell);
+                cell.SetPos(new Vector2Int(i, j));
+
+                cell.SetRegion(MakeLevelController.instance.GetLevel().dataBoard.GetRegion(i, j)); ;
+
+            }
+        }
+        foreach (List<Cell> i in cells)
+        {
+            foreach (Cell c in i)
+            {
+
+                Vector2Int pos = c.GetPos();
+                Cell l = GetCellByPos(pos.x, pos.y - 1);
+                Cell t = GetCellByPos(pos.x - 1, pos.y);
+                Cell r = GetCellByPos(pos.x, pos.y + 1);
+                Cell b = GetCellByPos(pos.x + 1, pos.y);
+                c.InitCell(l, t, r, b, this);
+            }
+        }
     }
     public void InitBoard()
     {
-        GameContrler.instance.ResetNewGame();
 
+
+        GameContrler.instance.ResetNewGame();
         title.SetLevel(GameConfig.instance.GetCurrentLevel()+1);
         cells = new List<List<Cell>>();
 

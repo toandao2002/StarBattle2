@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScriptableObjectController : MonoBehaviour
 {
-    private T CreateOrReplaceAsset<T>(T asset, string path) where T : ScriptableObject
+    public T CreateOrReplaceAsset<T>(T asset, string path) where T : ScriptableObject
     {
 #if UNITY_EDITOR
         T existingAsset = AssetDatabase.LoadAssetAtPath<T>(path);
@@ -27,7 +27,7 @@ public class ScriptableObjectController : MonoBehaviour
     }
     public string GetPathLevel(int level)
     {
-        string path = "Assets/GameConfig/Level/Level/" + level + ".asset";
+        string path = "Assets/GameConfig/Level/Level " + level + ".asset";
         return path;
     }
 }
