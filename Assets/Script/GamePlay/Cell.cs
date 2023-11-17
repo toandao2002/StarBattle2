@@ -38,8 +38,8 @@ public class Cell :MonoBehaviour
     private void Awake()
     {
 
-        disInRegioin = 0.5f;
-        disOutRegioin = 2f;
+        disInRegioin = 0.8f;
+        disOutRegioin = 4f;
     }
     // Start is called before the first frame update
     void Start()
@@ -57,6 +57,7 @@ public class Cell :MonoBehaviour
     public Vector2 GetDis(Cell cell, Vector2 offset, int v)
     {
         Vector2 offsetRs = offset;
+        
         if (cell != null) //
         {
             if (cell.CheckRegion(region)) // same region => boder is thin
@@ -88,7 +89,7 @@ public class Cell :MonoBehaviour
         this.board = board;
         Vector2 oMin = Vector2.zero;
         Vector2 oMax = Vector2.zero;
-        
+
         /*
            min.x = l
            min.y = b
@@ -96,17 +97,21 @@ public class Cell :MonoBehaviour
            max.x = -r
            max.y = -t
         */
+        if (pos == new Vector2(1, 2))
+        {
+
+        }
         oMin =  GetDis(l, oMin, -1);
         oMin =GetDis(b, oMin, 1);
         oMax= GetDis(r, oMax, -1);
         oMax= GetDis(t, oMax, 1);
      
         oMax *= -1;
-       /* if (GameConfig.instance.dataBoard.CheckPosCorrect(pos))
-            txt.text = "*";
-        txt.text += region + "";*/
+        /*   if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
+               txt.text = "*";
+           txt.text += region + ""; */
         txt.text = "";
-        ChangeRectranform(oMin, oMax);
+           ChangeRectranform(oMin, oMax);
 
         inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f* region  ,255);
     }
@@ -223,7 +228,11 @@ public class Cell :MonoBehaviour
 
 
     #region display
-
+    public void ResetStatus() {
+        Icon.color = new Color32(255, 255, 255, 0);
+        errors = new List<NameError>();
+        statusCell = StatusCell.None;
+    }
     public void HightLightWrong(NameError nameError)
     {
         inCellBgr.color = Color.red;
@@ -253,18 +262,23 @@ public class Cell :MonoBehaviour
         }
     }
 
-    public void ShowHint(bool isStar)
+    public void ShowHint(StatusCell stt)
     {
 
-        if (isStar)
+        if (stt == StatusCell.DoubleClick)
         {
             inCellBgr.color = Color.green;
         }
-        else {
+        else if(stt == StatusCell.None) {
+            inCellBgr.color = Color.gray;
+        }
+        else if(stt == StatusCell.OneClick)
+        {
             inCellBgr.color = Color.yellow;
         }
         StartCoroutine(ShowHintInDuration(2));
     }
+
     IEnumerator ShowHintInDuration(int time)
     {
 

@@ -8,10 +8,16 @@ public class GameContrler : MonoBehaviour
     public List<HistoryAction> historyActions; 
     public List<HistoryAction> ReActions; 
     public Tutorial tutorial;
-    public Board board;
+    public Board board; 
+
+   
     private void Awake()
     {
         instance = this;
+        
+    }
+    public void Init()
+    {
         historyActions = new List<HistoryAction>();
         ReActions = new List<HistoryAction>();
         tutorial = new Tutorial();
@@ -21,7 +27,10 @@ public class GameContrler : MonoBehaviour
     {
         MyEvent.GameWin += GameWin;
     }
-
+    public void ResetNewGame()
+    {
+        Init();
+    }
     public void GameWin() {
         Debug.Log("Game Win");
     }
@@ -76,6 +85,10 @@ public class GameContrler : MonoBehaviour
     {
         HintMesage  hintMesage= tutorial.Hint(board);
         hintMesage.ShowHint(board);
+    }
+    public void BackHome()
+    {
+        GameManger.instance.LoadScene("Home");
     }
 }
  

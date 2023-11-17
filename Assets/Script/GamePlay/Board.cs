@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+    public Title title;
     public List<Cell> cellsRaw;
     public List<List<Cell>> cells;
     public int sizeBoard;
@@ -20,32 +21,40 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitBoard();
+    }
+    public void InitBoard()
+    {
+        GameContrler.instance.ResetNewGame();
+
+        title.SetLevel(GameConfig.instance.GetCurrentLevel()+1);
         cells = new List<List<Cell>>();
+
         for (int i = 0; i < sizeBoard; i++)
         {
             cells.Add(new List<Cell>());
             for (int j = 0; j < sizeBoard; j++)
             {
                 Cell cell = cellsRaw[i * sizeBoard + j];
+                cell.ResetStatus();
+
                 cells[i].Add(cell);
                 cell.SetPos(new Vector2Int(i, j));
-                cell.SetRegion(GameConfig.instance.dataBoard.GetRegion(i, j));
+
+                cell.SetRegion(GameConfig.instance.GetLevelCurrent().dataBoard.GetRegion(i,j)); ;
+              
             }
         }
-        InitBoard();
-    }
-    public void InitBoard()
-    {
         foreach (List<Cell> i in cells)
         {
             foreach (Cell c in i)
             {
+
                 Vector2Int pos = c.GetPos();
                 Cell l = GetCellByPos(pos.x, pos.y - 1);
                 Cell t = GetCellByPos(pos.x - 1, pos.y);
                 Cell r = GetCellByPos(pos.x, pos.y + 1);
                 Cell b = GetCellByPos(pos.x + 1, pos.y);
-
                 c.InitCell(l, t, r, b, this);
             }
         }
@@ -216,7 +225,7 @@ public class Board : MonoBehaviour
             {
                 if(cells[i][j].statusCell== StatusCell.DoubleClick)
                 {
-                    if(!GameConfig.instance.dataBoard.CheckPosCorrectStar(cells[i][j].pos)){
+                    if(!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos)){
                         Debug.Log("ko dung");
                         return false;
                     }
@@ -228,7 +237,7 @@ public class Board : MonoBehaviour
             }
         }
         
-        return cntCorrect == GameConfig.instance.dataBoard.posCorrectStar.Count;
+        return cntCorrect == GameConfig.instance.GetLevelCurrent().dataBoard.posCorrectStar.Count;
     }
     #endregion
 

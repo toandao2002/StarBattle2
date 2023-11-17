@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "DataBoard", menuName = "Data/DataBoard", order = 1)]
 [System.Serializable]
-public class DataBoard : ScriptableObject
+public class DataBoard 
 {
     public int size;
     public string dataRegion = "0 0 0 1 1 1 1 1 1 0 2 2 1 1 1 1 1 1 2 2 2 2 3 3 3 3 4 2 2 2 2 2 3 3 3 4 5 2 2 2 2 2 2 3 4 5 5 2 2 6 6 6 3 3 5 5 5 5 6 6 6 7 3 8 5 5 5 5 6 6 7 3 8 8 8 5 5 5 6 7 3";
@@ -44,7 +43,7 @@ public class DataBoard : ScriptableObject
     }
     public int GetRegion(int x, int y)
     {
-        if (subRegions == null) InitData();
+        if (subRegions == null|| subRegions.Count ==0) InitData();
        
         return subRegions[x][y];
          

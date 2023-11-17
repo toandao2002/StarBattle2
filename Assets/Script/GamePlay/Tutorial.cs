@@ -13,23 +13,26 @@ public enum TypeHint{
     IncorrectPos,
     Arround,
     MustClickMoreOneStarInRegion,
-
+    ShouldOneStarInRegion,
+    ShouldClickStarInRegion
 }
 public class HintMesage
 {
     public TypeHint typeHint;
     public List<Vector2Int> posHints;
     public List<Vector2Int> posStars;
+    public List<Vector2Int> posDots;
     public HintMesage(TypeHint typeHint, List<Vector2Int> posHint)
     {
         this.typeHint = typeHint;
         this.posHints = posHint;
     }
-    public HintMesage(TypeHint typeHint, List<Vector2Int> posHint, List<Vector2Int> posStars)
+    public HintMesage(TypeHint typeHint, List<Vector2Int> posHint, List<Vector2Int> posStars, List<Vector2Int> posDots)
     {
         this.typeHint = typeHint;
         this.posHints = posHint;
         this.posStars = posStars;
+        this.posDots = posDots;
     }
     public void SetPostHint(List<Vector2Int> posHint)
     {
@@ -38,6 +41,11 @@ public class HintMesage
     public void SetPosStar(List<Vector2Int> posStars)
     {
         this.posStars = posStars;
+    }
+    public void SetPosDot(List<Vector2Int> posDots)
+    {
+
+        this.posDots = posDots;
     }
     public void SetTypeHint(TypeHint typeHint)
     {
@@ -62,12 +70,17 @@ public class HintMesage
     {
         foreach(Vector2Int i in posHints)
         {
-            board.cells[i.x][i.y].ShowHint(false);
+            board.cells[i.x][i.y].ShowHint(StatusCell.None);
+        }
+        foreach (Vector2Int i in posDots)
+        {
+            board.cells[i.x][i.y].ShowHint(StatusCell.OneClick);
         }
         foreach (Vector2Int i in posStars)
         {
-            board.cells[i.x][i.y].ShowHint(true);
+            board.cells[i.x][i.y].ShowHint(StatusCell.DoubleClick);
         }
+        HintMesageUI.instance.ShowHint(typeHint);
     }
 }
 public class Tutorial
@@ -155,17 +168,22 @@ public class Tutorial
             {
                 // case cell is star and real isn't star
                 if (board.cells[i][j].statusCell == StatusCell.DoubleClick)
-                    if (!GameConfig.instance.dataBoard.CheckPosCorrectStar(new Vector2Int(i, j))) {
+                    if (!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(new Vector2Int(i, j))) {
                         posHint.Add(new Vector2Int(i, j));
                         hintMesage.SetPostHint(posHint);
+                        hintMesage.SetPosStar(new List<Vector2Int>());
+                        hintMesage.SetPosDot(new List<Vector2Int>());
                         return hintMesage;
                     }
                 // case cell is dot and real is star
                 if (board.cells[i][j].statusCell == StatusCell.OneClick)
-                    if (GameConfig.instance.dataBoard.CheckPosCorrectStar(new Vector2Int(i, j)))
+                    if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(new Vector2Int(i, j)))
                     {
                         posHint.Add(new Vector2Int(i, j));
                         hintMesage.SetPostHint(posHint);
+                        hintMesage.SetPosStar(new List<Vector2Int>());
+
+                        hintMesage.SetPosDot(new List<Vector2Int>());
                         return hintMesage;
                     }
             }
@@ -201,20 +219,20 @@ public class Tutorial
         // case must be mark  is star 
         if (posEmpty.Count == 2 && posStar.Count == 0)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar);
+            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar, posStar, new List<Vector2Int>());
             return hintMesage;
         }
         // case row is fisnish -> mark cell is dot 
         if (posStar.Count == 2)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty);
+            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty,new List<Vector2Int>(),posEmpty);
             return hintMesage;
 
         }
         // case row has one star and has only cell is empty
         if ((posStar.Count == 1 && posEmpty.Count == 1))
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty);
+            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty,posEmpty, new List<Vector2Int>());
             return hintMesage;
         }
         // case wrong  haven't check because cell has infomation about error when user click
@@ -248,20 +266,20 @@ public class Tutorial
         // case must be mark  is star 
         if (posEmpty.Count == 2 && posStar.Count == 0)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar);
+            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar ,posStar, new List<Vector2Int>());
             return hintMesage;
         }
         // case column is fisnish -> mark cell is dot 
         if (posStar.Count == 2)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty);
+            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty, new List<Vector2Int>(), posEmpty);
             return hintMesage;
 
         }
         // case column has one star and has only cell is empty
         if ((posStar.Count == 1 && posEmpty.Count == 1))
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty);
+            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty, posEmpty, new List<Vector2Int>());
             return hintMesage;
         }
         // case wrong  haven't check because cell has infomation about error when user click
@@ -293,7 +311,7 @@ public class Tutorial
             return new HintMesage(TypeHint.None, new List<Vector2Int>());
         else
         {
-            return new HintMesage(TypeHint.Arround, posEmpty);
+            return new HintMesage(TypeHint.Arround, posEmpty, new List<Vector2Int>(), posEmpty);
         }
     }
     public HintMesage CheckRegion(Board board, Cell cell)
@@ -305,7 +323,7 @@ public class Tutorial
         check = new List<bool>(new bool[sizeBoard * sizeBoard]);
         if (numCell.y == 1 && numCell.x == 1)
         {
-            return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty);
+            return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posEmpty, new List<Vector2Int>());
         }
         /*
 
@@ -421,7 +439,7 @@ public class Tutorial
                     {
                         posStar.Add(regionSpecial.posCellImportant[i] + posEmpty[0]);
                     }
-                    return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posStar);
+                    return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posStar, posEmpty);
                 }
 
                 
@@ -454,7 +472,7 @@ public class Tutorial
                         posStar.Add(posEmpty[i]);
                     }
                 }
-                return new HintMesage(TypeHint.None, posEmpty, posStar);
+                return new HintMesage(TypeHint.ShouldOneStarInRegion, posEmpty, posStar, new List<Vector2Int>());
             }
         }
         else
@@ -473,9 +491,9 @@ public class Tutorial
                     posStar.Add(posEmpty[i]);
                 }
             }
-            return new HintMesage(TypeHint.None, posEmpty, posStar);
+            return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar,posEmpty);
         }
-        return new HintMesage(TypeHint.None, new List<Vector2Int>(), posStar);
+        return new HintMesage(TypeHint.None, new List<Vector2Int>(), posStar, new List<Vector2Int>());
     }
 
 
