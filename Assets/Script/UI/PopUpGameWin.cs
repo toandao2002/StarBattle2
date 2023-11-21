@@ -10,7 +10,7 @@ public class PopUpGameWin : BasePopUP
     }
     public void NextLevel()
     {
-        GameConfig.instance.SetLevelCurrent(GameConfig.instance.GetCurrentLevel() + 1);
+        GameConfig.instance.SetLevelCurrent(GameConfig.instance.GetCurrentLevel().nameLevel + 1);
         GameContrler.instance.board.InitBoard();
         Hide();
     }

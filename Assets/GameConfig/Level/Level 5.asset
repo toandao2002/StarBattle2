@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a31e421615799a498601fae47ece2fc, type: 3}
   m_Name: Level 5
   m_EditorClassIdentifier: 
+  nameLevel: 5
   typeGame: 0
   dataBoard:
     size: 9

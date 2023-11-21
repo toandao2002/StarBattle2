@@ -31,8 +31,10 @@ public class Board : MonoBehaviour
     }
     public void InitBoardMakeLevel()
     {
+        
         GameContrler.instance.ResetNewGame();
-        title.SetLevel(GameConfig.instance.GetCurrentLevel() + 1);
+        GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel());
+        title.SetLevel(GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -69,7 +71,7 @@ public class Board : MonoBehaviour
 
 
         GameContrler.instance.ResetNewGame();
-        title.SetLevel(GameConfig.instance.GetCurrentLevel()+1);
+        title.SetLevel(GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -151,7 +153,7 @@ public class Board : MonoBehaviour
             HighLightColumn(column, true);
         }
     }
-    public void CheckAround(Vector2Int pos)
+    public bool CheckAround(Vector2Int pos)
     {
         bool hasError = false;
         int numError = 0;
@@ -180,6 +182,7 @@ public class Board : MonoBehaviour
                 cellNext.ShowNormal(NameError.Cross);
             }
         }
+        return !hasError;
        
        
     }
@@ -358,4 +361,97 @@ public class Board : MonoBehaviour
             return false;
         return true;
     }
+
+
+
+    #region MakeLevel
+
+    public bool CheckRowLevel(int row)
+    {
+        int numDot = 0, numStar = 0;
+        for (int i = 0; i < sizeBoard; i++)
+        {
+            if (cells[row][i].statusCell == StatusCell.OneClick) // dot
+            {
+                numDot++;
+            }
+            else if (cells[row][i].statusCell == StatusCell.DoubleClick) // star
+            {
+                numStar++;
+            }
+        }
+        if (  numStar != 2)
+        {
+            HighLightRow(row, false);
+            return false;
+        }
+        else
+        {
+            HighLightRow(row, true);
+            return true;
+        }
+    }
+    public bool CheckColumnLevel(int column)
+    {
+
+        int numDot = 0, numStar = 0;
+        for (int i = 0; i < sizeBoard; i++)
+        {
+            if (cells[i][column].statusCell == StatusCell.OneClick) // dot
+            {
+                numDot++;
+            }
+            else if (cells[i][column].statusCell == StatusCell.DoubleClick) // star
+            {
+                numStar++;
+            }
+        }
+        if (numStar != 2)
+        {
+            HighLightColumn(column, false);
+            return false;
+        }
+        else
+        {
+            HighLightColumn(column, true);
+            return true;
+        }
+    }
+
+    public bool CheckRegionLevel(Cell cell)
+    {
+        List<bool> check = new List<bool>(new bool[sizeBoard * sizeBoard]);
+        Vector2Int numCell = CountCellEmpty(cell.pos, cell.region, check);
+        check = new List<bool>(new bool[sizeBoard * sizeBoard]);
+
+        if (  numCell.y != 2)
+        {
+            HighLightRegion(cell.pos, cell.region, check, false);
+            return false;
+        }
+        else
+        {
+            HighLightRegion(cell.pos, cell.region, check, true);
+            return true;
+        }
+    }
+    public void CheckCorrectMap()
+    {
+        foreach(Cell i in cellsRaw)
+        {
+            bool c = true;
+            c = c && i.CheckMapInModeLeve();
+            
+            if (i.statusCell == StatusCell.DoubleClick)
+            { 
+                c = c&& i.CheckArrond();
+            }
+            if(c == false)
+            {
+                return;
+            }
+
+        }
+    }
+    #endregion
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class DataBoard 
 {
     public int size;
-    public string dataRegion = "0 0 0 1 1 1 1 1 1 0 2 2 1 1 1 1 1 1 2 2 2 2 3 3 3 3 4 2 2 2 2 2 3 3 3 4 5 2 2 2 2 2 2 3 4 5 5 2 2 6 6 6 3 3 5 5 5 5 6 6 6 7 3 8 5 5 5 5 6 6 7 3 8 8 8 5 5 5 6 7 3";
-     string dataPosStar = "0 2 0 4 1 0 1 6 2 4 2 8 3 1 3 6 4 3 4 8 5 1 5 5 6 3 6 7 7 1 7 5 8 2 8 7";
+    public string dataRegion;
+    public string dataPosStar;
     public List<List<int>> subRegions;
     
     public List<Vector2Int> posCorrectStar;
@@ -51,8 +51,8 @@ public class DataBoard
 
     }
     public void InitPos()
-    {
-        dataPosStar = "0 2 0 4 1 0 1 6 2 4 2 8 3 1 3 6 4 3 4 8 5 1 5 5 6 3 6 7 7 0 7 5 8 2 8 7";
+    {/*
+        dataPosStar = "0 2 0 4 1 0 1 6 2 4 2 8 3 1 3 6 4 3 4 8 5 1 5 5 6 3 6 7 7 0 7 5 8 2 8 7";*/
         string[] split = System.Text.RegularExpressions.Regex.Split(dataPosStar.Trim(), @" +");
          
         for (int i = 0; i < split.Length -1; i+=2)
@@ -65,7 +65,7 @@ public class DataBoard
     public int GetRegion(int x, int y)
     {
         if (subRegions == null|| subRegions.Count ==0) InitData();
-        Show();
+       //
         return subRegions[x][y];
          
     }
@@ -82,8 +82,7 @@ public class DataBoard
         }
     }
     public bool CheckPosCorrectStar(Vector2Int pos)
-    {
-        posCorrectStar = new List<Vector2Int>();
+    { 
         if (posCorrectStar.Count == 0)
         { 
             InitPos();
@@ -96,6 +95,17 @@ public class DataBoard
             }
         }
         return false;
+    }
+    public void SetStar(Vector2Int posStar)
+    {
+        if(!posCorrectStar.Contains(posStar))
+        {
+            posCorrectStar.Add(posStar);
+        }
+    }
+    public void RemovePosStar(Vector2Int posStar)
+    {
+        posCorrectStar.Remove(posStar);
     }
 }
  

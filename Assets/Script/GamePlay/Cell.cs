@@ -42,12 +42,13 @@ public class Cell :MonoBehaviour
 
         disInRegioin = 0.8f;
         disOutRegioin = 4f;
+        Icon.color = new Color32(255, 255, 255, 0);
     }
     // Start is called before the first frame update
     void Start()
     {
 
-        Icon.color = new Color32(255, 255, 255, 0);
+        
 
     }
     
@@ -99,7 +100,7 @@ public class Cell :MonoBehaviour
            max.x = -r
            max.y = -t
         */
-        if (pos == new Vector2(1, 2))
+        if (pos == new Vector2(5, 1))
         {
 
         }
@@ -109,11 +110,18 @@ public class Cell :MonoBehaviour
         oMax= GetDis(t, oMax, 1);
      
         oMax *= -1;
-        /*   if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
-               txt.text = "*";
-           txt.text += region + ""; */
-        txt.text = "";
-           ChangeRectranform(oMin, oMax);
+        if(board != null && board.isModeMakeLevel)
+        {
+            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
+                ShowStarIcon();
+            txt.text = region + "";
+        }
+        else {
+            txt.text = "";
+        }
+       
+        
+        ChangeRectranform(oMin, oMax);
 
         inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f* region  ,255);
     }
@@ -148,6 +156,12 @@ public class Cell :MonoBehaviour
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos); 
         Check();
+    }
+    public void ShowStarIcon()
+    {
+        Icon.color = new Color32(255, 255, 255, 255);
+        Icon.sprite = star;
+        statusCell = StatusCell.DoubleClick;
     }
     public void OneClick(bool isUser)
     {
@@ -335,22 +349,32 @@ public class Cell :MonoBehaviour
         {
             statusCell = StatusCell.None;
             Icon.color = new Color32(255, 255, 255, 0);
+            GameConfig.instance.GetLevelCurrent().RemovePosStar(pos);
         }
         else
         {
             statusCell = StatusCell.DoubleClick;
             Icon.color = new Color32(255, 255, 255, 255);
             Icon.sprite = star;
+            GameConfig.instance.GetLevelCurrent().SetStarPos(pos);
+
         }
-       
         Check();
+        board.CheckAround(pos);
 
-        if (board.CheckWin())
-        {
-            MyEvent.GameWin?.Invoke();
-        }
     }
-
+    public bool CheckMapInModeLeve()
+    {
+         
+        bool c1= board.CheckRowLevel(pos.x);
+        bool c2 =board.CheckColumnLevel(pos.y);
+        bool c3 = board.CheckRegionLevel(this);
+        return c1 && c2 && c3;
+    }
+    public bool CheckArrond()
+    {
+        return board.CheckAround(pos);
+    }
     
     public void ReSetShowRegionForCell(Cell cell)
     {
@@ -362,7 +386,7 @@ public class Cell :MonoBehaviour
         Cell b = boardMakeLevel.GetCellByPos(pos.x + 1, pos.y);
         cell.InitCell(l, t, r, b, boardMakeLevel);
     }
-
+  
     #endregion
 
 

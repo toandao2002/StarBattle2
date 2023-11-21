@@ -13,8 +13,15 @@ public enum TypeGame
 [System.Serializable]
 public class Level : ScriptableObject
 {
+    public int nameLevel;
     public TypeGame typeGame;
     public DataBoard dataBoard;
-    
-   
+    public void SetStarPos(Vector2Int posStar)
+    {
+        dataBoard.SetStar(posStar);
+    }
+    public void RemovePosStar(Vector2Int posStar)
+    {
+        dataBoard.RemovePosStar(posStar);
+    }
 }

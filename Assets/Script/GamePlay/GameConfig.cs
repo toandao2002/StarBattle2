@@ -5,22 +5,26 @@ using UnityEngine;
 public class GameConfig : MonoBehaviour
 {
 
-    public static GameConfig instance; 
-    public int levelCurent;
+    public static GameConfig instance;  
     public List<Level> levels;
+    public Level levelCurent;
     public Level GetLevel(int id)
     {
         return levels[id];
     }
     public Level GetLevelCurrent()
     {
-        return levels[levelCurent];
+        return levelCurent;
     }
     public void SetLevelCurrent(int level)
     {
+        levelCurent = levels[level];
+    }
+    public void SetLevelCurrentMakeLevel(Level level)
+    {
         levelCurent = level;
     }
-    public int GetCurrentLevel()
+    public Level GetCurrentLevel()
     {
         return levelCurent;
     }
