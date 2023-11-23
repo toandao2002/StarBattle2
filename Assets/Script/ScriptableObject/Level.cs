@@ -16,6 +16,10 @@ public class Level : ScriptableObject
     public int nameLevel;
     public TypeGame typeGame;
     public DataBoard dataBoard;
+    public Level(int nameLevel)
+    {
+        this.nameLevel = nameLevel;
+    }
     public void SetStarPos(Vector2Int posStar)
     {
         dataBoard.SetStar(posStar);

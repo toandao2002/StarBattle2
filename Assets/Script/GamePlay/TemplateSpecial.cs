@@ -11,6 +11,8 @@ public class RegionSpecial
         this.poscells = poscells;
         this.posCellImportant = posCellImportant;
     }
+
+  
     public bool CheckFit(List<Vector2Int> posEmpty, Board board)
     { 
         int countCell = 0;
@@ -365,5 +367,34 @@ public class TemplateSpecial
             }
         }
         return null;
+    }
+
+
+    public List<Vector2Int> posSquare = new List<Vector2Int>()
+    {
+       
+                    new Vector2Int(0,0),
+                    new Vector2Int(0,1),
+                    new Vector2Int(1,0),
+                    new Vector2Int(1,1),
+
+              
+    };
+    public bool checkFitSquare(List<Vector2Int> posEmpty, Board board)
+    {
+        int countFaile = 0;
+        for (int i = 0; i < posEmpty.Count; i++)
+        {
+            Vector2Int posCheck = posEmpty[i] - posEmpty[0];
+            if (!posSquare.Contains(posCheck))
+            {
+
+                countFaile++;
+                return false;
+            }
+
+        }
+        return true;
+
     }
 }

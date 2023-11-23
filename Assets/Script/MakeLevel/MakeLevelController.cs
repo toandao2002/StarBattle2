@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 
 public class MakeLevelController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MakeLevelController : MonoBehaviour
     public static MakeLevelController instance;
     public TMP_InputField levelInput;
     public TMP_InputField regionInput;
+    public TMP_Dropdown typeLevel;
     public bool modeSetRegion;
     public TMP_Text txtBtnMode;
     public Level levelCurrent;
@@ -44,19 +46,25 @@ public class MakeLevelController : MonoBehaviour
     }
     public Level GetLevel()
     {
+        
         if (GetLevelInt() == 0) {
             Debug.Log("level must greater 0");
             levelInput.text = "1";
         }
-        if(GetLevelInt()>= GameConfig.instance.levels.Count)
+        levelCurrent = (Level)AssetDatabase.LoadAssetAtPath(scr.GetPathLevel((TypeGame)typeLevel.value, GetLevelInt()), typeof(Level));
+        if (levelCurrent == null)
         {
             Debug.Log("Case create new level");
             DataBoard databoard = new DataBoard(9,"","");
-            levelCurrent = new Level();
+            levelCurrent = new Level(Int32.Parse(levelInput.text) );
             levelCurrent.dataBoard = databoard;
         }
-        else 
-            levelCurrent = GameConfig.instance.levels[GetLevelInt()-1];
+        else
+        {
+             
+            
+        }
+           
         return levelCurrent;
     }
     private void Awake()
@@ -77,9 +85,10 @@ public class MakeLevelController : MonoBehaviour
                 rg += (board.cells[i][j].region + " ");
             }
         }
-        DataBoard dataBoard = new DataBoard(9, rg, posStar);
+        List<Vector2Int> posCorrectStar = GameConfig.instance.GetCurrentLevel().dataBoard.posCorrectStar;
+        DataBoard dataBoard = new DataBoard(9, rg, posStar,posCorrectStar);
         levelCurrent.dataBoard = dataBoard;
-        scr.CreateOrReplaceAsset(levelCurrent, scr.GetPathLevel(GetLevelInt()));
+        scr.CreateOrReplaceAsset(levelCurrent, scr.GetPathLevel((TypeGame)typeLevel.value,  GetLevelInt()));
     }
 
 }

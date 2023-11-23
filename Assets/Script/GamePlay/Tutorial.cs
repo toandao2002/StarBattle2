@@ -14,7 +14,9 @@ public enum TypeHint{
     Arround,
     MustClickMoreOneStarInRegion,
     ShouldOneStarInRegion,
-    ShouldClickStarInRegion
+    ShouldClickStarInRegion,
+    ShoudlRowAround,
+    ShoudlColumnAround,
 }
 public class HintMesage
 {
@@ -136,6 +138,20 @@ public class Tutorial
                             break;
 
                         }
+                        hintMesage = CheckRegion(board, board.cells[i][j]);
+                        if (hintMesage.posHints.Count != 0)
+                        {
+                            isDetectedHint = true;
+                            break;
+
+                        }
+                        hintMesage = CheckAroundRegionOfCell(board, board.cells[i][j].pos);
+                        if (hintMesage.posHints.Count != 0)
+                        {
+                            isDetectedHint = true;
+                            break;
+
+                        }
                     }
                     if (board.cells[i][j].statusCell == StatusCell.DoubleClick && !isDetectedHint)
                     {
@@ -146,7 +162,11 @@ public class Tutorial
                             break;
                         }
                     }
-                    else if (isDetectedHint) break;
+                    else if (!isDetectedHint)  // suppose this cell is star then check these cells around 
+                    { 
+                    
+                    
+                    }
 
 
                 }
@@ -158,6 +178,7 @@ public class Tutorial
         // 
 
     }
+   
     public HintMesage FindIncorrestPos(Board board)
     {
         List<Vector2Int> posHint = new List<Vector2Int>();
@@ -235,12 +256,159 @@ public class Tutorial
             HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty,posEmpty, new List<Vector2Int>());
             return hintMesage;
         }
+        if (posEmpty.Count >= 2&& posEmpty.Count <= 4&&  posStar.Count == 0)
+        {
+            return CheckSquare(posEmpty, board);
+        }
         // case wrong  haven't check because cell has infomation about error when user click
 
         // case row correct
         return new HintMesage(TypeHint.None, new List<Vector2Int>());
 
     }
+
+    public HintMesage CheckSquare(List<Vector2Int> posEmpty,Board board)
+    {
+        List<Vector2Int>  posDot = new List<Vector2Int>();
+        List<Vector2Int>  posStar = new List<Vector2Int>();
+        for (int i = 0; i < posEmpty.Count; i++)
+        {
+            int count = board.CountAndCheckCellEmptyAround(posEmpty[i], posEmpty);
+            if (count == 1)/// khong con nuoc di
+            {
+                posDot.Add(posEmpty[i]);
+            }
+            List<Vector2Int> PostEmtpyCheck = new List<Vector2Int>();
+            PostEmtpyCheck.AddRange(posEmpty);
+            PostEmtpyCheck.Remove(posEmpty[i]);
+
+            if (templateSpecial.checkFitSquare(PostEmtpyCheck, board))
+            {
+                posStar.Add(posEmpty[i]);
+            }
+
+        }
+        List<Vector2Int> posHint = new List<Vector2Int>();
+        posHint.AddRange(posStar);
+        posHint.AddRange(posDot);
+        return new HintMesage(TypeHint.ShoudlRowAround, posHint, posStar, posDot);
+    }
+    public HintMesage CheckAroundRegionOfCell( Board board,Vector2Int pos)
+    {
+        int sizeBoard = board.sizeBoard; 
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        Cell CellCurrent = board.cells[pos.x][pos.y];
+        if(pos == new Vector2Int(2, 7))
+        {
+
+        }
+        foreach (Vector2Int d in direction)
+        {
+            Vector2Int posNext = pos + d;
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if (cellNext.statusCell == StatusCell.None && cellNext.region != CellCurrent.region )
+            {
+                if(pos == new Vector2Int(2, 7))
+                {
+                    
+                }
+                posEmpty = new List<Vector2Int>();
+                List<bool> check = new List<bool>(new bool[sizeBoard * sizeBoard]);
+                Vector2Int rs =  GetCellEmptyInReGionDontNextOneStar(board,posNext,cellNext.region, check, posEmpty, pos);
+                if(rs.y ==0  && rs.x<=4)
+                {
+                    posEmpty.Sort((v1, v2) => {
+                        if (v1.x.Equals(v2.x))
+                        {
+                            return v1.y.CompareTo(v2.y);
+                        }
+                        else return v1.x.CompareTo(v2.x);
+                    });
+                    List<Vector2Int> posDot = new List<Vector2Int>();
+                    if (templateSpecial.checkFitSquare(posEmpty, board))
+                    {
+                        posDot.Add(pos); 
+                    }
+
+                    return new HintMesage(TypeHint.ShoudlRowAround, posDot, new List<Vector2Int>(), posDot);
+                }
+                else if (rs.y == 1 && rs.x == 0)
+                {
+
+                    List<Vector2Int> posDot = new List<Vector2Int>(); 
+                    posDot.Add(pos);
+                    return new HintMesage(TypeHint.ShoudlRowAround, posDot, new List<Vector2Int>(), posDot);
+                }
+                else
+                {
+                    Debug.Log(posEmpty);
+                }
+            }
+
+        } 
+        return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+        
+        
+    }
+    public Vector2Int GetCellEmptyInReGionDontNextOneStar(Board board, Vector2Int pos, int region, List<bool> Check, List<Vector2Int> posEmtpy, Vector2Int posStar)
+    {
+        Cell cellCurent = board.cells[pos.x][pos.y];
+        int numCellEmpty = 0;
+        if (cellCurent.statusCell == StatusCell.None && !NextOneStar(board, pos,posStar))
+        {
+            posEmtpy.Add(cellCurent.pos);
+            numCellEmpty = 1;
+        }
+        else
+        {
+            numCellEmpty = 0;
+        }
+        int NumStar = cellCurent.statusCell == StatusCell.DoubleClick ? 1 : 0;
+        Vector2Int result = new Vector2Int(numCellEmpty, NumStar);
+        Check[pos.x * board.sizeBoard + pos.y] = true;
+        foreach (Vector2Int d in direction)
+        {
+
+            Vector2Int posNext = pos + d;
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+
+
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if (Check[posNext.x * board.sizeBoard + posNext.y] == false && cellNext.region == region)
+            {
+                result += GetCellEmptyInReGionDontNextOneStar(board, posNext, region, Check, posEmtpy,posStar);
+            }
+        }
+        return result;  
+    }
+    public bool NextOneStar(Board board, Vector2Int pos, Vector2Int posStar)
+    {
+
+        Cell CellCurrent = board.cells[pos.x][pos.y];
+        foreach (Vector2Int d in direction)
+        {
+            Vector2Int posNext = posStar + d;
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            } 
+            if (pos == posNext )
+            {
+                return true;
+            }
+
+
+        }
+        return false;
+    }
+
     public HintMesage CheckColumn(Board board, int column)
     {
         List<Vector2Int> posStar = new List<Vector2Int>();
@@ -281,6 +449,10 @@ public class Tutorial
         {
             HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty, posEmpty, new List<Vector2Int>());
             return hintMesage;
+        }
+        if (posEmpty.Count >= 2 && posEmpty.Count <= 4&& posStar.Count == 0)
+        {
+            return CheckSquare(posEmpty, board);
         }
         // case wrong  haven't check because cell has infomation about error when user click
 
@@ -325,19 +497,7 @@ public class Tutorial
         {
             return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posEmpty, new List<Vector2Int>());
         }
-        /*
-
-           [***] -> 00 02 star - 01 dot
-
-           *
-           ** -> 00 20 star- 10 11 dot
-           *
-
-           *
-          ** -> 00 20 star- 10 1-1 dot
-           *
-
-        */
+       
         else if (numCell.y == 0 && (numCell.x >= 3 ))
         {  
             posEmpty.Sort((  v1,   v2) => {
@@ -398,69 +558,26 @@ public class Tutorial
      */
 
     TemplateSpecial templateSpecial = new TemplateSpecial();
-    public HintMesage HandelCaseSpecial(List<Vector2Int> posEmpty, Board board)
-    {
-       
-        int numx = 0;
-        int numy = 0;
-        
-        if (posEmpty.Count >= 4)
-        {
-            for (int i = 1; i < posEmpty.Count; i++)
-            {
-                /*
-                    *
-                    *
-                    *
-                 */
-                if (posEmpty[i].x - posEmpty[i - 1].x == 1 && posEmpty[i].y == posEmpty[i - 1].y)
-                {
-                    numx++;
-                }
-                //[***] -> 00 02 star - 01 dot
-                if (posEmpty[i].y - posEmpty[i - 1].y == 1 && posEmpty[i].x == posEmpty[i - 1].x)
-                {
-                    numy++;
-                }
-                /*   
-                    *
-                    * -> 00 20 star - 10   dot
-                    *
-                */
-            }
-            if (numx == 2 || numy == 2)
-            {
-                RegionSpecial regionSpecial = templateSpecial.Check(posEmpty,board);
-                
-                List<Vector2Int> posStar = new List<Vector2Int>();
-                if (regionSpecial!= null)
-                { 
-                    for (int i =0; i< regionSpecial.posCellImportant.Count; i ++)
-                    {
-                        posStar.Add(regionSpecial.posCellImportant[i] + posEmpty[0]);
-                    }
-                    return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posStar, posEmpty);
-                }
-
-                
-            }
-        }
-        return new HintMesage(TypeHint.None, new List<Vector2Int>());
-    }
+     
 
     public HintMesage HandelCaseSpecial2 (List<Vector2Int> posEmpty, Board board)
     {
         int countMax = -200;
         List<Vector2Int> posStar= new List<Vector2Int>();
-        if(posEmpty.Count >= 4)
+        List<Vector2Int> posDot= new List<Vector2Int>();
+        if (posEmpty.Count >= 4)
         {
 
-            RegionSpecial regionSpecial =  templateSpecial.Checkit(posEmpty, board);
-            if(regionSpecial!= null)
+            RegionSpecial regionSpecial = templateSpecial.Checkit(posEmpty, board);
+            if (regionSpecial != null)
             {
                 for (int i = 0; i < posEmpty.Count; i++)
                 {
                     int count = board.CountAndCheckCellEmptyAround(posEmpty[i], posEmpty);
+                    if (count == 1) // khong con nuoc di
+                    {
+                        posDot.Add(posEmpty[i]);
+                    }
                     if (count > countMax)
                     {
                         countMax = count;
@@ -472,7 +589,40 @@ public class Tutorial
                         posStar.Add(posEmpty[i]);
                     }
                 }
-                return new HintMesage(TypeHint.ShouldOneStarInRegion, posEmpty, posStar, new List<Vector2Int>());
+                if (posStar.Count <= 2)
+                    return new HintMesage(TypeHint.ShouldOneStarInRegion, posEmpty, posStar, posDot);
+                else
+                {
+                    return new HintMesage(TypeHint.ShouldOneStarInRegion, new List<Vector2Int>(), new List<Vector2Int>(), posDot);
+
+                }
+
+            }
+            else if (regionSpecial == null)
+            {
+                for (int i = 0; i < posEmpty.Count; i++)
+                {
+                    int count = board.CountAndCheckCellEmptyAround(posEmpty[i], posEmpty);
+                    if (count == 1)/// khong con nuoc di
+                    {
+                        posDot.Add(posEmpty[i]);
+                    }
+                    List<Vector2Int> PostEmtpyCheck = new List<Vector2Int>();
+                    PostEmtpyCheck.AddRange(posEmpty);
+                    PostEmtpyCheck.Remove(posEmpty[i]);
+
+                    if (templateSpecial.checkFitSquare(PostEmtpyCheck, board))
+                    {
+                        posStar.Add(posEmpty[i]);
+                    }
+
+                }
+                List<Vector2Int> posHint = new List<Vector2Int>();
+                posHint.AddRange(posStar);
+                posHint.AddRange(posDot);
+
+                return new HintMesage(TypeHint.ShouldOneStarInRegion, posHint, posStar, posDot);
+
             }
         }
         else
@@ -491,44 +641,18 @@ public class Tutorial
                     posStar.Add(posEmpty[i]);
                 }
             }
-            return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar,posEmpty);
+            return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar, posEmpty);
         }
         return new HintMesage(TypeHint.None, new List<Vector2Int>(), posStar, new List<Vector2Int>());
     }
 
 
-    public bool Hande3(List<Vector2Int> posEmpty)
+
+
+    #region get cells empty
+    public void GetCellsEmtpyInRow(int row)
     {
-        int numx = 0;
-        int numy = 0;
-        for (int i = 1; i < posEmpty.Count; i++)
-        {
-            /*
-                *
-                *
-                *
-             */
-            if (posEmpty[i].x - posEmpty[i - 1].x == 1 && posEmpty[i].y == posEmpty[i - 1].y)
-            {
-                numx++;
-            }
-            //[***] -> 00 02 star - 01 dot
-            if (posEmpty[i].y - posEmpty[i - 1].y == 1 && posEmpty[i].x == posEmpty[i - 1].x)
-            {
-                numy++;
-            }
-            /*   
-                *
-                ** -> 00 20 star - 10 11 dot
-                *
-            */
 
-
-        }
-        if (numx == 2 || numy == 2)
-        {
-            return true;
-        }
-        return false;
     }
+    #endregion
 }

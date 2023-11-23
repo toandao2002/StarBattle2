@@ -9,7 +9,7 @@ public class ButonLevel : MonoBehaviour
     public void SetLevel(int id)
     {
         txtLevel.text = id.ToString();
-        level = id-1;
+        level = id;
     }
     public void ChoseLevel()
     {

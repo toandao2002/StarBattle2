@@ -24,15 +24,19 @@ public class Board : MonoBehaviour
     {
         if (isModeMakeLevel)
         {
-            InitBoardMakeLevel();
+            InitBoardMakeLevel(false);
         }
         else 
             InitBoard();
     }
-    public void InitBoardMakeLevel()
+    public void InitBoardMakeLevel(bool isClear)
     {
         
         GameContrler.instance.ResetNewGame();
+        if (isClear)
+        {
+            MakeLevelController.instance.GetLevel().dataBoard.ResetData();
+        }
         GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel());
         title.SetLevel(GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
@@ -46,9 +50,9 @@ public class Board : MonoBehaviour
                 cell.ResetStatus();
 
                 cells[i].Add(cell);
-                cell.SetPos(new Vector2Int(i, j));
-
-                cell.SetRegion(MakeLevelController.instance.GetLevel().dataBoard.GetRegion(i, j)); ;
+                cell.SetPos(new Vector2Int(i, j)); 
+                cell.SetRegion(MakeLevelController.instance.GetLevel().dataBoard.GetRegion(i, j)); 
+                 
 
             }
         }
@@ -63,6 +67,7 @@ public class Board : MonoBehaviour
                 Cell r = GetCellByPos(pos.x, pos.y + 1);
                 Cell b = GetCellByPos(pos.x + 1, pos.y);
                 c.InitCell(l, t, r, b, this);
+                
             }
         }
     }
@@ -365,6 +370,10 @@ public class Board : MonoBehaviour
 
 
     #region MakeLevel
+    public void Clear()
+    {
+        InitBoardMakeLevel(true);
+    }
 
     public bool CheckRowLevel(int row)
     {

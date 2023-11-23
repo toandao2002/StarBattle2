@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameConfig : MonoBehaviour
 {
 
     public static GameConfig instance;  
-    public List<Level> levels;
     public Level levelCurent;
-    public Level GetLevel(int id)
-    {
-        return levels[id];
-    }
+    public TypeGame typeGame;
+    public ScriptableObjectController scr;
+    
+    
     public Level GetLevelCurrent()
     {
         return levelCurent;
     }
     public void SetLevelCurrent(int level)
     {
-        levelCurent = levels[level];
+        string path = scr.GetPathLevel(typeGame,level);
+        levelCurent = (Level)AssetDatabase.LoadAssetAtPath(path, typeof(Level));
+         
     }
     public void SetLevelCurrentMakeLevel(Level level)
     {

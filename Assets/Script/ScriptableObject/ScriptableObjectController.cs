@@ -25,9 +25,9 @@ public class ScriptableObjectController : MonoBehaviour
         return null;
 #endif
     }
-    public string GetPathLevel(int level)
+    public string GetPathLevel(TypeGame typeGame, int level)
     {
-        string path = "Assets/GameConfig/Level/Level " + level + ".asset";
+        string path = "Assets/GameConfig/"+typeGame.ToString()+"/Level " + level + ".asset";
         return path;
     }
 }

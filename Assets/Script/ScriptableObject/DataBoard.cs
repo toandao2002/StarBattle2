@@ -17,6 +17,14 @@ public class DataBoard
         this.dataRegion = dataRegion;
         this.dataPosStar= dataPosStar;
     }
+    public DataBoard(int size, String dataRegion, String dataPosStar, List<Vector2Int> posCorrectStar )
+    {
+        this.size = size;
+        this.dataRegion = dataRegion;
+        this.dataPosStar = dataPosStar;
+        this.posCorrectStar = new List<Vector2Int>();
+        this.posCorrectStar.AddRange(posCorrectStar);
+    }
     public void InitData()
     {
         subRegions = new List<List<int>>();
@@ -54,7 +62,7 @@ public class DataBoard
     {/*
         dataPosStar = "0 2 0 4 1 0 1 6 2 4 2 8 3 1 3 6 4 3 4 8 5 1 5 5 6 3 6 7 7 0 7 5 8 2 8 7";*/
         string[] split = System.Text.RegularExpressions.Regex.Split(dataPosStar.Trim(), @" +");
-         
+        posCorrectStar = new List<Vector2Int>();
         for (int i = 0; i < split.Length -1; i+=2)
         {
             int x = Int32.Parse(split[i ]);
@@ -82,8 +90,8 @@ public class DataBoard
         }
     }
     public bool CheckPosCorrectStar(Vector2Int pos)
-    { 
-        if (posCorrectStar.Count == 0)
+    {
+        if (posCorrectStar == null)
         { 
             InitPos();
         } 
@@ -106,6 +114,13 @@ public class DataBoard
     public void RemovePosStar(Vector2Int posStar)
     {
         posCorrectStar.Remove(posStar);
+    }
+    public void ResetData()
+    {
+        this.dataRegion = "";
+        this.dataPosStar = "";
+        this.posCorrectStar = new List<Vector2Int>();
+        this.subRegions = new List<List<int>>();
     }
 }
  

@@ -10,7 +10,7 @@ public class TableLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i< GameConfig.instance.levels.Count; i++)
+        for(int i = 0; i< 10; i++)
         {
             btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
             btnLevels[i].SetLevel(i + 1);
