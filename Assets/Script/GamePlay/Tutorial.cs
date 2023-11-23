@@ -17,6 +17,7 @@ public enum TypeHint{
     ShouldClickStarInRegion,
     ShoudlRowAround,
     ShoudlColumnAround,
+    MustMarkDot,
 }
 public class HintMesage
 {
@@ -213,6 +214,74 @@ public class Tutorial
         hintMesage = new HintMesage(TypeHint.None, new List<Vector2Int>());
         return hintMesage;
     }
+
+    public HintMesage CheckRegionInRowOrColumn (List <Vector2Int> posEmpty, Board board, int amountStar)
+    {
+        var subRegion = new Dictionary<int, List<Vector2Int>>();
+        for (int i = 0; i < posEmpty.Count; i++)
+        {
+            int region = board.cells[posEmpty[i].x][posEmpty[i].y].region;
+            if (subRegion.ContainsKey(region))
+            {
+                subRegion[region].Add(posEmpty[i]);
+            }
+            else
+            {
+                subRegion[region] = new List<Vector2Int>();
+                subRegion[region].Add(posEmpty[i]);
+            }
+        } 
+        List<int> regionHasOneStar = new List<int>();
+        foreach (int i in subRegion.Keys)
+        {
+
+            List<bool> check = new List<bool>(new bool[board. sizeBoard * board.sizeBoard]);
+            Vector2Int numCell = CountCellEmpty(board, subRegion[i][0], i, check, new List<Vector2Int>()); 
+            if(numCell.y == 1 && numCell.x == subRegion[i].Count)
+            {
+                regionHasOneStar.Add(i);
+            }
+
+        }
+        // case 2 star in row or column must be in this 2 region 
+        if (regionHasOneStar.Count == 2&& subRegion.Count >3 && amountStar ==0 )
+        {
+            List<Vector2Int> posHint = new List<Vector2Int>();
+            List<Vector2Int> posDot = new List<Vector2Int>();
+            foreach (int i in subRegion.Keys)
+            { 
+                if (regionHasOneStar.Contains(i))
+                {
+                    posHint.AddRange(subRegion[i]);
+                }
+                else
+                {
+                    posDot.AddRange(subRegion[i]);
+                }
+
+            }
+            return new HintMesage(TypeHint.MustMarkDot, posHint, new List<Vector2Int>(), posDot);
+        }
+        else if(amountStar == 1 && regionHasOneStar.Count == 1&& subRegion.Count>=1)
+        {
+            List<Vector2Int> posHint = new List<Vector2Int>();
+            List<Vector2Int> posDot = new List<Vector2Int>();
+            foreach (int i in subRegion.Keys)
+            {
+                if (regionHasOneStar.Contains(i))
+                {
+                    posHint.AddRange(subRegion[i]);
+                }
+                else
+                {
+                    posDot.AddRange(subRegion[i]);
+                }
+
+            }
+            return new HintMesage(TypeHint.MustMarkDot, posHint, new List<Vector2Int>(), posDot);
+        }
+        return new HintMesage(TypeHint.MustMarkDot, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+    }
     public HintMesage CheckRow(Board board, int row)
     {
 
@@ -258,13 +327,73 @@ public class Tutorial
         }
         if (posEmpty.Count >= 2&& posEmpty.Count <= 4&&  posStar.Count == 0)
         {
-            return CheckSquare(posEmpty, board);
+            HintMesage hintMesage = CheckSquare(posEmpty, board);
+            if (hintMesage.posHints.Count != 0)
+                return hintMesage;
         }
+        if(posEmpty.Count>2 )
+            return CheckRegionInRowOrColumn(posEmpty,board,posStar.Count);
+
+
+        // case wrong  haven't check because cell has infomation about error when user click
+
+        // case row correct
+        return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+
+    }
+    public HintMesage CheckColumn(Board board, int column)
+    {
+        List<Vector2Int> posStar = new List<Vector2Int>();
+        List<Vector2Int> posDot = new List<Vector2Int>();
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+
+            if (board.cells[i][column].statusCell == StatusCell.OneClick)
+            {
+                posDot.Add(new Vector2Int(i, column));
+            }
+            if (board.cells[i][column].statusCell == StatusCell.DoubleClick)
+            {
+                posStar.Add(new Vector2Int(i, column));
+            }
+            if (board.cells[i][column].statusCell == StatusCell.None)
+            {
+                posEmpty.Add(new Vector2Int(i, column));
+            }
+
+        }
+        // case must be mark  is star 
+        if (posEmpty.Count == 2 && posStar.Count == 0)
+        {
+            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar, posStar, new List<Vector2Int>());
+            return hintMesage;
+        }
+        // case column is fisnish -> mark cell is dot 
+        if (posStar.Count == 2)
+        {
+            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty, new List<Vector2Int>(), posEmpty);
+            return hintMesage;
+
+        }
+        // case column has one star and has only cell is empty
+        if ((posStar.Count == 1 && posEmpty.Count == 1))
+        {
+            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty, posEmpty, new List<Vector2Int>());
+            return hintMesage;
+        }
+        if (posEmpty.Count >= 2 && posEmpty.Count <= 4 && posStar.Count == 0)
+        { 
+            HintMesage hintMesage = CheckSquare(posEmpty, board);
+            if (hintMesage.posHints.Count != 0)
+                return hintMesage;
+        }
+        if (posEmpty.Count > 2)
+            return CheckRegionInRowOrColumn(posEmpty, board, posStar.Count);
         // case wrong  haven't check because cell has infomation about error when user click
 
         // case row correct
         return new HintMesage(TypeHint.None, new List<Vector2Int>());
-
     }
 
     public HintMesage CheckSquare(List<Vector2Int> posEmpty,Board board)
@@ -409,56 +538,7 @@ public class Tutorial
         return false;
     }
 
-    public HintMesage CheckColumn(Board board, int column)
-    {
-        List<Vector2Int> posStar = new List<Vector2Int>();
-        List<Vector2Int> posDot = new List<Vector2Int>();
-        List<Vector2Int> posEmpty = new List<Vector2Int>();
-        for (int i = 0; i < board.sizeBoard; i++)
-        {
-
-            if (board.cells[i][column].statusCell == StatusCell.OneClick)
-            {
-                posDot.Add(new Vector2Int(i, column));
-            }
-            if (board.cells[i][column].statusCell == StatusCell.DoubleClick)
-            {
-                posStar.Add(new Vector2Int(i, column));
-            }
-            if (board.cells[i][column].statusCell == StatusCell.None)
-            {
-                posEmpty.Add(new Vector2Int(i, column));
-            }
-
-        }
-        // case must be mark  is star 
-        if (posEmpty.Count == 2 && posStar.Count == 0)
-        {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustTwoWstar, posStar ,posStar, new List<Vector2Int>());
-            return hintMesage;
-        }
-        // case column is fisnish -> mark cell is dot 
-        if (posStar.Count == 2)
-        {
-            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty, new List<Vector2Int>(), posEmpty);
-            return hintMesage;
-
-        }
-        // case column has one star and has only cell is empty
-        if ((posStar.Count == 1 && posEmpty.Count == 1))
-        {
-            HintMesage hintMesage = new HintMesage(TypeHint.MustOneStar, posEmpty, posEmpty, new List<Vector2Int>());
-            return hintMesage;
-        }
-        if (posEmpty.Count >= 2 && posEmpty.Count <= 4&& posStar.Count == 0)
-        {
-            return CheckSquare(posEmpty, board);
-        }
-        // case wrong  haven't check because cell has infomation about error when user click
-
-        // case row correct
-        return new HintMesage(TypeHint.None, new List<Vector2Int>());
-    }
+    
     public HintMesage CheckAround(Board board, Vector2Int pos)
     {
 
@@ -497,7 +577,10 @@ public class Tutorial
         {
             return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posEmpty, new List<Vector2Int>());
         }
-       
+        else if (numCell.y == 0 && numCell.x == 2)
+        {
+            return new HintMesage(TypeHint.MustClickMoreOneStarInRegion, posEmpty, posEmpty, new List<Vector2Int>());
+        }
         else if (numCell.y == 0 && (numCell.x >= 3 ))
         {  
             posEmpty.Sort((  v1,   v2) => {
@@ -507,8 +590,13 @@ public class Tutorial
                 }
                 else return v1.x.CompareTo(v2.x);
             });
-            
-             
+            // case cell all in row or colunm
+            var hintMesage = CheckEmptyCellsInRegionByRowAndColunm(posEmpty, board);
+            if(hintMesage.posHints.Count > 0)
+            {
+                return hintMesage;
+            }
+
             if (posEmpty.Count >= 3&& posEmpty.Count <=5)
             {
                 return HandelCaseSpecial2(posEmpty, board);
@@ -558,8 +646,88 @@ public class Tutorial
      */
 
     TemplateSpecial templateSpecial = new TemplateSpecial();
-     
 
+    public List<Vector2Int> MarkRowDot(int row, Board board, List<Vector2Int> posExcept)
+    {
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+
+            if (posExcept.Contains(board.cells[row][i].pos))
+            {
+                continue;
+            }
+            if ( board.cells[row][i].statusCell == StatusCell.None)
+            {
+                posEmpty.Add(new Vector2Int(row, i));
+            }
+
+        }
+        return posEmpty;
+    }
+    public List<Vector2Int> MarkColumnDot(int column, Board board, List<Vector2Int> posExcept)
+    {
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+
+            if (posExcept.Contains(board.cells[i][column].pos))
+            {
+                continue;
+            }
+            if (board.cells[i][column].statusCell == StatusCell.None)
+            {
+                posEmpty.Add(new Vector2Int(i, column));
+            }
+
+        }
+        return posEmpty;
+    }
+    // case: in region hasn't any star and empty cells cover in row or column
+    public HintMesage CheckEmptyCellsInRegionByRowAndColunm(List<Vector2Int> posEmpty, Board board)
+    {
+        // check row
+        bool inRow = true;
+        bool inColumn = true;
+        List<Vector2Int> posDot =new List<Vector2Int>();
+        for (int i = 1; i<posEmpty.Count;i++)
+        {
+            if(posEmpty[i].x != posEmpty[i - 1].x)
+            {
+                inRow = false;
+               
+                break;
+            }
+        }
+        if (inRow)
+        {
+            posDot = MarkRowDot(posEmpty[0].x, board, posEmpty);
+            if(posDot.Count > 0)
+            {
+                return new HintMesage(TypeHint.MustMarkDot, posEmpty, new List<Vector2Int>(), posDot);
+            }
+        }
+
+        // check column
+        for (int i = 1; i < posEmpty.Count; i++)
+        {
+            if (posEmpty[i].y != posEmpty[i - 1].y)
+            {
+                inColumn = false;
+                break;
+            }
+        }
+        if (inColumn)
+        {
+            posDot = MarkColumnDot(posEmpty[0].y, board, posEmpty);
+            if (posDot.Count > 0)
+            {
+                return new HintMesage(TypeHint.MustMarkDot, posEmpty, new List<Vector2Int>(), posDot);
+            }
+        }
+        return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+    }
+    // handel case in one region empty cells 
     public HintMesage HandelCaseSpecial2 (List<Vector2Int> posEmpty, Board board)
     {
         int countMax = -200;
@@ -617,6 +785,7 @@ public class Tutorial
                     }
 
                 }
+
                 List<Vector2Int> posHint = new List<Vector2Int>();
                 posHint.AddRange(posStar);
                 posHint.AddRange(posDot);
@@ -641,9 +810,10 @@ public class Tutorial
                     posStar.Add(posEmpty[i]);
                 }
             }
-            return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar, posEmpty);
+            if(posStar.Count <=2&& posStar.Count >0)
+                return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar, posEmpty);
         }
-        return new HintMesage(TypeHint.None, new List<Vector2Int>(), posStar, new List<Vector2Int>());
+        return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
     }
 
 

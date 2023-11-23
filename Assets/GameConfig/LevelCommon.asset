@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca2fc1ad7a5f3a4eaa6986c5db4d2c7, type: 3}
+  m_Name: LevelCommon
+  m_EditorClassIdentifier: 
+  levelEasy:
+  - nameSubLevel: Beginner-1
+    isNeedBuy: 0
+    levels:
+    - {fileID: 11400000, guid: cb88aa1189ff4cd4f823b0c657bccf40, type: 2}
+    - {fileID: 11400000, guid: 6c753476add0b4a4db9b58d1d33ee5cd, type: 2}
+  - nameSubLevel: Beginner-2
+    isNeedBuy: 0
+    levels:
+    - {fileID: 11400000, guid: 89515b6f19686ac47affab060857a21b, type: 2}
+    - {fileID: 11400000, guid: e1073deab7d73004dbd0325f16ae23c4, type: 2}
+  - nameSubLevel: Beginner-3
+    isNeedBuy: 1
+    levels:
+    - {fileID: 11400000, guid: 916ed01022e666e4aaf3c3700c5f74dd, type: 2}
+    - {fileID: 11400000, guid: 4d10d5325beddc84f81a99fa0275b1a0, type: 2}
+  - nameSubLevel: Beginner-4
+    isNeedBuy: 1
+    levels:
+    - {fileID: 11400000, guid: 3f54ad869bd33cd4a811b07929b8229c, type: 2}
+  levelMedium:
+  - nameSubLevel: level 1
+    isNeedBuy: 0
+    levels:
+    - {fileID: 11400000, guid: bb4a0e22b5156494fa70e201c42edbc7, type: 2}
+    - {fileID: 11400000, guid: daa09bae1c887e74e93466c1ee987d51, type: 2}
+  - nameSubLevel: level 1
+    isNeedBuy: 0
+    levels:
+    - {fileID: 11400000, guid: df1d1e597a85de84299c188f918f39b9, type: 2}
+  levelDifficult: []
+  levelGenius: []

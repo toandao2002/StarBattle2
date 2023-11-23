@@ -32,6 +32,11 @@ public class MakeLevelController : MonoBehaviour
     {
         return Int32.Parse(regionInput.text);
     }
+    public void SetModeSetRegion()
+    {
+        modeSetRegion = true;
+        txtBtnMode.text = "Set Region";
+    }
     public void ChangeModeSetUp()
     {
         modeSetRegion = !modeSetRegion;
@@ -89,6 +94,19 @@ public class MakeLevelController : MonoBehaviour
         DataBoard dataBoard = new DataBoard(9, rg, posStar,posCorrectStar);
         levelCurrent.dataBoard = dataBoard;
         scr.CreateOrReplaceAsset(levelCurrent, scr.GetPathLevel((TypeGame)typeLevel.value,  GetLevelInt()));
+    }
+    public void NextRegion()
+    {
+        int num = Int32.Parse(regionInput.text)+1;
+        if (num > 9) num = 1;
+        regionInput.text = (num )+"";
+    }
+    public void BackRegion()
+    {
+        int num = Int32.Parse(regionInput.text)-1;
+        if (num < 1) num = 9;
+
+        regionInput.text = (num) + "";
     }
 
 }

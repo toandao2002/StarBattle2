@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class MyEvent : MonoBehaviour
 {
-    public static Action GameWin;
+    public static Action<System.Object> GameWin;
 }

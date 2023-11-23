@@ -185,7 +185,7 @@ public class Cell :MonoBehaviour
        
         if (board.CheckWin())
         {
-            MyEvent.GameWin?.Invoke();
+            MyEvent.GameWin?.Invoke(null);
         }
 
         board.CheckAround(pos);

@@ -380,8 +380,19 @@ public class TemplateSpecial
 
               
     };
+    public List<Vector2Int> posSquareReverse = new List<Vector2Int>()
+    {
+
+                    new Vector2Int(0,-1),
+                    new Vector2Int(0,0),
+                    new Vector2Int(1,-1),
+                    new Vector2Int(1,0),
+
+
+    };
     public bool checkFitSquare(List<Vector2Int> posEmpty, Board board)
     {
+        bool c1 = true, c2 = true;
         int countFaile = 0;
         for (int i = 0; i < posEmpty.Count; i++)
         {
@@ -390,11 +401,25 @@ public class TemplateSpecial
             {
 
                 countFaile++;
-                return false;
+                c1 = false;
+                break;
             }
 
         }
-        return true;
+        for (int i = 0; i < posEmpty.Count; i++)
+        {
+            Vector2Int posCheck = posEmpty[i] - posEmpty[0];
+            if (!posSquareReverse.Contains(posCheck))
+            {
+
+                countFaile++;
+                c2 = false;
+                break;
+            }
+
+        }
+
+        return c1||c2;
 
     }
 }

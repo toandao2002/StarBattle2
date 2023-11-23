@@ -8,19 +8,41 @@ public class GameContrler : MonoBehaviour
     public List<HistoryAction> historyActions; 
     public List<HistoryAction> ReActions; 
     public Tutorial tutorial;
-    public Board board; 
-
-   
+    public Board board;
+    public MyTime myTime;
+    public DataLevel dataLevel;
     private void Awake()
     {
         instance = this;
         
+    }
+    private void OnDisable()
+    {
+        if (myTime != null)
+        {
+            dataLevel.timeFinish = myTime.timeRun;
+            string json = Util.ConvertObjectToString<DataLevel>(dataLevel);
+            DataGame.SetDataJson(DataGame.Level + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
+            DataGame.Save();
+        }
+            
     }
     public void Init()
     {
         historyActions = new List<HistoryAction>();
         ReActions = new List<HistoryAction>();
         tutorial = new Tutorial();
+        if(!board.isModeMakeLevel)
+        {
+            myTime.CountTime(GameConfig.instance.timeFinishPlay);
+            dataLevel = GameConfig.instance.GetCurrentLevel().datalevel;
+
+        }
+        if(dataLevel.dayPlay == null)
+        {
+            dataLevel.dayPlay = System.DateTime.Today;
+        }
+
     }
     // Start is called before the first frame update
     void Start()
@@ -31,7 +53,7 @@ public class GameContrler : MonoBehaviour
     {
         Init();
     }
-    public void GameWin() {
+    public void GameWin(object obj) {
         Debug.Log("Game Win");
     }
     public void AddAction(HistoryAction  history)

@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
     }
     public void InitBoardMakeLevel(bool isClear)
     {
-        
+        MakeLevelController.instance.SetModeSetRegion();
         GameContrler.instance.ResetNewGame();
         if (isClear)
         {

@@ -6,6 +6,7 @@ public enum TypeGame
     Easy,
     Medium,
     Difficult,
+    Genius,
 
 }
 [CreateAssetMenu(fileName = "Level", menuName = "Data/Level", order = 1)]
@@ -16,6 +17,7 @@ public class Level : ScriptableObject
     public int nameLevel;
     public TypeGame typeGame;
     public DataBoard dataBoard;
+    public DataLevel datalevel;
     public Level(int nameLevel)
     {
         this.nameLevel = nameLevel;

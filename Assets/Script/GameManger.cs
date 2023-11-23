@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManger : MonoBehaviour
 {
     public static GameManger instance;
+    public ManageUi manageUi;
     public void LoadScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
