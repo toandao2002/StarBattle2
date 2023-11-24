@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class ChoseLevel_1 : BasePopUP
 {
+    
     public List<BoxChoseBigLevel> boxChoseBigLevels;
-    public override void Show(object data = null)
+    public override void Show(object data = null, int dir =1)
     {
-        base.Show(data);
+        base.Show(data,dir);
         List<SubLevel> subLevels = GameConfig.instance.GetSubsLevelByTypeGame();
         for (int i = 0; i < subLevels.Count; i++)
         {
-            boxChoseBigLevels[i].nameLevel = subLevels[i].nameSubLevel;
-            boxChoseBigLevels[i].NumLevelIn = subLevels[i].levels.Count;
-            boxChoseBigLevels[i].levels = subLevels[i].levels;
-            
+
+            boxChoseBigLevels[i]. InitBox(subLevels[i]);
         }
-           
-            
-        
     }
 
 }

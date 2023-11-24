@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,5 +30,11 @@ public class Level : ScriptableObject
     public void RemovePosStar(Vector2Int posStar)
     {
         dataBoard.RemovePosStar(posStar);
+    }
+    public void ReStart()
+    {
+        datalevel = new DataLevel(DateTime.Now.ToString(), false,0);
+        string json = Util.ConvertObjectToString<DataLevel>(datalevel);
+        DataGame.SetDataJson(DataGame.Level + typeGame + nameLevel, json);
     }
 }

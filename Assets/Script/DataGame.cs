@@ -6,6 +6,9 @@ using UnityEngine;
 public static class DataGame 
 {
     public static string Level = "Level";
+    public static string History = "History";
+
+
     public static string GetDataJson(string key)
     {
         return PlayerPrefs.GetString(key);
@@ -50,10 +53,10 @@ public class SettingData
 [System.Serializable]
 public class DataLevel
 {
-    public DateTime dayPlay;
+    public string dayPlay;
     public bool isfinished;
     public int timeFinish;
-    public DataLevel (DateTime dayPlay ,bool isfinished, int timeFinish)
+    public DataLevel (string dayPlay ,bool isfinished, int timeFinish)
     {
         this.dayPlay = dayPlay;
         this.isfinished = isfinished;
@@ -61,8 +64,7 @@ public class DataLevel
 
     }
     public DataLevel( bool isfinished, int timeFinish)
-    {
-        this.dayPlay = dayPlay;
+    { 
         this.isfinished = isfinished;
         this.timeFinish = timeFinish;
 
@@ -70,5 +72,18 @@ public class DataLevel
 }
 public class HistoryPlayed
 {
-    List<DataLevel> historys; 
+    int maxSave = 5;
+    public List<Level> historys; 
+    public void AddDatalevel(Level dataLevel)
+    {
+        if(historys.Count >= maxSave)
+        {
+            historys.RemoveAt(0);
+        }
+        historys.Add(dataLevel);
+    }
+    public List<Level> GetHistorys()
+    {
+        return historys;
+    }
 }

@@ -6,7 +6,7 @@ public class PopUpGameWin : BasePopUP
 {
     private void Start()
     {
-        MyEvent.GameWin += Show;
+        MyEvent.GameWin += Show2;
     }
     public void NextLevel()
     {
@@ -14,8 +14,13 @@ public class PopUpGameWin : BasePopUP
         GameContrler.instance.board.InitBoard();
         Hide();
     }
+    public void Show2(object dta)
+    {
+        Show();
+
+    }
     private void OnDestroy()
     {
-        MyEvent.GameWin -= Show;
+        MyEvent.GameWin -= Show2;
     }
 }

@@ -17,4 +17,8 @@ public class GameManger : MonoBehaviour
         if(instance == null)
             instance = this;
     }
+    public void ResetData()
+    {
+        DataGame.resetData();
+    }
 }

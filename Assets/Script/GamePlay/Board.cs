@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    public Title title;
+    public TittleUI title;
     public List<Cell> cellsRaw;
     public List<List<Cell>> cells;
     public int sizeBoard;
     public bool isModeMakeLevel;
+    public bool isFinish;
     List<Vector2Int> direction = new List<Vector2Int>() {
         new Vector2Int(0,-1),  //l
         new Vector2Int(-1,-1),  //l-t
@@ -38,7 +39,7 @@ public class Board : MonoBehaviour
             MakeLevelController.instance.GetLevel().dataBoard.ResetData();
         }
         GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel());
-        title.SetLevel(GameConfig.instance.GetCurrentLevel().nameLevel);
+        title.SetLevelTittle(GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -71,12 +72,20 @@ public class Board : MonoBehaviour
             }
         }
     }
+    public void ReStart()
+    {
+        isFinish = false;
+        GameConfig.instance.GetCurrentLevel().ReStart();
+        GameConfig.instance.timeFinishPlay = 0;
+        GameContrler.instance.ResetNewGame();
+        InitBoard();
+    }
     public void InitBoard()
     {
 
-
+        if (GameConfig.instance.GetCurrentLevel().datalevel.isfinished) isFinish = true;
         GameContrler.instance.ResetNewGame();
-        title.SetLevel(GameConfig.instance.GetCurrentLevel().nameLevel);
+        title.SetLevelTittle(GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)

@@ -13,21 +13,31 @@ public enum NamePopUp
 }
 public class BasePopUP : MonoBehaviour
 {
+   
     public NamePopUp namePopUp;
-    public GameObject main;
-    public GameObject Bgr;
+    public GameObject main; 
     public bool isPopUp;
     private float durationEffect = 0.5f;
-    public void Hide() {
+    RectTransform rec;
+    public virtual void Hide(int dir = 1) {
 
-        main.transform.DOScale(0.4f, durationEffect).From(1).OnComplete(()=> {
+        if (rec == null)
+        {
+            rec = main.GetComponent<RectTransform>();
+        }
+        rec.DOAnchorPos3DY(Screen.height* dir* 0.8f, 0.2f).From(0).OnComplete(()=> {
             main.SetActive(false); 
         }); 
     }
-    public virtual void Show(object data = null)
+    public virtual void Show(object data = null,int dir =1)
     {
         
         main.SetActive(true);
-        main.transform.DOScale(1f, durationEffect).From(0.4f); 
+        if(rec== null)
+        {
+            rec = main.GetComponent<RectTransform>();
+        }
+        rec.DOAnchorPos3DY(0, 0.2f).From(-Screen.height* dir*0.8f);
+        
     }
 }

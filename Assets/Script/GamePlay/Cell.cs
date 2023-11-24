@@ -36,13 +36,14 @@ public class Cell :MonoBehaviour
     public Vector2Int pos;
     Board board;
     bool beingWrong;
+    Color color;
     public List<NameError> errors= new List<NameError>();
     private void Awake()
     {
 
         disInRegioin = 0.8f;
         disOutRegioin = 4f;
-        Icon.color = new Color32(255, 255, 255, 0);
+        Icon.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
@@ -116,14 +117,20 @@ public class Cell :MonoBehaviour
                 ShowStarIcon();
             txt.text = region + "";
         }
+        else if (board != null && board.isFinish)
+        {
+            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
+                ShowStarIcon();
+            txt.text = "";
+        }
         else {
             txt.text = "";
         }
        
         
         ChangeRectranform(oMin, oMax);
-
-        inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f* region  ,255);
+        color = new Color(1, 1 - 0.02f * region, 1, 255); ;
+        inCellBgr.color = color;
     }
     public void ChangeRectranform(Vector2 omin, Vector2 omax)
     {
@@ -152,15 +159,16 @@ public class Cell :MonoBehaviour
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
         statusCell = StatusCell.None;
         Icon.sprite = null;
-        Icon.color = new Color32(255, 255, 255, 0);
+        Icon.gameObject.SetActive(false);
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos); 
         Check();
     }
     public void ShowStarIcon()
     {
-        Icon.color = new Color32(255, 255, 255, 255);
+        Icon.gameObject.SetActive(true);
         Icon.sprite = star;
+        Icon.SetNativeSize();
         statusCell = StatusCell.DoubleClick;
     }
     public void OneClick(bool isUser)
@@ -168,9 +176,10 @@ public class Cell :MonoBehaviour
         if (isUser)
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
         statusCell = StatusCell.OneClick;
-        Icon.color = new Color32(255, 255, 255, 255);
+        Icon.gameObject.SetActive(true);
         Icon.sprite = dot;
-        if(!isUser)// because when isn't user: from star-> dot so will check only isn't user
+        Icon.SetNativeSize();
+        if (!isUser)// because when isn't user: from star-> dot so will check only isn't user
             board.CheckAround(pos);
         Check();
     }
@@ -179,8 +188,9 @@ public class Cell :MonoBehaviour
         if(isUser)
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
         statusCell = StatusCell.DoubleClick;
-        Icon.color = new Color32(255, 255, 255, 255);
+        Icon.gameObject.SetActive(true);
         Icon.sprite = star;
+        Icon.SetNativeSize();
         Check();
        
         if (board.CheckWin())
@@ -245,7 +255,7 @@ public class Cell :MonoBehaviour
 
     #region display
     public void ResetStatus() {
-        Icon.color = new Color32(255, 255, 255, 0);
+        Icon.gameObject.SetActive(false);
         errors = new List<NameError>();
         statusCell = StatusCell.None;
     }
@@ -272,9 +282,10 @@ public class Cell :MonoBehaviour
         }
         if(errors.Count ==0 && beingWrong == true)
         { 
+
             beingWrong = false;
 
-            inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f * region, 255);
+            inCellBgr.color = color;
         }
     }
 
@@ -300,7 +311,7 @@ public class Cell :MonoBehaviour
 
         
         yield return new WaitForSeconds(time);
-        inCellBgr.color = new Color(1 - 0.05f * region, 1 - 0.05f * region, 1 - 0.05f * region, 255);
+        inCellBgr.color = color;
 
     }
     #endregion
@@ -348,13 +359,13 @@ public class Cell :MonoBehaviour
         if (statusCell == StatusCell.DoubleClick)
         {
             statusCell = StatusCell.None;
-            Icon.color = new Color32(255, 255, 255, 0);
+            Icon.gameObject.SetActive(false);
             GameConfig.instance.GetLevelCurrent().RemovePosStar(pos);
         }
         else
         {
             statusCell = StatusCell.DoubleClick;
-            Icon.color = new Color32(255, 255, 255, 255);
+            Icon.gameObject.SetActive(true);
             Icon.sprite = star;
             GameConfig.instance.GetLevelCurrent().SetStarPos(pos);
 

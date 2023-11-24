@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   nameLevel: 2
-  typeGame: 0
+  typeGame: 1
   dataBoard:
     size: 9
     dataRegion: '0 0 0 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 1 1 1
@@ -22,3 +22,7 @@ MonoBehaviour:
     dataPosStar: '0 0 '
     posCorrectStar:
     - {x: 0, y: 0}
+  datalevel:
+    dayPlay: 
+    isfinished: 0
+    timeFinish: 0

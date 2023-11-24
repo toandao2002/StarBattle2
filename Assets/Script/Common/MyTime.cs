@@ -15,7 +15,13 @@ public class MyTime : MonoBehaviour
         timeRun = fromTime;
         StartCoroutine(IECountdown());
     }
-    
+    public void SetTime(int fromTime)
+    {
+        timeRun = fromTime;
+        var timeSpan = TimeSpan.FromSeconds(timeRun);
+
+        timeTxt.text = timeSpan.ToString(@"hh\:mm\:ss");
+    }
 
     IEnumerator IECountdown()
     {
