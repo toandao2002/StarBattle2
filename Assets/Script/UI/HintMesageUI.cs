@@ -1,8 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
+
 public class HintMesageUI : MonoBehaviour
 {
     public static HintMesageUI instance;
@@ -10,8 +12,9 @@ public class HintMesageUI : MonoBehaviour
     {
         instance = this;    
     }
-    public GameObject main;
-    public TMP_Text txt;
+    public Image main;
+    public TMP_Text txt; 
+    public List<TMP_Text> textFade;
     public void ShowHint(TypeHint typeHint)
     {
         txt.text = GetDescription(typeHint);
@@ -20,14 +23,22 @@ public class HintMesageUI : MonoBehaviour
     }
     IEnumerator show()
     {
-        main.SetActive(true);
-        float duration = 0.7f;
-        this.GetComponent<RectTransform>().DOAnchorPosY( +230, duration);
-        yield return new WaitForSeconds(2);
-        this.GetComponent<RectTransform>().DOAnchorPosY(-100, duration);
-        yield return new WaitForSeconds(duration);
-
-        main.SetActive(false);
+        
+        main.gameObject.SetActive(true);
+        float duration = 1f;
+        main.DOFade(1, duration/2).From(0);
+        foreach(TMP_Text i in textFade)
+        {
+            i.DOFade(1, duration/2).From(0);
+        } 
+        yield return new WaitForSeconds(duration*2+1);
+        main.DOFade(0, duration/2).From(1);
+        foreach(TMP_Text i in textFade)
+        {
+            i.DOFade(0, duration/2).From(1);
+        }
+        yield return new WaitForSeconds(duration/2);
+        main.gameObject.SetActive(false);
     }
     public string GetDescription(TypeHint typeHint)
     {
@@ -55,6 +66,12 @@ public class HintMesageUI : MonoBehaviour
                 return "A star should be placed in this position";
             case TypeHint.ShouldClickStarInRegion:
                 return "Star should be placed in this position";
+            case TypeHint.MarkDotUnlessHasCellEmpty:
+                return "Nếu vị trí này là 1 ngôi sao thì không còn ô trống trong các vùng đước đánh dấu";
+            case TypeHint.ShouldDotBecauseSquare:
+                return "Nếu vị trí này là 1 ngôi sao thì vùng đanh được đánh dấu còn lại sẽ không đủ ô trống để đánh dấu sao";
+             case TypeHint.MustMarkDot:
+                return "Phải đánh dấu các ô này là dáu chấm";
             default:
                 return "No Hint";
                   

@@ -15,9 +15,10 @@ public enum TypeHint{
     MustClickMoreOneStarInRegion,
     ShouldOneStarInRegion,
     ShouldClickStarInRegion,
-    ShoudlRowAround,
+    ShouldDotBecauseSquare,
     ShoudlColumnAround,
     MustMarkDot,
+    MarkDotUnlessHasCellEmpty,
 }
 public class HintMesage
 {
@@ -101,6 +102,7 @@ public class Tutorial
 
     public HintMesage Hint(Board board)
     {
+        if (GameConfig.instance.GetCurrentLevel().datalevel.isfinished) return null;
         HintMesage hintMesage;
         bool isDetectedHint = false;
         // case incorect position of star or dot
@@ -315,7 +317,8 @@ public class Tutorial
         // case row is fisnish -> mark cell is dot 
         if (posStar.Count == 2)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty,new List<Vector2Int>(),posEmpty);
+            posStar.AddRange(posDot);
+            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posStar, new List<Vector2Int>(),posEmpty);
             return hintMesage;
 
         }
@@ -372,7 +375,8 @@ public class Tutorial
         // case column is fisnish -> mark cell is dot 
         if (posStar.Count == 2)
         {
-            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posEmpty, new List<Vector2Int>(), posEmpty);
+            posStar.AddRange(posDot);
+            HintMesage hintMesage = new HintMesage(TypeHint.TwoStarCorrect, posStar, new List<Vector2Int>(), posEmpty);
             return hintMesage;
 
         }
@@ -420,7 +424,16 @@ public class Tutorial
         List<Vector2Int> posHint = new List<Vector2Int>();
         posHint.AddRange(posStar);
         posHint.AddRange(posDot);
-        return new HintMesage(TypeHint.ShoudlRowAround, posHint, posStar, posDot);
+        if (posStar.Count == 2)
+            return new HintMesage(TypeHint.MustTwoWstar, posHint, posStar, posDot);
+        else  if(posStar.Count == 1)
+        {
+            return new HintMesage(TypeHint.MustOneStar, posEmpty, posStar, posDot);
+        }
+        else
+        {
+            return new HintMesage(TypeHint.ShouldDotBecauseSquare, posHint, posStar, posDot);
+        }
     }
     public HintMesage CheckAroundRegionOfCell( Board board,Vector2Int pos)
     {
@@ -448,6 +461,7 @@ public class Tutorial
                 posEmpty = new List<Vector2Int>();
                 List<bool> check = new List<bool>(new bool[sizeBoard * sizeBoard]);
                 Vector2Int rs =  GetCellEmptyInReGionDontNextOneStar(board,posNext,cellNext.region, check, posEmpty, pos);
+                
                 if(rs.y ==0  && rs.x<=4)
                 {
                     posEmpty.Sort((v1, v2) => {
@@ -458,19 +472,20 @@ public class Tutorial
                         else return v1.x.CompareTo(v2.x);
                     });
                     List<Vector2Int> posDot = new List<Vector2Int>();
+                    //if empty cells is a part of square -> cell is dot
                     if (templateSpecial.checkFitSquare(posEmpty, board))
                     {
                         posDot.Add(pos); 
                     }
-
-                    return new HintMesage(TypeHint.ShoudlRowAround, posDot, new List<Vector2Int>(), posDot);
+                    if(posDot.Count != 0)
+                        return new HintMesage(TypeHint.ShouldDotBecauseSquare, posEmpty, new List<Vector2Int>(), posDot);
                 }
                 else if (rs.y == 1 && rs.x == 0)
                 {
 
                     List<Vector2Int> posDot = new List<Vector2Int>(); 
                     posDot.Add(pos);
-                    return new HintMesage(TypeHint.ShoudlRowAround, posDot, new List<Vector2Int>(), posDot);
+                    return new HintMesage(TypeHint.ShouldDotBecauseSquare, posDot, new List<Vector2Int>(), posDot);
                 }
                 else
                 {
@@ -789,8 +804,10 @@ public class Tutorial
                 List<Vector2Int> posHint = new List<Vector2Int>();
                 posHint.AddRange(posStar);
                 posHint.AddRange(posDot);
-
-                return new HintMesage(TypeHint.ShouldOneStarInRegion, posHint, posStar, posDot);
+                if(posStar.Count !=0)
+                    return new HintMesage(TypeHint.ShouldOneStarInRegion, posEmpty, posStar, posDot);
+                if (posStar.Count == 0&& posDot.Count != 0)
+                    return new HintMesage(TypeHint.MarkDotUnlessHasCellEmpty, posEmpty, posStar, posDot);
 
             }
         }

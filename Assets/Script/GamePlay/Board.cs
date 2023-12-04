@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+    public MyTime myTime;
     public TittleUI title;
     public List<Cell> cellsRaw;
     public List<List<Cell>> cells;
@@ -23,12 +24,19 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    private void OnEnable()
+    {
         if (isModeMakeLevel)
         {
             InitBoardMakeLevel(false);
         }
-        else 
+        else
+        {
             InitBoard();
+        }
     }
     public void InitBoardMakeLevel(bool isClear)
     {
@@ -39,7 +47,7 @@ public class Board : MonoBehaviour
             MakeLevelController.instance.GetLevel().dataBoard.ResetData();
         }
         GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel());
-        title.SetLevelTittle(GameConfig.instance.GetCurrentLevel().nameLevel);
+        title.SetLevelTittle(GameConfig.instance.nameModePlay +" "+GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -74,18 +82,43 @@ public class Board : MonoBehaviour
     }
     public void ReStart()
     {
+        GameContrler.instance. DeLeteOldDataBoardFinish();
+        if (isFinish == true)
+        {
+            DataLevelComon dataLevelComon = GameConfig.instance.GetDataLevelCommon();
+            dataLevelComon.DecNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame);
+        }
         isFinish = false;
         GameConfig.instance.GetCurrentLevel().ReStart();
         GameConfig.instance.timeFinishPlay = 0;
         GameContrler.instance.ResetNewGame();
         InitBoard();
     }
+    public void ResetTimer()
+    {
+        myTime.StopAllCoroutines();
+        if (!GameConfig.instance.GetCurrentLevel().datalevel.isfinished)
+            myTime.CountTime(GameConfig.instance.timeFinishPlay);
+        else
+        {
+            myTime.SetTime(GameConfig.instance.timeFinishPlay);
+        }
+    }
+    DataOldBoardGame dataOldBoardGame ;
+    public  void UpdateOldDataStaus()
+    {
+        if(!isFinish)    
+           dataOldBoardGame = DataGame.GetDataOldBoardGame(GameConfig.instance.typeGame, GameConfig.instance.GetLevelCurrent().nameLevel);
+
+    }
     public void InitBoard()
     {
-
-        if (GameConfig.instance.GetCurrentLevel().datalevel.isfinished) isFinish = true;
+        UpdateOldDataStaus();
+        ResetTimer();
+       
+        isFinish = GameConfig.instance.GetCurrentLevel().datalevel.isfinished;
         GameContrler.instance.ResetNewGame();
-        title.SetLevelTittle(GameConfig.instance.GetCurrentLevel().nameLevel);
+        title.SetLevelTittle(GameConfig.instance.nameModePlay+ " "+ GameConfig.instance.GetCurrentLevel().nameLevel);
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -94,15 +127,30 @@ public class Board : MonoBehaviour
             for (int j = 0; j < sizeBoard; j++)
             {
                 Cell cell = cellsRaw[i * sizeBoard + j];
+                 
                 cell.ResetStatus();
 
                 cells[i].Add(cell);
                 cell.SetPos(new Vector2Int(i, j));
 
                 cell.SetRegion(GameConfig.instance.GetLevelCurrent().dataBoard.GetRegion(i,j)); ;
-              
+                if(dataOldBoardGame!= null&& dataOldBoardGame.cells!= null&&dataOldBoardGame.cells.Count !=0 &&!isFinish)
+                {
+                     
+                        cell.statusCell =dataOldBoardGame.GetStatus(cell.pos);
+
+                    
+                     
+                    
+                }
             }
         }
+        StartCoroutine(delay());
+    }
+
+    IEnumerator delay()
+    {
+        yield return null;
         foreach (List<Cell> i in cells)
         {
             foreach (Cell c in i)
@@ -114,11 +162,11 @@ public class Board : MonoBehaviour
                 Cell r = GetCellByPos(pos.x, pos.y + 1);
                 Cell b = GetCellByPos(pos.x + 1, pos.y);
                 c.InitCell(l, t, r, b, this);
+                if(!isFinish)
+                    c.ShowStatusCell();
             }
         }
     }
-
-
     #region  check
     public void CheckRow(int row)
     {

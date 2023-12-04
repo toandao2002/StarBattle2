@@ -9,7 +9,6 @@ public class DataBoard
     public string dataRegion;
     public string dataPosStar;
     public List<List<int>> subRegions;
-    
     public List<Vector2Int> posCorrectStar;
     public DataBoard(int size, String dataRegion, String dataPosStar )
     {

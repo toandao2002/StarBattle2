@@ -17,4 +17,10 @@ public static class Util
         string rs =  JsonUtility.ToJson(data);
         return rs;
     }
+    public static T ConvertStringToObejct<T>(string json)
+    { 
+        T obj = JsonUtility.FromJson<T>(json);
+        return obj;
+    }
+   
 }

@@ -18,4 +18,5 @@ public class SubLevel
     public string nameSubLevel;
     public bool isNeedBuy;
     public List<Level> levels;
+    public int GetAmountLevel() { return levels.Count; }
 }

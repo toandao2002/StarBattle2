@@ -5,37 +5,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 public class TittleUI : MonoBehaviour
-{
-    public static TittleUI instacne;
-    private void Awake()
-    {
-        instacne = this;
-    }
-    
-    public Sprite back;
-    public Sprite home;
+{ 
+     
+     
     public Image spriteIconLeft;
     public MyButton LeftBtn;
     public TMP_Text nameTittle;
-    public  void ShowTittle(NamePopUp namePopup, string nameT)
+    public void OpenSeting()
+    {
+        SettingUI.instance.Show();
+    }
+    public  void ShowTittle( string nameT)
     {
         nameTittle.text = nameT;
-        spriteIconLeft.gameObject.SetActive(true);
-
-        switch (namePopup)
-        {
-            case NamePopUp.ChoseLevel1:
-                SetIconLeft(home);
-                
-                break;
-            case NamePopUp.Lobby:
-                spriteIconLeft.gameObject.SetActive(false);
-                break;
-            default:
-                SetIconLeft(back);
-                break;
-
-        }
+        
     }
     public void SetActionIconLeft(Action call)
     {
@@ -49,8 +32,8 @@ public class TittleUI : MonoBehaviour
     {
         spriteIconLeft.sprite = sprite;
     }
-    public void SetLevelTittle(int numlevel)
+    public void SetLevelTittle(string numlevel)
     {
-        nameTittle.text = "Level : " + numlevel;
+        nameTittle.text =    numlevel;
     }
 }

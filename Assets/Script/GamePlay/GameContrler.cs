@@ -25,14 +25,7 @@ public class GameContrler : MonoBehaviour
         ReActions = new List<HistoryAction>();
         tutorial = new Tutorial();
         if(!board.isModeMakeLevel)
-        {
-            myTime.StopAllCoroutines();
-            if (!GameConfig.instance.GetCurrentLevel().datalevel.isfinished)  
-                myTime.CountTime(GameConfig.instance.timeFinishPlay);
-            else
-            {
-                myTime.SetTime(GameConfig.instance.timeFinishPlay);
-            }
+        { 
             dataLevel = GameConfig.instance.GetCurrentLevel().datalevel;
             dataLevel.dayPlay = System.DateTime.Today.ToString();
             UpdateHistoryPlayed();
@@ -70,6 +63,7 @@ public class GameContrler : MonoBehaviour
     private void OnDestroy()
     {
         MyEvent.GameWin -= GameWin;
+        SaveData();
     }
 
     public void ResetNewGame()
@@ -81,6 +75,8 @@ public class GameContrler : MonoBehaviour
         GameWin(null);
     }
     public void GameWin(object obj) {
+        DataLevelComon dataLevelComon = GameConfig.instance.GetDataLevelCommon();
+        dataLevelComon.IncNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame);
         Debug.Log("Game Win");
         dataLevel.isfinished = true;
         SaveData();
@@ -136,12 +132,38 @@ public class GameContrler : MonoBehaviour
     public void Hint()
     {
         HintMesage  hintMesage= tutorial.Hint(board);
-        hintMesage.ShowHint(board);
+        if(hintMesage!= null)   
+            hintMesage.ShowHint(board);
     }
+    
     public void BackHome()
     {
-        GameManger.instance.LoadScene("Home");
+        PopUpGameWin.instance.main.SetActive(false);
         SaveData();
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
+    }
+    public void SaveDataBoardDontFinish()
+    {
+        DataOldBoardGame dataOldBoardGame = new DataOldBoardGame();
+        int cnti = 0, cntj = 0;
+        foreach (List<Cell> i in board.cells)
+        {
+            foreach (Cell j in i)
+            {
+                dataOldBoardGame.cells.Add((int)j.statusCell);
+                cntj++;
+            }
+            cntj = 0;
+            cnti++;
+        }
+        string json = Util.ConvertObjectToString(dataOldBoardGame);
+        DataGame.SetDataJson(DataGame.OldBoard + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
+    }
+    public void DeLeteOldDataBoardFinish()
+    {
+        DataGame.SetDataJson(DataGame.OldBoard + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, "{}");
+        DataGame.Save();
     }
     public void SaveData()
     {
@@ -149,10 +171,15 @@ public class GameContrler : MonoBehaviour
         {
             dataLevel.timeFinish = myTime.timeRun;
             string json = Util.ConvertObjectToString<DataLevel>(dataLevel);
+            SaveDataBoardDontFinish();
             DataGame.SetDataJson(DataGame.Level + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
             DataGame.SetDataJson(DataGame.History, Util.ConvertObjectToString<HistoryPlayed>(historyPlayed));
+            DataGame.SetDataJson(DataGame.DataLevelComon, Util.ConvertObjectToString(GameConfig.instance.dataLevelComon));
             DataGame.Save();
         }
     }
+
+    
+
 }
  

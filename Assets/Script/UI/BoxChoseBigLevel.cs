@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -29,6 +30,7 @@ public class BoxChoseBigLevel : MonoBehaviour
             }
             else
             {
+                levels[i].datalevel = new DataLevel(DateTime.Now.ToString(), false, 0);
                 //btnLevels[i].SetTime(0);
             }
         }
@@ -37,27 +39,13 @@ public class BoxChoseBigLevel : MonoBehaviour
     }
     public void OpenChoseLevel2()
     {
-       
-        TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel2, nameLevel);
-        SetActionForBtnTitle();
+        
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,levels );
-
+        ChoseLevel_2.instance.tittle.ShowTittle(nameLevel);
+        GameConfig.instance.nameModePlay = nameLevel.Substring(0,nameLevel.Length-2);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
     }
-    public void SetActionForBtnTitle()
-    {
-        TittleUI.instacne.SetActionIconLeft(() => {
-            TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel1, nameLevel.Substring(0,nameLevel.Length-2));
-            GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel1,1,-1);
-            GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel2,-1);
-            TittleUI.instacne.SetActionIconLeft(() => {
-                TittleUI.instacne.ShowTittle(NamePopUp.Lobby, "Home");
-                GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
-                GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1,-1);
-
-            });
-        });
-    }
+ 
     
 
 }

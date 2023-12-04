@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+ 
 public class ScriptableObjectController : MonoBehaviour
 {
     public T CreateOrReplaceAsset<T>(T asset, string path) where T : ScriptableObject
@@ -27,7 +27,7 @@ public class ScriptableObjectController : MonoBehaviour
     }
     public string GetPathLevel(TypeGame typeGame, int level)
     {
-        string path = "Assets/GameConfig/"+typeGame.ToString()+"/Level " + level + ".asset";
+        string path = "GameConfig/"+typeGame.ToString()+"/Level " + level + "";
         return path;
     }
-}
+} 

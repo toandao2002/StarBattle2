@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEditor;
-
 public class MakeLevelController : MonoBehaviour
 {
     
@@ -16,6 +15,9 @@ public class MakeLevelController : MonoBehaviour
     public TMP_Text txtBtnMode;
     public Level levelCurrent;
     int levelInt = -1;
+
+
+
     public ScriptableObjectController scr;
     public Board board;
 
@@ -56,6 +58,7 @@ public class MakeLevelController : MonoBehaviour
             Debug.Log("level must greater 0");
             levelInput.text = "1";
         }
+#if UNITY_EDITOR
         levelCurrent = (Level)AssetDatabase.LoadAssetAtPath(scr.GetPathLevel((TypeGame)typeLevel.value, GetLevelInt()), typeof(Level));
         if (levelCurrent == null)
         {
@@ -69,7 +72,7 @@ public class MakeLevelController : MonoBehaviour
              
             
         }
-           
+#endif
         return levelCurrent;
     }
     private void Awake()
@@ -109,4 +112,4 @@ public class MakeLevelController : MonoBehaviour
         regionInput.text = (num) + "";
     }
 
-}
+} 

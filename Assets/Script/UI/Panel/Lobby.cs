@@ -9,52 +9,83 @@ public class Lobby : BasePopUP
     public BoxPlayedRecently BoxPlayedRecentlyPref;
     public GameObject contennt;
     public List<BoxPlayedRecently> boxPlayedRecentlies;
-
-    public  void Start()
+    public List<BoxBigLevelHome> boxBigLevelHomes;
+    public GameObject content;
+    private void Start()
     {
+        HandelData();
+    }
+    public void RemoveGarbage()
+    {
+        for (int i = content.transform.childCount - 1; i >= 0; i--)
+        {
+            Destroy(content.transform.GetChild(i).gameObject);
+        }
+    }
+    public override void Show(object data = null, int dir = 1)
+    {
+        base.Show(data, dir);
+        HandelData();
+    }
+    public void HandelData()
+    {
+        RemoveGarbage();
+        DataLevelComon dataLevelComon = GameConfig.instance.GetDataLevelCommon();
+
+        foreach (BoxBigLevelHome i in boxBigLevelHomes)
+        {
+            List<SubLevel> subLevels = GameConfig.instance.GetSubsLevelByTypeGame(i.typeGame);
+            int numLevel = 0;
+            foreach (var j in subLevels)
+            {
+                numLevel += j.GetAmountLevel();
+            }
+            print(numLevel+" "+ (float)dataLevelComon.GetLevelPassByTypeGame(i.typeGame));
+            i.SetRateBarLevel((float)dataLevelComon.GetLevelPassByTypeGame(i.typeGame) / numLevel);
+        }
+
+
         HistoryPlayed historyPlayed = null;
         try
         {
-             historyPlayed = JsonUtility.FromJson<HistoryPlayed>(DataGame.GetDataJson(DataGame.History));
+            historyPlayed = JsonUtility.FromJson<HistoryPlayed>(DataGame.GetDataJson(DataGame.History));
 
         }
         catch
         {
             Debug.Log("Dont find history");
         }
-        if(historyPlayed!= null)
+        if (historyPlayed != null)
         {
-            for (int i = historyPlayed.historys.Count -1; i>= 0; i --)
+            for (int i = historyPlayed.historys.Count - 1; i >= 0; i--)
             {
                 var obj = Instantiate(BoxPlayedRecentlyPref, contennt.transform);
-                obj.SetData(historyPlayed.historys[i].typeGame.ToString()+"-"+ historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].datalevel.dayPlay,
-                    historyPlayed.historys[i].datalevel.isfinished== true?"Finished": "Process",historyPlayed.historys[i].datalevel.timeFinish
-                     ,historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].typeGame
+                 
+                try
+                {
+                    obj.SetData(historyPlayed.historys[i].typeGame.ToString() + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].datalevel.dayPlay,
+                    historyPlayed.historys[i].datalevel.isfinished == true ? "Finished" : "Process", historyPlayed.historys[i].datalevel.timeFinish
+                     , historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].typeGame
                     );
-                boxPlayedRecentlies.Add(obj);
+                    boxPlayedRecentlies.Add(obj);
+                }
+                catch
+                {
+                    Debug.Log("Loi game gan day");
+                }
+
+
             }
         }
     }
-    public void SetActionForBtnTitle()
-    {
-        TittleUI.instacne.SetActionIconLeft(() => {
-            TittleUI.instacne.ShowTittle(NamePopUp.Lobby, "Home");
-            GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
-            GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1,-1);
-        });
-    }
     public void OpenLevelEasy()
     {
-        typeGame = TypeGame.Easy;
-        TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel1, "Beginer");
-        SetActionForBtnTitle();
+        typeGame = TypeGame.Easy;  
         HandleChangePanel();
     }
     public void OpenLevelMedium()
     {
-        typeGame = TypeGame.Medium;
-        TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel1, "Medium");
-        SetActionForBtnTitle();
+        typeGame = TypeGame.Medium;  
         HandleChangePanel();
 
 
@@ -62,17 +93,13 @@ public class Lobby : BasePopUP
     public void OpenLevelDifficut()
     {
 
-        typeGame = TypeGame.Difficult;
-        TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel1, "Difficult");
-        SetActionForBtnTitle();
+        typeGame = TypeGame.Difficult;  
         HandleChangePanel();
 
     }
     public void OpenLevelGenius()
-    {
-        TittleUI.instacne.ShowTittle(NamePopUp.ChoseLevel1, "Genius");
-        typeGame = TypeGame.Genius;
-        SetActionForBtnTitle();
+    { 
+        typeGame = TypeGame.Genius; 
         HandleChangePanel();
 
     }

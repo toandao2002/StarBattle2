@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ChoseLevel_2 : BasePopUP
 {
+    public TittleUI tittle;
+    public static ChoseLevel_2 instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     public ButonLevel btnLevelPrefab;
     public List<ButonLevel> btnLevels;
     public GameObject content;
@@ -48,9 +54,11 @@ public class ChoseLevel_2 : BasePopUP
             }
         }
     }
-    // Start is called before the first frame update
-    void Start()
+   public void Back()
     {
-        
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel1, 1, -1);
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel2, -1);
     }
+     
+  
 }

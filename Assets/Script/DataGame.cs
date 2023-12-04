@@ -6,7 +6,10 @@ using UnityEngine;
 public static class DataGame 
 {
     public static string Level = "Level";
+    public static string OldBoard = "OldBoard";
     public static string History = "History";
+    public static string DataLevelComon = "DataLevelComon";
+    public static string SettingData = "SettingData";
 
 
     public static string GetDataJson(string key)
@@ -18,6 +21,8 @@ public static class DataGame
         PlayerPrefs.SetString(key, json);
     }
     
+
+
     public static void Save()
     {
         PlayerPrefs.Save();
@@ -32,23 +37,14 @@ public static class DataGame
         DataLevel dataLevel = JsonUtility.FromJson<DataLevel>(json);
         return dataLevel;
     }
+    public static DataOldBoardGame GetDataOldBoardGame(TypeGame typeGame, int level)
+    {
+        string json = PlayerPrefs.GetString(OldBoard + typeGame + level);
+        DataOldBoardGame dataOldBoardGame = JsonUtility.FromJson<DataOldBoardGame>(json);
+        return dataOldBoardGame;
+    }
 }
-[System.Serializable]
-public class SettingData
-{
-    //public Dictionary<PushNotificationType, int> androidPnIndexes = new Dictionary<PushNotificationType, int>();
-    /*
-        public bool enablePn;
-        public bool requestedPn;*/
-
-    public bool haptic = true;
-    public float soundVolume = 1;
-    public float musicVolume = 1;
-
-    public bool theme;
-
-    //public bool iOsTrackingRequested;
-}
+ 
 
 [System.Serializable]
 public class DataLevel
@@ -70,9 +66,11 @@ public class DataLevel
 
     }
 }
+[System.Serializable]
 public class HistoryPlayed
 {
     int maxSave = 5;
+
     public List<Level> historys; 
     public void AddDatalevel(Level dataLevel)
     {
@@ -85,5 +83,9 @@ public class HistoryPlayed
     public List<Level> GetHistorys()
     {
         return historys;
+    }
+    public override string ToString()
+    {
+        return base.ToString();
     }
 }

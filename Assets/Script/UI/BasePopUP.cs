@@ -2,30 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
+
 public enum NamePopUp
 {
     GameWin,
     Lobby,
     ChoseLevel1,
     ChoseLevel2,
-
+    GamePlay,
 
 }
 public class BasePopUP : MonoBehaviour
 {
    
     public NamePopUp namePopUp;
-    public GameObject main; 
+    public GameObject main;
+    public CanvasGroup canvasGroup;
+    public Image BgrMain; 
     public bool isPopUp;
-    private float durationEffect = 0.5f;
-    RectTransform rec;
+    protected float durationEffect = 0.3f;
+    protected RectTransform rec;
+    protected Ease ease = Ease.InOutQuart;
     public virtual void Hide(int dir = 1) {
 
+        if(BgrMain!= null)
+        {
+            BgrMain.fillAmount = 1;
+        }
         if (rec == null)
         {
             rec = main.GetComponent<RectTransform>();
         }
-        rec.DOAnchorPos3DY(Screen.height* dir* 0.8f, 0.2f).From(0).OnComplete(()=> {
+
+        float posY = 120;
+        if (dir == 1) // up
+        {
+            posY = 120;
+        }
+        else
+        {
+            if (BgrMain != null)
+            {
+                BgrMain.DOFillAmount(0, durationEffect).From(1).SetEase(ease);
+            }
+        }
+        canvasGroup.DOFade(0, durationEffect).From(1);
+
+        rec.DOAnchorPos3DY(posY * dir, durationEffect).SetEase(ease).From(0).OnComplete(()=> {
             main.SetActive(false); 
         }); 
     }
@@ -37,7 +61,21 @@ public class BasePopUP : MonoBehaviour
         {
             rec = main.GetComponent<RectTransform>();
         }
-        rec.DOAnchorPos3DY(0, 0.2f).From(-Screen.height* dir*0.8f);
+        float posY =-120;
+        if (dir == -1) // down
+        {
+            posY = -120;
+            
+        }
+        else
+        {
+            if (BgrMain != null)
+            {
+                BgrMain.DOFillAmount(1, durationEffect).From(0).SetEase(ease);
+            }
+        }
+        canvasGroup.DOFade(1, durationEffect).From(0);
+        rec.DOAnchorPos3DY(0, durationEffect).From(posY * dir).SetEase(ease);
         
     }
 }

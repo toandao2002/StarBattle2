@@ -20,7 +20,7 @@ public class ButonLevel : MonoBehaviour
     public Image bgr;
     public Sprite spriteDone;
     public Sprite spriteProcess;
-    public Sprite spriteNothing;
+    public Sprite spriteNothing; 
     public void SetLevel(int id, int nameLevel,NameStateLevel nameState)
     {
         txtLevel.text = nameLevel.ToString();
@@ -49,6 +49,7 @@ public class ButonLevel : MonoBehaviour
     {
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timeFinish);
-        GameManger.instance.LoadScene("GamePlay");
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel2);
     }
 }
