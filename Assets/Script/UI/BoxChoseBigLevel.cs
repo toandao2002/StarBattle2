@@ -13,6 +13,16 @@ public class BoxChoseBigLevel : MonoBehaviour
     public List<Level> levels;
     public Image bar;
     public TMP_Text percent;
+     
+    private void OnEnable()
+    {
+        ChangeTheme();
+        MyEvent.ChangeTheme += ChangeTheme;
+    }
+    private void OnDisable()
+    {
+        MyEvent.ChangeTheme -= ChangeTheme;
+    }
     public void InitBox(SubLevel subLevel)
     {
         nameLevel = subLevel.nameSubLevel;
@@ -45,7 +55,29 @@ public class BoxChoseBigLevel : MonoBehaviour
         GameConfig.instance.nameModePlay = nameLevel.Substring(0,nameLevel.Length-2);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
     }
- 
-    
 
+
+    #region change theme 
+
+    public Image bgr;
+    public List<Sprite> Bgrs;
+     
+    public void ChangeTheme()
+    {
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if (theme == NameTheme.Dark)
+        {
+            bgr.sprite = Bgrs[1];
+            txtLevel.color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
+            percent.color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
+        }
+        else
+        { 
+            bgr.sprite = Bgrs[0];
+            txtLevel.color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Back];
+            percent.color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Gray];
+        }
+    }
+
+    #endregion
 }

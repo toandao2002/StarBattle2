@@ -175,6 +175,7 @@ public class Tutorial
                 }
                 if (isDetectedHint) break;
             }
+        ManageAudio.Instacne.PlaySound(NameSound.Hint);
         Debug.Log(hintMesage);
         return hintMesage;
 

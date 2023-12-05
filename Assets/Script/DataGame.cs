@@ -11,6 +11,7 @@ public static class DataGame
     public static string DataLevelComon = "DataLevelComon";
     public static string SettingData = "SettingData";
 
+    //  first in game show tut
     public static string FTurtorial = "FTurtorial";
 
     public static string GetDataJson(string key)
@@ -51,6 +52,8 @@ public static class DataGame
         DataOldBoardGame dataOldBoardGame = JsonUtility.FromJson<DataOldBoardGame>(json);
         return dataOldBoardGame;
     }
+
+     
 }
  
 

@@ -207,6 +207,10 @@ MonoBehaviour:
   levels: []
   bar: {fileID: 6309760597201217663}
   percent: {fileID: 6309760597145004138}
+  bgr: {fileID: 5365364325275114827}
+  Bgrs:
+  - {fileID: 21300000, guid: ecf10533e1af01c40bd958e78d4988b6, type: 3}
+  - {fileID: 21300000, guid: 9797380f127751a4d87b2e8ceabcd0fc, type: 3}
 --- !u!1 &6309760596731898067
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class SettingData
     public float soundVolume = 1;
     public float musicVolume = 1;
 
-    public bool theme;
+    public NameTheme theme;
     public static SettingData GetSetting()
     {
         SettingData settingData = Util.ConvertStringToObejct<SettingData>(DataGame.GetDataJson(DataGame.SettingData));
@@ -22,6 +22,7 @@ public class SettingData
     {
         string json = Util.ConvertObjectToString(this);
         DataGame.SetDataJson(DataGame.SettingData, json);
+        DataGame.Save();
         MyEvent.UpdateSetingData?.Invoke();
     }
     public void TurnSound()
@@ -34,9 +35,23 @@ public class SettingData
         musicVolume = Mathf.Abs(1 - musicVolume);
         SaveSetingData();
     }
-    public void Vibration()
+    public void ChangeVibration()
     {
         vibrate = !vibrate;
         SaveSetingData();
+    }
+    public NameTheme ChangeTheme()
+    {
+        if(theme == NameTheme.Dark)
+        {
+            theme = NameTheme.White;
+           
+        }
+        else
+        {
+            theme = NameTheme.Dark;
+        }
+        SaveSetingData();
+        return theme;
     }
 }

@@ -20,6 +20,25 @@ public class Switch : MonoBehaviour
     {
         btn.onClick.AddListener(Click);
     }
+    public void UpdateState(bool val)
+        
+    {
+        isON = val;
+        if (val)
+        {
+            bgr.sprite = sprites[0];
+            state.text = "ON";
+            TurnOn?.Invoke();
+            Circle.transform.DOLocalMoveX(18, 0.3f);
+        }
+        else
+        {
+            bgr.sprite = sprites[1];
+            state.text = "OFF";
+            Circle.transform.DOLocalMoveX(-18, 0.3f);
+            TurnOff?.Invoke();
+        }
+    }
     public void Click()
     {
         isON = !isON;

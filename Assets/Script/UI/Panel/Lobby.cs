@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lobby : BasePopUP
 {
@@ -11,6 +13,11 @@ public class Lobby : BasePopUP
     public List<BoxPlayedRecently> boxPlayedRecentlies;
     public List<BoxBigLevelHome> boxBigLevelHomes;
     public GameObject content;
+    public override void Awake()
+    {
+        base.Awake();
+        ChangeTheme();
+    }
     private void Start()
     {
         HandelData();
@@ -26,6 +33,12 @@ public class Lobby : BasePopUP
     {
         base.Show(data, dir);
         HandelData();
+        ChangeTheme();
+
+    }
+    private void OnEnable()
+    {
+        ChangeTheme();
     }
     public void HandelData()
     {
@@ -109,4 +122,45 @@ public class Lobby : BasePopUP
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel1);
         Hide();
     }
+
+
+    #region change theme
+
+    [Header("Bgr------------------")]
+    public Sprite bgligt;
+    public Sprite bgdark;
+    [Header("Recently------------")]
+    public Image bgrRecentlyPlayed;
+    public Sprite bgrRecentlyPlayedWhite;
+    public Sprite bgrRecentlyPlayedDark;
+
+    public Image bar;
+    public Sprite barDark;
+    public Sprite barLight;
+ 
+    public TMP_Text titleRecently;
+    public override void ChangeTheme()
+    {
+        base.ChangeTheme();
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if(theme == NameTheme.Dark)
+        {
+            bgrRecentlyPlayed.sprite = bgrRecentlyPlayedDark;
+            titleRecently.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            BgrMain.sprite = bgdark;
+            bar.sprite = barDark;
+        }
+        else
+        {
+            bgrRecentlyPlayed.sprite = bgrRecentlyPlayedWhite;
+            titleRecently.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+            BgrMain.sprite = bgligt;
+            bar.sprite = barLight;
+        }
+
+
+    }
+    #endregion  
+
+
 }

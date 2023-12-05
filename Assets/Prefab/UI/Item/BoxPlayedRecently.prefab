@@ -298,6 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3545d3c15b518ca40a6dd39ba9d76e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgr: {fileID: 5516763165827765224}
+  bgrLight: {fileID: 21300000, guid: 2025e4b5945cb3341948c621b28cf2cd, type: 3}
+  bgrDark: {fileID: 21300000, guid: 12e3d010c205a9849980de7d768fc12d, type: 3}
   nameLevel: {fileID: 5516763166312326981}
   dayPlay: {fileID: 5516763165690823853}
   state: {fileID: 5516763166002154275}

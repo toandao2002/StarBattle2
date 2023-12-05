@@ -2,6 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum NameTheme
+{
+    White,
+    Dark,
+}
+public enum NameThemeText
+{
+    Back,
+    Gray,
+    White,
+}
 [CreateAssetMenu(fileName = "Theme", menuName = "Data/Theme", order = 1)]
 public class Theme : ScriptableObject
 {

@@ -153,20 +153,28 @@ public class GameContrler : MonoBehaviour
     }
     public void SaveDataBoardDontFinish()
     {
-        DataOldBoardGame dataOldBoardGame = new DataOldBoardGame();
-        int cnti = 0, cntj = 0;
-        foreach (List<Cell> i in board.cells)
+        try
         {
-            foreach (Cell j in i)
+            DataOldBoardGame dataOldBoardGame = new DataOldBoardGame();
+            int cnti = 0, cntj = 0;
+            foreach (List<Cell> i in board.cells)
             {
-                dataOldBoardGame.cells.Add((int)j.statusCell);
-                cntj++;
+                foreach (Cell j in i)
+                {
+                    dataOldBoardGame.cells.Add((int)j.statusCell);
+                    cntj++;
+                }
+                cntj = 0;
+                cnti++;
             }
-            cntj = 0;
-            cnti++;
+            string json = Util.ConvertObjectToString(dataOldBoardGame);
+            DataGame.SetDataJson(DataGame.OldBoard + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
+
         }
-        string json = Util.ConvertObjectToString(dataOldBoardGame);
-        DataGame.SetDataJson(DataGame.OldBoard + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
+        catch
+        {
+            Debug.Log("Dont data");
+        }
     }
     public void DeLeteOldDataBoardFinish()
     {

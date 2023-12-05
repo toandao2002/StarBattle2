@@ -14,10 +14,19 @@ public class HintMesageUI : MonoBehaviour
     }
     public Image main;
     public TMP_Text txt; 
+    public TMP_Text title; 
     public List<TMP_Text> textFade;
     public void ShowHint(TypeHint typeHint)
     {
         txt.text = GetDescription(typeHint);
+        title.text = "Hint";
+        StopAllCoroutines();
+        StartCoroutine(show());
+    }
+    public void ShowNotice(string val)
+    {
+        txt.text = val;
+        title.text = "Notice";
         StopAllCoroutines();
         StartCoroutine(show());
     }

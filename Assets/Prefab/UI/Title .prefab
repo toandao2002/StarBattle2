@@ -189,6 +189,10 @@ MonoBehaviour:
   spriteIconLeft: {fileID: 4158416083772667154}
   LeftBtn: {fileID: 4158416083772667155}
   nameTittle: {fileID: 4158416083181570278}
+  Bgr: {fileID: 4158416083757148472}
+  bgrColors:
+  - {r: 0.427451, g: 0.49411768, b: 0.91372555, a: 1}
+  - {r: 0.19607845, g: 0.20000002, b: 0.21568629, a: 1}
 --- !u!1 &4158416083757148474
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,10 @@ public class BasePopUP : MonoBehaviour
     protected float durationEffect = 0.3f;
     protected RectTransform rec;
     protected Ease ease = Ease.InOutQuart;
+    public virtual void Awake()
+    {
+        MyEvent.ChangeTheme += ChangeTheme;
+    }
     public virtual void Hide(int dir = 1) {
 
         if(BgrMain!= null)
@@ -47,7 +51,7 @@ public class BasePopUP : MonoBehaviour
                 BgrMain.DOFillAmount(0, durationEffect).From(1).SetEase(ease);
             }
         }
-        canvasGroup.DOFade(0, durationEffect).From(1);
+        canvasGroup.DOFade(0, durationEffect).From(1).SetDelay(0.02f);
 
         rec.DOAnchorPos3DY(posY * dir, durationEffect).SetEase(ease).From(0).OnComplete(()=> {
             main.SetActive(false); 
@@ -76,6 +80,11 @@ public class BasePopUP : MonoBehaviour
         }
         canvasGroup.DOFade(1, durationEffect).From(0);
         rec.DOAnchorPos3DY(0, durationEffect).From(posY * dir).SetEase(ease);
+        
+    }
+   
+    public virtual void  ChangeTheme()
+    {
         
     }
 }

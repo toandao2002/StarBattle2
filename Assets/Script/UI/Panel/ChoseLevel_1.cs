@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChoseLevel_1 : BasePopUP
 {
@@ -17,6 +18,7 @@ public class ChoseLevel_1 : BasePopUP
 
             boxChoseBigLevels[i]. InitBox(subLevels[i]);
         }
+        ChangeTheme();
     }
      public void  backHome()
     {
@@ -24,4 +26,27 @@ public class ChoseLevel_1 : BasePopUP
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1, -1);
     }
 
+
+    #region Change theme
+
+    public Image nativeBgr;
+    public Sprite bgrDark;
+    public Sprite bgrLight;
+    public override void ChangeTheme()
+    {
+        base.ChangeTheme();
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if (theme == NameTheme.Dark)
+        {
+            BgrMain.sprite = bgrDark;    
+        }
+        else
+        {
+            BgrMain.sprite = bgrLight;
+
+        }
+
+
+    }
+    #endregion
 }

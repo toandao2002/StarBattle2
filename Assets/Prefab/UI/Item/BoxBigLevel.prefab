@@ -50,7 +50,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 5102660821953495600}
+  barLight: {r: 0.6431373, g: 0.75294125, b: 0.91372555, a: 0}
+  barDark: {r: 0.28627452, g: 0.30588236, b: 0.6117647, a: 0}
+  bgr: {fileID: 4437843674219104458}
+  bgrLight: {fileID: 21300000, guid: 49333ccb1a13a2049beab0b93f8c69a7, type: 3}
+  bgrDark: {fileID: 21300000, guid: d05bb6dbeb52f6f448d0bda59915b3d6, type: 3}
   typeGame: 0
+  nameLevel: {fileID: 7996217445145215770}
 --- !u!1 &2307409351839597938
 GameObject:
   m_ObjectHideFlags: 0

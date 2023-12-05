@@ -28,7 +28,10 @@ public class MyButton : Button
     {
 
         base.OnPointerClick(eventData);
-
+        if (!NoHasSound)
+        {
+            ManageAudio.Instacne?.PlaySound(NameSound.Click);
+        }
 
     }
 

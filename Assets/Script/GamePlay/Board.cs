@@ -243,6 +243,7 @@ public class Board : MonoBehaviour
                 cellNext.ShowNormal(NameError.Cross);
             }
         }
+        
         return !hasError;
        
        
@@ -321,7 +322,48 @@ public class Board : MonoBehaviour
         }
         return result;
     }
+    bool BeingCorrectPath;
+    public void  CheckCorrec()
+    {
+        BeingCorrectPath = false;
+        for (int i = 0; i < sizeBoard; i++)
+        {
+            for (int j = 0; j < sizeBoard; j++)
+            {
+                if (cells[i][j].statusCell == StatusCell.DoubleClick)
+                {
+                    if (!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos))
+                    {
+                        Debug.Log("ko dung");
+                        BeingCorrectPath = true;
+                        break;
+                    }
+                    
+                }
+                else if (cells[i][j].statusCell == StatusCell.OneClick)
+                {
+                    if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos))
+                    {
+                        Debug.Log("ko dung");
+                        BeingCorrectPath = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (BeingCorrectPath)
+        {
+            HintMesageUI.instance.ShowNotice("You are taking the wrong step");
+            ManageAudio.Instacne.PlaySound(NameSound.Laugh);
+        }
+        else
+        {
+            ManageAudio.Instacne.PlaySound(NameSound.Clap);
 
+            HintMesageUI.instance.ShowNotice("You are going right");
+        }
+
+    }
     public  bool CheckWin()
     {
         int cntCorrect = 0;
@@ -333,6 +375,7 @@ public class Board : MonoBehaviour
                 {
                     if(!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos)){
                         Debug.Log("ko dung");
+                        BeingCorrectPath = true;
                         return false;
                     }
                     else
@@ -392,6 +435,7 @@ public class Board : MonoBehaviour
             }
         }
         
+        
     }
     public void HighLightRow(int row, bool correct)
     {
@@ -406,6 +450,8 @@ public class Board : MonoBehaviour
                 cells[row][i].HightLightWrong(NameError.Row);
             }
         }
+        
+
     }
 
     public void HighLightColumn(int colunm, bool correct)
@@ -421,6 +467,8 @@ public class Board : MonoBehaviour
                 cells[i][colunm].HightLightWrong(NameError.Column);
             }
         }
+         
+
     }
     #endregion
 
@@ -536,4 +584,6 @@ public class Board : MonoBehaviour
         }
     }
     #endregion
+
+   
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+[DefaultExecutionOrder(-1)]
 public class GameConfig : MonoBehaviour
 {
 
@@ -13,6 +13,10 @@ public class GameConfig : MonoBehaviour
     public int timeFinishPlay; 
     public DataLevelComon dataLevelComon;
     public string nameModePlay;
+
+    public NameTheme nameTheme;
+    public Theme darkMode;
+    public Theme lightMode;
     public void SetTypeGame(TypeGame typeGame)
     {
         this.typeGame = typeGame;
@@ -75,14 +79,7 @@ public class GameConfig : MonoBehaviour
     {
         return levelCurent;
     }
-    private void OnEnable()
-    {
-        if (instance == null)
-        {
-            instance = this;
-
-        }
-    }
+     
     private void Awake()
     {
         Debug.Log("a");
@@ -92,6 +89,7 @@ public class GameConfig : MonoBehaviour
             instance = this;
              
         }
+        nameTheme = SettingData.GetSetting().theme;
         
         
     }

@@ -26,12 +26,17 @@ public class Cell :MonoBehaviour
 
     // only use in make level;
     public Board boardMakeLevel;
+    public List<Color> stars;
     public Sprite star;
+    Color colorStar;
+    public List<Color> dots;
+    Color colorDot;
     public Sprite dot;
     public Sprite starHint;
     public Sprite dotHint;
     public  StatusCell statusCell;
     public int region;
+    public Image Bgr;
     public Image inCellBgr;
     public Image inCellBgrWrong ;
     public Image icon;
@@ -46,13 +51,15 @@ public class Cell :MonoBehaviour
     public Color hintDotColor;
     public Color hintNoneColor;
     public List<Color> colorCells;
+    public List<Color> colorCellLight;
+    public List<Color> colorCellDark;
     Color color;
     public Color colorWrong;
     public Color colorWrongLight;
     public List<NameError> errors= new List<NameError>();
 
 
-    public List<GameObject> border;
+    public List<Image> border;
     private void Awake()
     {
 
@@ -60,9 +67,17 @@ public class Cell :MonoBehaviour
         disOutRegioin = 2;
         icon.gameObject.SetActive(false);
     }
+    private void OnEnable()
+    {
+        MyEvent.ChangeTheme += ChangeTheme;
+    }
+    private void OnDisable()
+    {
+        MyEvent.ChangeTheme -= ChangeTheme;
+    }
     // Start is called before the first frame update
- 
-    
+
+
 
     public bool CheckRegion(int region)
     {
@@ -120,6 +135,7 @@ public class Cell :MonoBehaviour
     }
     public void InitCell(Cell l, Cell t, Cell r, Cell b , Board board)
     {
+        ChangeTheme();
         this.board = board;
         if(!beingWrong)  
             inCellBgrWrong.gameObject.SetActive(false);
@@ -172,18 +188,18 @@ public class Cell :MonoBehaviour
     public void ChangeRectranform(Vector2 omin, Vector2 omax)
     {
          
-        border[0].SetActive(omin.x == disOutRegioin);
+        border[0].gameObject.SetActive(omin.x == disOutRegioin);
         
-        border[3].SetActive(omin.y == disOutRegioin);
+        border[3].gameObject.SetActive(omin.y == disOutRegioin);
         
-        border[2].SetActive(omax.x == -disOutRegioin);
+        border[2].gameObject.SetActive(omax.x == -disOutRegioin);
         
-        border[1].SetActive(omax.y == -disOutRegioin);
+        border[1].gameObject.SetActive(omax.y == -disOutRegioin);
         int sizeWith = 4;
          
         if(omax.y == 0)
         {
-            border[1].SetActive(true);
+            border[1].gameObject.SetActive(true);
             border[1].GetComponent<RectTransform>().sizeDelta = new Vector2(0, sizeWith);
             border[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             border[1].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith/2, 0);
@@ -191,7 +207,7 @@ public class Cell :MonoBehaviour
         }
         if (omax.x == 0)
         {
-            border[2].SetActive(true);
+            border[2].gameObject.SetActive(true);
             border[2].GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
             border[2].GetComponent<RectTransform>().sizeDelta = new Vector2(sizeWith, 0);
             border[2].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
@@ -199,14 +215,14 @@ public class Cell :MonoBehaviour
 
         if (omin.x == 0)
         {
-            border[0].SetActive(true);
+            border[0].gameObject.SetActive(true);
             border[0].GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
             border[0].GetComponent<RectTransform>().sizeDelta = new Vector2(sizeWith, 0);
             border[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0)    ;
         }
         if (omin.y == 0)
         {
-            border[3].SetActive(true);
+            border[3].gameObject.SetActive(true);
 
             border[3].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith/2, 0);
             border[3].GetComponent<RectTransform>().offsetMax = new Vector2(sizeWith/2, sizeWith);
@@ -260,8 +276,8 @@ public class Cell :MonoBehaviour
         Check();
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos);
-         
-        
+        ManageAudio.Instacne.PlaySoundDelay(NameSound.ClickCell);
+
     }
 
     public void OneClick(bool isUser)
@@ -275,7 +291,7 @@ public class Cell :MonoBehaviour
         Check();
         if (!isUser)// because when isn't user: from star-> dot so will check only isn't user
             board.CheckAround(pos);
-        
+        ManageAudio.Instacne.PlaySoundDelay(NameSound.ClickCell);
     }
     public void DoubleClick(bool isUser)
     {
@@ -288,13 +304,17 @@ public class Cell :MonoBehaviour
         if (board.CheckWin())
         {
             MyEvent.GameWin?.Invoke(null);
+
+            ManageAudio.Instacne.PlaySoundDelay(NameSound.WinGame);
+        }else
+        {
+            ManageAudio.Instacne.PlaySoundDelay(NameSound.StarClick);
         }
         
         
         Check();
         board.CheckAround(pos);
-        
-       
+
 
     }
     bool beEffectByMoveMouse;
@@ -322,7 +342,7 @@ public class Cell :MonoBehaviour
     }
     public void OnExit()
     {
-
+        
         beEffectByMoveMouse = true;
     }
     bool isUp;
@@ -335,10 +355,7 @@ public class Cell :MonoBehaviour
             isDown = false;
         } 
     }
-    public void HandelMain()
-    {
-
-    }
+     
     public void Check()
     {
         board.CheckRow(pos.x);
@@ -349,6 +366,38 @@ public class Cell :MonoBehaviour
 
 
     #region display
+
+    public void ChangeTheme()
+    {
+        if(GameConfig.instance.nameTheme == NameTheme.Dark)
+        {
+            colorStar = stars[1];
+            colorDot = dots[1];
+            colorCells = colorCellDark;
+            for(int i = 0; i<4; i++)
+            {
+                border[i].color = Color.white;
+            }
+            Bgr.color = Color.white;
+        }
+        else
+        {
+            colorCells = colorCellLight;
+            colorDot = dots[0];
+            colorStar = stars[0];
+            for (int i = 0; i < 4; i++)
+            {
+                border[i].color = Color.black;
+            }
+            Bgr.color = Color.black;
+
+        }
+        if (region >= 9)
+            color = colorCells[0];
+        else
+            color = colorCells[region];
+        UpdateDisplayCell();
+    }
     public void EffectWinStar()
     {
         icon.gameObject.transform.DOScale(0.7f, 0.3f).From(0.4f).SetEase(Ease.InOutBack);
@@ -374,16 +423,30 @@ public class Cell :MonoBehaviour
         statusCell = StatusCell.OneClick;
         icon.gameObject.SetActive(true);
         icon.sprite = dot;
+        icon.color = colorDot;
         icon.SetNativeSize();
         icon.transform.DOScale(0.7f, 0.2f).From(0).SetEase(Ease.InOutBack);
+    }
+    void UpdateDisplayCell()
+    {
+        if(statusCell == StatusCell.OneClick)
+        {
+            icon.color = colorDot;
+        }
+        else if (statusCell == StatusCell.DoubleClick)
+        {
+            icon.color = colorStar;
+        }
+        inCellBgr.color = color;
     }
     public void ShowStarIcon()
     {
         icon.gameObject.SetActive(true);
+        icon.color = colorStar;
         icon.sprite = star;
         icon.SetNativeSize();
         statusCell = StatusCell.DoubleClick;
-        icon.transform.DOScale(0.7f, 0.1f).From(0).SetEase(Ease.InOutBack);
+        icon.transform.DOScale(0.7f, 0.05f).From(0).SetEase(Ease.InOutBack);
     }
    
     public void ResetStatus() {
@@ -424,7 +487,13 @@ public class Cell :MonoBehaviour
             inCellBgrWrong.gameObject.SetActive(true);
             inCellBgrWrong.color = colorWrong;
             inCellBgrWrong.DOFade(1, 1f).From(0);
+            EfextWrong();
         }
+    }
+    public void EfextWrong()
+    {
+        ManageAudio.Instacne.Vibrate();
+        ManageAudio.Instacne.PlaySoundDelay(NameSound.ErrorPlay);
     }
     IEnumerator DelayShowWrong()
     {
