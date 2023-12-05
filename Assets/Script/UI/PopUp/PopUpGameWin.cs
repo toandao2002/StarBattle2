@@ -21,6 +21,12 @@ public class PopUpGameWin : BasePopUP
 
      
         GameConfig.instance.SetLevelCurrent(GameConfig.instance.GetCurrentLevel().nameLevel + 1);
+        /* DataLevel datalevel = DataGame.GetDataLevel(GameConfig.instance.typeGame, GameConfig.instance.GetCurrentLevel().nameLevel+1);
+         if (datalevel != null)
+         {
+             GameConfig.instance.GetCurrentLevel().datalevel = datalevel;
+         }*/
+        GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetCurrentLevel().datalevel.timeFinish);
         GameContrler.instance.board.InitBoard();
        
         Hide(-1);

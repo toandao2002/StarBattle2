@@ -134,15 +134,7 @@ public class Board : MonoBehaviour
                 cell.SetPos(new Vector2Int(i, j));
 
                 cell.SetRegion(GameConfig.instance.GetLevelCurrent().dataBoard.GetRegion(i,j)); ;
-                if(dataOldBoardGame!= null&& dataOldBoardGame.cells!= null&&dataOldBoardGame.cells.Count !=0 &&!isFinish)
-                {
-                     
-                        cell.statusCell =dataOldBoardGame.GetStatus(cell.pos);
-
-                    
-                     
-                    
-                }
+                
             }
         }
         StartCoroutine(delay());
@@ -162,8 +154,15 @@ public class Board : MonoBehaviour
                 Cell r = GetCellByPos(pos.x, pos.y + 1);
                 Cell b = GetCellByPos(pos.x + 1, pos.y);
                 c.InitCell(l, t, r, b, this);
-                if(!isFinish)
-                    c.ShowStatusCell();
+                StatusCell _statusCell = StatusCell.None;
+                if (dataOldBoardGame != null && dataOldBoardGame.cells != null && dataOldBoardGame.cells.Count != 0 && !isFinish)
+                {
+
+                    _statusCell = dataOldBoardGame.GetStatus(c.pos);
+
+                }
+                if (!isFinish)
+                    c.ShowStatusCell(_statusCell);
             }
         }
     }
@@ -343,8 +342,25 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        
-        return cntCorrect == GameConfig.instance.GetLevelCurrent().dataBoard.posCorrectStar.Count;
+        bool win = cntCorrect == GameConfig.instance.GetLevelCurrent().dataBoard.posCorrectStar.Count; 
+        if (win)
+        {
+            for (int i = 0; i < sizeBoard; i++)
+            {
+                for (int j = 0; j < sizeBoard; j++)
+                {
+                    if (cells[i][j].statusCell == StatusCell.DoubleClick)
+                    {
+                        cells[i][j].EffectWinStar();
+                    }
+                    else
+                    {
+                        cells[i][j].DonClick(true);
+                    }
+                }
+            }
+        }
+        return win;
     }
     #endregion
 

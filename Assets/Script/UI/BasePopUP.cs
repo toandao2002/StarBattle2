@@ -11,7 +11,7 @@ public enum NamePopUp
     ChoseLevel1,
     ChoseLevel2,
     GamePlay,
-
+    Tutoria,
 }
 public class BasePopUP : MonoBehaviour
 {

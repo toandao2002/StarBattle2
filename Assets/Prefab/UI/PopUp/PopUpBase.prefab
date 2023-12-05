@@ -1711,8 +1711,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   namePopUp: 0
-  main: {fileID: 9160282029824628719}
+  main: {fileID: 9160282031295633307}
+  canvasGroup: {fileID: 6426024414588516624}
+  BgrMain: {fileID: 0}
   isPopUp: 0
+  level: {fileID: 0}
+  time: {fileID: 0}
 --- !u!1 &9160282030329104577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,13 +2098,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9160282031295633306}
+  - component: {fileID: 6426024414588516624}
   m_Layer: 5
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9160282031295633306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2121,6 +2126,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &6426024414588516624
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9160282031295633307}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9160282031364590829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2360,7 @@ GameObject:
   - component: {fileID: 4206397407252168297}
   - component: {fileID: 2151893724294770426}
   m_Layer: 5
-  m_Name: NextLevel (1)
+  m_Name: BackToHome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2452,9 +2469,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9160282030216561884}
-        m_TargetAssemblyTypeName: PopUpGameWin, Assembly-CSharp
-        m_MethodName: NextLevel
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameContrler, Assembly-CSharp
+        m_MethodName: BackHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -24,9 +24,9 @@ public class BoxPlayedRecently : MonoBehaviour
     public void PlayGame()
     {
         GameConfig.instance.nameModePlay = nameLevel.text;
+        GameConfig.instance.typeGame = typeGame;
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timeFinishInt);
-        GameConfig.instance.typeGame = typeGame;
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel2);
 

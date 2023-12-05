@@ -13,14 +13,22 @@ public class GameContrler : MonoBehaviour
     public MyTime myTime;
     public DataLevel dataLevel;
     HistoryPlayed historyPlayed = null;
+
+    public List<ParticleSystem> fx;
+    public List<GameObject> PosFx;
     private void Awake()
     {
         instance = this;
-        
+        MyEvent.GameWin += EfWin;
     }
   
     public void Init()
     {
+        for (int i = 0; i < 2; i++)
+        { 
+            fx[i].gameObject.SetActive(false);
+           
+        }
         historyActions = new List<HistoryAction>();
         ReActions = new List<HistoryAction>();
         tutorial = new Tutorial();
@@ -178,7 +186,16 @@ public class GameContrler : MonoBehaviour
             DataGame.Save();
         }
     }
-
+    
+    public void EfWin(object obj)
+    {
+        for(int i = 0; i < 2; i++)
+        {
+            fx[i].transform.position = PosFx[i].transform.position;
+            fx[i].gameObject.SetActive(true);
+            fx[i].Play();
+        }
+    }
     
 
 }

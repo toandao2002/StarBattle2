@@ -1,58 +1,35 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using DG.Tweening;
-using System;
 
-public enum StatusCell
+public class CellTut : MonoBehaviour
 {
-    None,
-    OneClick,
-    DoubleClick,
-
-}
-public enum NameError
-{
-    Row,
-    Column,
-    Region,
-    Cross,
-}
-
-public class Cell :MonoBehaviour  
-{ 
-
-    // only use in make level;
-    public Board boardMakeLevel;
+    // only use in make level; 
     public Sprite star;
-    public Sprite dot;
-    public Sprite starHint;
-    public Sprite dotHint;
-    public  StatusCell statusCell;
+    public Sprite dot; 
+    public StatusCell statusCell;
     public int region;
     public Image inCellBgr;
-    public Image inCellBgrWrong ;
-    public Image icon;
-    public Image iconHint;
-    public int disInRegioin ;
-    public int disOutRegioin ;
-    public Text txt;
+    public Image inCellBgrWrong;
+    public Image icon; 
+    public int disInRegioin;
+    public int disOutRegioin; 
     public Vector2Int pos;
-    Board board;
-    bool beingWrong;
-    public Color hintStarColor;
-    public Color hintDotColor;
-    public Color hintNoneColor;
+    BoardTut board;
+    bool beingWrong; 
     public List<Color> colorCells;
     Color color;
-    public Color colorWrong;
-    public Color colorWrongLight;
-    public List<NameError> errors= new List<NameError>();
+    public Color colorWrong; 
+    public List<NameError> errors = new List<NameError>();
 
 
     public List<GameObject> border;
+    public GameObject borderPar;
+    public Image Bgr;
+    public MyButton btn;
     private void Awake()
     {
 
@@ -61,32 +38,32 @@ public class Cell :MonoBehaviour
         icon.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
- 
-    
+
+
 
     public bool CheckRegion(int region)
     {
         return this.region == region;
     }
-    public Vector2 GetDis(Cell cell, Vector2 offset, int v)
+    public Vector2 GetDis(CellTut cell, Vector2 offset, int v)
     {
         Vector2 offsetRs = offset;
-        
+
         if (cell != null) //
         {
             if (cell.CheckRegion(region)) // same region => boder is thin
             {
-                if(v == -1)
+                if (v == -1)
                     offsetRs.x = disInRegioin;
                 else
                     offsetRs.y = disInRegioin;
-            } 
+            }
             else  // difference region => boder is stroke
             {
                 if (v == -1)
-                    offsetRs.x = disOutRegioin;
+                    offsetRs.x = 0;
                 else
-                    offsetRs.y = disOutRegioin;
+                    offsetRs.y = 0;
             }
         }
         else // cell is empty so boder is stroke
@@ -95,10 +72,10 @@ public class Cell :MonoBehaviour
                 offsetRs.x = 0;
             else
                 offsetRs.y = 0;
-        } 
+        }
         return offsetRs;
     }
-    public bool GetLogicBoder(Cell cell, Vector2 offset, int v)
+    public bool GetLogicBoder(CellTut cell, Vector2 offset, int v)
     {
         Vector2 offsetRs = offset;
 
@@ -116,17 +93,17 @@ public class Cell :MonoBehaviour
         else // cell is empty so boder is stroke
         {
             return true;
-        } 
+        }
     }
-    public void InitCell(Cell l, Cell t, Cell r, Cell b , Board board)
+    public void InitCell(CellTut l, CellTut t, CellTut r, CellTut b, BoardTut board)
     {
         this.board = board;
-        if(!beingWrong)  
+        if (!beingWrong)
             inCellBgrWrong.gameObject.SetActive(false);
         Vector2 oMin = Vector2.zero;
         Vector2 oMax = Vector2.zero;
         bool bl, bt, br, bb;
-     
+
         /*
            min.x = l
            min.y = b
@@ -145,25 +122,11 @@ public class Cell :MonoBehaviour
 
 
         oMax *= -1;
-        if(board != null && board.isModeMakeLevel)
-        {
-            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
-                ShowStarIcon();
-            txt.text = region + "";
-        }
-        else if (board != null && board.isFinish)
-        {
-            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
-                ShowStarIcon();
-            txt.text = "";
-        }
-        else {
-            txt.text = "";
-        }
        
-        
+
+
         ChangeRectranform(oMin, oMax);
-        if(region>=9)
+        if (region >= 9)
             color = colorCells[0];
         else
             color = colorCells[region];
@@ -171,23 +134,23 @@ public class Cell :MonoBehaviour
     }
     public void ChangeRectranform(Vector2 omin, Vector2 omax)
     {
-         
+
         border[0].SetActive(omin.x == disOutRegioin);
-        
+
         border[3].SetActive(omin.y == disOutRegioin);
-        
+
         border[2].SetActive(omax.x == -disOutRegioin);
-        
+
         border[1].SetActive(omax.y == -disOutRegioin);
         int sizeWith = 4;
-         
-        if(omax.y == 0)
+
+        if (omax.y == 0)
         {
             border[1].SetActive(true);
             border[1].GetComponent<RectTransform>().sizeDelta = new Vector2(0, sizeWith);
             border[1].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            border[1].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith/2, 0);
-            border[1].GetComponent<RectTransform>().offsetMax = new Vector2(sizeWith/2, sizeWith);
+            border[1].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith / 2, 0);
+            border[1].GetComponent<RectTransform>().offsetMax = new Vector2(sizeWith / 2, sizeWith);
         }
         if (omax.x == 0)
         {
@@ -202,14 +165,14 @@ public class Cell :MonoBehaviour
             border[0].SetActive(true);
             border[0].GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
             border[0].GetComponent<RectTransform>().sizeDelta = new Vector2(sizeWith, 0);
-            border[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0)    ;
+            border[0].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         }
         if (omin.y == 0)
         {
             border[3].SetActive(true);
 
-            border[3].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith/2, 0);
-            border[3].GetComponent<RectTransform>().offsetMax = new Vector2(sizeWith/2, sizeWith);
+            border[3].GetComponent<RectTransform>().offsetMin = new Vector2(-sizeWith / 2, 0);
+            border[3].GetComponent<RectTransform>().offsetMax = new Vector2(sizeWith / 2, sizeWith);
             border[3].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         }
         /*inCellBgr.GetComponent<RectTransform>().offsetMin = omin;
@@ -220,20 +183,19 @@ public class Cell :MonoBehaviour
     #region handle click
     public void Click()
     {
-
-        if (GameConfig.instance.levelCurent.datalevel.isfinished) return;
+       
         if (statusCell == StatusCell.OneClick && !beEffectByMoveMouse)
-        { 
+        {
             DoubleClick(true);
         }
-        else if (statusCell == StatusCell.DoubleClick && !beEffectByMoveMouse )
+        else if (statusCell == StatusCell.DoubleClick && !beEffectByMoveMouse)
         {
             DonClick(true);
-        } 
+        }
     }
-    
+
     public void ResetColorBgr()// by stopping coroutine some action can be wrong
-    {  
+    {
         if (beingWrong)
         {
             inCellBgrWrong.gameObject.SetActive(true);
@@ -244,14 +206,11 @@ public class Cell :MonoBehaviour
         {
             inCellBgrWrong.gameObject.SetActive(false);
             inCellBgr.color = color;
-        }
-        iconHint.gameObject.SetActive(false);
+        } 
     }
     public void DonClick(bool isUser)// để phần biệt user và chức năng redo
     {
-        
-        if (isUser)
-            GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
+        if (board.dontClick) return;
         statusCell = StatusCell.None;
         icon.sprite = null;
         icon.gameObject.SetActive(false);
@@ -260,63 +219,56 @@ public class Cell :MonoBehaviour
         Check();
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos);
-         
-        
+        MyEvent.DontClickTut?.Invoke();
+
     }
 
     public void OneClick(bool isUser)
     {
-        if (isUser)
-            GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
+        if (board.dontClick) return;
         ShowDotIcon();
         ResetColorBgr();
         StopAllCoroutines();
-        
+
         Check();
         if (!isUser)// because when isn't user: from star-> dot so will check only isn't user
             board.CheckAround(pos);
-        
+        MyEvent.OneClickTut?.Invoke();
+
     }
     public void DoubleClick(bool isUser)
     {
-        if(isUser)
-            GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
-     
+        if (board.dontClick) return;
         ShowStarIcon();
         ResetColorBgr();
         StopAllCoroutines();
-        if (board.CheckWin())
-        {
-            MyEvent.GameWin?.Invoke(null);
-        }
-        
-        
+       
+
         Check();
         board.CheckAround(pos);
         
-       
+        MyEvent.DoubleClickTut?.Invoke();
 
     }
     bool beEffectByMoveMouse;
     public void MoveOnCell()
-    {
-        if (GameConfig.instance.levelCurent.datalevel.isfinished) return;
+    { 
         if (statusCell == StatusCell.None)
         {
             OneClick(true);
             beEffectByMoveMouse = true;
         }
-        
+
         else
         {
             beEffectByMoveMouse = false;
-        } 
+        }
 
 
     }
     bool isDown;
     public void OnDown()
-    { 
+    {
         isUp = false;
         isDown = true;
     }
@@ -328,12 +280,12 @@ public class Cell :MonoBehaviour
     bool isUp;
     public void onUp()
     {
-        isUp = true; 
+        isUp = true;
         if (isDown)
         {
             Click();
             isDown = false;
-        } 
+        }
     }
     public void HandelMain()
     {
@@ -344,19 +296,21 @@ public class Cell :MonoBehaviour
         board.CheckRow(pos.x);
         board.CheckColumn(pos.y);
         board.CheckRegion(this);
+        bool win = board.CheckWin();
+        if (win)
+        {
+            Debug.Log("win ");
+            MyEvent.CheckWinTut?.Invoke();
+        }
     }
     #endregion
 
 
     #region display
-    public void EffectWinStar()
-    {
-        icon.gameObject.transform.DOScale(0.7f, 0.3f).From(0.4f).SetEase(Ease.InOutBack);
-    }
     public void ShowStatusCell(StatusCell _statusCell)
     {
         statusCell = _statusCell;
-         if (_statusCell == StatusCell.OneClick)
+        if (_statusCell == StatusCell.OneClick)
         {
             OneClick(true);
         }
@@ -385,19 +339,20 @@ public class Cell :MonoBehaviour
         statusCell = StatusCell.DoubleClick;
         icon.transform.DOScale(0.7f, 0.1f).From(0).SetEase(Ease.InOutBack);
     }
-   
-    public void ResetStatus() {
+
+    public void ResetStatus()
+    {
         icon.gameObject.SetActive(false);
         errors = new List<NameError>();
         statusCell = StatusCell.None;
         inCellBgrWrong.gameObject.SetActive(false);
         beingWrong = false;
     }
-    
-    public void HightLightWrong(NameError nameError,bool showImmediately = false)
+
+    public void HightLightWrong(NameError nameError, bool showImmediately = false)
     {
         beingWrong = true;
-        if (!errors.Contains(nameError)&& nameError!= NameError.Cross)
+        if (!errors.Contains(nameError) && nameError != NameError.Cross)
         {
             errors.Add(nameError);
         }
@@ -440,13 +395,13 @@ public class Cell :MonoBehaviour
     }
     public void ShowNormal(NameError nameError)
     {
-       
+
         if (errors.Contains(nameError))
         {
             errors.Remove(nameError);
         }
-        if(errors.Count ==0 && beingWrong == true)
-        { 
+        if (errors.Count == 0 && beingWrong == true)
+        {
 
             beingWrong = false;
             inCellBgrWrong.gameObject.SetActive(false);
@@ -455,52 +410,22 @@ public class Cell :MonoBehaviour
         }
     }
 
-    public void ShowHint(StatusCell stt)
-    {
+    
 
-        if (stt == StatusCell.DoubleClick)
-        {
-            iconHint.gameObject.SetActive(true);
-            iconHint.sprite = starHint;
-            iconHint.SetNativeSize();
-            inCellBgr.color = hintStarColor;
-        }
-        else if(stt == StatusCell.None) {
-            inCellBgr.color = hintNoneColor;
-        }
-        else if(stt == StatusCell.OneClick)
-        {
-            iconHint.gameObject.SetActive(true);
-            iconHint.sprite = dotHint;
-            iconHint.SetNativeSize();
-            inCellBgr.color = hintDotColor;
-        }
-        inCellBgrWrong.gameObject.SetActive(false);
-        EffectShow();
-        StartCoroutine(ShowHintInDuration(2));
-    }
-
-    IEnumerator ShowHintInDuration(int time)
-    {
-
-        
-        yield return new WaitForSeconds(time);
-        if(beingWrong) 
-            inCellBgr.color = colorWrong;
-        else
-            inCellBgr.color = color;
-        iconHint.gameObject.SetActive(false);
-        if(beingWrong)
-            inCellBgrWrong.gameObject.SetActive(true);
-
-
-    }
+   
     #endregion
 
 
     public void SetRegion(int region)
     {
         this.region = region;
+        if(region == 1)
+        {
+            borderPar.SetActive(false);
+            inCellBgr.gameObject.SetActive(false);
+            Bgr.color = new Color(0, 0, 0, 0);
+            btn.enabled = false;
+        }
     }
     public Vector2Int GetPos()
     {
@@ -510,87 +435,17 @@ public class Cell :MonoBehaviour
     {
         pos = p;
     }
-
-
-
-
-
-    #region makeLevel
-
-    public void MoveSetRegion()
-    {
-        if (!MakeLevelController.instance.modeSetRegion) return;
-        SetRegion(MakeLevelController.instance.GetRegion());
-        Vector2Int pos = GetPos();
-        Cell l = boardMakeLevel.GetCellByPos(pos.x, pos.y - 1);
-        Cell t = boardMakeLevel.GetCellByPos(pos.x - 1, pos.y);
-        Cell r = boardMakeLevel.GetCellByPos(pos.x, pos.y + 1);
-        Cell b = boardMakeLevel.GetCellByPos(pos.x + 1, pos.y);
-        InitCell(l, t, r, b, boardMakeLevel);
-        ReSetShowRegionForCell(l);
-        ReSetShowRegionForCell(t);
-        ReSetShowRegionForCell(r);
-        ReSetShowRegionForCell(b);
-    }
-    
-    public void SetStar()
-    {
-        if (MakeLevelController.instance.modeSetRegion) return;
-
-        if (statusCell == StatusCell.DoubleClick)
-        {
-            statusCell = StatusCell.None;
-            icon.gameObject.SetActive(false);
-            GameConfig.instance.GetLevelCurrent().RemovePosStar(pos);
-        }
-        else
-        {
-            statusCell = StatusCell.DoubleClick;
-            icon.gameObject.SetActive(true);
-            icon.sprite = star;
-            GameConfig.instance.GetLevelCurrent().SetStarPos(pos);
-
-        }
-        Check();
-        board.CheckAround(pos);
-
-    }
-    public bool CheckMapInModeLeve()
-    {
-         
-        bool c1= board.CheckRowLevel(pos.x);
-        bool c2 =board.CheckColumnLevel(pos.y);
-        bool c3 = board.CheckRegionLevel(this);
-        return c1 && c2 && c3;
-    }
-    public bool CheckArrond()
-    {
-        return board.CheckAround(pos);
-    }
-    
-    public void ReSetShowRegionForCell(Cell cell)
-    {
-        if (cell == null) return;
-        Vector2Int pos = cell.GetPos();
-        Cell l = boardMakeLevel.GetCellByPos(pos.x, pos.y - 1);
-        Cell t = boardMakeLevel.GetCellByPos(pos.x - 1, pos.y);
-        Cell r = boardMakeLevel.GetCellByPos(pos.x, pos.y + 1);
-        Cell b = boardMakeLevel.GetCellByPos(pos.x + 1, pos.y);
-        cell.InitCell(l, t, r, b, boardMakeLevel);
-    }
-
-    #endregion
+ 
 
 
     public void DelayCall(Action call, float time = 1f)
     {
-        StartCoroutine(IeDelayCall(call,time));
+        StartCoroutine(IeDelayCall(call, time));
     }
     IEnumerator IeDelayCall(Action call, float time)
     {
         yield return new WaitForSeconds(time);
         call?.Invoke();
     }
-
 
 }

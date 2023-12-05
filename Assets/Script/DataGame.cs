@@ -11,6 +11,7 @@ public static class DataGame
     public static string DataLevelComon = "DataLevelComon";
     public static string SettingData = "SettingData";
 
+    public static string FTurtorial = "FTurtorial";
 
     public static string GetDataJson(string key)
     {
@@ -21,7 +22,14 @@ public static class DataGame
         PlayerPrefs.SetString(key, json);
     }
     
-
+    public static int GetInt (string key)
+    {
+        return PlayerPrefs.GetInt(key);
+    }
+    public static void SetInt(string key, int val)
+    {
+        PlayerPrefs.SetInt(key, val);
+    }
 
     public static void Save()
     {

@@ -21,4 +21,16 @@ public class GameManger : MonoBehaviour
     {
         DataGame.resetData();
     }
+    private void Start()
+    {
+        if (DataGame.GetInt(DataGame.FTurtorial) == 0)
+        {
+            manageUi.ShowPopUp(NamePopUp.Tutoria);
+            DataGame.SetInt(DataGame.FTurtorial, 1);
+            DataGame.Save();
+        }
+        else
+        { 
+        }
+    }
 }
