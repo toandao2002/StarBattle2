@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataLevelComon 
+public class DataLevelUser 
 {
     public List<int> numLevelPass;
-    public DataLevelComon()
+    public DataLevelUser()
     {
         numLevelPass = new List<int>() { 0, 0, 0, 0 };
     }
@@ -25,5 +25,11 @@ public class DataLevelComon
 
         int id = (int)typeGame;
         numLevelPass[id] -= 1;
+    }
+    public bool CheckLevelFinish(TypeGame typeGame, int level)
+    {
+        int id = (int)typeGame;
+
+        return level -1 <= numLevelPass[id];
     }
 }

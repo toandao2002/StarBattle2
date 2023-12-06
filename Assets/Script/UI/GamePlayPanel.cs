@@ -12,10 +12,19 @@ public class GamePlayPanel : BasePopUP
     public Image bgrBottom;
     public List<Color> bgrBottomColor;
     public List<TMP_Text> txt;
+    private void OnEnable()
+    {
+        MyEvent.UpdateDataAmountHint += SetTextAmountHint;
+    }
+    private void OnDisable()
+    {
+        MyEvent.UpdateDataAmountHint -= SetTextAmountHint;
+    }
     public override void Show(object data = null, int dir = 1)
     {
         base.Show(data, dir);
         ChangeTheme();
+        SetTextAmountHint();
     }
     public override void ChangeTheme()
     {
@@ -40,5 +49,40 @@ public class GamePlayPanel : BasePopUP
             bgrBottom.color = bgrBottomColor[0];
         }
          
+    }
+
+    public TMP_Text amountHint;
+    int numHint = 0;
+    public void SetTextAmountHint()
+    {
+        
+        if (DataGame.CheckContain(DataGame.AmountHint))
+        {
+            numHint = DataGame.GetInt(DataGame.AmountHint);
+        }
+        else
+        {
+            numHint = 3;
+            DataGame.SetInt(DataGame.AmountHint, 3);
+            DataGame.Save();
+        }
+        amountHint.text = numHint + "";
+    }
+    public void CheckHint()
+    {
+        
+        if (numHint == 0)
+        {
+            PopUpHint.instance.Show();
+        }
+        else
+        {
+            numHint -= 1;
+            GameContrler.instance.Hint();
+            DataGame.SetInt(DataGame.AmountHint, numHint  );
+            DataGame.Save();
+            
+        }
+        SetTextAmountHint();
     }
 }

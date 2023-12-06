@@ -7,6 +7,7 @@ public class MyEvent : MonoBehaviour
 {
     public static Action<System.Object> GameWin;
     public static Action UpdateSetingData;
+    public static Action UpdateDataAmountHint;
 
 
     public static Action CheckWinTut;

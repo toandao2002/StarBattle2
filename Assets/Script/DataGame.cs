@@ -10,6 +10,7 @@ public static class DataGame
     public static string History = "History";
     public static string DataLevelComon = "DataLevelComon";
     public static string SettingData = "SettingData";
+    public static string AmountHint = "AmountHint";
 
     //  first in game show tut
     public static string FTurtorial = "FTurtorial";
@@ -26,6 +27,10 @@ public static class DataGame
     public static int GetInt (string key)
     {
         return PlayerPrefs.GetInt(key);
+    }
+    public static bool CheckContain(string key)
+    {
+        return PlayerPrefs.HasKey(key);
     }
     public static void SetInt(string key, int val)
     {

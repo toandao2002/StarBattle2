@@ -335,7 +335,7 @@ public class Tutorial
             if (hintMesage.posHints.Count != 0)
                 return hintMesage;
         }
-        if(posEmpty.Count>2 )
+        if(posEmpty.Count>2 && !CheckCellsIsSameRegion(posEmpty, board))
             return CheckRegionInRowOrColumn(posEmpty,board,posStar.Count);
 
 
@@ -344,6 +344,16 @@ public class Tutorial
         // case row correct
         return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
 
+    }
+    public bool CheckCellsIsSameRegion(List<Vector2Int> posEmpty, Board board)
+    {
+        int region = board.cells[posEmpty[0].x][posEmpty[0].y].region;
+        for (int i = 0;i< posEmpty.Count; i++)
+        {
+            int row = posEmpty[i].x, column = posEmpty[i].y;
+            if( board.cells[row][column].region != region) return false;
+        }
+        return true;
     }
     public HintMesage CheckColumn(Board board, int column)
     {

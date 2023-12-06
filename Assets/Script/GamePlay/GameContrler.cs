@@ -83,7 +83,7 @@ public class GameContrler : MonoBehaviour
         GameWin(null);
     }
     public void GameWin(object obj) {
-        DataLevelComon dataLevelComon = GameConfig.instance.GetDataLevelCommon();
+        DataLevelUser dataLevelComon = GameConfig.instance.GetDataLevelCommon();
         dataLevelComon.IncNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame);
         Debug.Log("Game Win");
         dataLevel.isfinished = true;

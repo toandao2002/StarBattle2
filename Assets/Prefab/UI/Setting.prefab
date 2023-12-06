@@ -121,7 +121,15 @@ MonoBehaviour:
   main: {fileID: 7152926178845074853}
   canvasGroup: {fileID: 0}
   BgrMain: {fileID: 0}
+  BgrMain2: {fileID: 0}
   isPopUp: 0
+  sound: {fileID: 0}
+  music: {fileID: 0}
+  vibration: {fileID: 0}
+  darkmode: {fileID: 0}
+  restorePurchased: {fileID: 0}
+  howToPlay: {fileID: 0}
+  bgrColors: []
 --- !u!1 &7152926178845074853
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,8 +862,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4158416083394178042, guid: 74d9f754a1647d84ba94a4e028d2136e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74d9f754a1647d84ba94a4e028d2136e, type: 3}
 --- !u!224 &6553270802700139861 stripped
 RectTransform:

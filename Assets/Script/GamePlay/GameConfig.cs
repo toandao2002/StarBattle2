@@ -11,7 +11,7 @@ public class GameConfig : MonoBehaviour
     public TypeGame typeGame; 
     public LevelCommon levelCommon;
     public int timeFinishPlay; 
-    public DataLevelComon dataLevelComon;
+    public DataLevelUser dataLevelComon;
     public string nameModePlay;
 
     public NameTheme nameTheme;
@@ -93,14 +93,14 @@ public class GameConfig : MonoBehaviour
         
         
     }
-    public DataLevelComon GetDataLevelCommon()
+    public DataLevelUser GetDataLevelCommon()
     {
         
         if (dataLevelComon == null)
         {
-            dataLevelComon = Util.ConvertStringToObejct<DataLevelComon>(DataGame.GetDataJson(DataGame.DataLevelComon));
+            dataLevelComon = Util.ConvertStringToObejct<DataLevelUser>(DataGame.GetDataJson(DataGame.DataLevelComon));
             if(dataLevelComon == null)  
-                dataLevelComon = new DataLevelComon();
+                dataLevelComon = new DataLevelUser();
 
         }
         return dataLevelComon;

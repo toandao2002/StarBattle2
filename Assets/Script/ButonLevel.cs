@@ -127,6 +127,14 @@ public class ButonLevel : MonoBehaviour
     }
     public void ChoseLevel()
     {
+        DataLevelUser dataLevelUser = GameConfig.instance.GetDataLevelCommon();
+        if (!dataLevelUser.CheckLevelFinish(GameConfig.instance.typeGame, level))
+        {
+            PopUpContinuePlay.instance.Show();
+            return;
+        }
+        
+        
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timeFinish);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);

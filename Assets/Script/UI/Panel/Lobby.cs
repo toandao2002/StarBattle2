@@ -43,7 +43,7 @@ public class Lobby : BasePopUP
     public void HandelData()
     {
         RemoveGarbage();
-        DataLevelComon dataLevelComon = GameConfig.instance.GetDataLevelCommon();
+        DataLevelUser dataLevelComon = GameConfig.instance.GetDataLevelCommon();
 
         foreach (BoxBigLevelHome i in boxBigLevelHomes)
         {
@@ -157,7 +157,8 @@ public class Lobby : BasePopUP
             BgrMain.sprite = bgligt;
             bar.sprite = barLight;
         }
-
+        if (BgrMain2 != null)
+            BgrMain2.sprite = BgrMain.sprite;
 
     }
     #endregion  

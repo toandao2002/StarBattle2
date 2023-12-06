@@ -56,7 +56,17 @@ public class BoxChoseBigLevel : MonoBehaviour
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
     }
 
+    public void OpenLasTLevelCanPlay()
+    {
+        DataLevelUser dataLevelUser = GameConfig.instance.GetDataLevelCommon();
+        int id = dataLevelUser. GetLevelPassByTypeGame(GameConfig.instance.typeGame);
 
+        GameConfig.instance.SetLevelCurrent(id+1);
+        GameConfig.instance.nameModePlay = nameLevel.Substring(0, nameLevel.Length - 2);
+        GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetLevelCurrent().datalevel.timeFinish);
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
+    }
     #region change theme 
 
     public Image bgr;

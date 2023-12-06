@@ -280,6 +280,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9566e30b3ab49487dbb595f75cf3c302, type: 2}
     - {fileID: 11400000, guid: bee2a98779b854314a8cb93aa18c26e3, type: 2}
     - {fileID: 11400000, guid: 937bdda421ca442fc95502acab8b84c4, type: 2}
+    - {fileID: 11400000, guid: 8595a91d946b8d645953316d9ada46ed, type: 2}
     - {fileID: 11400000, guid: 8d012731d688a4ff28eadf8b240ce733, type: 2}
   - nameSubLevel: Medium-3
     isNeedBuy: 0
@@ -478,6 +479,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 966077b46ed184ef39e6bf4d92ace1c5, type: 2}
     - {fileID: 11400000, guid: eff99e54ab71f47cfb67eadac08a9926, type: 2}
     - {fileID: 11400000, guid: e865c6595e0894a27b248442e2e3d3f4, type: 2}
+    - {fileID: 11400000, guid: 73876bfd9cf030f4684d8c06eeb71195, type: 2}
     - {fileID: 11400000, guid: b0f4b93ba5bbe44638e6b547e301ee68, type: 2}
     - {fileID: 11400000, guid: 7586b3b83bff14c61b73b77ee6d57dda, type: 2}
     - {fileID: 11400000, guid: 7e79c4cdec84c49038d649229864569b, type: 2}

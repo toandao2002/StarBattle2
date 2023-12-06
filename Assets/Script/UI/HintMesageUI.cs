@@ -62,17 +62,17 @@ public class HintMesageUI : MonoBehaviour
             case TypeHint.MustOneStar:
                 return "This cell must be a star";
             case TypeHint.TwoStarCorrect:
-                return "This row or column should be marked with a dot";
+                return "This row or column should be marked with dots because there are enough stars";
             case TypeHint.ManyDot:
                 return "Many dot in row or column";
             case TypeHint.IncorrectPos:
-                return "This box is in the wrong position";
+                return "This cell is in the wrong position";
             case TypeHint.Arround:
-                return "Mark the dots around the star cells";
+                return "Mark the cells around the star as dots";
             case TypeHint.MustClickMoreOneStarInRegion:
-                return "Must mark more than 1 star in 1 area";
+                return "This cell must be marked as a star so that there are enough stars in the specified area";
             case TypeHint.ShouldOneStarInRegion:
-                return "A star should be placed in this position";
+                return "This location should be marked as a star because if this location were a dot there would not be enough cells to place the star in the designated area";
             case TypeHint.ShouldClickStarInRegion:
                 return "Star should be placed in this position";
             case TypeHint.MarkDotUnlessHasCellEmpty:

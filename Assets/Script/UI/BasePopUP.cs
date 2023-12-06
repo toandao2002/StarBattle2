@@ -20,6 +20,7 @@ public class BasePopUP : MonoBehaviour
     public GameObject main;
     public CanvasGroup canvasGroup;
     public Image BgrMain; 
+    public Image BgrMain2; 
     public bool isPopUp;
     protected float durationEffect = 0.3f;
     protected RectTransform rec;
@@ -51,7 +52,8 @@ public class BasePopUP : MonoBehaviour
                 BgrMain.DOFillAmount(0, durationEffect).From(1).SetEase(ease);
             }
         }
-        canvasGroup.DOFade(0, durationEffect).From(1).SetDelay(0.02f);
+        if(canvasGroup!= null)
+            canvasGroup.DOFade(0, durationEffect).From(1).SetDelay(0.02f);
 
         rec.DOAnchorPos3DY(posY * dir, durationEffect).SetEase(ease).From(0).OnComplete(()=> {
             main.SetActive(false); 
@@ -78,7 +80,8 @@ public class BasePopUP : MonoBehaviour
                 BgrMain.DOFillAmount(1, durationEffect).From(0).SetEase(ease);
             }
         }
-        canvasGroup.DOFade(1, durationEffect).From(0);
+        if (canvasGroup != null)
+            canvasGroup.DOFade(1, durationEffect).From(0);
         rec.DOAnchorPos3DY(0, durationEffect).From(posY * dir).SetEase(ease);
         
     }

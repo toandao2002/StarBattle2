@@ -77,6 +77,8 @@ public class ChoseLevel_2 : BasePopUP
             BgrMain.sprite = bgrLight;
 
         }
+        if (BgrMain2 != null)
+            BgrMain2.sprite = BgrMain.sprite;
 
 
     }
