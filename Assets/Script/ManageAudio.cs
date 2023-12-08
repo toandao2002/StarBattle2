@@ -18,6 +18,11 @@ public enum NameMusic
 {
 
 }
+public enum nameVibrate
+{
+    light,
+    medium,
+}
 public class ManageAudio : MonoBehaviour
 {
     public static ManageAudio Instacne;
@@ -27,7 +32,7 @@ public class ManageAudio : MonoBehaviour
     public List<AudioClip> sounds;
     public List<AudioClip> musics;
     SettingData settingData;
-    Queue<NameSound> PlayedSound = new Queue<NameSound>();
+    Queue<nameVibrate> stateVibrates = new Queue<nameVibrate>();
     private void Awake()
     {
 
@@ -38,19 +43,12 @@ public class ManageAudio : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f); 
-            if(PlayedSound.Count != 0)  
-                PlayedSound.Dequeue(); 
+            yield return new WaitForSeconds(0.05f); 
+            if(stateVibrates.Count != 0)  
+                stateVibrates.Dequeue(); 
         }
     }
-    public void PlaySoundDelay(NameSound id)
-    {
-        if (!PlayedSound.Contains(id))
-        { 
-            sound.PlayOneShot(sounds[(int)id]);
-            PlayedSound.Enqueue(id);
-        }
-    }
+    
     public void Start()
     {
         settingData = SettingData.GetSetting();
@@ -71,13 +69,23 @@ public class ManageAudio : MonoBehaviour
     public void UpdateHaptic()
     {
         settingData.ChangeVibration();
-        Vibrate();
+        VibrateLight();
     }
 
-    public void Vibrate()
+    public void VibrateLight()
     {
-        if(settingData.vibrate)
-            haptic.LightFeedback();
+        haptic.LightFeedback();
+    }
+    public void VibratMedium()
+    {
+        if (settingData.vibrate)
+        {
+            if (!stateVibrates.Contains(nameVibrate.light))
+            {
+                stateVibrates.Enqueue(nameVibrate.medium);
+                haptic.MediumFeedback(); 
+            }
+        }
     }
     public void PlaySound(NameSound id )
     {

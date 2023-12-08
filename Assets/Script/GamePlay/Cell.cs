@@ -47,8 +47,7 @@ public class Cell :MonoBehaviour
     public Vector2Int pos;
     Board board;
     bool beingWrong;
-    public Color hintStarColor;
-    public Color hintDotColor;
+    public Color hintStarColor; 
     public Color hintNoneColor;
     public List<Color> colorCells;
     public List<Color> colorCellLight;
@@ -57,7 +56,7 @@ public class Cell :MonoBehaviour
     public Color colorWrong;
     public Color colorWrongLight;
     public List<NameError> errors= new List<NameError>();
-
+    int idColor;
 
     public List<Image> border;
     private void Awake()
@@ -176,13 +175,11 @@ public class Cell :MonoBehaviour
         else {
             txt.text = "";
         }
-       
-        
+          
+
         ChangeRectranform(oMin, oMax);
-        if(region>=9)
-            color = colorCells[0];
-        else
-            color = colorCells[region];
+        idColor = board.GetColorByRegion(region);
+        color = colorCells[idColor];
         inCellBgr.color = color;
     }
     public void ChangeRectranform(Vector2 omin, Vector2 omax)
@@ -276,7 +273,7 @@ public class Cell :MonoBehaviour
         Check();
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos);
-        ManageAudio.Instacne.PlaySoundDelay(NameSound.ClickCell);
+        ManageAudio.Instacne.VibrateLight();
 
     }
 
@@ -291,7 +288,7 @@ public class Cell :MonoBehaviour
         Check();
         if (!isUser)// because when isn't user: from star-> dot so will check only isn't user
             board.CheckAround(pos);
-        ManageAudio.Instacne.PlaySoundDelay(NameSound.ClickCell);
+        ManageAudio.Instacne.VibrateLight();
     }
     public void DoubleClick(bool isUser)
     {
@@ -305,13 +302,10 @@ public class Cell :MonoBehaviour
         {
             MyEvent.GameWin?.Invoke(null);
 
-            ManageAudio.Instacne.PlaySoundDelay(NameSound.WinGame);
-        }else
-        {
-            ManageAudio.Instacne.PlaySoundDelay(NameSound.StarClick);
+            ManageAudio.Instacne.PlaySound(NameSound.WinGame);
         }
-        
-        
+
+        ManageAudio.Instacne.VibrateLight();
         Check();
         board.CheckAround(pos);
 
@@ -319,7 +313,7 @@ public class Cell :MonoBehaviour
     }
     bool beEffectByMoveMouse;
     public void MoveOnCell()
-    {
+    { 
         if (GameConfig.instance.levelCurent.datalevel.isfinished) return;
         if (statusCell == StatusCell.None)
         {
@@ -337,19 +331,23 @@ public class Cell :MonoBehaviour
     bool isDown;
     public void OnDown()
     { 
+
         isUp = false;
         isDown = true;
+        isExit = false;
     }
+    bool isExit;
     public void OnExit()
-    {
-        
+    { 
+        isExit = true;
         beEffectByMoveMouse = true;
     }
     bool isUp;
     public void onUp()
-    {
+    { 
+
         isUp = true; 
-        if (isDown)
+        if (isDown && !isExit)
         {
             Click();
             isDown = false;
@@ -358,14 +356,26 @@ public class Cell :MonoBehaviour
      
     public void Check()
     {
-        board.CheckRow(pos.x);
-        board.CheckColumn(pos.y);
-        board.CheckRegion(this);
+        try
+        {
+            board.CheckRow(pos.x);
+            board.CheckColumn(pos.y);
+            board.CheckRegion(this);
+        }
+        catch
+        {
+
+        }
+        
     }
     #endregion
 
 
     #region display
+    public List<Color> borderColors;
+    public List<Color> BgrColors;
+    public List<Color> iconHintColors;
+    
 
     public void ChangeTheme()
     {
@@ -376,9 +386,10 @@ public class Cell :MonoBehaviour
             colorCells = colorCellDark;
             for(int i = 0; i<4; i++)
             {
-                border[i].color = Color.white;
+                border[i].color = borderColors[1];
             }
-            Bgr.color = Color.white;
+            Bgr.color = BgrColors[1];
+            iconHint.color = iconHintColors[1];
         }
         else
         {
@@ -387,15 +398,15 @@ public class Cell :MonoBehaviour
             colorStar = stars[0];
             for (int i = 0; i < 4; i++)
             {
-                border[i].color = Color.black;
+                border[i].color = borderColors[0];
             }
-            Bgr.color = Color.black;
+            Bgr.color = BgrColors[0];
+            iconHint.color = iconHintColors[0];
+
 
         }
-        if (region >= 9)
-            color = colorCells[0];
-        else
-            color = colorCells[region];
+        color = colorCells[idColor];
+
         UpdateDisplayCell();
     }
     public void EffectWinStar()
@@ -425,7 +436,8 @@ public class Cell :MonoBehaviour
         icon.sprite = dot;
         icon.color = colorDot;
         icon.SetNativeSize();
-        icon.transform.DOScale(0.7f, 0.2f).From(0).SetEase(Ease.InOutBack);
+      
+        
     }
     void UpdateDisplayCell()
     {
@@ -446,7 +458,7 @@ public class Cell :MonoBehaviour
         icon.sprite = star;
         icon.SetNativeSize();
         statusCell = StatusCell.DoubleClick;
-        icon.transform.DOScale(0.7f, 0.05f).From(0).SetEase(Ease.InOutBack);
+        icon.DOFade(1f, 0.05f).From(0.5f).SetEase(Ease.InOutBack);
     }
    
     public void ResetStatus() {
@@ -492,8 +504,7 @@ public class Cell :MonoBehaviour
     }
     public void EfextWrong()
     {
-        ManageAudio.Instacne.Vibrate();
-        ManageAudio.Instacne.PlaySoundDelay(NameSound.ErrorPlay);
+        ManageAudio.Instacne.VibratMedium();
     }
     IEnumerator DelayShowWrong()
     {
@@ -535,17 +546,18 @@ public class Cell :MonoBehaviour
             inCellBgr.color = hintStarColor;
         }
         else if(stt == StatusCell.None) {
-            inCellBgr.color = hintNoneColor;
+            inCellBgr.color = hintStarColor;
         }
         else if(stt == StatusCell.OneClick)
         {
             iconHint.gameObject.SetActive(true);
             iconHint.sprite = dotHint;
             iconHint.SetNativeSize();
-            inCellBgr.color = hintDotColor;
+            inCellBgr.color = hintStarColor;
         }
         inCellBgrWrong.gameObject.SetActive(false);
         EffectShow();
+        StopAllCoroutines();
         StartCoroutine(ShowHintInDuration(2));
     }
 

@@ -16,4 +16,7 @@ public class MyEvent : MonoBehaviour
     public static Action DontClickTut;
 
     public static Action ChangeTheme;
+
+
+    public static Action ClickBack;
 }

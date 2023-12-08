@@ -40,6 +40,7 @@ public class BoxChoseBigLevel : MonoBehaviour
             }
             else
             {
+         
                 levels[i].datalevel = new DataLevel(DateTime.Now.ToString(), false, 0);
                 //btnLevels[i].SetTime(0);
             }

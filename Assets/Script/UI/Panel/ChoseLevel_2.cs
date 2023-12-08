@@ -28,33 +28,44 @@ public class ChoseLevel_2 : BasePopUP
         base.Hide(dir);
         
         btnLevels = new List<ButonLevel>();
+        MyEvent.ClickBack -= Back;
     }
     public override void Show(object data = null, int dir =1)
     {
         base.Show(data, dir);
-        levels = (List<Level>)data;
-        RemoveGarbage();
-        ChangeTheme();
-
-        for (int i = 0; i < levels.Count; i++)
+        try
         {
-            btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
-            NameStateLevel nameStateLevel = NameStateLevel.Nothing;
-            if (levels[i].datalevel.isfinished) nameStateLevel = NameStateLevel.Finished;
-            else if (!levels[i].datalevel.isfinished && levels[i].datalevel.timeFinish >0)
+            levels = (List<Level>)data;
+            RemoveGarbage();
+            ChangeTheme();
+
+            for (int i = 0; i < levels.Count; i++)
             {
-                nameStateLevel = NameStateLevel.Process;
-            }
-            btnLevels[i].SetLevel(levels[i].nameLevel, levels[i].nameLevel, nameStateLevel); 
-            if (levels[i].datalevel != null)
-            { 
-                btnLevels[i].SetTime(levels[i].datalevel.timeFinish);
-            }
-            else
-            {
-                //btnLevels[i].SetTime(0);
+                btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
+                NameStateLevel nameStateLevel = NameStateLevel.Nothing;
+                if (levels[i].datalevel.isfinished) nameStateLevel = NameStateLevel.Finished;
+                else if (!levels[i].datalevel.isfinished && levels[i].datalevel.timeFinish > 0)
+                {
+                    nameStateLevel = NameStateLevel.Process;
+                }
+                btnLevels[i].SetLevel(levels[i].nameLevel, levels[i].nameLevel, nameStateLevel);
+                if (levels[i].datalevel != null)
+                {
+                    btnLevels[i].SetTime(levels[i].datalevel.timeFinish);
+                }
+                else
+                {
+                    //btnLevels[i].SetTime(0);
+                }
             }
         }
+        catch
+        {
+
+        }
+        
+        
+        MyEvent.ClickBack = Back;
     }
    public void Back()
     {

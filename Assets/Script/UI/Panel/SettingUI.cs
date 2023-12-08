@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine; 
 using DG.Tweening;
 using UnityEngine.UI;
+using System;
 
 public class SettingUI : BasePopUP
 {
@@ -39,7 +40,10 @@ public class SettingUI : BasePopUP
         rec.DOAnchorPos3DX(0, durationEffect).From(posY * dir).SetEase(ease);
         UpdateUi();
         ChangeTheme();
+        preAction = (Action)Delegate.Combine(MyEvent.ClickBack);
+        MyEvent.ClickBack = Back; 
     }
+    Action preAction;
     public override void Hide(int dir = 1)
     {
         if (rec == null)
@@ -61,6 +65,7 @@ public class SettingUI : BasePopUP
     public void Back()
     {
         Hide(-1);
+        MyEvent.ClickBack = preAction;
     }
     public void UpdateUi()
     {

@@ -26,7 +26,7 @@ public class Board : MonoBehaviour
     {
         
     }
-
+    
     private void OnEnable()
     {
         if (isModeMakeLevel)
@@ -111,8 +111,58 @@ public class Board : MonoBehaviour
            dataOldBoardGame = DataGame.GetDataOldBoardGame(GameConfig.instance.typeGame, GameConfig.instance.GetLevelCurrent().nameLevel);
 
     }
+
+    // devide color for cells
+    List<Node> nodes = new List<Node>();
+    public int GetColorByRegion(int region)
+    {
+        for (int i = 0; i < nodes.Count; i++)
+        {
+            if(nodes[i].val == region)
+            {
+                return nodes[i].color;
+            }
+        }
+        return 0;
+    }
+    public void DivideColor()
+    {
+        nodes = new List<Node>();
+        for (int i = 0; i < cells.Count; i++)
+        {
+
+            for (int j = 0; j < cells[0].Count; j++)
+            {
+                Cell cell = cells[i][j];
+                foreach (Vector2Int d in direction)
+                {
+                    Vector2Int posNext = cell.pos + d;
+                    if (!CheckPosCorect(posNext.x, posNext.y))
+                    {
+                        continue;
+                    }
+                    Cell cellNext = cells[posNext.x][posNext.y];
+                    if (cellNext.region == cell.region)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Node node = Node.GetNodeByVal(nodes,cell.region);
+                        Node nodeChild = Node.GetNodeByVal(nodes,cellNext.region);
+                        node.AddNodeChild(nodeChild);
+                        nodeChild.AddNodeChild(node);
+                    }
+                }
+            }
+        }
+        ColorGraph colorGraph = new ColorGraph();
+        colorGraph.DrawColor(nodes);
+        
+    }
     public void InitBoard()
     {
+       
         ResetTimer();
        
         isFinish = GameConfig.instance.GetCurrentLevel().datalevel.isfinished;
@@ -137,6 +187,7 @@ public class Board : MonoBehaviour
                 
             }
         }
+        DivideColor();
         StartCoroutine(delay());
     }
 
@@ -353,12 +404,10 @@ public class Board : MonoBehaviour
         }
         if (BeingCorrectPath)
         {
-            HintMesageUI.instance.ShowNotice("You are taking the wrong step");
-            ManageAudio.Instacne.PlaySound(NameSound.Laugh);
+            HintMesageUI.instance.ShowNotice("You are taking the wrong step"); 
         }
         else
-        {
-            ManageAudio.Instacne.PlaySound(NameSound.Clap);
+        { 
 
             HintMesageUI.instance.ShowNotice("You are going right");
         }
@@ -402,6 +451,7 @@ public class Board : MonoBehaviour
                     }
                 }
             }
+            isFinish = true;
         }
         return win;
     }

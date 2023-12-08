@@ -10,6 +10,7 @@ public class DataBoard
     public string dataPosStar;
     public List<List<int>> subRegions;
     public List<Vector2Int> posCorrectStar;
+    public Dictionary<int, List<Vector2Int>> regionsMp;
     public DataBoard(int size, String dataRegion, String dataPosStar )
     {
         this.size = size;
@@ -24,10 +25,14 @@ public class DataBoard
         this.posCorrectStar = new List<Vector2Int>();
         this.posCorrectStar.AddRange(posCorrectStar);
     }
+    public List<Vector2Int> GetCellPosByRegion(int region)
+    {
+        return regionsMp[region];
+    }
     public void InitData()
     {
         subRegions = new List<List<int>>();
-      
+        regionsMp = new Dictionary<int, List<Vector2Int>>();
         string[] split = System.Text.RegularExpressions.Regex.Split(dataRegion.Trim(), @" +");
         if(split.Length == 1)
         {
@@ -48,8 +53,14 @@ public class DataBoard
                 subRegions.Add(new List<int>());
                 for (int j = 0; j < size; j++)
                 {
-                    subRegions[i].Add(Int32.Parse(split[i * size + j]));
-
+                    int region = Int32.Parse(split[i * size + j]);
+                    subRegions[i].Add(region);
+                    if (!regionsMp.ContainsKey(region))
+                    {
+                        regionsMp[region] = new List<Vector2Int>();
+                    }
+                    regionsMp[region].Add(new Vector2Int(i, j));
+                     
                 }
             }
 

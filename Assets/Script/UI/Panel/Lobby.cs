@@ -52,8 +52,7 @@ public class Lobby : BasePopUP
             foreach (var j in subLevels)
             {
                 numLevel += j.GetAmountLevel();
-            }
-            print(numLevel+" "+ (float)dataLevelComon.GetLevelPassByTypeGame(i.typeGame));
+            } 
             i.SetRateBarLevel((float)dataLevelComon.GetLevelPassByTypeGame(i.typeGame) / numLevel);
         }
 
@@ -68,23 +67,23 @@ public class Lobby : BasePopUP
         {
             Debug.Log("Dont find history");
         }
-        if (historyPlayed != null)
+        if (historyPlayed!= null &&historyPlayed.historys != null)
         {
             for (int i = historyPlayed.historys.Count - 1; i >= 0; i--)
             {
                 var obj = Instantiate(BoxPlayedRecentlyPref, contennt.transform);
                  
                 try
-                {
-                    obj.SetData(historyPlayed.historys[i].typeGame.ToString() + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].datalevel.dayPlay,
-                    historyPlayed.historys[i].datalevel.isfinished == true ? "Finished" : "Process", historyPlayed.historys[i].datalevel.timeFinish
+                { 
+                    obj.SetData(historyPlayed.historys[i].typeGame.ToString() + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
+                    historyPlayed.historys[i].isfinished == true ? "Finished" : "Process", historyPlayed.historys[i].timeFinish
                      , historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].typeGame
                     );
                     boxPlayedRecentlies.Add(obj);
                 }
                 catch
                 {
-                    Debug.Log("Loi game gan day");
+                    Debug.LogError("Loi game gan day");
                 }
 
 

@@ -19,17 +19,18 @@ public class BoxSetting : MonoBehaviour
     {
         MyEvent.ChangeTheme -= ChangeTheme;
     }
-    public void ChangeTheme()
+    public virtual void ChangeTheme()
     {
         NameTheme theme = GameConfig.instance.nameTheme;
         if (theme == NameTheme.Dark)
         {
             Bgr.sprite = Bgrs[1];
+            nametxt.color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
         }
         else
         {
             Bgr.sprite = Bgrs[0];
-
+            nametxt.color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Back];
         }
     }
 }

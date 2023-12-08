@@ -35,11 +35,18 @@ public class GameContrler : MonoBehaviour
         if(!board.isModeMakeLevel)
         { 
             dataLevel = GameConfig.instance.GetCurrentLevel().datalevel;
-            dataLevel.dayPlay = System.DateTime.Today.ToString();
-            UpdateHistoryPlayed();
+            dataLevel.dayPlay = System.DateTime.Now.ToString();
+            UpdateHistoryPlayedWhenStartPlay();
         }
     }
-    public void UpdateHistoryPlayed()
+    public void UpdateHistoryPlayedWhenEndPlay()
+
+    {
+        int id = historyPlayed.historys.Count - 1;
+        historyPlayed.historys[id].isfinished = board.isFinish;
+        historyPlayed.historys[id].timeFinish = board.myTime.timeRun ;
+    }
+    public void UpdateHistoryPlayedWhenStartPlay()
     {
         
         try
@@ -54,11 +61,11 @@ public class GameContrler : MonoBehaviour
         if(historyPlayed == null)
         {
             historyPlayed = new HistoryPlayed();
-            historyPlayed.historys = new List<Level>();
+            historyPlayed.historys = new List<LevelHistoryPlay>();
             historyPlayed.AddDatalevel(GameConfig.instance.GetCurrentLevel());
         }
         else
-        {
+        { 
             historyPlayed.AddDatalevel(GameConfig.instance.GetCurrentLevel());
         }
     }
@@ -150,7 +157,8 @@ public class GameContrler : MonoBehaviour
         SaveData();
         GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
-    }
+    }  
+    
     public void SaveDataBoardDontFinish()
     {
         try
@@ -188,8 +196,10 @@ public class GameContrler : MonoBehaviour
             dataLevel.timeFinish = myTime.timeRun;
             string json = Util.ConvertObjectToString<DataLevel>(dataLevel);
             SaveDataBoardDontFinish();
+            UpdateHistoryPlayedWhenEndPlay();
             DataGame.SetDataJson(DataGame.Level + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
             DataGame.SetDataJson(DataGame.History, Util.ConvertObjectToString<HistoryPlayed>(historyPlayed));
+            Debug.Log(Util.ConvertObjectToString<HistoryPlayed>(historyPlayed));
             DataGame.SetDataJson(DataGame.DataLevelComon, Util.ConvertObjectToString(GameConfig.instance.dataLevelComon));
             DataGame.Save();
         }

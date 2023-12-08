@@ -6,12 +6,27 @@ using TMPro;
 public class PopUpGameWin : BasePopUP
 {
     public static PopUpGameWin instance;
+    
+    public TMP_Text level;
+    public TMP_Text time;
+    public TMP_Text congrate;
+
+    public Sprite bgrLight;
+    public Sprite bgrDark;
     private void Awake()
     {
         instance = this;
+        MyEvent.ChangeTheme += ChangeTheme;
     }
-    public TMP_Text level;
-    public TMP_Text time;
+    public override void Show(object data = null, int dir = 1)
+    {
+        base.Show(data, dir);
+
+    }
+    private void OnEnable()
+    {
+        
+    }
     private void Start()
     {
         MyEvent.GameWin += Show2;
@@ -45,5 +60,30 @@ public class PopUpGameWin : BasePopUP
     private void OnDestroy()
     {
         MyEvent.GameWin -= Show2;
+    }
+    public override void ChangeTheme()
+    {
+        base.ChangeTheme();
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if (theme == NameTheme.Dark)
+        {
+
+            level.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            time.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            congrate.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            BgrMain.sprite = bgrDark;
+        }
+        else
+        {
+
+            BgrMain.sprite = bgrLight;
+            level.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+            congrate.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+            time.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+            
+        }
+        if (BgrMain2 != null)
+            BgrMain2.sprite = BgrMain.sprite;
+
     }
 }

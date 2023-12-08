@@ -19,8 +19,14 @@ public class ChoseLevel_1 : BasePopUP
             boxChoseBigLevels[i]. InitBox(subLevels[i]);
         }
         ChangeTheme();
+        MyEvent.ClickBack = backHome;
     }
-     public void  backHome()
+    public override void Hide(int dir = 1)
+    {
+        base.Hide(dir);
+        MyEvent.ClickBack -= backHome;
+    }
+    public void  backHome()
     {
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby, 1, -1);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1, -1);

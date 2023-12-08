@@ -10,12 +10,16 @@ public class HintMesageUI : MonoBehaviour
     public static HintMesageUI instance;
     private void Awake()
     {
-        instance = this;    
+        instance = this;
+        MyEvent.ChangeTheme += ChangeTheme;
     }
+     
+
     public Image main;
     public TMP_Text txt; 
     public TMP_Text title; 
     public List<TMP_Text> textFade;
+    public List<Color> colorBgr;
     public void ShowHint(TypeHint typeHint)
     {
         txt.text = GetDescription(typeHint);
@@ -30,9 +34,38 @@ public class HintMesageUI : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(show());
     }
+    public void Hide()
+    {
+        StopAllCoroutines();
+        main.DOFade(0, 0.2f).From(1).OnComplete(() => {
+            main.gameObject.SetActive(false);
+        });
+        foreach (TMP_Text i in textFade)
+        {
+            i.DOFade(0,  0.2f).From(1);
+        }
+    }
+    public void ChangeTheme()
+    {
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if (theme == NameTheme.Dark)
+        {
+            main.color = colorBgr[1];
+            txt.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Gray];
+            title.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+         
+        }
+        else
+        {
+            main.color = colorBgr[0];
+            txt.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Gray];
+            title.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+      
+        }
+    }
     IEnumerator show()
     {
-        
+        ChangeTheme();
         main.gameObject.SetActive(true);
         float duration = 1f;
         main.DOFade(1, duration/2).From(0);

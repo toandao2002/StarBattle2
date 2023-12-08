@@ -65,6 +65,7 @@ public static class DataGame
 [System.Serializable]
 public class DataLevel
 {
+    [SerializeField]
     public string dayPlay;
     public bool isfinished;
     public int timeFinish;
@@ -82,21 +83,41 @@ public class DataLevel
 
     }
 }
+[Serializable]
+public class LevelHistoryPlay
+{
+    public int nameLevel;
+    public TypeGame typeGame;
+    public string dayPlay;
+    public bool isfinished;
+    public int timeFinish;
+    public LevelHistoryPlay(int nameLevel, TypeGame typeGame, string dayPlay, bool isFinished, int timeFinish)
+    {
+        this.nameLevel = nameLevel;
+        this.typeGame = typeGame;
+        this.dayPlay = dayPlay;
+        this.isfinished = isFinished;
+        this.timeFinish = timeFinish;
+
+    }
+}
 [System.Serializable]
 public class HistoryPlayed
 {
-    int maxSave = 5;
-
-    public List<Level> historys; 
+    int maxSave = 30;
+    [SerializeField]
+    public List<LevelHistoryPlay> historys; 
     public void AddDatalevel(Level dataLevel)
     {
+        if (historys == null) historys = new List<LevelHistoryPlay>();
         if(historys.Count >= maxSave)
         {
             historys.RemoveAt(0);
         }
-        historys.Add(dataLevel);
+        LevelHistoryPlay level = new LevelHistoryPlay(dataLevel.nameLevel, dataLevel.typeGame, dataLevel.datalevel.dayPlay, dataLevel.datalevel.isfinished, dataLevel.datalevel.timeFinish); ;
+        historys.Add(level);
     }
-    public List<Level> GetHistorys()
+    public List<LevelHistoryPlay> GetHistorys()
     {
         return historys;
     }

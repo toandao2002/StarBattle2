@@ -329,7 +329,7 @@ public class CellTut : MonoBehaviour
         icon.gameObject.SetActive(true);
         icon.sprite = dot;
         icon.SetNativeSize();
-        icon.transform.DOScale(0.7f, 0.2f).From(0).SetEase(Ease.InOutBack);
+        icon.transform.DOScale(1, 0.2f).From(0).SetEase(Ease.InOutBack);
     }
     public void ShowStarIcon()
     {
@@ -337,7 +337,7 @@ public class CellTut : MonoBehaviour
         icon.sprite = star;
         icon.SetNativeSize();
         statusCell = StatusCell.DoubleClick;
-        icon.transform.DOScale(0.7f, 0.1f).From(0).SetEase(Ease.InOutBack);
+        icon.transform.DOScale(1, 0.1f).From(0).SetEase(Ease.InOutBack);
     }
 
     public void ResetStatus()

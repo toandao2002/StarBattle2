@@ -2743,8 +2743,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241bf451015637b40b253131335d7af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main: {fileID: 1247332000}
+  main: {fileID: 1247332002}
   txt: {fileID: 138699271}
+  title: {fileID: 138699271}
+  textFade: []
+  colorBgr: []
 --- !u!1 &281417383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,6 +3627,8 @@ MonoBehaviour:
     dayPlay: 
     isfinished: 0
     timeFinish: 0
+  fx: []
+  PosFx: []
 --- !u!4 &410723253
 Transform:
   m_ObjectHideFlags: 0
@@ -3703,11 +3708,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3e4bc09350c0c459fb1bd4908ddc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  back: {fileID: 0}
-  home: {fileID: 0}
-  spriteIconLeft: {fileID: 0}
+  IconLeft: {fileID: 0}
+  IconRight: {fileID: 0}
+  spriteIconRightLight: {fileID: 0}
+  spriteIconRightDark: {fileID: 0}
+  spriteIconLeftLight: {fileID: 0}
+  spriteIconLeftDark: {fileID: 0}
   LeftBtn: {fileID: 0}
   nameTittle: {fileID: 99807929}
+  Bgr: {fileID: 0}
+  bgrColors: []
 --- !u!1001 &431355521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6301,6 +6311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ec7262d914fbf4b962292ba39fa64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTime: {fileID: 0}
   title: {fileID: 430370057}
   cellsRaw:
   - {fileID: 1963094545}
@@ -6554,9 +6565,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCurent: {fileID: 0}
   typeGame: 0
-  scr: {fileID: 0}
   levelCommon: {fileID: 0}
   timeFinishPlay: 0
+  nameModePlay: 
+  nameTheme: 0
+  darkMode: {fileID: 0}
+  lightMode: {fileID: 0}
 --- !u!4 &889058088
 Transform:
   m_ObjectHideFlags: 0

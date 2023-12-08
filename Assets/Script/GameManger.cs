@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +31,16 @@ public class GameManger : MonoBehaviour
         }
         else
         { 
+        }
+    }
+    public void Update()
+    {
+        // Kiểm tra nút quay trở lại trên Android
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Xử lý sự kiện khi nút quay trở lại được nhấn
+            MyEvent.ClickBack?.Invoke();
+            Debug.Log("back");
         }
     }
 }

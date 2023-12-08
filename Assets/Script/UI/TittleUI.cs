@@ -7,8 +7,13 @@ using TMPro;
 public class TittleUI : MonoBehaviour
 { 
      
-     
-    public Image spriteIconLeft;
+    
+    public Image IconLeft;
+    public Image IconRight;
+    public Sprite spriteIconRightLight;
+    public Sprite spriteIconRightDark;
+    public Sprite spriteIconLeftLight;
+    public Sprite spriteIconLeftDark;
     public MyButton LeftBtn;
     public TMP_Text nameTittle;
 
@@ -35,12 +40,15 @@ public class TittleUI : MonoBehaviour
         {
             Bgr.color = bgrColors[1];
             nameTittle.color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
+            IconLeft.sprite = spriteIconLeftDark;
+            IconRight.sprite = spriteIconRightDark;
         }
         else
         {
             Bgr.color = bgrColors[0];
             nameTittle.color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Back];
-
+            IconLeft.sprite = spriteIconLeftLight;
+            IconRight.sprite = spriteIconRightLight;
 
         }
     }
@@ -59,7 +67,7 @@ public class TittleUI : MonoBehaviour
     }
     public void SetIconLeft(Sprite sprite)
     {
-        spriteIconLeft.sprite = sprite;
+        IconLeft.sprite = sprite;
     }
     public void SetLevelTittle(string numlevel)
     {

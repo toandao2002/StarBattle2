@@ -19,6 +19,9 @@ public enum TypeHint{
     ShoudlColumnAround,
     MustMarkDot,
     MarkDotUnlessHasCellEmpty,
+
+    DotByRegionAdvance,
+    MarkDotBecauseDontPlaced,
 }
 public class HintMesage
 {
@@ -141,14 +144,21 @@ public class Tutorial
                             break;
 
                         }
-                        hintMesage = CheckRegion(board, board.cells[i][j]);
+                       /* hintMesage = CheckRegion(board, board.cells[i][j]);
+                        if (hintMesage.posHints.Count != 0)
+                        {
+                            isDetectedHint = true;
+                            break;
+
+                        }*/
+                        hintMesage = CheckAroundRegionOfCell(board, board.cells[i][j].pos);
                         if (hintMesage.posHints.Count != 0)
                         {
                             isDetectedHint = true;
                             break;
 
                         }
-                        hintMesage = CheckAroundRegionOfCell(board, board.cells[i][j].pos);
+                        hintMesage = CheckAround_Row_column(board, board.cells[i][j]);
                         if (hintMesage.posHints.Count != 0)
                         {
                             isDetectedHint = true;
@@ -175,8 +185,11 @@ public class Tutorial
                 }
                 if (isDetectedHint) break;
             }
-        ManageAudio.Instacne.PlaySound(NameSound.Hint);
         Debug.Log(hintMesage);
+        if(hintMesage.posHints.Count == 0)
+        {
+            hintMesage = CheckAdvance(board);
+        }
         return hintMesage;
 
         // 
@@ -294,11 +307,18 @@ public class Tutorial
         List<Vector2Int> posEmpty = new List<Vector2Int>();
         for (int i = 0; i < board.sizeBoard; i++)
         {
-
-            if (board.cells[row][i].statusCell == StatusCell.OneClick)
+            try
             {
-                posDot.Add(new Vector2Int(row, i));
+                if (board.cells[row][i].statusCell == StatusCell.OneClick)
+                {
+                    posDot.Add(new Vector2Int(row, i));
+                }
             }
+            catch
+            {
+
+            }
+           
             if (board.cells[row][i].statusCell == StatusCell.DoubleClick)
             {
                 posStar.Add(new Vector2Int(row, i));
@@ -336,7 +356,13 @@ public class Tutorial
                 return hintMesage;
         }
         if(posEmpty.Count>2 && !CheckCellsIsSameRegion(posEmpty, board))
+        {
+            if(row == 2)
+            {
+
+            }
             return CheckRegionInRowOrColumn(posEmpty,board,posStar.Count);
+        }
 
 
         // case wrong  haven't check because cell has infomation about error when user click
@@ -403,7 +429,7 @@ public class Tutorial
             if (hintMesage.posHints.Count != 0)
                 return hintMesage;
         }
-        if (posEmpty.Count > 2)
+        if (posEmpty.Count > 2&&!CheckCellsIsSameRegion(posEmpty, board))
             return CheckRegionInRowOrColumn(posEmpty, board, posStar.Count);
         // case wrong  haven't check because cell has infomation about error when user click
 
@@ -623,8 +649,13 @@ public class Tutorial
                 return hintMesage;
             }
 
-            if (posEmpty.Count >= 3&& posEmpty.Count <=5)
+            if (posEmpty.Count >= 3&& posEmpty.Count <=9)
             {
+
+                if (cell.pos == new Vector2Int(1, 2))
+                {
+
+                }
                 return HandelCaseSpecial2(posEmpty, board);
             }
         }
@@ -839,18 +870,336 @@ public class Tutorial
                 }
             }
             if(posStar.Count <=2&& posStar.Count >0)
-                return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar, posEmpty);
+                return new HintMesage(TypeHint.ShouldClickStarInRegion, posEmpty, posStar, new List<Vector2Int>());
         }
         return new HintMesage(TypeHint.None, new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
     }
 
-
-
-
-    #region get cells empty
-    public void GetCellsEmtpyInRow(int row)
+    public void ResetStateDontClick(List<Vector2Int>  pos, Board board)
+    {
+        foreach(Vector2Int i in pos)
+        {
+            board.cells[i.x][i.y].statusCell = StatusCell.None;
+        }
+    }
+    public bool CheckColumn2( Board board, int column)
     {
 
+
+        int numEmtpy = 0, numStar = 0;
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+            if (board.cells[i][column].statusCell == StatusCell.None) // dot
+            {
+                numEmtpy++;
+                posEmpty.Add(board.cells[i][column].pos);
+            }
+            else if (board.cells[i][column].statusCell == StatusCell.DoubleClick) // star
+            {
+                numStar++;
+            }
+        }
+        if (numEmtpy == 0 && numStar == 1)
+        {
+
+            return false;
+        }
+        if (numEmtpy == 1 && numStar == 0)
+        {
+            return false;
+        }
+        if (numEmtpy == 2 && numStar == 0)
+        {
+            int count = board.CountAndCheckCellEmptyAround(posEmpty[0], posEmpty);
+            if (count == 1)/// khong con nuoc di
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public bool CheckRow2(Board board, int row)
+    {
+        
+        int numEmtpy = 0, numStar = 0;
+        List<Vector2Int> posEmpty = new List<Vector2Int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+            if (board.cells[row][i].statusCell == StatusCell.None) // dot
+            {
+                numEmtpy++;
+                posEmpty.Add(board.cells[row][i].pos);
+            }
+            else if (board.cells[row][i].statusCell == StatusCell.DoubleClick) // star
+            {
+
+                numStar++;
+            }
+        }
+        if (numEmtpy ==0 && numStar ==1)
+        {
+
+            return false;
+        }
+        if(numEmtpy == 1 && numStar == 0)
+        {
+            return false;
+        }
+        if (numEmtpy == 2 && numStar == 0)
+        {
+            int count = board.CountAndCheckCellEmptyAround(posEmpty[0], posEmpty);
+            if (count == 1)/// khong con nuoc di
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public HintMesage CheckAround_Row_column(Board board, Cell cell)
+    {
+        List<Vector2Int> posWilBeDot = new List<Vector2Int>();
+        HintMesage hintMesage = new HintMesage(TypeHint.None,new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+        //top
+        bool posCorrect = false;
+        bool done = false;
+        for (int i =1;i< 4; i++)
+        {
+            Vector2Int posNext = cell.pos + direction[i];
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            posCorrect = true;
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if(cellNext.statusCell == StatusCell.None)
+            {
+                posWilBeDot.Add(cellNext.pos);
+                cellNext.statusCell = StatusCell.OneClick;
+            }
+        }
+        if (posCorrect  && !done)
+        {
+            if(cell.pos.y == 0)
+            {
+
+            }
+            bool dung = CheckRow2(board, cell.pos.x - 1);
+
+     
+            if (!dung)
+            {
+                done = true;
+                hintMesage = new HintMesage(TypeHint.MarkDotBecauseDontPlaced, posWilBeDot, new List<Vector2Int>(), new List<Vector2Int>() { cell.pos });
+            }
+        }
+        ResetStateDontClick(posWilBeDot, board);
+        //Botton\
+        posCorrect = false;
+        posWilBeDot = new List<Vector2Int>();
+        for (int i = 5; i < 8; i++)
+        {
+            Vector2Int posNext = cell.pos + direction[i];
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            posCorrect = true;
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if (cellNext.statusCell == StatusCell.None)
+            {
+                posWilBeDot.Add(cellNext.pos);
+                cellNext.statusCell = StatusCell.OneClick;
+            }
+        }
+        if (posCorrect && !done)
+        {
+            bool dung = CheckRow2(board, cell.pos.x + 1);
+            
+            if (!dung)
+            {
+                done = true;
+                hintMesage = new HintMesage(TypeHint.MarkDotBecauseDontPlaced, posWilBeDot, new List<Vector2Int>(), new List<Vector2Int>() { cell.pos });
+            }
+        }
+        ResetStateDontClick(posWilBeDot, board);
+        //l
+        posCorrect = false;
+        posWilBeDot = new List<Vector2Int>();
+        for (int i = 1; i < 2; i++)
+        {
+            Vector2Int posNext = cell.pos + direction[i];
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            posCorrect = true;
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if (cellNext.statusCell == StatusCell.None)
+            {
+                posWilBeDot.Add(cellNext.pos);
+                cellNext.statusCell = StatusCell.OneClick;
+            }
+        }
+        
+        if (posCorrect && !done)
+        {
+            Vector2Int posNext = cell.pos + direction[7];
+            if (board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                 Cell cellNext = board.cells[posNext.x][posNext.y];
+                if(cellNext.statusCell == StatusCell.None)
+                { 
+                    cellNext.statusCell = StatusCell.OneClick;
+                    posWilBeDot.Add(posNext);
+
+                }
+            }
+            bool dung= CheckColumn2(board, cell.pos.y - 1); 
+            if (!dung)
+            {
+                done = true;
+                hintMesage = new HintMesage(TypeHint.MarkDotBecauseDontPlaced, posWilBeDot, new List<Vector2Int>(), new List<Vector2Int>() { cell.pos });
+            }
+        }
+        ResetStateDontClick(posWilBeDot, board);
+        //r
+        posCorrect = false;
+        posWilBeDot = new List<Vector2Int>();
+        for (int i = 3; i < 6; i++)
+        {
+            Vector2Int posNext = cell.pos + direction[i];
+            if (!board.CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            posCorrect = true;
+            Cell cellNext = board.cells[posNext.x][posNext.y];
+            if (cellNext.statusCell == StatusCell.None)
+            {
+                posWilBeDot.Add(cellNext.pos);
+                cellNext.statusCell = StatusCell.OneClick;
+            }
+        }
+        if (posCorrect && !done)
+        {
+            bool dung = CheckColumn2(board, cell.pos.y + 1); 
+            if (!dung)
+            {
+                done = true;
+                hintMesage = new HintMesage(TypeHint.MarkDotBecauseDontPlaced, posWilBeDot, new List<Vector2Int>(), new List<Vector2Int>() { cell.pos });
+            }
+        }
+        ResetStateDontClick(posWilBeDot, board);
+        return hintMesage;
+
+    }
+
+    #region Check Advanced
+
+    public HintMesage CheckAdvance(Board board)
+    {
+        HintMesage hint = new HintMesage(TypeHint.None,new List<Vector2Int>(), new List<Vector2Int>(), new List<Vector2Int>());
+        bool done = false;
+        for (int i  =0;i< board.sizeBoard; i++)
+        {
+            if (done) break;
+            for (int j = i;j < board.sizeBoard; j++)
+            {
+                if(i == 5 && j == 8)
+                {
+
+                }
+                hint = RowAdvanced(board, i, j);
+                if (hint.posHints.Count != 0)
+                {
+                    done = true;
+                    break;
+                }
+                hint = ColumnAdvance(board, i, j);
+                if (hint.posHints.Count != 0)
+                {
+                    done = true;
+                    break;
+                }
+
+            }
+        }
+        return hint;
+    }
+    public void HandelDataCellInRange(int a )
+    {
+        
+    }
+    public HintMesage RowAdvanced(Board board, int rowS, int rowF)
+    {
+        List<int> regions = new List<int>();
+        for (int i = rowS; i <= rowF; i++)
+        {
+            for(int j = 0; j< board.sizeBoard; j++)
+            {
+                int region = board.cells[i][j].region;
+                if ( !regions.Contains(region) )
+                {
+                    regions.Add(region);
+                }
+            }
+        }
+        int numRow = rowF - rowS + 1;
+        List<Vector2Int> poshint = new List<Vector2Int>();
+        if (numRow == regions.Count)
+        {
+            foreach(int i in regions)
+            {
+                List<Vector2Int> posCellInRegion = GameConfig.instance.GetCurrentLevel().dataBoard.GetCellPosByRegion(i);
+                foreach(Vector2Int p in posCellInRegion)
+                {
+                    if((p.x<rowS || p.x > rowF )  && board.cells[p.x][p.y].statusCell == StatusCell.None)
+                    {
+                        poshint.Add(p);
+                    }
+                }
+            }
+        }
+        return   new HintMesage(TypeHint.DotByRegionAdvance, poshint, new List<Vector2Int>(), poshint);
+    }
+    public HintMesage ColumnAdvance(Board board, int columnS, int columnF)
+    {
+        if(columnF == 6 && columnS == 0)
+        {
+
+        }
+        List<int> regions = new List<int>();
+        for (int i = 0; i < board.sizeBoard; i++)
+        {
+            for (int j = columnS; j <= columnF ; j++)
+            {
+                int region = board.cells[i][j].region;
+                if (!regions.Contains(region)  )
+                {
+                    regions.Add(region);
+                }
+            }
+        }
+        int numRow = columnF - columnS + 1;
+        List<Vector2Int> poshint = new List<Vector2Int>();
+        if (numRow == regions.Count)
+        {
+            foreach (int i in regions)
+            {
+                List<Vector2Int> posCellInRegion = GameConfig.instance.GetCurrentLevel().dataBoard.GetCellPosByRegion(i);
+                foreach (Vector2Int p in posCellInRegion)
+                {
+                    if ((p.y < columnS || p.y > columnF )&& board.cells[p.x][p.y].statusCell == StatusCell.None)
+                    {
+                        poshint.Add(p);
+                    }
+                }
+            }
+        }
+        return new HintMesage(TypeHint.DotByRegionAdvance, poshint, new List<Vector2Int>(), poshint);
     }
     #endregion
 }

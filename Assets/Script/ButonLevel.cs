@@ -133,8 +133,8 @@ public class ButonLevel : MonoBehaviour
             PopUpContinuePlay.instance.Show();
             return;
         }
-        
-        
+
+
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timeFinish);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);

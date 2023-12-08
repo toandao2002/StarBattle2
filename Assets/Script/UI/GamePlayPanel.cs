@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class GamePlayPanel : BasePopUP
 {
-    public Sprite bgrDark;
-    public Sprite bgrLight;
-
+   
+    public List<Color> Bgr;
     public Image bgrBottom;
     public List<Color> bgrBottomColor;
     public List<TMP_Text> txt;
@@ -20,11 +19,18 @@ public class GamePlayPanel : BasePopUP
     {
         MyEvent.UpdateDataAmountHint -= SetTextAmountHint;
     }
+    
     public override void Show(object data = null, int dir = 1)
     {
         base.Show(data, dir);
         ChangeTheme();
         SetTextAmountHint();
+        MyEvent.ClickBack = Back;
+    }
+    public override void Hide(int dir = 1)
+    {
+        base.Hide(dir);
+        MyEvent.ClickBack -= Back;
     }
     public override void ChangeTheme()
     {
@@ -32,7 +38,7 @@ public class GamePlayPanel : BasePopUP
         NameTheme theme = GameConfig.instance.nameTheme;
         if (theme == NameTheme.Dark)
         {
-            BgrMain.sprite = bgrDark;
+            BgrMain.color = Bgr[1];
             for(int i = 0; i < txt.Count; i++)
             {
                 txt[i].color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
@@ -41,7 +47,7 @@ public class GamePlayPanel : BasePopUP
         }
         else
         {
-            BgrMain.sprite = bgrLight;
+            BgrMain.color= Bgr[0];
             for (int i = 0; i < txt.Count; i++)
             {
                 txt[i].color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Gray];
@@ -84,5 +90,10 @@ public class GamePlayPanel : BasePopUP
             
         }
         SetTextAmountHint();
+    }
+    public void Back()
+    {
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,1,-1);
     }
 }

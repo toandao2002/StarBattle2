@@ -127,6 +127,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4371085816281231135, guid: 9fb62efdd51edae47a08623b65bab5ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371085816281231135, guid: 9fb62efdd51edae47a08623b65bab5ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5569146443907122366, guid: 9fb62efdd51edae47a08623b65bab5ee, type: 3}
       propertyPath: m_Name
       value: Cell TUT

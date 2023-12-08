@@ -13,12 +13,19 @@ public enum TypeGame
 [CreateAssetMenu(fileName = "Level", menuName = "Data/Level", order = 1)]
 
 [System.Serializable]
+
 public class Level : ScriptableObject
 {
     public int nameLevel;
     public TypeGame typeGame;
     public DataBoard dataBoard;
+    
     public DataLevel datalevel;
+    public static Level Copy(Level level)
+    {
+        Level leve2 = Instantiate(level);
+        return leve2;
+    }
     public Level(int nameLevel)
     {
         this.nameLevel = nameLevel;

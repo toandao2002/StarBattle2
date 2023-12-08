@@ -186,12 +186,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed3e4bc09350c0c459fb1bd4908ddc0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteIconLeft: {fileID: 4158416083772667154}
+  IconLeft: {fileID: 4158416083772667154}
+  IconRight: {fileID: 4158416084024209492}
+  spriteIconRightLight: {fileID: 21300000, guid: 10c09c7fa7a22bf4ca38ac0ce6914edc, type: 3}
+  spriteIconRightDark: {fileID: 21300000, guid: 949d025a92cbd5848842fe160652bafe, type: 3}
+  spriteIconLeftLight: {fileID: 0}
+  spriteIconLeftDark: {fileID: 0}
   LeftBtn: {fileID: 4158416083772667155}
   nameTittle: {fileID: 4158416083181570278}
   Bgr: {fileID: 4158416083757148472}
   bgrColors:
-  - {r: 0.427451, g: 0.49411768, b: 0.91372555, a: 1}
+  - {r: 0.25490198, g: 0.5058824, b: 0.80784315, a: 1}
   - {r: 0.19607845, g: 0.20000002, b: 0.21568629, a: 1}
 --- !u!1 &4158416083757148474
 GameObject:
@@ -251,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.454902, g: 0.5176471, b: 0.9450981, a: 1}
+  m_Color: {r: 0.25490198, g: 0.5058824, b: 0.80784315, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -1,20 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class PopUpHint : BasePopUP
 {
     public static PopUpHint instance;
+    public Image bgr;
+    public TMP_Text contentTxt;
+    public List<Color> colorBgr;
     public override void Awake()
     {
         base.Awake();
         instance = this;
+        
+    }
+    public override void Show(object data = null, int dir = 1)
+    {
+        base.Show(data, dir);
+        ChangeTheme();
+
     }
     public void  WatchAdGetHint()
     {
-        DataGame.SetInt(DataGame.AmountHint, DataGame.GetInt(DataGame.AmountHint)+10);
+        DataGame.SetInt(DataGame.AmountHint, DataGame.GetInt(DataGame.AmountHint)+10000);
         MyEvent.UpdateDataAmountHint?.Invoke();
         Hide();
     }
-
+    public override void ChangeTheme()
+    {
+        NameTheme theme = GameConfig.instance.nameTheme;
+        if (theme == NameTheme.Dark)
+        {
+            bgr.color = colorBgr[1];
+            contentTxt.color = GameConfig.instance.darkMode.colorText[(int)NameThemeText.White];
+        }
+        else
+        {
+            bgr.color = colorBgr[0];
+            contentTxt.color = GameConfig.instance.lightMode.colorText[(int)NameThemeText.Gray];
+        }
+    }
 }
