@@ -15,6 +15,9 @@ public static class DataGame
     //  first in game show tut
     public static string FTurtorial = "FTurtorial";
 
+    // shop
+    public static string Datapack = "Datapack";
+
     public static string GetDataJson(string key)
     {
         return PlayerPrefs.GetString(key);
@@ -106,11 +109,11 @@ public class HistoryPlayed
 {
     int maxSave = 30;
     [SerializeField]
-    public List<LevelHistoryPlay> historys; 
+    public List<LevelHistoryPlay> historys;
     public void AddDatalevel(Level dataLevel)
     {
         if (historys == null) historys = new List<LevelHistoryPlay>();
-        if(historys.Count >= maxSave)
+        if (historys.Count >= maxSave)
         {
             historys.RemoveAt(0);
         }
@@ -125,4 +128,7 @@ public class HistoryPlayed
     {
         return base.ToString();
     }
+
+  
 }
+

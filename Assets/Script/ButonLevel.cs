@@ -17,7 +17,7 @@ public class ButonLevel : MonoBehaviour
     public TMP_Text txtLevel;
     public TMP_Text TimeTxt;
     int timeFinish;
-    int level;
+    public int level;
     public Image bgr;
     public Sprite spriteDone;
     public Sprite spriteDoneDark;
@@ -78,6 +78,7 @@ public class ButonLevel : MonoBehaviour
     {
         this.nameState = nameState;
         txtLevel.text = nameLevel.ToString();
+        
         level = id;
         bool darkMode = GameConfig.instance.nameTheme == NameTheme.Dark;
         switch (nameState)

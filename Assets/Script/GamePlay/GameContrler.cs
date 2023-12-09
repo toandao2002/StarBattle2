@@ -78,7 +78,7 @@ public class GameContrler : MonoBehaviour
     private void OnDestroy()
     {
         MyEvent.GameWin -= GameWin;
-        SaveData();
+        
     }
 
     public void ResetNewGame()

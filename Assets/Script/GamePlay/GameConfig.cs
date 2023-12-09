@@ -105,8 +105,16 @@ public class GameConfig : MonoBehaviour
         }
         return dataLevelComon;
     }
-
-    
+    DataPack datapack;
+    public DataPack GetDataPack()
+    {
+        if(datapack == null)
+        {
+            datapack = Util.ConvertStringToObejct<DataPack>(DataGame.GetDataJson(DataGame.Datapack));
+        }
+        if (datapack == null) datapack = new DataPack();
+        return datapack;
+    }
 }
 public enum TextColor
 {

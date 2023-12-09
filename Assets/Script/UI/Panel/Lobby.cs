@@ -118,7 +118,7 @@ public class Lobby : BasePopUP
     public void HandleChangePanel()
     {
         GameConfig.instance.SetTypeGame(typeGame);
-        GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel1);
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2);
         Hide();
     }
 
