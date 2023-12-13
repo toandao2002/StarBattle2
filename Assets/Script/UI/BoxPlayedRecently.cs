@@ -47,9 +47,13 @@ public class BoxPlayedRecently : MonoBehaviour
 
 
     }
-    public void SetData(string namelevel, string dayplay, string state, int timeFinish, int level,  TypeGame typeGame)
+
+    
+    public void SetData( string nameLevel, string dayplay, string state, int timeFinish, int level,  TypeGame typeGame)
     {
-        this.nameLevel.text = namelevel ;
+        
+        nameLevel = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(typeGame)) +"-" + nameLevel;
+        this.nameLevel.text = nameLevel;
         this.dayPlay.text = dayplay ;
         this. state.text = state ;
         timeFinishInt = timeFinish;

@@ -24,7 +24,7 @@ public class HintMesageUI : MonoBehaviour
     public void ShowHint(TypeHint typeHint)
     {
         txt.text = GetDescription(typeHint);
-        title.text = "Hint";
+        title.text = Util.GetLocalizeRealString(Loc.ID.GamePlay.Hint);
 
         main.gameObject.SetActive(true);
         cg.DOFade(1, 1 / 2).From(0);
@@ -34,7 +34,7 @@ public class HintMesageUI : MonoBehaviour
     public void ShowNotice(string val)
     {
         txt.text = val;
-        title.text = "Notice";
+        title.text = Util.GetLocalizeRealString(Loc.ID.Common.Notification);
         main.gameObject.SetActive(true);
         cg.DOFade(1, 1 / 2).From(0);
         ChangeTheme();
@@ -66,17 +66,17 @@ public class HintMesageUI : MonoBehaviour
       
         }
     }
-  
+
     public string GetDescription(TypeHint typeHint)
     {
-        switch (typeHint)
+        /*switch (typeHint)
         {
             case TypeHint.None:
                 return "";
             case TypeHint.MoreTwoStar:
-                return "Has more star in row or column";
+                return Util.GetLocalizeRealString("/Hint/" + typeHint);
             case TypeHint.MustTwoWstar:
-                return "These two cells must be stars";
+                return Util.GetLocalizeRealString("/Hint/" + typeHint);
             case TypeHint.MustOneStar:
                 return "This cell must be a star";
             case TypeHint.TwoStarCorrect:
@@ -102,6 +102,13 @@ public class HintMesageUI : MonoBehaviour
             default:
                 return "No Hint";
                   
+        }*/
+        try
+        {
+            return Util.GetLocalizeRealString("/Hint/" + typeHint);
+        }
+        catch {
+            return Util.GetLocalizeRealString(Loc.ID.Hint.None);
         }
     }
 }

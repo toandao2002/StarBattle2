@@ -22,5 +22,26 @@ public static class Util
         T obj = JsonUtility.FromJson<T>(json);
         return obj;
     }
-   
+
+    public static string GetIdLocalLizeTypeGame (TypeGame typeGame)
+    {
+        switch (typeGame)
+        {
+            case TypeGame.Difficult:
+                return Loc.ID.Common.ExpertText;
+            case TypeGame.Medium:
+                return Loc.ID.Common.AdvancedText;
+            case TypeGame.Easy:
+                return Loc.ID.Common.BeginnerText;
+            case TypeGame.Genius:
+                return Loc.ID.Common.GeniusText;
+
+        }
+        // other ones, just use the base method
+        return Loc.ID.Common.BeginnerText;
+    }
+    public static string GetLocalizeRealString(string s)
+    {
+        return Wugner.Localize.Localization.GetEntry(null, s, "").Content;
+    }
 }

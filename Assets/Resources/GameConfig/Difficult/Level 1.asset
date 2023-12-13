@@ -41,6 +41,6 @@ MonoBehaviour:
     - {x: 5, y: 7}
     - {x: 3, y: 8}
   datalevel:
-    dayPlay: 
+    dayPlay: 12/13/2023 10:54:15 AM
     isfinished: 0
-    timeFinish: 0
+    timeFinish: 1

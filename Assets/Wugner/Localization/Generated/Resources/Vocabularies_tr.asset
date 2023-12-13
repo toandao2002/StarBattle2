@@ -13,9 +13,385 @@ MonoBehaviour:
   m_Name: Vocabularies_tr
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: OYNAMAK
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Acemi
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Geli\u015Fmi\u015F"
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Uzman
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Dahi
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Bildiri
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: tr
     FontName: 
     Content: Ev
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Son oynat\u0131lan"
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\u0130\u015Fleme"
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bitmi\u015F"
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Daha Fazla Bulma Bulma
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Ses efekti
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "M\xFCzik"
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Titre\u015Fim"
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Karanl\u0131k mod"
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Dil
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Sat\u0131n Al\u0131nan Geri Y\xFCkle"
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Nas\u0131l oynan\u0131r"
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "A\xE7\u0131k"
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Kapal\u0131"
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Almanca
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Rus\xE7a"
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\u0130ngilizce"
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Vietnam
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Ayarlar
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "A\xE7"
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Kapamak
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Mod Ba\u015Flang\u0131\xE7ta Seviye 0> 1 al\u0131n"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Geli\u015Fmi\u015F modda seviye 0> 1"
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Mod Uzman\u0131nda Seviye 0> 1"
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Mod Genius'ta Seviye 0> 1
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Ma\u011Faza"
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Kilitli
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Tebrik
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Tebrikler, yeni seviyenin ba\u015Far\u0131yla kilidini a\xE7t\u0131n\u0131z"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Ok\u015Famak"
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Tekrarlamak
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Kontrol etmek
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Geri alma
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\u0130pucu"
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Do\u011Fru hamleyi oynuyorsun"
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Yanl\u0131\u015F bir hareket yap\u0131yorsun"
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "10 ipucu al\u0131n"
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "10 ipucu almak i\xE7in bir reklam izleyin. Not: \u0130pu\xE7lar\u0131na
+      ihtiyac\u0131n var, g\xFCven bana"
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\u0130zle"
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Sat\u0131r veya s\xFCtunda 2'den fazla y\u0131ld\u0131z var"
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu pozisyona 2 y\u0131ld\u0131z yerle\u015Ftirmeli"
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu pozisyona 1 y\u0131ld\u0131z yerle\u015Ftirmeli"
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "S\u0131ralardaki veya s\xFCtunlardaki h\xFCcreler, zaten 2 y\u0131ld\u0131zlar\u0131
+      oldu\u011Fu i\xE7in noktalarla i\u015Faretlenmelidir"
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Vurgulanan alanda \xE7ok fazla nokta var"
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Vurgulanan kutu yanl\u0131\u015F pozisyonda"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Y\u0131ld\u0131z \xE7evresindeki kutular noktalarla i\u015Faretlenmelidir"
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu kutu bir y\u0131ld\u0131z olmal\u0131, aksi takdirde vurgulanan
+      alanda yeterli y\u0131ld\u0131z olmayacak"
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu kutu bir y\u0131ld\u0131z olmal\u0131, aksi takdirde vurgulanan
+      alanda yeterli y\u0131ld\u0131z olmayacak"
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Y\u0131ld\u0131z bu pozisyona yerle\u015Ftirilmelidir"
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum bir y\u0131ld\u0131zsa, vurgulanan alanda bo\u015F h\xFCcre
+      yok"
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum bir nokta ile i\u015Faretlenmelidir, \xE7\xFCnk\xFC aksi takdirde
+      belirlenen alan ek y\u0131ld\u0131zlar yerle\u015Ftiremez"
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum y\u0131ld\u0131z olamaz, aksi takdirde kalan h\xFCcreler yeterli
+      y\u0131ld\u0131zlara sahip olmaz"
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum y\u0131ld\u0131z olamaz, aksi takdirde kalan h\xFCcreler yeterli
+      y\u0131ld\u0131zlara sahip olmaz"
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum y\u0131ld\u0131z olamaz, aksi takdirde kalan h\xFCcreler yeterli
+      y\u0131ld\u0131zlara sahip olmaz"
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu konum y\u0131ld\u0131z olamaz, aksi takdirde kalan h\xFCcreler yeterli
+      y\u0131ld\u0131zlara sahip olmaz"
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\xDCzg\xFCn\xFCm Hata \xD6neri Sistemi"

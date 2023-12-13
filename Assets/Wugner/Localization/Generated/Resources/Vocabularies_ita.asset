@@ -13,9 +13,386 @@ MonoBehaviour:
   m_Name: Vocabularies_ita
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: GIOCARE
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Principiante
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Avanzate
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Esperto
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Genio
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Notifica
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: ita
     FontName: 
     Content: Casa
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Giocato recentemente
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: In lavorazione
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Finito
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ottieni pi\xF9 puzzle"
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Effetto sonoro
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Musica
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Vibrazione
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Modalit\xE0 scura"
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Lingua
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Restore acquistato
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Come giocare
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: SU
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Spento
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tedesco
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Russo
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Inglese
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Vietnamita
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Impostazioni
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Accendere
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Spegnere
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ottieni livello 0> 1 in modalit\xE0 principiante"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ottieni il livello 0> 1 in modalit\xE0 avanzata"
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ottieni livello 0> 1 in modalit\xE0 esperto"
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ottieni il livello 0> 1 in modalit\xE0 genio"
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Negozio
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Bloccato
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Congratulazioni
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Congratulazioni, hai sbloccato con successo il nuovo livello
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Oke
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Rigiocare
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Controllo
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Disfare
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Suggerimento
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Stai giocando la mossa giusta
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Stai facendo una mossa sbagliata
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Ottieni 10 suggerimenti
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: 'Guarda un annuncio per ricevere 10 suggerimenti. Nota: hai bisogno
+      di suggerimenti, fidati di me'
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Guarda AD
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Ci sono pi\xF9 di 2 stelle nella riga o nella colonna"
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Deve posizionare 2 stelle in questa posizione
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Deve posizionare 1 stella in questa posizione
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Le celle in righe o colonne devono essere contrassegnate con punti
+      perch\xE9 hanno gi\xE0 2 stelle"
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Ci sono troppi punti nell'area evidenziata
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "La casella evidenziata \xE8 nella posizione sbagliata"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Le scatole intorno alla stella dovrebbero essere contrassegnate con
+      punti
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Questa scatola deve essere una stella, altrimenti non ci saranno abbastanza
+      stelle nell'area evidenziata
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Questa scatola deve essere una stella, altrimenti non ci saranno abbastanza
+      stelle nell'area evidenziata
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: La stella dovrebbe essere collocata in questa posizione
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Se questa posizione \xE8 una stella, non ci sono celle vuote nell'area
+      evidenziata"
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa posizione deve essere contrassegnata con un punto perch\xE9
+      altrimenti l'area designata non sar\xE0 in grado di posizionare stelle aggiuntive"
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa posizione non pu\xF2 essere una stella altrimenti le celle rimanenti
+      non avranno abbastanza stelle"
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa posizione non pu\xF2 essere una stella altrimenti le celle rimanenti
+      non avranno abbastanza stelle"
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa posizione non pu\xF2 essere una stella altrimenti le celle rimanenti
+      non avranno abbastanza stelle"
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa posizione non pu\xF2 essere una stella altrimenti le celle rimanenti
+      non avranno abbastanza stelle"
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Scusate il sistema di suggestione dell'errore

@@ -7,9 +7,9 @@ public class ManageUi : MonoBehaviour
 {
     private void Awake()
     {
-        float sx = (Screen.width / 720f);
+  /*      float sx = (Screen.width / 720f);
         float sy = (Screen.height / 1280f);
-        this.GetComponent<CanvasScaler>().matchWidthOrHeight = (sx < sy ? 0 : 1);
+        this.GetComponent<CanvasScaler>().matchWidthOrHeight = (sx < sy ? 0 : 1);*/
     }
     public List<BasePopUP> popUps;
     public void ShowPopUp(NamePopUp namePopUp, object data = null, int dir = 1)

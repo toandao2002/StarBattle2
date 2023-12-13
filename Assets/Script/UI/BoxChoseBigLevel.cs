@@ -52,7 +52,7 @@ public class BoxChoseBigLevel : MonoBehaviour
     {
         
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,levels );
-        ChoseLevel_2.instance.tittle.ShowTittle(nameLevel);
+        ChoseLevel_2.instance.tittle.ShowTittle(txtLevel.text);
         GameConfig.instance.nameModePlay = nameLevel.Substring(0,nameLevel.Length-2);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
     }

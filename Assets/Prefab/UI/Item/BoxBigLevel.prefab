@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 8550995404608614475}
   - component: {fileID: 7795681819505212274}
   - component: {fileID: 7996217445145215770}
+  - component: {fileID: 1900747436316452902}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -317,7 +318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 293.1, y: 11.2}
+  m_AnchoredPosition: {x: 259.22, y: 11.2}
   m_SizeDelta: {x: 328, y: 45.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7795681819505212274
@@ -417,6 +418,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1900747436316452902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2937872054437329883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2812c779a1f8ea42b92867c5e0a4a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setAtRuntime: 0
+  _id: Common/BeginnerText
+  _showPreview: 0
+  _previewLanguage: en
 --- !u!1 &7320338340113335021
 GameObject:
   m_ObjectHideFlags: 0

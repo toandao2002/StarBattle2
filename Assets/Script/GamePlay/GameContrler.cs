@@ -15,11 +15,12 @@ public class GameContrler : MonoBehaviour
     HistoryPlayed historyPlayed = null;
     public List<ParticleSystem> fx;
     public List<GameObject> PosFx;
-
+ 
     private void Awake()
     {
         instance = this;
         MyEvent.GameWin += EfWin;
+        
     }
     
     public void Init()

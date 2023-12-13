@@ -13,9 +13,401 @@ MonoBehaviour:
   m_Name: Vocabularies_kr
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB180\uB2E4"
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCD08\uBCF4\uC790"
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uACE0\uAE09\uC758"
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC804\uBB38\uAC00"
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCC9C\uC7AC"
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uACF5\uACE0"
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: kr
     FontName: 
     Content: "\uC9D1"
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCD5C\uADFC\uC5D0 \uC7AC\uC0DD \uB41C"
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCC98\uB9AC"
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC644\uC131\uB41C"
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB354 \uB9CE\uC740 \uD37C\uC990\uC744 \uC5BB\uC73C\uC2ED\uC2DC\uC624"
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC74C\uD5A5 \uD6A8\uACFC"
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC74C\uC545"
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC9C4\uB3D9"
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2E4\uD06C \uBAA8\uB4DC"
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC5B8\uC5B4"
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAD6C\uB9E4 \uD55C \uBCF5\uC6D0"
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC8C\uC784 \uBC29\uBC95"
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "~\uC5D0"
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB044\uB2E4"
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB3C5\uC77C \uC0AC\uB78C"
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB7EC\uC2DC\uC544\uC778"
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC601\uC5B4"
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBCA0\uD2B8\uB0A8\uC5B4"
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC124\uC815"
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCF1C\uB2E4"
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB044\uB2E4"
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBAA8\uB4DC \uCD08\uBCF4\uC790\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744
+      \uC5BB\uC73C\uC2ED\uC2DC\uC624"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBAA8\uB4DC \uACE0\uAE09\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uAC00\uC838\uC635\uB2C8\uB2E4"
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBAA8\uB4DC \uC804\uBB38\uAC00\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744
+      \uC5BB\uC2B5\uB2C8\uB2E4"
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "Mode Genius\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uC5BB\uC73C\uC2ED\uC2DC\uC624"
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC00\uAC8C"
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC7A0\uACA8 \uC788\uC2B5\uB2C8\uB2E4"
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCD95\uD558\uD569\uB2C8\uB2E4"
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uCD95\uD558\uD569\uB2C8\uB2E4. \uC0C8\uB85C\uC6B4 \uC218\uC900\uC744
+      \uC131\uACF5\uC801\uC73C\uB85C \uC7A0\uAE08 \uD574\uC81C\uD588\uC2B5\uB2C8\uB2E4"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC624\uCF00"
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2E4\uC2DC \uD558\uB2E4"
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD655\uC778\uD558\uB2E4"
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC2E4\uD589 \uCDE8\uC18C"
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD78C\uD2B8"
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2F9\uC2E0\uC740 \uC62C\uBC14\uB978 \uC6C0\uC9C1\uC784\uC744\uD558\uACE0
+      \uC788\uC2B5\uB2C8\uB2E4"
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2F9\uC2E0\uC740 \uC798\uBABB\uB41C \uC6C0\uC9C1\uC784\uC744\uD558\uACE0
+      \uC788\uC2B5\uB2C8\uB2E4."
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "10 \uD78C\uD2B8\uB97C \uC5BB\uC73C\uC2ED\uC2DC\uC624"
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "10 \uAC1C\uC758 \uD78C\uD2B8\uB97C \uBC1B\uC73C\uB824\uBA74 \uAD11\uACE0\uB97C\uBCF4\uACE0
+      \uC788\uC2B5\uB2C8\uB2E4.\n\uCC38\uACE0 : \uD78C\uD2B8\uAC00 \uD544\uC694\uD569\uB2C8\uB2E4"
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAD11\uACE0\uBCF4\uAE30"
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD589\uC774\uB098 \uC5F4\uC5D0 2 \uAC1C \uC774\uC0C1\uC758 \uBCC4\uC774
+      \uC788\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uC5D0 \uBCC4 2 \uAC1C\uB97C \uB193\uC544\uC57C\uD569\uB2C8\uB2E4"
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uC5D0 \uBCC4 1 \uAC1C\uB97C \uB193\uC544\uC57C\uD569\uB2C8\uB2E4"
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD589\uC774\uB098 \uAE30\uB465\uC758 \uC140\uC740 \uC774\uBBF8 \uBCC4
+      2 \uAC1C\uAC00 \uC788\uAE30 \uB54C\uBB38\uC5D0 \uC810\uC73C\uB85C \uD45C\uC2DC\uB418\uC5B4\uC57C\uD569\uB2C8\uB2E4."
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC15\uC870 \uD45C\uC2DC\uB41C \uC601\uC5ED\uC5D0\uB294 \uC810\uC774
+      \uB108\uBB34 \uB9CE\uC2B5\uB2C8\uB2E4"
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC15\uC870 \uD45C\uC2DC\uB41C \uC0C1\uC790\uB294 \uC798\uBABB\uB41C
+      \uC704\uCE58\uC5D0 \uC788\uC2B5\uB2C8\uB2E4"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBCC4 \uC8FC\uBCC0\uC758 \uC0C1\uC790\uC5D0\uB294 \uC810\uC73C\uB85C
+      \uD45C\uC2DC\uB418\uC5B4\uC57C\uD569\uB2C8\uB2E4."
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC0C1\uC790\uB294 \uBCC4\uC774\uC5B4\uC57C\uD569\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uAC15\uC870 \uD45C\uC2DC\uB41C \uC601\uC5ED\uC5D0
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC0C1\uC790\uB294 \uBCC4\uC774\uC5B4\uC57C\uD569\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uAC15\uC870 \uD45C\uC2DC\uB41C \uC601\uC5ED\uC5D0
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBCC4\uC740\uC774 \uC704\uCE58\uC5D0 \uBC30\uCE58\uD574\uC57C\uD569\uB2C8\uB2E4"
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uAC00 \uBCC4\uC774\uB77C\uBA74 \uAC15\uC870 \uD45C\uC2DC\uB41C
+      \uC601\uC5ED\uC5D0 \uBE48 \uC140\uC774 \uC5C6\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uB294 \uC9C0\uC815\uB41C \uC601\uC5ED\uC774 \uCD94\uAC00
+      \uBCC4\uC744 \uBC30\uCE58 \uD560 \uC218 \uC5C6\uAE30 \uB54C\uBB38\uC5D0 \uC810\uC73C\uB85C
+      \uD45C\uC2DC\uB418\uC5B4\uC57C\uD569\uB2C8\uB2E4."
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uB294 \uBCC4\uC774 \uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uB098\uBA38\uC9C0 \uC140\uC5D0\uB294
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uB294 \uBCC4\uC774 \uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uB098\uBA38\uC9C0 \uC140\uC5D0\uB294
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uB294 \uBCC4\uC774 \uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uB098\uBA38\uC9C0 \uC140\uC5D0\uB294
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uC704\uCE58\uB294 \uBCC4\uC774 \uB420 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.
+      \uADF8\uB807\uC9C0 \uC54A\uC73C\uBA74 \uB098\uBA38\uC9C0 \uC140\uC5D0\uB294
+      \uBCC4\uC774 \uCDA9\uBD84\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC8C4\uC1A1\uD569\uB2C8\uB2E4. \uC624\uB958 \uC81C\uC548 \uC2DC\uC2A4\uD15C"

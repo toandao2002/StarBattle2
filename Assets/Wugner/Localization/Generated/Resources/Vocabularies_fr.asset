@@ -13,9 +13,389 @@ MonoBehaviour:
   m_Name: Vocabularies_fr
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: JOUER
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "D\xE9butant"
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Avanc\xE9"
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Expert
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "G\xE9nie"
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Notification
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: fr
     FontName: 
     Content: Maison
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Jou\xE9 r\xE9cemment"
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Traitement
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Fini
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Obtenez plus de puzzle
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Effet sonore
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Musique
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Vibration
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Mode sombre
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Langue
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Restaurer achet\xE9"
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Comment jouer
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Sur
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "D\xE9sactiv\xE9"
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Allemand
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: russe
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Anglais
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: vietnamien
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Param\xE8tres"
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Allumer
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "\xC9teindre"
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Obtenez le niveau 0> 1 en mode d\xE9butant"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Obtenez le niveau 0> 1 en mode avanc\xE9"
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Obtenez un niveau 0> 1 en mode expert
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Obtenez le niveau 0> 1 en mode g\xE9nie"
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Boutique
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Ferm\xE9 \xE0 cl\xE9"
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "F\xE9licitations"
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "F\xE9licitations, vous avez r\xE9ussi \xE0 d\xE9verrouiller le nouveau
+      niveau"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Goard
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Rejouer
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "V\xE9rifier"
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: annuler
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Indice
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Vous jouez le bon mouvement
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Vous faites un mauvais pas.
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Obtenez 10 indices
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: 'Regardez une annonce pour recevoir 10 conseils.
+
+      Remarque: vous
+      avez besoin d''indices, croyez-moi'
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Regarder l'annonce
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Il y a plus de 2 \xE9toiles dans la ligne ou la colonne"
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Doit placer 2 \xE9toiles dans cette position"
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Doit placer 1 \xE9toile dans cette position"
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Les cellules des lignes ou des colonnes doivent \xEAtre marqu\xE9es
+      de points car ils ont d\xE9j\xE0 2 \xE9toiles"
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Il y a trop de points dans la zone mis en \xE9vidence"
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "La bo\xEEte en surbrillance est dans la mauvaise position"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Les bo\xEEtes autour de l'\xE9toile doivent \xEAtre marqu\xE9es de
+      points"
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cette bo\xEEte doit \xEAtre une \xE9toile, sinon il n'y aura pas assez
+      d'\xE9toiles dans la zone en surbrillance"
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cette bo\xEEte doit \xEAtre une \xE9toile, sinon il n'y aura pas assez
+      d'\xE9toiles dans la zone en surbrillance"
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "L'\xE9toile doit \xEAtre plac\xE9e dans cette position"
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Si cet emplacement est une \xE9toile, il n'y a pas de cellules vides
+      dans la zone en surbrillance"
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cette position doit \xEAtre marqu\xE9e d'un point car sinon la zone
+      d\xE9sign\xE9e ne pourra pas placer des \xE9toiles suppl\xE9mentaires"
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cet emplacement ne peut pas \xEAtre une \xE9toile sinon les cellules
+      restantes n'auront pas assez d'\xE9toiles"
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cet emplacement ne peut pas \xEAtre une \xE9toile sinon les cellules
+      restantes n'auront pas assez d'\xE9toiles"
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cet emplacement ne peut pas \xEAtre une \xE9toile sinon les cellules
+      restantes n'auront pas assez d'\xE9toiles"
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cet emplacement ne peut pas \xEAtre une \xE9toile sinon les cellules
+      restantes n'auront pas assez d'\xE9toiles"
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Syst\xE8me de suggestion d'erreur d\xE9sol\xE9"

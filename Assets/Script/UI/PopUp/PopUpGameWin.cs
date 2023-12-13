@@ -34,16 +34,26 @@ public class PopUpGameWin : BasePopUP
     public void NextLevel()
     {
 
-     
-        GameConfig.instance.SetLevelCurrent(GameConfig.instance.GetCurrentLevel().nameLevel + 1);
-        /* DataLevel datalevel = DataGame.GetDataLevel(GameConfig.instance.typeGame, GameConfig.instance.GetCurrentLevel().nameLevel+1);
-         if (datalevel != null)
-         {
-             GameConfig.instance.GetCurrentLevel().datalevel = datalevel;
-         }*/
-        GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetCurrentLevel().datalevel.timeFinish);
-        GameContrler.instance.board.InitBoard();
-       
+        int levelNext = GameConfig.instance.GetCurrentLevel().nameLevel + 1;
+        
+        bool bought = GameConfig.instance.GetDataPack().CheckLevelHasBeenBought(levelNext, GameConfig.instance.typeGame, GameConfig.instance.levelCommon);
+        if (bought) {
+            GameConfig.instance.SetLevelCurrent(levelNext);
+            /* DataLevel datalevel = DataGame.GetDataLevel(GameConfig.instance.typeGame, GameConfig.instance.GetCurrentLevel().nameLevel+1);
+             if (datalevel != null)
+             {
+                 GameConfig.instance.GetCurrentLevel().datalevel = datalevel;
+             }*/
+            GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetCurrentLevel().datalevel.timeFinish);
+            GameContrler.instance.board.InitBoard();
+
+        }
+        else
+        {
+            GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,1,-1);
+            PopUpContinuePlay.instance.Show(1,-1);
+        }
+
         Hide(-1);
     }
     public void Show2(object dta)

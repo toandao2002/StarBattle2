@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a31e421615799a498601fae47ece2fc, type: 3}
+  m_Name: Level 86
+  m_EditorClassIdentifier: 
+  nameLevel: 86
+  typeGame: 3
+  dataBoard:
+    size: 9
+    dataRegion: '1 1 1 1 3 3 3 3 3 1 1 1 1 3 3 3 3 3 0 2 1 1 4 4 5 5 5 0 2 2 4 4
+      4 5 5 5 0 2 2 0 0 0 0 0 5 0 0 0 0 8 0 8 8 5 7 0 0 0 8 8 8 8 8 7 0 0 0 0 8 6
+      6 8 7 7 7 7 8 8 6 6 6 '
+    dataPosStar: '0 0 0 7 1 3 1 5 2 1 2 7 3 3 3 5 4 1 4 8 5 4 5 6 6 0 6 2 7 4 7 6
+      8 2 8 8 '
+    posCorrectStar:
+    - {x: 7, y: 6}
+    - {x: 8, y: 8}
+    - {x: 7, y: 4}
+    - {x: 5, y: 4}
+    - {x: 5, y: 6}
+    - {x: 8, y: 2}
+    - {x: 6, y: 0}
+    - {x: 6, y: 2}
+    - {x: 4, y: 1}
+    - {x: 2, y: 1}
+    - {x: 3, y: 3}
+    - {x: 3, y: 5}
+    - {x: 2, y: 7}
+    - {x: 4, y: 8}
+    - {x: 0, y: 0}
+    - {x: 1, y: 3}
+    - {x: 1, y: 5}
+    - {x: 0, y: 7}
+  datalevel:
+    dayPlay: 
+    isfinished: 0
+    timeFinish: 0

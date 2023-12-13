@@ -10,7 +10,21 @@ public class LevelCommon : ScriptableObject
     public List<SubLevel> levelMedium;
     public List<SubLevel> levelDifficult;
     public List<SubLevel> levelGenius;
-     
+    public List<SubLevel> GetSubLevel(TypeGame typeGame)
+    {
+        switch (typeGame) { 
+            case TypeGame.Easy:
+                return levelEasy;
+            case TypeGame.Medium:
+                return levelMedium;
+            case TypeGame.Difficult:
+                return levelDifficult;
+            case TypeGame.Genius:
+                return levelGenius;
+        }
+        return null;
+
+    }
 }
 [System.Serializable]
 public class SubLevel

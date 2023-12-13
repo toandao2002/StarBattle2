@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f220486053d77954fbf9367380d1397f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isON: 0
+  isON: 1
   btn: {fileID: 984933279}
   Circle: {fileID: 8682396828098593518}
   state: {fileID: 9631963991375952}
@@ -412,7 +412,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SettingUI, Assembly-CSharp
+        m_MethodName: TurnSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   TimeDeLay: 0
   hasEffect: 1
   onEnter:
@@ -513,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7574530324207657863}
   - component: {fileID: 5479648866030673426}
+  - component: {fileID: 3552437529641775679}
   - component: {fileID: 7043319373483834444}
   m_Layer: 5
   m_Name: NameSetting
@@ -548,6 +561,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7767763170434844616}
   m_CullTransparentMesh: 1
+--- !u!114 &3552437529641775679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767763170434844616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2812c779a1f8ea42b92867c5e0a4a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setAtRuntime: 0
+  _id: Setting/SoundEffectText
+  _showPreview: 0
+  _previewLanguage: en
 --- !u!114 &7043319373483834444
 MonoBehaviour:
   m_ObjectHideFlags: 0

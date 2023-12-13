@@ -13,9 +13,384 @@ MonoBehaviour:
   m_Name: Vocabularies_es
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: JUGAR
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Principiante
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Avanzado
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Experto
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Genio
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Notificaci\xF3n"
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: es
     FontName: 
     Content: Hogar
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Recientemente jugado
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Procesando
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Finalizado
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Obtener m\xE1s rompecabezas"
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Efecto de sonido
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "M\xFAsica"
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Vibraci\xF3n"
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Modo oscuro
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Idioma
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Restaurar comprado
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "C\xF3mo jugar"
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: En
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Apagado
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Alem\xE1n"
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Ruso
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Ingl\xE9s"
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Vietnamita
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Ajustes
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Encender
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Apagar
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Obtener nivel 0> 1 en Mode Beginner
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Obtener nivel 0> 1 en modo avanzado
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Obtener nivel 0> 1 en el experto en modo
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Obtener nivel 0> 1 en el genio del modo
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Comercio
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Encerrado
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Felicitaci\xF3n"
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Felicitaciones, has desbloqueado con \xE9xito el nuevo nivel"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Oke
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Repetici\xF3n"
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Controlar
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Deshacer
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Pista
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Est\xE1s jugando el movimiento correcto"
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Est\xE1s haciendo un movimiento incorrecto"
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Obtener 10 sugerencias
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Mire un anuncio para recibir 10 pistas. Nota: necesitas pistas, cr\xE9eme"
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Ver anuncio
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Hay m\xE1s de 2 estrellas en la fila o columna"
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Debe colocar 2 estrellas en esta posici\xF3n"
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Debe colocar 1 estrella en esta posici\xF3n"
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Las celdas en filas o columnas deben estar marcadas con puntos porque
+      ya tienen 2 estrellas
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Hay demasiados puntos en el \xE1rea resaltada"
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "El cuadro resaltado est\xE1 en la posici\xF3n incorrecta"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Las cajas alrededor de la estrella deben estar marcadas con puntos
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta caja debe ser una estrella, de lo contrario no habr\xE1 suficientes
+      estrellas en el \xE1rea resaltada"
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta caja debe ser una estrella, de lo contrario no habr\xE1 suficientes
+      estrellas en el \xE1rea resaltada"
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "La estrella debe colocarse en esta posici\xF3n"
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Si esta ubicaci\xF3n es una estrella, no hay celdas vac\xEDas en el
+      \xE1rea resaltada"
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta posici\xF3n debe estar marcada con un punto porque de lo contrario
+      el \xE1rea designada no podr\xE1 colocar estrellas adicionales"
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta ubicaci\xF3n no puede ser una estrella, de lo contrario, las c\xE9lulas
+      restantes no tendr\xE1n suficientes estrellas"
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta ubicaci\xF3n no puede ser una estrella, de lo contrario, las c\xE9lulas
+      restantes no tendr\xE1n suficientes estrellas"
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta ubicaci\xF3n no puede ser una estrella, de lo contrario, las c\xE9lulas
+      restantes no tendr\xE1n suficientes estrellas"
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta ubicaci\xF3n no puede ser una estrella, de lo contrario, las c\xE9lulas
+      restantes no tendr\xE1n suficientes estrellas"
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Lo siento Sistema de sugerencia de error

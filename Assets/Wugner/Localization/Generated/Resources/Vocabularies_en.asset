@@ -13,9 +13,384 @@ MonoBehaviour:
   m_Name: Vocabularies_en
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: PLAY
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Beginner
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Advanced
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Expert
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Genius
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Notification
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: en
     FontName: 
     Content: Home
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Recently played
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Processing
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Finished
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get more puzzle
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Sound effect
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Music
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Vibration
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Dark mode
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Language
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Restore purchased
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: How to play
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: On
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Off
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: German
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Russian
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: English
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Vietnamese
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Settings
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Turn on
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Turn off
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get Level 0 > 1 in mode beginner
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get Level 0 > 1 in mode advanced
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get Level 0 > 1 in mode expert
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get Level 0 > 1 in mode Genius
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Shop
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Locked
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Congratulation
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Congratulations, You have successfully unlocked the new level
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Oke
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Replay
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Check
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Undo
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Hint
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: You are playing the right move
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: You are making a wrong move.
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Get 10 Hints
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: "Watch an ad to receive 10 hints. \nNote : You need hints, trust me"
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Watch ad
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: There are more than 2 stars in the row or column
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Must place 2 stars in this position
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Must place 1 star in this position
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Cells in rows or columns should be marked with dots because they already
+      have 2 stars
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: There are too many dots in the highlighted area
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: The highlighted box is in the wrong position
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: The boxes around the star should be marked with dots
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This box must be a star, otherwise there won't be enough stars in the
+      highlighted area
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This box must be a star, otherwise there won't be enough stars in the
+      highlighted area
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Star should be placed in this position
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: If this location is a star, there are no empty cells in the highlighted
+      area
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This position must be marked with a dot because otherwise the designated
+      area will not be able to place additional stars
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This location cannot be a star otherwise the remaining cells will not
+      have enough stars
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This location cannot be a star otherwise the remaining cells will not
+      have enough stars
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This location cannot be a star otherwise the remaining cells will not
+      have enough stars
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This location cannot be a star otherwise the remaining cells will not
+      have enough stars
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Sorry error suggestion system

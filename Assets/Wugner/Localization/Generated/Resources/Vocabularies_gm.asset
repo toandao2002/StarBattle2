@@ -13,9 +13,384 @@ MonoBehaviour:
   m_Name: Vocabularies_gm
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: SPIELEN
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Anf\xE4nger"
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Fortschrittlich
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Experte
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Genius
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Benachrichtigung
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: gm
     FontName: 
     Content: Heim
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "K\xFCrzlich gespielt"
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Wird bearbeitet
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Fertig
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Holen Sie sich mehr R\xE4tsel"
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Sound-Effekt
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Musik
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Vibration
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Dunkler Modus
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Sprache
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Wiedergekauft wiederherstellen
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Spielanleitung
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: An
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Aus
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Deutsch
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Russisch
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Englisch
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Vietnamesisch
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Einstellungen
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Anmachen
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Abschalten
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Holen Sie sich Stufe 0> 1 im Modusanf\xE4nger"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Nehmen Sie Stufe 0> 1 im Modus Fortgeschrittene
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Holen Sie sich Level 0> 1 im Modus -Experten
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Holen Sie sich Level 0> 1 im Modus Genie
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Gesch\xE4ft"
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Gesperrt
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Herzlichen Gl\xFCckwunsch"
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Herzlichen Gl\xFCckwunsch, Sie haben das neue Level erfolgreich freigeschaltet"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Oke
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Wiederholung
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "\xDCberpr\xFCfen"
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "R\xFCckg\xE4ngig machen"
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Hinweis
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Sie spielen den richtigen Zug
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Sie machen einen falschen Schritt
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Holen Sie sich 10 Hinweise
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: 'Sehen Sie sich eine Anzeige an, um 10 Hinweise zu erhalten. Hinweis:
+      Sie brauchen Hinweise, vertrauen Sie mir'
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: AD AD ansehen
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Es gibt mehr als 2 Sterne in der Zeile oder Spalte
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Muss 2 Sterne in diese Position platzieren
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Muss 1 Stern in diese Position platzieren
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Zellen in Zeilen oder S\xE4ulen sollten mit Punkten markiert sein,
+      weil sie bereits 2 Sterne haben"
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Es gibt zu viele Punkte im hervorgehobenen Bereich
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Die hervorgehobene Box befindet sich in der falschen Position
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Die Kisten um den Stern sollten mit Punkten gekennzeichnet sein
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Diese Box muss ein Stern sein, sonst gibt es im hervorgehobenen Bereich
+      nicht genug Sterne
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Diese Box muss ein Stern sein, sonst gibt es im hervorgehobenen Bereich
+      nicht genug Sterne
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Stern sollte in diese Position platziert werden
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Wenn dieser Ort ein Stern ist, gibt es im hervorgehobenen Bereich keine
+      leeren Zellen
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Diese Position muss mit einem Punkt markiert werden
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht genug Sterne
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht genug Sterne
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht genug Sterne
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht genug Sterne
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Entschuldigung Fehlervorschlag System

@@ -107,10 +107,14 @@ public class ChoseLevel_2 : BasePopUP
         MyEvent.ClickBack = Back;
         
     }
+    public void ChangeLanguage()
+    {
+        tittle.ShowTittle(Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(GameConfig.instance.typeGame)));
+    }
     public void GetData()
     {
         List<SubLevel> subLevels = GameConfig.instance.GetCurrentSubs();
-        tittle.ShowTittle(subLevels[0].nameSubLevel.Substring(0, subLevels[0].nameSubLevel.Length - 2));
+        ChangeLanguage();
         levels = new List<Level>();
         for(int i = 0; i< subLevels.Count; i++)
         {

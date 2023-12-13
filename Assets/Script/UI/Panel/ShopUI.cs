@@ -126,6 +126,30 @@ public class ShopUI : BasePopUP
             cnt++;
             cntLevle += s.GetAmountLevel();
         }
+        cnt = 0;
+        cntLevle = 0;
+        canBuy = true;
+        foreach (SubLevel s in levelCommon.levelGenius)
+        {
+            BoxBuyPack boxBuyPack = null;
+            if (s.isNeedBuy && dataPack.CheckPackBeBought(TypeGame.Genius, cnt))
+            {
+
+            }
+            else if (s.isNeedBuy && !dataPack.CheckPackBeBought(TypeGame.Genius, cnt) && canBuy)
+            {
+                canBuy = false;
+                boxBuyPack = Instantiate(boxBuyPackPref, content);
+                boxBuyPack.init(true, s, TypeGame.Genius, dataPack, cnt, cntLevle, cntLevle + s.GetAmountLevel());
+            }
+            else if (s.isNeedBuy)
+            {
+                boxBuyPack = Instantiate(boxBuyPackPref, content);
+                boxBuyPack.init(false, s, TypeGame.Genius, dataPack, cnt, cntLevle, cntLevle + s.GetAmountLevel());
+            }
+            cnt++;
+            cntLevle += s.GetAmountLevel();
+        }
     }
     public override void ChangeTheme()
     {

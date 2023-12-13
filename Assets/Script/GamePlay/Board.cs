@@ -11,6 +11,10 @@ public class Board : MonoBehaviour
     public int sizeBoard;
     public bool isModeMakeLevel;
     public bool isFinish;
+
+    public GameObject posLeftScreen;
+    public GameObject posLeftBoard;
+
     List<Vector2Int> direction = new List<Vector2Int>() {
         new Vector2Int(0,-1),  //l
         new Vector2Int(-1,-1),  //l-t
@@ -24,9 +28,18 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Camera cam = Camera.main;
+        Vector3 pos1 = cam.ScreenToWorldPoint(posLeftScreen.transform.position);
+        Vector3 pos2 = cam.ScreenToWorldPoint(posLeftBoard.transform.position);
+        if (pos1.x >= pos2.x- 0.01)
+        {
+            float valScale = pos1.x / (pos2.x - 0.5f);
+            this.gameObject.transform.localScale = new Vector3(valScale, valScale);
+        }
         
+
     }
-    
+
     private void OnEnable()
     {
         if (isModeMakeLevel)
@@ -38,16 +51,20 @@ public class Board : MonoBehaviour
             InitBoard();
         }
     }
+    public void ChangeLanguage()
+    {
+        title.ShowTittle(Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(GameConfig.instance.typeGame)) +" "+ GameConfig.instance.GetCurrentLevel().nameLevel);
+    }
     public void InitBoardMakeLevel(bool isClear)
     {
+        ChangeLanguage();
         MakeLevelController.instance.SetModeSetRegion();
         GameContrler.instance.ResetNewGame();
         if (isClear)
         {
             MakeLevelController.instance.GetLevel().dataBoard.ResetData();
         }
-        GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel());
-        title.SetLevelTittle(GameConfig.instance.nameModePlay +" "+GameConfig.instance.GetCurrentLevel().nameLevel);
+        GameConfig.instance.SetLevelCurrentMakeLevel(MakeLevelController.instance.GetLevel()); 
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -168,7 +185,7 @@ public class Board : MonoBehaviour
         isFinish = GameConfig.instance.GetCurrentLevel().datalevel.isfinished  ;
         UpdateOldDataStaus();
         GameContrler.instance.ResetNewGame();
-        title.SetLevelTittle(GameConfig.instance.nameModePlay+ " "+ GameConfig.instance.GetCurrentLevel().nameLevel);
+        ChangeLanguage();
         cells = new List<List<Cell>>();
 
         for (int i = 0; i < sizeBoard; i++)
@@ -373,10 +390,10 @@ public class Board : MonoBehaviour
         }
         return result;
     }
-    bool BeingCorrectPath;
+    bool DontBeingCorrectPath;
     public void  CheckCorrec()
     {
-        BeingCorrectPath = false;
+        DontBeingCorrectPath = false;
         for (int i = 0; i < sizeBoard; i++)
         {
             for (int j = 0; j < sizeBoard; j++)
@@ -386,7 +403,7 @@ public class Board : MonoBehaviour
                     if (!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos))
                     {
                         Debug.Log("ko dung");
-                        BeingCorrectPath = true;
+                        DontBeingCorrectPath = true;
                         break;
                     }
                     
@@ -396,20 +413,20 @@ public class Board : MonoBehaviour
                     if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos))
                     {
                         Debug.Log("ko dung");
-                        BeingCorrectPath = true;
+                        DontBeingCorrectPath = true;
                         break;
                     }
                 }
             }
         }
-        if (BeingCorrectPath)
+        if (DontBeingCorrectPath)
         {
-            HintMesageUI.instance.ShowNotice("You are taking the wrong step"); 
+            HintMesageUI.instance.ShowNotice(Util.GetLocalizeRealString(Loc.ID.GamePlay.CheckInCorrectText)); 
         }
         else
-        { 
+        {
 
-            HintMesageUI.instance.ShowNotice("You are going right");
+            HintMesageUI.instance.ShowNotice(Util.GetLocalizeRealString(Loc.ID.GamePlay.CheckCorrectText));
         }
 
     }
@@ -424,7 +441,7 @@ public class Board : MonoBehaviour
                 {
                     if(!GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(cells[i][j].pos)){
                         Debug.Log("ko dung");
-                        BeingCorrectPath = true;
+                        DontBeingCorrectPath = true;
                         return false;
                     }
                     else

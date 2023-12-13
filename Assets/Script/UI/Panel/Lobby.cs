@@ -77,7 +77,7 @@ public class Lobby : BasePopUP
                  
                 try
                 { 
-                    obj.SetData(historyPlayed.historys[i].typeGame.ToString().ToString(historyPlayed.historys[i].typeGame) + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
+                    obj.SetData(""+ historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
                     historyPlayed.historys[i].isfinished == true ? "Finished" : "Process", historyPlayed.historys[i].timeFinish
                      , historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].typeGame
                     );

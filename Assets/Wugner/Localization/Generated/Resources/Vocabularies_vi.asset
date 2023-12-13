@@ -13,9 +13,401 @@ MonoBehaviour:
   m_Name: Vocabularies_vi
   m_EditorClassIdentifier: 
   _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "CH\u01A0I"
+  - ID: Common/BeginnerText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "T\xE2n th\u1EE7"
+  - ID: Common/AdvancedText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "N\xE2ng cao"
+  - ID: Common/ExpertText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Chuy\xEAn gia"
+  - ID: Common/GeniusText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Thi\xEAn t\xE0i"
+  - ID: Common/Notification
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Th\xF4ng b\xE1o"
   - ID: Home/HomeText
     Type: 0
     Remark: 
     Language: vi
     FontName: 
     Content: "Trang ch\u1EE7"
+  - ID: Home/RecentPlayedText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "G\u1EA7n \u0111\xE2y \u0111\xE3 ch\u01A1i"
+  - ID: Home/ProcessText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "X\u1EED l\xFD"
+  - ID: Home/FinishedText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ho\xE0n th\xE0nh"
+  - ID: ChoseLevel/GetMorePuzzle
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn \u0111\u01B0\u1EE3c nhi\u1EC1u c\xE2u \u0111\u1ED1 h\u01A1n"
+  - ID: Setting/SoundEffectText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Hi\u1EC7u \u1EE9ng \xE2m thanh"
+  - ID: Setting/MusicText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "\xC2m nh\u1EA1c"
+  - ID: Setting/VibrationText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Rung \u0111\u1ED9ng"
+  - ID: Setting/DarkModeText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u1EBF \u0111\u1ED9 t\u1ED1i"
+  - ID: Setting/LanguageText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ng\xF4n ng\u1EEF"
+  - ID: Setting/RestorePurchasedText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Kh\xF4i ph\u1EE5c mua"
+  - ID: Setting/HowToPlayText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "L\xE0m th\u1EBF n\xE0o \u0111\u1EC3 ch\u01A1i"
+  - ID: Setting/OnText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "TR\xCAN"
+  - ID: Setting/OffText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "T\u1EAFt"
+  - ID: Setting/GermanText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ti\u1EBFng \u0110\u1EE9c"
+  - ID: Setting/RussianText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ti\u1EBFng Nga"
+  - ID: Setting/EnglishText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ti\u1EBFng Anh"
+  - ID: Setting/VietnameseText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ti\u1EBFng Vi\u1EC7t"
+  - ID: Setting/SettingsText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE0i \u0111\u1EB7t"
+  - ID: Setting/On
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EADt"
+  - ID: Setting/Off
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "T\u1EAFt"
+  - ID: Shop/GetLevelInModeBegginer
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn c\u1EA5p \u0111\u1ED9 0> 1 trong ng\u01B0\u1EDDi m\u1EDBi
+      b\u1EAFt \u0111\u1EA7u ch\u1EBF \u0111\u1ED9"
+  - ID: Shop/GetLevelInModeAdvanced
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn c\u1EA5p \u0111\u1ED9 0> 1 trong ch\u1EBF \u0111\u1ED9 n\xE2ng
+      cao"
+  - ID: Shop/GetLevelInModeExpert
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn c\u1EA5p 0> 1 trong chuy\xEAn gia ch\u1EBF \u0111\u1ED9"
+  - ID: Shop/GetLevelInModeGenius
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn c\u1EA5p \u0111\u1ED9 0> 1 trong ch\u1EBF \u0111\u1ED9 Genius"
+  - ID: Shop/ShopText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\u1EEDa h\xE0ng"
+  - ID: Shop/LockedText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Kh\xF3a"
+  - ID: Shop/CongratulationText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\xFAc m\u1EEBng"
+  - ID: Shop/CongratulationContentText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Xin ch\xFAc m\u1EEBng, b\u1EA1n \u0111\xE3 m\u1EDF kh\xF3a th\xE0nh
+      c\xF4ng"
+  - ID: Shop/OkeText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: Oke
+  - ID: GamePlay/ReplayText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ph\xE1t l\u1EA1i"
+  - ID: GamePlay/Check
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ki\u1EC3m tra"
+  - ID: GamePlay/Undo
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ho\xE0n t\xE1c"
+  - ID: GamePlay/Hint
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "G\u1EE3i \xFD"
+  - ID: GamePlay/CheckCorrectText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n \u0111ang ch\u01A1i \u0111\xFAng b\u01B0\u1EDBc"
+  - ID: GamePlay/CheckInCorrectText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n \u0111ang th\u1EF1c hi\u1EC7n m\u1ED9t \u0111\u1ED9ng th\xE1i
+      sai"
+  - ID: GamePlay/Get10HintsText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Nh\u1EADn 10 g\u1EE3i \xFD"
+  - ID: GamePlay/PopUpHintContent
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Xem m\u1ED9t qu\u1EA3ng c\xE1o \u0111\u1EC3 nh\u1EADn 10 g\u1EE3i \xFD.
+      L\u01B0u \xFD: B\u1EA1n c\u1EA7n g\u1EE3i \xFD, h\xE3y tin t\xF4i"
+  - ID: GamePlay/WatchAdText
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Xem qu\u1EA3ng c\xE1o"
+  - ID: Hint/MoreTwoStar
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xF3 h\u01A1n 2 sao trong h\xE0ng ho\u1EB7c c\u1ED9t"
+  - ID: Hint/MustTwoWstar
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ph\u1EA3i \u0111\u1EB7t 2 sao \u1EDF v\u1ECB tr\xED n\xE0y"
+  - ID: Hint/MustOneStar
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ph\u1EA3i \u0111\u1EB7t 1 sao \u1EDF v\u1ECB tr\xED n\xE0y"
+  - ID: Hint/TwoStarCorrect
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c \xF4 trong c\xE1c h\xE0ng ho\u1EB7c c\u1ED9t n\xEAn \u0111\u01B0\u1EE3c
+      \u0111\xE1nh d\u1EA5u b\u1EB1ng c\xE1c ch\u1EA5m v\xEC ch\xFAng \u0111\xE3
+      c\xF3 2 sao"
+  - ID: Hint/ManyDot
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xF3 qu\xE1 nhi\u1EC1u d\u1EA5u ch\u1EA5m trong khu v\u1EF1c n\u1ED5i
+      b\u1EADt"
+  - ID: Hint/IncorrectPos
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\u1ED9p \u0111\u01B0\u1EE3c t\xF4 s\xE1ng \u1EDF v\u1ECB tr\xED sai"
+  - ID: Hint/Arround
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c h\u1ED9p xung quanh ng\xF4i sao n\xEAn \u0111\u01B0\u1EE3c \u0111\xE1nh
+      d\u1EA5u b\u1EB1ng c\xE1c ch\u1EA5m"
+  - ID: Hint/MustClickMoreOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\u1ED9p n\xE0y ph\u1EA3i l\xE0 m\u1ED9t ng\xF4i sao, n\u1EBFu kh\xF4ng
+      s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7 sao trong khu v\u1EF1c \u0111\u01B0\u1EE3c
+      t\xF4 s\xE1ng"
+  - ID: Hint/ShouldOneStarInRegion
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\u1ED9p n\xE0y ph\u1EA3i l\xE0 m\u1ED9t ng\xF4i sao, n\u1EBFu kh\xF4ng
+      s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7 sao trong khu v\u1EF1c \u0111\u01B0\u1EE3c
+      t\xF4 s\xE1ng"
+  - ID: Hint/ShouldClickStarInRegion
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ng\xF4i sao n\xEAn \u0111\u01B0\u1EE3c \u0111\u1EB7t \u1EDF v\u1ECB
+      tr\xED n\xE0y"
+  - ID: Hint/MarkDotUnlessHasCellEmpty
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "N\u1EBFu v\u1ECB tr\xED n\xE0y l\xE0 m\u1ED9t ng\xF4i sao, kh\xF4ng
+      c\xF3 \xF4 tr\u1ED1ng trong khu v\u1EF1c \u0111\u01B0\u1EE3c t\xF4 s\xE1ng"
+  - ID: Hint/ShouldDotBecauseSquare
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "V\u1ECB tr\xED n\xE0y ph\u1EA3i \u0111\u01B0\u1EE3c \u0111\xE1nh d\u1EA5u
+      b\u1EB1ng m\u1ED9t d\u1EA5u ch\u1EA5m v\xEC n\u1EBFu kh\xF4ng khu v\u1EF1c
+      \u0111\u01B0\u1EE3c ch\u1EC9 \u0111\u1ECBnh s\u1EBD kh\xF4ng th\u1EC3 \u0111\u1EB7t
+      c\xE1c ng\xF4i sao b\u1ED5 sung"
+  - ID: Hint/MustMarkDot
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "V\u1ECB tr\xED n\xE0y kh\xF4ng th\u1EC3 l\xE0 m\u1ED9t ng\xF4i sao
+      n\u1EBFu kh\xF4ng c\xE1c \xF4 c\xF2n l\u1EA1i s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7
+      sao"
+  - ID: Hint/DotByRegionAdvance
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "V\u1ECB tr\xED n\xE0y kh\xF4ng th\u1EC3 l\xE0 m\u1ED9t ng\xF4i sao
+      n\u1EBFu kh\xF4ng c\xE1c \xF4 c\xF2n l\u1EA1i s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7
+      sao"
+  - ID: Hint/ShoudlColumnAround
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "V\u1ECB tr\xED n\xE0y kh\xF4ng th\u1EC3 l\xE0 m\u1ED9t ng\xF4i sao
+      n\u1EBFu kh\xF4ng c\xE1c \xF4 c\xF2n l\u1EA1i s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7
+      sao"
+  - ID: Hint/MarkDotBecauseDontPlaced
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "V\u1ECB tr\xED n\xE0y kh\xF4ng th\u1EC3 l\xE0 m\u1ED9t ng\xF4i sao
+      n\u1EBFu kh\xF4ng c\xE1c \xF4 c\xF2n l\u1EA1i s\u1EBD kh\xF4ng c\xF3 \u0111\u1EE7
+      sao"
+  - ID: Hint/None
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Xin l\u1ED7i h\u1EC7 th\u1ED1ng g\u1EE3i \xFD l\u1ED7i"

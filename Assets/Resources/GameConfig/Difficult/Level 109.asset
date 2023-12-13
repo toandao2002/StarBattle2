@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 109
   m_EditorClassIdentifier: 
   nameLevel: 109
-  typeGame: 0
+  typeGame: 2
   dataBoard:
     size: 9
     dataRegion: '1 1 1 1 2 2 2 2 2 8 8 3 3 3 0 2 2 2 8 8 3 3 3 0 0 0 2 8 8 8 3 7
@@ -40,3 +40,7 @@ MonoBehaviour:
     - {x: 7, y: 8}
     - {x: 5, y: 7}
     - {x: 3, y: 7}
+  datalevel:
+    dayPlay: 
+    isfinished: 0
+    timeFinish: 0

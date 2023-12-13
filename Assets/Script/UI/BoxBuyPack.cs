@@ -30,6 +30,22 @@ public class BoxBuyPack : MonoBehaviour
     {
         MyEvent.ChangeTheme -= ChangeTheme;
     }
+    public string GetIdContentShop(TypeGame typeGame)
+    {
+        switch (typeGame)
+        {
+            case TypeGame.Difficult:
+                return Loc.ID.Shop.GetLevelInModeExpert;
+            case TypeGame.Medium:
+                return Loc.ID.Shop.GetLevelInModeAdvanced;
+            case TypeGame.Easy:
+                return Loc.ID.Shop.GetLevelInModeBegginer;
+            case TypeGame.Genius:
+                return Loc.ID.Shop.GetLevelInModeGenius;
+
+        }
+        return "404";
+    }
     public void init(bool canBuy, SubLevel subLevel, TypeGame typeGame, DataPack datapack, int idPack, int levelFrom, int levelEnd)
     {
         this.idPack = idPack;
@@ -37,8 +53,18 @@ public class BoxBuyPack : MonoBehaviour
         this.typeGame = typeGame;
         this.canBuy = canBuy;
         this.sublevel = subLevel;
-        namePack.text = typeGame.ToString().ToString(typeGame) +" "+ (idPack + 1);
-        contecnPack.text = "Get level " + levelFrom + " > " + levelEnd+" in Mode" + typeGame.ToString().ToString(typeGame) ;
+        namePack.text = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(typeGame)) +" "+ (idPack + 1);
+        string buf = Util.GetLocalizeRealString(GetIdContentShop(typeGame));
+        
+        int indexS = buf.LastIndexOf("0");
+        buf = buf.Replace("0",  " ");
+        buf = buf.Insert(indexS, levelFrom+"");
+        int indexE = buf.LastIndexOf("1");
+
+        buf = buf.Substring(0, indexE) + buf.Substring(indexE + 1);
+        buf = buf.Insert(indexE, levelEnd +"");
+
+        contecnPack.text = buf;
         if (canBuy)
         {
             textInBtnBuy.text = "$ 100";
@@ -49,7 +75,7 @@ public class BoxBuyPack : MonoBehaviour
         {
             iconLocked.gameObject.SetActive(true);
             bgrBtn.sprite = bgrBtnGray;
-            textInBtnBuy.text = "Locked";
+            textInBtnBuy.text = Util.GetLocalizeRealString(Loc.ID.Shop.LockedText);
         }
     }
     public void Buy()
