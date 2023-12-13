@@ -6,8 +6,16 @@ using System;
 
 public class MyTime : MonoBehaviour
 {
-  
-
+    public int timeUserDontTouch;
+    private void OnEnable()
+    {
+        timeUserDontTouch = 0;
+        MyEvent.ClickCell += RessetTimeUserDontTouch;
+    }
+    private void OnDisable()
+    {
+        MyEvent.ClickCell -= RessetTimeUserDontTouch;
+    }
     public TMP_Text timeTxt;
     public int timeRun;
     public void CountTime(int fromTime )
@@ -22,7 +30,10 @@ public class MyTime : MonoBehaviour
 
         timeTxt.text = timeSpan.ToString(@"hh\:mm\:ss");
     }
-
+    public void RessetTimeUserDontTouch()
+    {
+        timeUserDontTouch = 0;
+    }
     IEnumerator IECountdown()
     {
       
@@ -33,7 +44,11 @@ public class MyTime : MonoBehaviour
             timeTxt.text = timeSpan.ToString(@"hh\:mm\:ss"); 
             yield return new WaitForSeconds(1);
             timeRun++;
-             
+            timeUserDontTouch++; 
+            if(timeUserDontTouch > 10)
+            {
+                MyEvent.DontTouch?.Invoke();
+            }
         }
     }
 

@@ -262,7 +262,7 @@ public class Cell :MonoBehaviour
     }
     public void DonClick(bool isUser)// để phần biệt user và chức năng redo
     {
-        
+        MyEvent.ClickCell?.Invoke();
         if (isUser)
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
         statusCell = StatusCell.None;
@@ -279,6 +279,7 @@ public class Cell :MonoBehaviour
 
     public void OneClick(bool isUser)
     {
+        MyEvent.ClickCell?.Invoke();
         if (isUser)
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
         ShowDotIcon();
@@ -292,7 +293,8 @@ public class Cell :MonoBehaviour
     }
     public void DoubleClick(bool isUser)
     {
-        if(isUser)
+        MyEvent.ClickCell?.Invoke();
+        if (isUser)
             GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
      
         ShowStarIcon();

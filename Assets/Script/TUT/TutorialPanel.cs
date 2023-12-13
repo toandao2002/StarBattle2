@@ -63,6 +63,7 @@ public class TutorialPanel : BasePopUP
     {
         GameConfig.instance.SetLevelCurrent(1);
         GameConfig.instance.SetTimeFiishCurrent(0);
+        GameConfig.instance.GetLevelCurrent().datalevel.isfinished = false;
         GameConfig.instance.nameModePlay="Easy";
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);
         GameManger.instance.manageUi.HidePopUP(NamePopUp.Tutoria);

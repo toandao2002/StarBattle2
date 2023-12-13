@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c85617316549e948ad627155d64b1f2, type: 3}
+  m_Name: LocalizationConfig
+  m_EditorClassIdentifier: 
+  _languageSettings:
+  - Language: en
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: vi
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: jp
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: es
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: ita
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: kr
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: gm
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: ru
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: in
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: fr
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: ar
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  - Language: tr
+    DisplayName: 
+    DefaultFont: {fileID: 0}
+    DefaultFontName: 
+  _localizeExcelFiles:
+  - {fileID: 4900000, guid: bd71bcc0f886b5d4f94b167ef65876c3, type: 3}
+  _localizeExcelFilePaths:
+  - 
+  _allFonts: []
+  _idConstantNameSpace: Loc
+  _idConstantClassName: ID
+  _customSpriteManager: 
+  _customFontManager: 
+  _customVocabularyManager: 
+  _customEditorVocabularyImporter: 

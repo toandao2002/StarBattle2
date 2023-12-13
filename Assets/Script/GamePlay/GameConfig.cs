@@ -11,12 +11,19 @@ public class GameConfig : MonoBehaviour
     public TypeGame typeGame; 
     public LevelCommon levelCommon;
     public int timeFinishPlay; 
-    public DataLevelUser dataLevelComon;
+    private DataLevelUser dataLevelComon;
     public string nameModePlay;
 
     public NameTheme nameTheme;
     public Theme darkMode;
     public Theme lightMode;
+
+
+   
+    public Dictionary<int, int> idLevelShowSuggest = new Dictionary<int, int>() {
+        {4,5 } 
+    };
+
     public void SetTypeGame(TypeGame typeGame)
     {
         this.typeGame = typeGame;
@@ -57,6 +64,10 @@ public class GameConfig : MonoBehaviour
     {
         return levelCurent;
     }
+     public int GetIntLevelCurrent()
+    {
+        return levelCurent.nameLevel;
+    }
     public string GetPathLevel(TypeGame typeGame, int level)
     {
         string path = "GameConfig/" + typeGame.ToString() + "/Level " + level + "";
@@ -96,7 +107,7 @@ public class GameConfig : MonoBehaviour
     public DataLevelUser GetDataLevelCommon()
     {
         
-        if (dataLevelComon == null)
+        if (dataLevelComon == null || dataLevelComon.numLevelPass == null)
         {
             dataLevelComon = Util.ConvertStringToObejct<DataLevelUser>(DataGame.GetDataJson(DataGame.DataLevelComon));
             if(dataLevelComon == null)  

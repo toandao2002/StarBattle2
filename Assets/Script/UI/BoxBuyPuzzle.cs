@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BoxBuyPuzzle : MonoBehaviour
 {
+    public NamePopUp namePopUp;
     public void OpenShop()
     {
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.Shop);
-        GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel2);
+        GameManger.instance.manageUi.HidePopUP(namePopUp);
+        ShopUI.instance.PrePopUP = namePopUp;
     }
 }

@@ -8,42 +8,45 @@ using UnityEngine.UI;
 public class HintMesageUI : MonoBehaviour
 {
     public static HintMesageUI instance;
+    public CanvasGroup cg;
     private void Awake()
     {
         instance = this;
         MyEvent.ChangeTheme += ChangeTheme;
+       
     }
      
 
     public Image main;
     public TMP_Text txt; 
-    public TMP_Text title; 
-    public List<TMP_Text> textFade;
+    public TMP_Text title;  
     public List<Color> colorBgr;
     public void ShowHint(TypeHint typeHint)
     {
         txt.text = GetDescription(typeHint);
         title.text = "Hint";
-        StopAllCoroutines();
-        StartCoroutine(show());
+
+        main.gameObject.SetActive(true);
+        cg.DOFade(1, 1 / 2).From(0);
+        ChangeTheme();
+        MyEvent.ClickCell += Hide;
     }
     public void ShowNotice(string val)
     {
         txt.text = val;
         title.text = "Notice";
-        StopAllCoroutines();
-        StartCoroutine(show());
+        main.gameObject.SetActive(true);
+        cg.DOFade(1, 1 / 2).From(0);
+        ChangeTheme();
+        MyEvent.ClickCell += Hide;
     }
     public void Hide()
     {
-        StopAllCoroutines();
-        main.DOFade(0, 0.2f).From(1).OnComplete(() => {
+        MyEvent.ClickCell -= Hide;
+        cg.DOFade(0, 0.4f).From(1).OnComplete(() => {
             main.gameObject.SetActive(false);
         });
-        foreach (TMP_Text i in textFade)
-        {
-            i.DOFade(0,  0.2f).From(1);
-        }
+        
     }
     public void ChangeTheme()
     {
@@ -63,25 +66,7 @@ public class HintMesageUI : MonoBehaviour
       
         }
     }
-    IEnumerator show()
-    {
-        ChangeTheme();
-        main.gameObject.SetActive(true);
-        float duration = 1f;
-        main.DOFade(1, duration/2).From(0);
-        foreach(TMP_Text i in textFade)
-        {
-            i.DOFade(1, duration/2).From(0);
-        } 
-        yield return new WaitForSeconds(duration*2+1);
-        main.DOFade(0, duration/2).From(1);
-        foreach(TMP_Text i in textFade)
-        {
-            i.DOFade(0, duration/2).From(1);
-        }
-        yield return new WaitForSeconds(duration/2);
-        main.gameObject.SetActive(false);
-    }
+  
     public string GetDescription(TypeHint typeHint)
     {
         switch (typeHint)

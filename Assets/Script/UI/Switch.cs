@@ -16,6 +16,7 @@ public class Switch : MonoBehaviour
     public TMP_Text state;
     public Image bgr;
     public List<Sprite> sprites;
+    public List<Color> txtColor;
     private void Start()
     {
         btn.onClick.AddListener(Click);
@@ -28,6 +29,7 @@ public class Switch : MonoBehaviour
         {
             bgr.sprite = sprites[0];
             state.text = "ON";
+            state.color = txtColor[0];
             TurnOn?.Invoke();
             Circle.transform.DOLocalMoveX(18, 0.3f);
         }
@@ -35,6 +37,7 @@ public class Switch : MonoBehaviour
         {
             bgr.sprite = sprites[1];
             state.text = "OFF";
+            state.color = txtColor[1];
             Circle.transform.DOLocalMoveX(-18, 0.3f);
             TurnOff?.Invoke();
         }
@@ -47,6 +50,7 @@ public class Switch : MonoBehaviour
         {
             bgr.sprite = sprites[0];
             state.text = "ON";
+            state.color = txtColor[0];
             TurnOn?.Invoke() ;
             Circle.transform.DOLocalMoveX(18, 0.3f);
         }
@@ -54,6 +58,7 @@ public class Switch : MonoBehaviour
         {
             bgr.sprite = sprites[1];
             state.text = "OFF";
+            state.color = txtColor[1];
             Circle.transform.DOLocalMoveX(-18, 0.3f);
             TurnOff?.Invoke();
         }

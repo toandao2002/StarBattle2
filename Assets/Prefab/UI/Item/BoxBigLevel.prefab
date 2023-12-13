@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 5102660821953495600}
-  barLight: {r: 0.9411765, g: 0.9529412, b: 0.96862745, a: 1}
-  barDark: {r: 0.25882354, g: 0.25882354, b: 0.27058825, a: 1}
+  barLight: {r: 0.43921572, g: 0.6784314, b: 0.9921569, a: 1}
+  barDark: {r: 0.43921572, g: 0.6784314, b: 0.9921569, a: 1}
   bgr: {fileID: 4437843674219104458}
   bgrLight: {fileID: 21300000, guid: 49333ccb1a13a2049beab0b93f8c69a7, type: 3}
   bgrDark: {fileID: 21300000, guid: d05bb6dbeb52f6f448d0bda59915b3d6, type: 3}

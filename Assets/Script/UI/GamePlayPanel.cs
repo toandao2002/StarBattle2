@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class GamePlayPanel : BasePopUP
 {
    
@@ -11,6 +11,8 @@ public class GamePlayPanel : BasePopUP
     public Image bgrBottom;
     public List<Color> bgrBottomColor;
     public List<TMP_Text> txt;
+
+    public GameObject iconHint;
     private void OnEnable()
     {
         MyEvent.UpdateDataAmountHint += SetTextAmountHint;
@@ -26,6 +28,8 @@ public class GamePlayPanel : BasePopUP
         ChangeTheme();
         SetTextAmountHint();
         MyEvent.ClickBack = Back;
+        MyEvent.DontTouch += SuggestHint;
+        MyEvent.ClickCell+= StopSuggestHInt;
     }
     public override void Hide(int dir = 1)
     {
@@ -56,7 +60,16 @@ public class GamePlayPanel : BasePopUP
         }
          
     }
-
+    public void SuggestHint()
+    {
+        iconHint.transform.DOScale(1, 0.2f).From(0.8f).SetEase(Ease.InOutBack).SetLoops(-1,LoopType.Yoyo);
+        
+    }
+    public void StopSuggestHInt()
+    {
+        iconHint.transform.DOKill();
+        iconHint.transform.localScale = Vector3.one;
+    }
     public TMP_Text amountHint;
     int numHint = 0;
     public void SetTextAmountHint()
@@ -95,5 +108,9 @@ public class GamePlayPanel : BasePopUP
     {
         GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,1,-1);
+    }
+    public void Win()
+    {
+        MyEvent.GameWin?.Invoke(null);
     }
 }

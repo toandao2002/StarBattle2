@@ -290,6 +290,8 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Difficult
       m_Image: {fileID: 0}
+    - m_Text: expert
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2743,10 +2745,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241bf451015637b40b253131335d7af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cg: {fileID: 0}
   main: {fileID: 1247332002}
   txt: {fileID: 138699271}
   title: {fileID: 138699271}
-  textFade: []
   colorBgr: []
 --- !u!1 &281417383
 GameObject:

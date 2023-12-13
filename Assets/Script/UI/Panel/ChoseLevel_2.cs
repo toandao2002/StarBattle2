@@ -6,35 +6,61 @@ using UnityEngine;
 public class ChoseLevel_2 : BasePopUP
 {
     public TittleUI tittle;
+    
     public static ChoseLevel_2 instance;
     public override void Awake()
     {
         base.Awake();
         instance = this;
-        MyEvent.BuyPack = () =>
-        {
-            Show();
-        };
     }
     
     public ButonLevel btnLevelPrefab;
-    public List<ButonLevel> btnLevels;
+    public List<ButonLevel> btnLevels; 
     public GameObject content;
     public List<Level> levels;
     public GameObject BoxShopPref;
     public void RemoveGarbage()
     {
-        for(int  i=content.transform.childCount-1;i>=0; i--)
+       /* for(int  i=content.transform.childCount-1;i>=0; i--)
         {
-            DestroyImmediate(content.transform.GetChild(i).gameObject);
-        }
+            
+        }*/
+        DestroyImmediate(content.transform.GetChild(content.transform.childCount - 1).gameObject);
     }
     public override void Hide(int dir = 1)
     {
         base.Hide(dir);
         
-        btnLevels = new List<ButonLevel>();
+      
         MyEvent.ClickBack -= Back;
+    }
+    public void show2()
+    {
+        Show();
+    }
+    public ButonLevel InitButtonLevel(int id)
+    {
+        if(id< btnLevels.Count)
+        {
+            btnLevels[id].gameObject.SetActive(true);
+            return btnLevels[id];
+        }
+         
+        ButonLevel btn = Instantiate(btnLevelPrefab, content.transform);
+        btnLevels.Add(btn);
+        return btn;
+    }
+    public void HideReduntantItem(int id)
+    {
+        for (int i = id; i < btnLevels.Count; i++)
+        {
+            if(btnLevels[i].gameObject.active == true)
+                btnLevels[i].gameObject.SetActive(false);
+            else
+            {
+                break;
+            }
+        }
     }
     public override void Show(object data = null, int dir = 1)
     {
@@ -49,24 +75,26 @@ public class ChoseLevel_2 : BasePopUP
 
             for (int i = 0; i < levels.Count; i++)
             {
-                btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
+                //btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
+                ButonLevel btnLevel = InitButtonLevel(i);
                 NameStateLevel nameStateLevel = NameStateLevel.Nothing;
                 if (levels[i].datalevel.isfinished) nameStateLevel = NameStateLevel.Finished;
                 else if (!levels[i].datalevel.isfinished && levels[i].datalevel.timeFinish > 0)
                 {
                     nameStateLevel = NameStateLevel.Process;
                 }
-                btnLevels[i].SetLevel(levels[i].nameLevel, levels[i].nameLevel, nameStateLevel);
-                Debug.Log(btnLevels[i].txtLevel);
+                btnLevel.SetLevel(levels[i].nameLevel, levels[i].nameLevel, nameStateLevel);
+               
                 if (levels[i].datalevel != null)
                 {
-                    btnLevels[i].SetTime(levels[i].datalevel.timeFinish);
+                    btnLevel.SetTime(levels[i].datalevel.timeFinish);
                 }
                 else
                 {
                     //btnLevels[i].SetTime(0);
                 }
             }
+            HideReduntantItem(levels.Count);
             Instantiate(BoxShopPref, content.transform);
         }
         catch (Exception e)
@@ -75,7 +103,7 @@ public class ChoseLevel_2 : BasePopUP
             Debug.LogError(e);
         }
 
-
+        
         MyEvent.ClickBack = Back;
         
     }

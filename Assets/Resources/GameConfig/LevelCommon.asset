@@ -16,8 +16,8 @@ MonoBehaviour:
   - nameSubLevel: Beginner-1
     isNeedBuy: 0
     levels:
-    - {fileID: 11400000, guid: cb88aa1189ff4cd4f823b0c657bccf40, type: 2}
     - {fileID: 11400000, guid: 6c753476add0b4a4db9b58d1d33ee5cd, type: 2}
+    - {fileID: 11400000, guid: cb88aa1189ff4cd4f823b0c657bccf40, type: 2}
     - {fileID: 11400000, guid: 89515b6f19686ac47affab060857a21b, type: 2}
     - {fileID: 11400000, guid: e1073deab7d73004dbd0325f16ae23c4, type: 2}
     - {fileID: 11400000, guid: 916ed01022e666e4aaf3c3700c5f74dd, type: 2}
@@ -226,7 +226,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d5ff8470811bc41ff8a99272198218a8, type: 2}
     - {fileID: 11400000, guid: b25e099a5ac0342a78e5ed581c5f2ca7, type: 2}
   levelMedium:
-  - nameSubLevel: Medium-1
+  - nameSubLevel: Advanced-1
     isNeedBuy: 0
     levels:
     - {fileID: 11400000, guid: bb4a0e22b5156494fa70e201c42edbc7, type: 2}
@@ -249,7 +249,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 8bc07cff86f8e4beca14bedeb1c739f3, type: 2}
     - {fileID: 11400000, guid: d4e5117ace8f447e1b7749fc208b7b16, type: 2}
     - {fileID: 11400000, guid: 35afb4b8296f74790a8cd38e4f56ec5c, type: 2}
-  - nameSubLevel: Medium-2
+  - nameSubLevel: Advanced-2
     isNeedBuy: 0
     levels:
     - {fileID: 11400000, guid: 6a0c8af7bbf6c4a6c8ac04e046ceb676, type: 2}
@@ -282,7 +282,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 937bdda421ca442fc95502acab8b84c4, type: 2}
     - {fileID: 11400000, guid: 8595a91d946b8d645953316d9ada46ed, type: 2}
     - {fileID: 11400000, guid: 8d012731d688a4ff28eadf8b240ce733, type: 2}
-  - nameSubLevel: Medium-3
+  - nameSubLevel: Advanced-3
     isNeedBuy: 1
     levels:
     - {fileID: 11400000, guid: 12e3c891e5972417aa11c9f665f416a4, type: 2}
@@ -335,7 +335,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6c5b016ecc0374f94adf2923cfc0c1dd, type: 2}
     - {fileID: 11400000, guid: acc354d44a98941a5b371b503a524f01, type: 2}
     - {fileID: 11400000, guid: 8cfd455cee89c4c4ba1b45873c15d6cb, type: 2}
-  - nameSubLevel: Medium-4
+  - nameSubLevel: Advanced-4
     isNeedBuy: 1
     levels:
     - {fileID: 11400000, guid: c12303eeb21c84889a61966f93d9099b, type: 2}
@@ -359,7 +359,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1fb70bef0239546218dd115e40939465, type: 2}
     - {fileID: 11400000, guid: 9576d9be5149040e08cc569e104225a3, type: 2}
   levelDifficult:
-  - nameSubLevel: Difficult-1
+  - nameSubLevel: Expert-1
     isNeedBuy: 0
     levels:
     - {fileID: 11400000, guid: 7d8278c77d4b22a4da409272c89b3a86, type: 2}
@@ -382,7 +382,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: be070af4c9ba2468a9747b3b38021b7a, type: 2}
     - {fileID: 11400000, guid: 3b9293504ddd1422c8e39cd5bdcff8cf, type: 2}
     - {fileID: 11400000, guid: 06e0cd6fea5d64be1a684e7e71554dfc, type: 2}
-  - nameSubLevel: Difficult-2
+  - nameSubLevel: Expert-2
     isNeedBuy: 0
     levels:
     - {fileID: 11400000, guid: 204e5b41d56c74634a4b170f3681be1d, type: 2}
@@ -415,7 +415,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 5d4be882faea94201899bbea8b225b6e, type: 2}
     - {fileID: 11400000, guid: 2fd1aab9b1c654049ab7e330cd820dd8, type: 2}
     - {fileID: 11400000, guid: 0fe745fb26bda4d2bb68e12e10efdd75, type: 2}
-  - nameSubLevel: Difficult-3
+  - nameSubLevel: Expert-3
     isNeedBuy: 1
     levels:
     - {fileID: 11400000, guid: e63c4267e082a4d5bac4cee41a0fe171, type: 2}
@@ -468,7 +468,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 16a80fbb0959e4b049fa5dbbdee2a974, type: 2}
     - {fileID: 11400000, guid: 536218ce136db4a99bf5bfe3c1af5743, type: 2}
     - {fileID: 11400000, guid: 2e19e3245104e41f4a8d2367bdbb77ec, type: 2}
-  - nameSubLevel: Difficult-4
+  - nameSubLevel: Expert-4
     isNeedBuy: 1
     levels:
     - {fileID: 11400000, guid: 914fdcb95fcd0447495b533f6cf881e1, type: 2}

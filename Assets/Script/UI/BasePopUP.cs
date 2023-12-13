@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public enum NamePopUp
 {
+    none,
     GameWin,
     Lobby,
     ChoseLevel1,
@@ -26,12 +27,13 @@ public class BasePopUP : MonoBehaviour
     protected float durationEffect = 0.3f;
     protected RectTransform rec;
     protected Ease ease = Ease.InOutQuart;
+    public bool isOn;
     public virtual void Awake()
     {
         MyEvent.ChangeTheme += ChangeTheme;
     }
     public virtual void Hide(int dir = 1) {
-
+        isOn = false;
         if(BgrMain!= null)
         {
             BgrMain.fillAmount = 1;
@@ -62,7 +64,7 @@ public class BasePopUP : MonoBehaviour
     }
     public virtual void Show(object data = null,int dir =1)
     {
-        
+        isOn = true;
         main.SetActive(true);
         if(rec== null)
         {

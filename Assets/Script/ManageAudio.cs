@@ -43,7 +43,7 @@ public class ManageAudio : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.05f); 
+            yield return new WaitForSeconds(0.1f); 
             if(stateVibrates.Count != 0)  
                 stateVibrates.Dequeue(); 
         }

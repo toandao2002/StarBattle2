@@ -13,15 +13,15 @@ public class GameContrler : MonoBehaviour
     public MyTime myTime;
     public DataLevel dataLevel;
     HistoryPlayed historyPlayed = null;
-
     public List<ParticleSystem> fx;
     public List<GameObject> PosFx;
+
     private void Awake()
     {
         instance = this;
         MyEvent.GameWin += EfWin;
     }
-  
+    
     public void Init()
     {
         for (int i = 0; i < 2; i++)
@@ -91,7 +91,7 @@ public class GameContrler : MonoBehaviour
     }
     public void GameWin(object obj) {
         DataLevelUser dataLevelComon = GameConfig.instance.GetDataLevelCommon();
-        dataLevelComon.IncNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame);
+        dataLevelComon.IncNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame,GameConfig.instance.GetIntLevelCurrent());
         Debug.Log("Game Win");
         dataLevel.isfinished = true;
         SaveData();
@@ -153,7 +153,7 @@ public class GameContrler : MonoBehaviour
     
     public void BackHome()
     {
-        PopUpGameWin.instance.main.SetActive(false);
+        PopUpGameWin.instance.Hide(-1);
         SaveData();
         GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
@@ -200,7 +200,8 @@ public class GameContrler : MonoBehaviour
             DataGame.SetDataJson(DataGame.Level + GameConfig.instance.typeGame + GameConfig.instance.GetLevelCurrent().nameLevel, json);
             DataGame.SetDataJson(DataGame.History, Util.ConvertObjectToString<HistoryPlayed>(historyPlayed));
             Debug.Log(Util.ConvertObjectToString<HistoryPlayed>(historyPlayed));
-            DataGame.SetDataJson(DataGame.DataLevelComon, Util.ConvertObjectToString(GameConfig.instance.dataLevelComon));
+            DataGame.SetDataJson(DataGame.DataLevelComon, Util.ConvertObjectToString<DataLevelUser>(GameConfig.instance.GetDataLevelCommon()));
+            Debug.Log(Util.ConvertObjectToString<DataLevelUser>(GameConfig.instance.GetDataLevelCommon()));
             DataGame.Save();
         }
     }
@@ -216,5 +217,26 @@ public class GameContrler : MonoBehaviour
     }
     
 
+    public void SuggestPlayMoreDifficult(object obj)
+    {
+        TypeGame typeGame = GameConfig.instance.typeGame;
+        DataLevelUser dataUser = GameConfig.instance.GetDataLevelCommon();
+        int num = (int)typeGame  +1;
+        int max = System.Enum.GetValues(typeof(TypeGame)).Length;
+        Debug.Log(Util.ConvertObjectToString(dataUser));
+        if (num == max || !GameConfig.instance.idLevelShowSuggest.ContainsKey(dataUser.GetLevelPassByTypeGame((TypeGame )(num-1))))
+        {
+            return;
+        }
+        typeGame = (TypeGame)(num );
+        int AmountLevelPass = dataUser.GetLevelPassByTypeGame(typeGame);
+        if(AmountLevelPass <= 5)
+        {
+            PopUPSuggestPlayMode.instance.Show(typeGame);
+        }
+    }
+
+
+    
 }
  

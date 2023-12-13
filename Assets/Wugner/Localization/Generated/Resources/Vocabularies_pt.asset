@@ -1,0 +1,752 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b411b40f2dfc446a61765d10c6facd, type: 3}
+  m_Name: Vocabularies_pt
+  m_EditorClassIdentifier: 
+  _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Toque
+  - ID: Common/LevelText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "N\xCDVEL"
+  - ID: Common/StartText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Come\xE7ar"
+  - ID: Home/NewLevelWillBeUpdated
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "\u0645\u0633\u062A\u0648\u064A\u0627\u062A \u062C\u062F\u064A\u062F\u0629
+      \u0633\u064A\u062A\u0645 \u062A\u062D\u062F\u064A\u062B\u0647\u0627 \u0642\u0631\u064A\u0628\u0627!"
+  - ID: Home/NewLevelEveryWeek
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Novos n\xEDveis cada semana!"
+  - ID: Common/RandomLevel
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: RANDOM LEVEL
+  - ID: Settings/SettingsText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Configura\xE7\xF5es"
+  - ID: Settings/SoundText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Som
+  - ID: Settings/MusicText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "M\xFAsica"
+  - ID: Settings/VibrationText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Vibra\xE7\xE3o"
+  - ID: Settings/RestoreText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Restaurar compra
+  - ID: Settings/VersionText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Vers\xE3o"
+  - ID: Settings/LanguageText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "L\xEDnguas"
+  - ID: Common/CloseText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Fechar
+  - ID: Common/OkText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: OK
+  - ID: Common/NextText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Pr\xF3ximo"
+  - ID: Language/LangugeText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "L\xCDNGUAS"
+  - ID: Common/RemoveAdText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: REMOVER PROPAGANDAS
+  - ID: Common/SkipLevelText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Pular n\xEDvel"
+  - ID: Result/YouWinText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Voc\xEA ganha"
+  - ID: Result/X2CoinText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Moeda X2
+  - ID: Common/FreeText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: GRATUITAMENTE
+  - ID: Result/RemoveAdNowText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Remova os an\xFAncios agora!"
+  - ID: Result/NewLevelsAreUnlockedText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Novos n\xEDveis s\xE3o desbloqueados"
+  - ID: Result/HintPlus
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: 1
+  - ID: Result/SkipText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Pular n\xEDvel"
+  - ID: Result/ReplayText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Repeti\xE7\xE3o"
+  - ID: Rate/RateUsText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Nos avalie
+  - ID: Rate/EnjoyGameText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Voc\xEA gosta de nosso jogo?"
+  - ID: Rate/EnjoyText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: A MELHOR ESCOLHA
+  - ID: Rate/RateText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Nos avalie
+  - ID: Rate/ThankForReviewText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Obrigado por seu coment\xE1rio!"
+  - ID: Common/MessageText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: MENSAGEM
+  - ID: Common/CongratulationText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "FELICITA\xC7\xD5ES!"
+  - ID: Common/PlayNowText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Jogue agora
+  - ID: Message/NoConnectText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Sem liga\xE7\xE3o"
+  - ID: Message/TurnOnWifiText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Por favor ativar o Wi-Fi para continuar
+  - ID: Message/ComingSoonText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: EM BREVE!
+  - ID: Message/ThisFeatureText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Este recurso ser\xE1 em breve. Obrigado!"
+  - ID: Common/AvailableNextUpdateText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Ele estar\xE1 dispon\xEDvel na pr\xF3xima atualiza\xE7\xE3o!"
+  - ID: Common/WatchAds
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "ADS REL\xD3GIO"
+  - ID: Common/ComingSoonText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: EM BREVE!
+  - ID: Message/RestoreSuccess
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Restaurar sucesso
+  - ID: Message/ThankPurchase
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Obrigado por sua compra!
+  - ID: Message/RemoveAdsSuccess
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Remover an\xFAncios com sucesso"
+  - ID: Shop/NotEnoughMoney
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Dinheiro insuficiente
+  - ID: Shop/WatchAdsToEarn
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Assista os an\xFAncios para ganhar"
+  - ID: Common/Unlimited
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Ilimitado
+  - ID: Settings/RateUs
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Nos avalie
+  - ID: Settings/FeedBack
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Coment\xE1rios"
+  - ID: Settings/Share
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Compartilhar
+  - ID: Settings/DailyReward
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Recompensa di\xE1ria"
+  - ID: Pause/Home
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Casa
+  - ID: Pause/SelectLevel
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "N\xEDvel"
+  - ID: Pause/Shop
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Comprar
+  - ID: Pause/Resume
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Retomar
+  - ID: Pause/PauseTitle
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Pausa
+  - ID: Shop/Store
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Armazenar
+  - ID: Hint/Tips
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: PONTAS
+  - ID: Common/PleaseWait
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Por favor, aguarde
+  - ID: Hint/NeedSomeHelp
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: PRECISA DE ALGUMA AJUDA
+  - ID: Hint/ShowAHint
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Mostrar uma Dica
+  - ID: Hint/Get10Hint
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Obter 10 dica
+  - ID: FinishMode/KeepPlayingText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Continue jogando para novos n\xEDveis de desbloqueio!"
+  - ID: Common/YouReceived
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Voc\xEA recebeu uma dica. Obrigado!"
+  - ID: Common/GetMoreHint
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Obtenha mais Hint
+  - ID: Daily/DailyReward
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "RECOMPENSA DI\xC1RIA"
+  - ID: Daily/Day
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Dia
+  - ID: Daily/GetReward
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Obter Reward!
+  - ID: Daily/X2Reward
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Recompensa X2!
+  - ID: Daily/Quote
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Volte amanh\xE3\npara obter sua recompensa!"
+  - ID: Common/CurrentLevel
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "N\xEDvel atual"
+  - ID: Common/Page
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "P\xE1gina"
+  - ID: Settings/Fanpage
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "P\xE1gina de f\xE3"
+  - ID: Common/PlayNormalModeText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: JOGAR NORMAL MODO
+  - ID: Common/UnlockEmojiMode
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Este modo ser\xE1 desbloqueado no n\xEDvel"
+  - ID: Common/NewChallengeUnlocked
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Novo Desafio Desbloqueado!
+  - ID: Home/Spin
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: RODAR
+  - ID: Common/NextFree
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Pr\xF3xima rodada gr\xE1tis na dispon\xEDveis"
+  - ID: Spin/OneFreeSpin
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "1 SPIN GR\xC1TIS"
+  - ID: Spin/FreeSpin
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "GR\xC1TIS SPIN"
+  - ID: Spin/FortuneWheel
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: FORTUNE RODA!
+  - ID: Common/FreeSpinIn
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Rota\xE7\xE3o livre em"
+  - ID: Common/ClaimText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Afirma\xE7\xE3o"
+  - ID: Common/SpinNow
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Gire agora
+  - ID: Common/NoThank
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "N\xE3o, obrigado"
+  - ID: Common/DoubleReward
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Dupla recompensa
+  - ID: Common/ClaimNowText
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Afirmam agora
+  - ID: Common/Tracking1
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Por favor, toque em \"permitir o rastreamento\" na tela seguinte para
+      nos ajudar a otimizar o seu conte\xFAdo e criar uma melhor experi\xEAncia de
+      jogo fo voc\xEA!"
+  - ID: Common/Tracking2
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Ativar \"permitir o rastreamento\" na defini\xE7\xE3o aplicativo, isso
+      vai nos ajudar a otimizar o seu conte\xFAdo e criar uma melhor experi\xEAncia
+      de jogo para voc\xEA!"
+  - ID: Common/Important
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: IMPORTANTE
+  - ID: Common/NotNow
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "AGORA N\xC3O"
+  - ID: TextLevel/Level1
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Gato real
+  - ID: TextLevel/Level2
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Apaixonado
+  - ID: TextLevel/Level3
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Jogo de sobreviv\xEAncia"
+  - ID: TextLevel/Level4
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Um estranho fora
+  - ID: TextLevel/Level5
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Segredo oculto
+  - ID: TextLevel/Level6
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Obtenha mais espectadores
+  - ID: TextLevel/Level7
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Ajude o beb\xEA a nascer"
+  - ID: TextLevel/Level8
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Gato bravo
+  - ID: TextLevel/Level9
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Meu medo
+  - ID: TextLevel/Level10
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Inverter a situa\xE7\xE3o"
+  - ID: TextLevel/Level11
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Quebra-cabe\xE7a do gato"
+  - ID: TextLevel/Level12
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Fazer amor
+  - ID: TextLevel/Level13
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Celebridade
+  - ID: TextLevel/Level14
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Salve-o
+  - ID: TextLevel/Level15
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: O que excita ela?
+  - ID: TextLevel/Level16
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Algo \xE9 t\xE3o estranho"
+  - ID: TextLevel/Level17
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Nas nuvens
+  - ID: TextLevel/Level18
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Encontre uma maneira de romper
+  - ID: TextLevel/Level19
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Fa\xE7a-a feliz"
+  - ID: TextLevel/Level20
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Reorganize o alfabeto
+  - ID: TextLevel/Level21
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Apagar a raiva
+  - ID: TextLevel/Level22
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "O que ele est\xE1 fazendo?"
+  - ID: TextLevel/Level23
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Por que o balde de \xE1gua n\xE3o \xE9 cheio?"
+  - ID: TextLevel/Level24
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Recuar o brinquedo da mola
+  - ID: TextLevel/Level25
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Encontre o cisne
+  - ID: TextLevel/Level26
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Quem \xE9 o assassino?"
+  - ID: TextLevel/Level27
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Salve-a
+  - ID: TextLevel/Level28
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: "Assust\xE1-la"
+  - ID: TextLevel/Level29
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Seu desejo
+  - ID: TextLevel/Level30
+    Type: 0
+    Remark: 
+    Language: pt
+    FontName: 
+    Content: Libertar o criminoso

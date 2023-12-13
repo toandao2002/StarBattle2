@@ -1,0 +1,747 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b411b40f2dfc446a61765d10c6facd, type: 3}
+  m_Name: Vocabularies_id
+  m_EditorClassIdentifier: 
+  _vocabularyEntries:
+  - ID: Common/PlayText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bermain
+  - ID: Common/LevelText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: TINGKAT
+  - ID: Common/StartText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Mulailah
+  - ID: Home/NewLevelWillBeUpdated
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: TINGKAT BARU AKAN UPDATED SEGERA!
+    Content: "Novos n\xEDveis ser\xE1 atualizado em breve!"
+  - ID: Home/NewLevelEveryWeek
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat baru setiap minggu!
+  - ID: Common/RandomLevel
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: RANDOM LEVEL
+    Content: "RANDOM N\xCDVEL"
+  - ID: Settings/SettingsText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Pengaturan
+  - ID: Settings/SoundText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Suara
+  - ID: Settings/MusicText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Musik
+  - ID: Settings/VibrationText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Getaran
+  - ID: Settings/RestoreText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Kembalikan pembelian
+  - ID: Settings/VersionText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: 'Versi: kapan'
+  - ID: Settings/LanguageText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bahasa
+  - ID: Common/CloseText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Menutup
+  - ID: Common/OkText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Baik
+  - ID: Common/NextText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Lanjut
+  - ID: Language/LangugeText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: BAHASA
+  - ID: Common/RemoveAdText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: HILANGKAN IKLAN
+  - ID: Common/SkipLevelText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Lewati level
+  - ID: Result/YouWinText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Kamu menang
+  - ID: Result/X2CoinText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: X2 koin
+  - ID: Common/FreeText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: GRATIS
+  - ID: Result/RemoveAdNowText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Hapus iklan sekarang!
+  - ID: Result/NewLevelsAreUnlockedText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat baru akan dibuka
+  - ID: Result/HintPlus
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: 1
+  - ID: Result/SkipText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Lewati level
+  - ID: Result/ReplayText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Ulangan
+  - ID: Rate/RateUsText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat kami
+  - ID: Rate/EnjoyGameText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Apakah Anda menikmati permainan kami?
+  - ID: Rate/EnjoyText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: PILIHAN TERBAIK
+  - ID: Rate/RateText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat kami
+  - ID: Rate/ThankForReviewText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Terima kasih untuk ulasan Anda!
+  - ID: Common/MessageText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: PESAN
+  - ID: Common/CongratulationText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: CONGRATULATION!
+  - ID: Common/PlayNowText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Main sekarang
+  - ID: Message/NoConnectText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tidak ada koneksi
+  - ID: Message/TurnOnWifiText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Silakan aktifkan Wifi untuk melanjutkan
+  - ID: Message/ComingSoonText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: SEGERA AKAN DATANG!
+  - ID: Message/ThisFeatureText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Fitur ini akan segera hadir. Terima kasih!
+  - ID: Common/AvailableNextUpdateText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Ini akan tersedia dalam update berikutnya!
+  - ID: Common/WatchAds
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: ADS PERHATIKAN
+  - ID: Common/ComingSoonText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: SEGERA AKAN DATANG!
+  - ID: Message/RestoreSuccess
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Kembalikan sukses
+  - ID: Message/ThankPurchase
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Terima kasih untuk pembelian Anda!
+  - ID: Message/RemoveAdsSuccess
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Iklan Hapus Berhasil
+  - ID: Shop/NotEnoughMoney
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tidak cukup uang
+  - ID: Shop/WatchAdsToEarn
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tonton Iklan Untuk Dapatkan
+  - ID: Common/Unlimited
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tak terbatas
+  - ID: Settings/RateUs
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat kami
+  - ID: Settings/FeedBack
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: FeedBack
+  - ID: Settings/Share
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bagikan
+  - ID: Settings/DailyReward
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Reward harian
+  - ID: Pause/Home
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Rumah
+  - ID: Pause/SelectLevel
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tingkat
+  - ID: Pause/Shop
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Toko
+  - ID: Pause/Resume
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Lanjut
+  - ID: Pause/PauseTitle
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Berhenti sebentar
+  - ID: Shop/Store
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Toko
+  - ID: Hint/Tips
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: TIPS
+  - ID: Common/PleaseWait
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Mohon tunggu
+  - ID: Hint/NeedSomeHelp
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: BUTUH PERTOLONGAN
+  - ID: Hint/ShowAHint
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tampilkan Petunjuk a
+  - ID: Hint/Get10Hint
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Dapatkan 10 hint
+  - ID: FinishMode/KeepPlayingText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Terus bermain ke tingkat baru membuka!
+  - ID: Common/YouReceived
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Anda telah menerima 1 petunjuk. Terima kasih!
+  - ID: Common/GetMoreHint
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Dapatkan Petunjuk
+  - ID: Daily/DailyReward
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: REWARD DAILY
+  - ID: Daily/Day
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Hari
+  - ID: Daily/GetReward
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Mendapat hadiah!
+  - ID: Daily/X2Reward
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: X2 Reward!
+  - ID: Daily/Quote
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: 'Kembalilah besok
+
+      untuk mendapatkan hadiah Anda!'
+  - ID: Common/CurrentLevel
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Level saat ini
+  - ID: Common/Page
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Halaman
+  - ID: Settings/Fanpage
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Halaman penggemar
+  - ID: Common/PlayNormalModeText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: BERMAIN NORMAL MODE
+  - ID: Common/UnlockEmojiMode
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Mode ini akan dibuka di tingkat
+  - ID: Common/NewChallengeUnlocked
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tantangan Baru Unlocked!
+  - ID: Home/Spin
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: BERPUTAR
+  - ID: Common/NextFree
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Berikutnya bebas berputar tersedia di
+  - ID: Spin/OneFreeSpin
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: 1 SPIN GRATIS
+  - ID: Spin/FreeSpin
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: PUTARAN GRATIS
+  - ID: Common/FreeSpinIn
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Gratis berputar di
+  - ID: Common/ClaimText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Klaim
+  - ID: Common/SpinNow
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Berputar sekarang
+  - ID: Common/NoThank
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Tidak, terima kasih
+  - ID: Common/DoubleReward
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Ganda pahala
+  - ID: Common/ClaimNowText
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Klaim sekarang
+  - ID: Common/Tracking1
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Silakan tekan "MENGIZINKAN TRACKING" pada layar berikutnya untuk membantu
+      kita mengoptimalkan konten Anda dan menciptakan pengalaman gaming yang lebih
+      baik fo Anda!
+  - ID: Common/Tracking2
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Aktifkan "IZINKAN TRACKING" dalam pengaturan aplikasi, ini akan membantu
+      kami mengoptimalkan konten Anda dan menciptakan pengalaman gaming yang lebih
+      baik untuk Anda!
+  - ID: Common/Important
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: PENTING
+  - ID: Common/NotNow
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: TIDAK SEKARANG
+  - ID: TextLevel/Level1
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Royal Cat
+  - ID: TextLevel/Level2
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Jatuh cinta
+  - ID: TextLevel/Level3
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Game Survival
+  - ID: TextLevel/Level4
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Aneh satu
+  - ID: TextLevel/Level5
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Rahasia tersembunyi
+  - ID: TextLevel/Level6
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Dapatkan lebih banyak pemirsa
+  - ID: TextLevel/Level7
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bantu bayi dilahirkan
+  - ID: TextLevel/Level8
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Marah kucing
+  - ID: TextLevel/Level9
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Ketakutanku
+  - ID: TextLevel/Level10
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Membalikkan situasi
+  - ID: TextLevel/Level11
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Kucing puzzle
+  - ID: TextLevel/Level12
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bercinta
+  - ID: TextLevel/Level13
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Selebriti
+  - ID: TextLevel/Level14
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Selamatkan dia
+  - ID: TextLevel/Level15
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Apa yang menggairahkannya?
+  - ID: TextLevel/Level16
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Sesuatu yang sangat aneh
+  - ID: TextLevel/Level17
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Di awan
+  - ID: TextLevel/Level18
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Temukan cara untuk masuk
+  - ID: TextLevel/Level19
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Buat dia bahagia
+  - ID: TextLevel/Level20
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Atur ulang alfabet
+  - ID: TextLevel/Level21
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Penghapus kemarahan
+  - ID: TextLevel/Level22
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Apa yang dia lakukan?
+  - ID: TextLevel/Level23
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Mengapa ember airnya tidak penuh?
+  - ID: TextLevel/Level24
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Recoil Spring Toy
+  - ID: TextLevel/Level25
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Temukan Swan
+  - ID: TextLevel/Level26
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Siapa pembunuhnya?
+  - ID: TextLevel/Level27
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Selamatkan dia
+  - ID: TextLevel/Level28
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Menakuti dia
+  - ID: TextLevel/Level29
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Keinginannya
+  - ID: TextLevel/Level30
+    Type: 0
+    Remark: 
+    Language: id
+    FontName: 
+    Content: Bebas penjahat

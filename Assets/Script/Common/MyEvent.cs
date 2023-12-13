@@ -19,6 +19,8 @@ public class MyEvent : MonoBehaviour
 
 
     public static Action ClickBack;
+    public static Action ClickCell;
+    public static Action DontTouch;
 
     public static Action BuyPack;
 }

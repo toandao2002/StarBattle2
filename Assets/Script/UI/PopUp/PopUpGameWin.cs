@@ -54,7 +54,8 @@ public class PopUpGameWin : BasePopUP
     }
     IEnumerator IeShow()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
+        GameContrler.instance.SuggestPlayMoreDifficult(null);
         Show();
     }
     private void OnDestroy()

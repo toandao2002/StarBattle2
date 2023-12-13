@@ -83,11 +83,11 @@ public class Board : MonoBehaviour
     public void ReStart()
     {
         GameContrler.instance. DeLeteOldDataBoardFinish();
-        if (isFinish == true)
+       /* if (isFinish == true)
         {
             DataLevelUser dataLevelComon = GameConfig.instance.GetDataLevelCommon();
             dataLevelComon.DecNumLevelPassInGame(GameConfig.instance.GetCurrentLevel().typeGame);
-        }
+        }*/
         isFinish = false;
         GameConfig.instance.GetCurrentLevel().ReStart();
         GameConfig.instance.timeFinishPlay = 0;
@@ -165,7 +165,7 @@ public class Board : MonoBehaviour
        
         ResetTimer();
        
-        isFinish = GameConfig.instance.GetCurrentLevel().datalevel.isfinished;
+        isFinish = GameConfig.instance.GetCurrentLevel().datalevel.isfinished  ;
         UpdateOldDataStaus();
         GameContrler.instance.ResetNewGame();
         title.SetLevelTittle(GameConfig.instance.nameModePlay+ " "+ GameConfig.instance.GetCurrentLevel().nameLevel);

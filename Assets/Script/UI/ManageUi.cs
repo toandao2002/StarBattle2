@@ -23,6 +23,18 @@ public class ManageUi : MonoBehaviour
             }
         }
     }
+    public BasePopUP GetPopUP(NamePopUp namePopUp)
+    {
+
+        foreach (BasePopUP i in popUps)
+        {
+            if (i.namePopUp == namePopUp)
+            {
+                return i; ;
+            }
+        }
+        return null;
+    }
     public void HidePopUP(NamePopUp namePopUp, int dir= 1 )
     {
         foreach (BasePopUP i in popUps)

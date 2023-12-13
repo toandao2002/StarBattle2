@@ -59,7 +59,7 @@ public class BoxPlayedRecently : MonoBehaviour
     }
     public void PlayGame()
     {
-        GameConfig.instance.nameModePlay = nameLevel.text;
+        GameConfig.instance.nameModePlay = nameLevel.text.Substring(0,nameLevel.text.Length -2);
         GameConfig.instance.typeGame = typeGame;
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timeFinishInt);

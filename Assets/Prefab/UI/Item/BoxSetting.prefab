@@ -336,6 +336,9 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: ea664308dde83f545a06b4b0f60157f1, type: 3}
   - {fileID: 21300000, guid: 58f6ab42864df2841bdb25a1ebc5438f, type: 3}
+  txtColor:
+  - {r: 0.6431373, g: 0.79215693, b: 0.47450984, a: 1}
+  - {r: 0.39215687, g: 0.5137255, b: 0.54901963, a: 1}
 --- !u!114 &984933277
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Lobby : BasePopUP
 {
+    public static Lobby instance;
     private TypeGame typeGame;
 
     public BoxPlayedRecently BoxPlayedRecentlyPref;
@@ -17,6 +18,7 @@ public class Lobby : BasePopUP
     {
         base.Awake();
         ChangeTheme();
+        instance = this;
     }
     private void Start()
     {
@@ -75,7 +77,7 @@ public class Lobby : BasePopUP
                  
                 try
                 { 
-                    obj.SetData(historyPlayed.historys[i].typeGame.ToString() + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
+                    obj.SetData(historyPlayed.historys[i].typeGame.ToString().ToString(historyPlayed.historys[i].typeGame) + "-" + historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
                     historyPlayed.historys[i].isfinished == true ? "Finished" : "Process", historyPlayed.historys[i].timeFinish
                      , historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].typeGame
                     );
@@ -121,7 +123,7 @@ public class Lobby : BasePopUP
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2);
         Hide();
     }
-
+ 
 
     #region change theme
 
