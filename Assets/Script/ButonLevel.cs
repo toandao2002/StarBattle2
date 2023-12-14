@@ -78,7 +78,7 @@ public class ButonLevel : MonoBehaviour
     {
         this.nameState = nameState;
         txtLevel.text = nameLevel.ToString();
-        
+        TimeTxt.gameObject.SetActive(false);
         level = id;
         bool darkMode = GameConfig.instance.nameTheme == NameTheme.Dark;
         switch (nameState)

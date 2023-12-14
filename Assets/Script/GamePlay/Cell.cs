@@ -265,8 +265,7 @@ public class Cell :MonoBehaviour
     public void DonClick(bool isUser)// để phần biệt user và chức năng redo
     {
         MyEvent.ClickCell?.Invoke();
-        if (isUser)
-            GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
+       
         statusCell = StatusCell.None;
         icon.sprite = null;
         icon.gameObject.SetActive(false);
@@ -276,7 +275,15 @@ public class Cell :MonoBehaviour
         if (isUser) // because when user: from star-> none so will check only user 
             board.CheckAround(pos);
         ManageAudio.Instacne.VibrateLight();
+        if (isUser)
+        {
+            GameContrler.instance.AddAction(new HistoryAction(this, statusCell));
+            if (board.CheckWin())
+            {
+                MyEvent.GameWin?.Invoke(null);
 
+            }
+        }
     }
 
     public void OneClick(bool isUser)

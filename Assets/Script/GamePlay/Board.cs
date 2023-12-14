@@ -486,7 +486,7 @@ public class Board : MonoBehaviour
                     }
                     else
                     {
-                        cells[i][j].DonClick(true);
+                        cells[i][j].DonClick(false);
                     }
                 }
             }
