@@ -22,10 +22,11 @@ public class TutorialPanel : BasePopUP
     public int idMesage1;
     public int idPreview;
     public MyButton nextTut;
+    public HandTut hand;
     private void OnEnable()
     {
         idTutCurrent = -1;
-        NextTut();
+       
         MyEvent.CheckWinTut += NextChildTut;
     }
     private void OnDisable()
@@ -41,12 +42,14 @@ public class TutorialPanel : BasePopUP
     public void NextChildTut()
     {
         idMesage1++;
-        meseage1.text = tutorialDatas[idTutCurrent].mesage1[idMesage1];
+        meseage1.text = Util.GetLocalizeRealString(tutorialDatas[idTutCurrent].mesage1[idMesage1]);
        
         mesage1H.enabled = false;
+        Canvas.ForceUpdateCanvases();
+        mesage1H.enabled = true;
         StartCoroutine(DelayOneFrame(() => {
-            Canvas.ForceUpdateCanvases();
-            mesage1H.enabled = true;
+            
+           
         }));
         if (idMesage1 == tutorialDatas[idTutCurrent].mesage1.Count - 1)
         {
@@ -121,11 +124,12 @@ public class TutorialPanel : BasePopUP
             NextPreview();
             return;
         }
-        meseage1.text = tutorialDatas[idTutCurrent].mesage1[idMesage1];
+        meseage1.text = Util.GetLocalizeRealString(tutorialDatas[idTutCurrent].mesage1[idMesage1]);
         mesage1H.enabled = false;
+        Canvas.ForceUpdateCanvases();
+        mesage1H.enabled = true;
         StartCoroutine(DelayOneFrame(() => {
-            Canvas.ForceUpdateCanvases();
-            mesage1H.enabled = true;
+           
         }));
         int numM = 0;
         nextTut.gameObject.SetActive(false);
@@ -133,7 +137,7 @@ public class TutorialPanel : BasePopUP
         for(numM =0; numM<tutData.mesage2.Count; numM++)
         {
             mesage2s[numM].gameObject.SetActive(true);
-            mesage2s[numM].text = tutData.mesage2[numM];
+            mesage2s[numM].text = Util.GetLocalizeRealString(tutData.mesage2[numM]);
         }
         for (numM = numM; numM< mesage2s.Count; numM++)
         {
@@ -141,13 +145,58 @@ public class TutorialPanel : BasePopUP
 
         }
         mesage2.enabled = false;
+        Canvas.ForceUpdateCanvases();
+        mesage2.enabled = true;
         StartCoroutine( DelayOneFrame(()=> {
-            Canvas.ForceUpdateCanvases();
-            mesage2.enabled = true;
+            
         }));
 
         boardTut.Init(tutData);
-       
+        StopAllCoroutines();
+        StartCoroutine(HandleHand(boardTut, tutData));
+    }
+    public IEnumerator HandleHand(BoardTut board, TutorialData tutData)
+    {
+        hand.ShowHand();
+        yield return new WaitForSeconds(0.5f);
+        if (tutData.posStar.Count >= 2)
+        {
+    
+            
+            Vector2Int idPosS = tutData.posStar[0];
+            Vector2Int idPosE = tutData.posStar[1];
+            Vector3 posS = board.cells[idPosS.x][idPosS.y].gameObject.transform.position;
+            Vector3 posE = board.cells[idPosE.x][idPosE.y].gameObject.transform.position;
+            hand.MoveHand(hand.posInit, posS);
+            yield return new WaitForSeconds(hand.timeMove);
+            hand.ActionTwoClick();
+            yield return new WaitForSeconds(hand.timeTwoClick*4);
+
+            hand.MoveHand(posS, posE);
+            yield return new WaitForSeconds(hand.timeMove);
+            hand.ActionTwoClick();
+            yield return new WaitForSeconds(hand.timeTwoClick * 4);
+            hand.MoveHand(
+              board.cells[idPosE.x][idPosE.y].gameObject.transform.position, hand.posInit);
+            yield return new WaitForSeconds(hand.timeMove);
+            hand.HideHand();
+
+
+        }
+        else
+        { 
+            Vector2Int idPosE = tutData.posStar[0];
+            hand.MoveHand(hand.posInit,
+                board.cells[idPosE.x][idPosE.y].gameObject.transform.position);
+            yield return new WaitForSeconds(hand.timeMove);
+            hand.ActionClick();
+            yield return new WaitForSeconds(hand.timeClick * 4);
+            hand.MoveHand(
+                board.cells[idPosE.x][idPosE.y].gameObject.transform.position, hand.posInit);
+            yield return new WaitForSeconds(hand.timeMove);
+            hand.HideHand();
+
+        }
     }
     public IEnumerator DelayOneFrame(Action call1  )
     {

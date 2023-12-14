@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: TutorialData 2
   m_EditorClassIdentifier: 
   mesage1:
-  - 'Let''s continue with the rules.<br>Can place 2 star in this region? But  the
-    carefull, they are not allowed to touch! '
-  - Awesome, that was easy!
+  - Tut/PreView2M0_0
+  - Tut/PreView2M0_1
   mesage2:
-  - Stars are not allowed to touch, even not diagonally
+  - Tut/PreView2M1_0
   sizeBoard: {x: 1, y: 3}
   posStar:
   - {x: 0, y: 0}

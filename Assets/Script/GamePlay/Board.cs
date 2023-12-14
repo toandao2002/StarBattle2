@@ -282,6 +282,28 @@ public class Board : MonoBehaviour
             HighLightColumn(column, true);
         }
     }
+    public void MarkDotArroundCell(Vector2Int pos)
+    {
+        bool hasError = false; 
+        Cell CellCurrent = cells[pos.x][pos.y];
+        foreach (Vector2Int d in direction)
+        {
+            Vector2Int posNext = pos + d;
+            if (!CheckPosCorect(posNext.x, posNext.y))
+            {
+                continue;
+            }
+            Cell cellNext = cells[posNext.x][posNext.y];
+            if ( cellNext.statusCell == StatusCell.None)
+            {
+                cellNext.OneClick(true);
+            }
+             
+        }
+         
+
+
+    }
     public bool CheckAround(Vector2Int pos)
     {
         bool hasError = false;

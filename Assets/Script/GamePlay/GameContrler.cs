@@ -209,7 +209,13 @@ public class GameContrler : MonoBehaviour
     
     public void EfWin(object obj)
     {
-        for(int i = 0; i < 2; i++)
+        StartCoroutine(IEEfwin());
+    }
+    public IEnumerator IEEfwin()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        ManageAudio.Instacne.PlaySound(NameSound.WinGame);
+        for (int i = 0; i < 2; i++)
         {
             fx[i].transform.position = PosFx[i].transform.position;
             fx[i].gameObject.SetActive(true);

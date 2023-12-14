@@ -57,7 +57,7 @@ public class Pack
     public bool CheckLevelHasBeenBought(int idLevel, LevelCommon levelCommon)
     {
         if (idBoughtPack.Count == 0) {
-            return levelCommon.GetSubLevel(typeGame)[0].GetAmountLevel()> idLevel;
+            return levelCommon.GetSubLevel(typeGame)[0].GetAmountLevel()> idLevel-1;
              
         }
         int idPackLast = idBoughtPack[idBoughtPack.Count - 1]-1;

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class MyLocalize : MonoBehaviour
 {
     public static MyLocalize Instance;
@@ -9,7 +9,7 @@ public class MyLocalize : MonoBehaviour
     [SerializeField] private List<BoxChoseLanguage> languagesBox;
     private Dictionary<string, BoxChoseLanguage> dict = new Dictionary<string, BoxChoseLanguage>();
     [SerializeField] private Transform holder;
-   
+    public TMP_Text language;
     private void Awake()
     {
         PostInit();
@@ -80,11 +80,14 @@ public class MyLocalize : MonoBehaviour
             "English", "French", "Vietnamese", "Espano", "German", "Hindi", "Italian", "Japanese", "Korean", "Russian",
             "Turkey", "Arabic", "Portugal","Indonesian"
         };
-         
+        List <string >ignoreKeys = new List<string>(){ "in", "jp", "kr", "ar", "pt", "id" };
         for (int i = 0; i < holder.childCount; i++)
         {
              
             languagesBox[i].Init(keys[i], names[i]);
+            if (ignoreKeys.Contains(keys[i])){
+                languagesBox[i].gameObject.SetActive(false);
+            }
             //holder.GetChild(i).GetComponentInChildren<UnityEngine.UI.Image>().sprite = flagSprites[i];
             
         }
@@ -113,7 +116,7 @@ public class MyLocalize : MonoBehaviour
 
     }
 
-    void UpdateSelected()
+    public void UpdateSelected()
     {
         for (int i = 0; i < languagesBox.Count; i++)
         {
@@ -122,6 +125,7 @@ public class MyLocalize : MonoBehaviour
         }
 
         dict[PlayerPrefs.GetString("Language", "en")].text.color = pickC;
+        language.text = dict[PlayerPrefs.GetString("Language", "en")].text.text;
         dict[PlayerPrefs.GetString("Language", "en")].bgr.color = Color.gray;
     }
 
@@ -133,9 +137,9 @@ public class MyLocalize : MonoBehaviour
         PlayerPrefs.SetString("Language", key);
         Wugner.Localize.Localization.Instance.SwitchLanguage(key);
         UpdateSelected();
-
+        MyEvent.UpdataLocalize?.Invoke() ;
         //FireBaseManager.Instance.LogEvent("Panel_LanguageSwitch_" + key);
         // SoundManager.Instance.PlaySFX(SFX.clickSFX);
-        
+
     }
 }

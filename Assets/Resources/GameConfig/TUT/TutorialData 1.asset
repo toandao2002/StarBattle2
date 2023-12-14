@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: TutorialData 1
   m_EditorClassIdentifier: 
   mesage1:
-  - Touch once to place a dot
-  - Touch again to make it a start
-  - Touch again to reset star
-  - Awesome, now you nkow how to control the game fields
+  - Tut/PreView1M0_0
+  - Tut/PreView1M0_1
+  - Tut/PreView1M0_2
+  - Tut/PreView1M0_3
   mesage2:
-  - Dots are used to mark fields where no stars can be placed
+  - Tut/PreView1M1_0
   sizeBoard: {x: 1, y: 1}
   posStar:
   - {x: 0, y: 0}

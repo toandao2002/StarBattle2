@@ -396,3 +396,152 @@ MonoBehaviour:
     Language: ita
     FontName: 
     Content: Scusate il sistema di suggestione dell'errore
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Sei nuovo a Star Battle?
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Donec a Massa ID Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringilla
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Insegnami le regole di base
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Fatto
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Ok ho capito
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tocca una volta per posizionare un punto
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tocca di nuovo per farlo iniziare
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tocca di nuovo per reimpostare la stella
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Fantastico, ora tu nkow come controllare i campi di gioco
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "I punti vengono utilizzati per contrassegnare i campi in cui non \xE8
+      possibile posizionare stelle"
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Continuiamo con le regole. Pu\xF2 posizionare 2 stelle in questa regione?
+      Ma gli attenti, non sono autorizzati a toccare!"
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Fantastico, \xE8 stato facile!"
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Le stelle non sono autorizzate a toccare, anche non in diagonale
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Questa regione \xE8 un po 'pi\xF9 complicata. Usa i punti se non sei
+      sicuro"
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Fantastico, hai quasi finito
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "I punti vengono utilizzati per contrassegnare i campi in cui non \xE8
+      possibile posizionare stelle"
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Le stelle non sono autorizzate a toccare, anche non in diagonale
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: 'Lasciami riassumere le regole di una normale battaglia a 2 stelle:'
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Le stelle non sono autorizzate a toccare, anche non in diagonale
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Ogni colonna, riga o regione deve avere esattamente 2 stelle
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Sii consapevole, ci sono giochi SLSO con pi\xF9 o meno di 2 stelle\n\nQui
+      devi cambiare la Regola 2 di conseguenza!"
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Lo hai fatto!
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Donec a Masa ID Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Gioca al puzzle per principianti

@@ -394,3 +394,153 @@ MonoBehaviour:
     Language: es
     FontName: 
     Content: Lo siento Sistema de sugerencia de error
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "\xBFEres nuevo en Star Battle?"
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Donec A Massa Id Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringilla
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Ens\xE9\xF1ame las reglas b\xE1sicas"
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Hecho
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Ok, lo tengo
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Toca una vez para colocar un punto
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Toca de nuevo para que sea un comienzo
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Toque nuevamente para restablecer la estrella
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Impresionante, ahora est\xE1s nkow c\xF3mo controlar los campos de
+      juego"
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Los puntos se utilizan para marcar campos donde no se pueden colocar
+      estrellas
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Continuemos con las reglas. \xBFPuede colocar 2 estrellas en esta regi\xF3n?
+      \xA1Pero el cuidadoso, no se les permite tocar!"
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Impresionante, \xA1eso fue f\xE1cil!"
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Las estrellas no pueden tocar, incluso no diagonalmente
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Esta regi\xF3n es un poco m\xE1s complicada. Usa los puntos si no est\xE1s
+      seguro"
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Impresionante, casi has terminado
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Los puntos se utilizan para marcar campos donde no se pueden colocar
+      estrellas
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Las estrellas no pueden tocar, incluso no diagonalmente
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Perm\xEDtanme resumir las reglas de una batalla normal de 2 estrellas:"
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Las estrellas no pueden tocar, incluso no diagonalmente
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Cada columna, fila o regi\xF3n debe tener exactamente 2 estrellas"
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Tenga en cuenta que hay juegos SLSO con m\xE1s o menos de 2 estrellas\n\n\xA1Aqu\xED
+      tienes que cambiar la Regla 2 en consecuencia!"
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "\xA1Lo hiciste!"
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Donec A Masa Id Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Reproducir rompecabezas para principiantes

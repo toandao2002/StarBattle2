@@ -272,5 +272,104 @@ namespace Loc
 			/// <summary>
 			public const string ShopText = "/Shop/ShopText";
 		}
+		public static class Tut
+		{
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView0M0_0 = "/Tut/PreView0M0_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView0M0_1 = "/Tut/PreView0M0_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView0M0_2 = "/Tut/PreView0M0_2";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView0M0_3 = "/Tut/PreView0M0_3";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView0M0_4 = "/Tut/PreView0M0_4";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView1M0_0 = "/Tut/PreView1M0_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView1M0_1 = "/Tut/PreView1M0_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView1M0_2 = "/Tut/PreView1M0_2";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView1M0_3 = "/Tut/PreView1M0_3";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView1M1_0 = "/Tut/PreView1M1_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView2M0_0 = "/Tut/PreView2M0_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView2M0_1 = "/Tut/PreView2M0_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView2M1_0 = "/Tut/PreView2M1_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView3M0_0 = "/Tut/PreView3M0_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView3M0_1 = "/Tut/PreView3M0_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView3M1_0 = "/Tut/PreView3M1_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView3M1_1 = "/Tut/PreView3M1_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView4_0 = "/Tut/PreView4_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView4_1 = "/Tut/PreView4_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView4_2 = "/Tut/PreView4_2";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView4_3 = "/Tut/PreView4_3";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView5_0 = "/Tut/PreView5_0";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView5_1 = "/Tut/PreView5_1";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PreView5_2 = "/Tut/PreView5_2";
+		}
 	}
 }

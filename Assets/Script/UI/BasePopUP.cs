@@ -52,15 +52,15 @@ public class BasePopUP : MonoBehaviour
         {
             if (BgrMain != null)
             {
-                BgrMain.DOFillAmount(0, durationEffect).From(1).SetEase(ease);
+                BgrMain.DOFillAmount(0, durationEffect).From(1).SetEase(ease).SetUpdate(true);
             }
         }
         if(canvasGroup!= null)
-            canvasGroup.DOFade(0, durationEffect).From(1).SetDelay(0.02f);
+            canvasGroup.DOFade(0, durationEffect).From(1).SetDelay(0.02f).SetUpdate(true);
 
         rec.DOAnchorPos3DY(posY * dir, durationEffect).SetEase(ease).From(0).OnComplete(()=> {
             main.SetActive(false); 
-        }); 
+        }).SetUpdate(true); 
     }
     public virtual void Show(object data = null,int dir =1)
     {
@@ -80,12 +80,12 @@ public class BasePopUP : MonoBehaviour
         {
             if (BgrMain != null)
             {
-                BgrMain.DOFillAmount(1, durationEffect).From(0).SetEase(ease);
+                BgrMain.DOFillAmount(1, durationEffect).From(0).SetEase(ease).SetUpdate(true);
             }
         }
         if (canvasGroup != null)
-            canvasGroup.DOFade(1, durationEffect).From(0);
-        rec.DOAnchorPos3DY(0, durationEffect).From(posY * dir).SetEase(ease);
+            canvasGroup.DOFade(1, durationEffect).From(0).SetUpdate(true);
+        rec.DOAnchorPos3DY(0, durationEffect).From(posY * dir).SetEase(ease).SetUpdate(true);
         
     }
    

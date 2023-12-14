@@ -399,3 +399,157 @@ MonoBehaviour:
     Language: fr
     FontName: 
     Content: "Syst\xE8me de suggestion d'erreur d\xE9sol\xE9"
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "\xCAtes-vous nouveau \xE0 Star Battle?"
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Donec A Massa Id Elit Porttior Mollis. Nunc malesuada vel arcu et fringilla.
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Apprenez-moi les r\xE8gles de base"
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Fait
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: OK j'ai compris
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Toucher une fois pour placer un point
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Appuyez \xE0 nouveau pour en faire un d\xE9but"
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Toucher \xE0 nouveau pour r\xE9initialiser l'\xE9toile"
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "G\xE9nial, maintenant vous nkow comment contr\xF4ler les champs de
+      jeu"
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Des points sont utilis\xE9s pour marquer les champs o\xF9 aucune \xE9toile
+      ne peut \xEAtre plac\xE9e"
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Continuons les r\xE8gles.\nPeut-on placer 2 \xE9toiles dans cette r\xE9gion?
+      Mais le prudence, ils ne sont pas autoris\xE9s \xE0 toucher!"
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "G\xE9nial, c'\xE9tait facile!"
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Les \xE9toiles ne sont pas autoris\xE9es \xE0 toucher, m\xEAme pas
+      en diagonale"
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Cette r\xE9gion est un peu plus d\xE9licate. Utilisez les points si
+      vous n'\xEAtes pas s\xFBr"
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "G\xE9nial, tu as presque termin\xE9"
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Des points sont utilis\xE9s pour marquer les champs o\xF9 aucune \xE9toile
+      ne peut \xEAtre plac\xE9e"
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Les \xE9toiles ne sont pas autoris\xE9es \xE0 toucher, m\xEAme pas
+      en diagonale"
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Permettez-moi de r\xE9sumer les r\xE8gles d'une bataille normale de
+      2 \xE9toiles:"
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Les \xE9toiles ne sont pas autoris\xE9es \xE0 toucher, m\xEAme pas
+      en diagonale"
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Chaque colonne, ligne ou r\xE9gion doit avoir exactement 2 \xE9toiles"
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Sachez, il y a des jeux SLSO avec plus ou moins de 2 \xE9toiles\n\nIci,
+      vous devez modifier la r\xE8gle 2 en cons\xE9quence!"
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Vous le trempez!
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Donec A masa id elit Porttior mollis. Nunn maleuada vel arcu et fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Jouer au puzzle d\xE9butant"

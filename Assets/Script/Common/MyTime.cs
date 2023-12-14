@@ -45,7 +45,7 @@ public class MyTime : MonoBehaviour
             yield return new WaitForSeconds(1);
             timeRun++;
             timeUserDontTouch++; 
-            if(timeUserDontTouch > 10)
+            if(timeUserDontTouch == 2)
             {
                 MyEvent.DontTouch?.Invoke();
             }

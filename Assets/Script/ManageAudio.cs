@@ -55,7 +55,10 @@ public class ManageAudio : MonoBehaviour
         UpdateSettingSoundAndMusic();
         StartCoroutine(DelaySound());
     }
-
+    public SettingData GetSetting()
+    {
+        return settingData;
+    }
     public void UpdateSound( )
     {
         settingData.TurnSound();
@@ -65,6 +68,11 @@ public class ManageAudio : MonoBehaviour
     {
         settingData.TurnMusic();
         UpdateSettingSoundAndMusic();
+    }
+    public void UpdateAutoDot()
+    {
+        settingData.TurnAutoDot();
+        
     }
     public void UpdateHaptic()
     {

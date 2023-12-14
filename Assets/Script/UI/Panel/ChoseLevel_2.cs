@@ -8,6 +8,7 @@ public class ChoseLevel_2 : BasePopUP
     public TittleUI tittle;
     
     public static ChoseLevel_2 instance;
+    public PopUpSuggestBuyPack popUpSuggestBuyPack;
     public override void Awake()
     {
         base.Awake();
@@ -19,6 +20,7 @@ public class ChoseLevel_2 : BasePopUP
     public GameObject content;
     public List<Level> levels;
     public GameObject BoxShopPref;
+    public ButtonPlayNow buttonPlayNow;
     public void RemoveGarbage()
     {
        /* for(int  i=content.transform.childCount-1;i>=0; i--)
@@ -72,13 +74,26 @@ public class ChoseLevel_2 : BasePopUP
             RemoveGarbage();
             GetData();
             ChangeTheme();
-
+            int levelFinishLast = 0;
+            int timeFinishLast = 0;
             for (int i = 0; i < levels.Count; i++)
             {
                 //btnLevels.Add(Instantiate(btnLevelPrefab, content.transform));
                 ButonLevel btnLevel = InitButtonLevel(i);
                 NameStateLevel nameStateLevel = NameStateLevel.Nothing;
-                if (levels[i].datalevel.isfinished) nameStateLevel = NameStateLevel.Finished;
+                if (levels[i].datalevel.isfinished)
+                {
+                    nameStateLevel = NameStateLevel.Finished;
+                    levelFinishLast = levels[i].nameLevel;
+                    if (levels[i].datalevel != null)
+                    {
+                        timeFinishLast =  levels[i].datalevel.timeFinish;
+                    }
+                    else
+                    {
+                        timeFinishLast = 0;
+                    }
+                }
                 else if (!levels[i].datalevel.isfinished && levels[i].datalevel.timeFinish > 0)
                 {
                     nameStateLevel = NameStateLevel.Process;
@@ -94,6 +109,7 @@ public class ChoseLevel_2 : BasePopUP
                     //btnLevels[i].SetTime(0);
                 }
             }
+            buttonPlayNow.SetLevel(levelFinishLast+1, timeFinishLast);
             HideReduntantItem(levels.Count);
             Instantiate(BoxShopPref, content.transform);
         }
@@ -107,6 +123,24 @@ public class ChoseLevel_2 : BasePopUP
         MyEvent.ClickBack = Back;
         
     }
+
+    public void SetDataForBtnPlayNow()
+    {
+        
+    }
+    public void OpenLasTLevelCanPlay()
+    {
+        DataLevelUser dataLevelUser = GameConfig.instance.GetDataLevelCommon();
+        int id = dataLevelUser.GetLevelPassByTypeGame(GameConfig.instance.typeGame);
+
+        GameConfig.instance.SetLevelCurrent(id + 1);
+        GameConfig.instance.nameModePlay = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(GameConfig.instance.typeGame));
+        GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetLevelCurrent().datalevel.timeFinish);
+        GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);
+        GameManger.instance.manageUi.HidePopUP(NamePopUp.ChoseLevel1);
+    }
+
+
     public void ChangeLanguage()
     {
         tittle.ShowTittle(Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(GameConfig.instance.typeGame)));
@@ -170,6 +204,11 @@ public class ChoseLevel_2 : BasePopUP
             BgrMain2.sprite = BgrMain.sprite;
 
 
+    }
+
+    public void ShowPopUPSuggestBuyPack()
+    {
+        popUpSuggestBuyPack.Show();
     }
 
 }

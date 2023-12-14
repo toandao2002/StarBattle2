@@ -7,7 +7,7 @@ public class SettingData
     public bool vibrate = true;
     public float soundVolume = 1;
     public float musicVolume = 1;
-
+    public bool autoDot = true;
     public NameTheme theme;
     public static SettingData GetSetting()
     {
@@ -24,6 +24,11 @@ public class SettingData
         DataGame.SetDataJson(DataGame.SettingData, json);
         DataGame.Save();
         MyEvent.UpdateSetingData?.Invoke();
+    }
+    public void TurnAutoDot()
+    {
+        autoDot = !autoDot;
+        SaveSetingData();
     }
     public void TurnSound()
     {

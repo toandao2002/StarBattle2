@@ -168,8 +168,10 @@ public class Cell :MonoBehaviour
         }
         else if (board != null && board.isFinish)
         {
-            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos))
+            if (GameConfig.instance.GetLevelCurrent().dataBoard.CheckPosCorrectStar(pos)) {
+                EffectWinStar();
                 ShowStarIcon();
+            }
             txt.text = "";
         }
         else {
@@ -304,13 +306,16 @@ public class Cell :MonoBehaviour
         {
             MyEvent.GameWin?.Invoke(null);
 
-            ManageAudio.Instacne.PlaySound(NameSound.WinGame);
+            
         }
 
         ManageAudio.Instacne.VibrateLight();
         Check();
         board.CheckAround(pos);
-
+        if (isUser && ManageAudio.Instacne.GetSetting().autoDot)
+        {
+            board.MarkDotArroundCell(pos);
+        }
 
     }
     bool beEffectByMoveMouse;
@@ -413,7 +418,7 @@ public class Cell :MonoBehaviour
     }
     public void EffectWinStar()
     {
-        icon.gameObject.transform.DOScale(0.7f, 0.3f).From(0.4f).SetEase(Ease.InOutBack);
+        icon.gameObject.transform.DOScale(0.7f, 0.5f).From(0.1f).SetEase(Ease.InOutBack);
     }
     public void ShowStatusCell(StatusCell _statusCell)
     {
@@ -469,6 +474,7 @@ public class Cell :MonoBehaviour
         statusCell = StatusCell.None;
         inCellBgrWrong.gameObject.SetActive(false);
         beingWrong = false;
+        StopAllCoroutines();
     }
     
     public void HightLightWrong(NameError nameError,bool showImmediately = false)
@@ -488,7 +494,7 @@ public class Cell :MonoBehaviour
         }
         else
         {
-
+            StopAllCoroutines();
             StartCoroutine(DelayShowWrong());
         }
     }
@@ -531,6 +537,7 @@ public class Cell :MonoBehaviour
         { 
 
             beingWrong = false;
+            StopAllCoroutines();
             inCellBgrWrong.gameObject.SetActive(false);
 
             inCellBgr.color = color;

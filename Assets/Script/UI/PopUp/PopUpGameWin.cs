@@ -46,15 +46,18 @@ public class PopUpGameWin : BasePopUP
              }*/
             GameConfig.instance.SetTimeFiishCurrent(GameConfig.instance.GetCurrentLevel().datalevel.timeFinish);
             GameContrler.instance.board.InitBoard();
+            Hide(-1);
 
         }
         else
         {
             GameManger.instance.manageUi.ShowPopUp(NamePopUp.ChoseLevel2,1,-1);
-            PopUpContinuePlay.instance.Show(1,-1);
+            GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
+            ChoseLevel_2.instance.popUpSuggestBuyPack.Show();
+            Hide(-1);
         }
 
-        Hide(-1);
+       
     }
     public void Show2(object dta)
     {

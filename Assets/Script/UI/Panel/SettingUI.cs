@@ -15,6 +15,7 @@ public class SettingUI : BasePopUP
     public BoxSetting darkmode;
     public BoxSetting restorePurchased;
     public BoxSetting howToPlay;
+    public BoxSetting autpDpt;
      
     public List<Color> bgrColors;
     private void OnEnable()
@@ -25,8 +26,10 @@ public class SettingUI : BasePopUP
     {
         MyEvent.ChangeTheme -= ChangeTheme;
     }
+
     public override void Show(object data = null, int dir = 1)
     {
+        PausedGame();
         main.SetActive(true);
         if (rec == null)
         {
@@ -36,16 +39,28 @@ public class SettingUI : BasePopUP
         if (dir == -1) // down
         {
             posY = 120;
-        }
-        rec.DOAnchorPos3DX(0, durationEffect).From(posY * dir).SetEase(ease);
+            }
+        rec.DOAnchorPos3DX(0, durationEffect).From(posY * dir).SetEase(ease).SetUpdate(true).SetEase(Ease.InOutQuart);
         UpdateUi();
+        MyLocalize.Instance.UpdateSelected();
         ChangeTheme();
         preAction = (Action)Delegate.Combine(MyEvent.ClickBack);
         MyEvent.ClickBack = Back; 
     }
+
+    public void PausedGame()
+    {
+        Time.timeScale = 0f;
+    }
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+    }
+
     Action preAction;
     public override void Hide(int dir = 1)
     {
+        ContinueGame();
         if (rec == null)
         {
             rec = main.GetComponent<RectTransform>();
@@ -57,9 +72,9 @@ public class SettingUI : BasePopUP
             posY = -120;
         }
 
-        rec.DOAnchorPos3DX(posY * dir, durationEffect).SetEase(ease).From(0).OnComplete(() => {
+        rec.DOAnchorPos3DX(posY * dir, durationEffect).SetEase(ease).From(0).SetUpdate(true).OnComplete(() => {
             main.SetActive(false);
-        });
+        }).SetEase(Ease.InOutQuart);
 
     }
     public void Back()
@@ -99,8 +114,17 @@ public class SettingUI : BasePopUP
 
             darkmode.mySwitch.UpdateState(false);
         }
-         
-        
+        if(settingData.autoDot)
+        {
+            autpDpt.mySwitch.UpdateState(true);
+        }
+        else
+        {
+            autpDpt.mySwitch.UpdateState(false);
+
+        }
+
+
     }
     private void Awake()
     {
@@ -110,7 +134,11 @@ public class SettingUI : BasePopUP
         }
         
     }
+    public void TurnAutoDot()
+    {
+        ManageAudio.Instacne.UpdateAutoDot();
 
+    }
     public void TurnSound()
     {
         ManageAudio.Instacne.UpdateSound();

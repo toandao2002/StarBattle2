@@ -394,3 +394,152 @@ MonoBehaviour:
     Language: gm
     FontName: 
     Content: Entschuldigung Fehlervorschlag System
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Bist du neu im Star Battle?
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Donec A Massa ID Elit porttior mollis. Nun Maleesuada Vel Arcu et Fringilla
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Lehre mir die Grundregeln
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Erledigt
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: OK ich habe es
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Ber\xFChren Sie einmal, um einen Punkt zu platzieren"
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Ber\xFChren Sie erneut, um es zu einem Start zu machen"
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Ber\xFChren Sie wieder, um Stern zur\xFCckzusetzen"
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Super, jetzt nkow wie man die Spielfelder kontrolliert
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Punkte werden verwendet, um Felder zu markieren, in denen keine Sterne
+      platziert werden k\xF6nnen"
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Lassen Sie uns mit den Regeln fortfahren. Kann 2 Sterne in dieser Region
+      platzieren? Aber das Sorgfalt, sie d\xFCrfen nicht ber\xFChren!"
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Super, das war einfach!
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Sterne d\xFCrfen nicht ber\xFChren, auch nicht diagonal"
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Diese Region ist etwas schwieriger. Verwenden Sie die Punkte, wenn Sie
+      sich nicht sicher sind
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Super, du bist fast fertig
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Punkte werden verwendet, um Felder zu markieren, in denen keine Sterne
+      platziert werden k\xF6nnen"
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Sterne d\xFCrfen nicht ber\xFChren, auch nicht diagonal"
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: 'Lassen Sie mich die Regeln eines normalen 2 -Sterne -Kampfes zusammenfassen:'
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Sterne d\xFCrfen nicht ber\xFChren, auch nicht diagonal"
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Jede Spalte, Zeile oder Region muss genau 2 Sterne haben
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Seien Sie sich bewusst, dass es SLSO -Spiele mit mehr oder weniger
+      als 2 Stern gibt\n\nHier m\xFCssen Sie Regel 2 entsprechend \xE4ndern!"
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Du hast es geschafft!
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Donec a masa id elit porttior mollis. Nunk Maleesuada Vel Arcu et Fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Spielen Sie Anf\xE4nger -Puzzle"

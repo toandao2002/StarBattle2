@@ -16,7 +16,7 @@ public class HintMesageUI : MonoBehaviour
        
     }
      
-
+    
     public Image main;
     public TMP_Text txt; 
     public TMP_Text title;  

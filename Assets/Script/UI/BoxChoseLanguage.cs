@@ -17,5 +17,6 @@ public class BoxChoseLanguage : MonoBehaviour
     public void UpdataLanguage()
     {
         MyLocalize.Instance.Select(val);
+        BoxLanguage.instance.ShowPopUpChoseLanguage();
     }
 }

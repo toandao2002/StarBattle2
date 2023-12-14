@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: TutorialData 3
   m_EditorClassIdentifier: 
   mesage1:
-  - This region is a bit trickier. Use the dots if you are not sure
-  - Awesome, you are almost done
+  - Tut/PreView3M0_0
+  - Tut/PreView3M0_1
   mesage2:
-  - Dots are used to mark fields where no stars can be placed
-  - Stars are not allowed to touch, even not diagonally
+  - Tut/PreView3M1_0
+  - Tut/PreView3M1_1
   sizeBoard: {x: 2, y: 3}
   posStar:
   - {x: 0, y: 0}

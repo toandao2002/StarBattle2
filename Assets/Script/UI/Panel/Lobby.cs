@@ -36,8 +36,10 @@ public class Lobby : BasePopUP
         base.Show(data, dir);
         HandelData();
         ChangeTheme();
+        
 
     }
+   
     private void OnEnable()
     {
         ChangeTheme();

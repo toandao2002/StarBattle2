@@ -52,14 +52,14 @@ public class Switch : MonoBehaviour
             state.text = "ON";
             state.color = txtColor[0];
             TurnOn?.Invoke() ;
-            Circle.transform.DOLocalMoveX(18, 0.3f);
+            Circle.transform.DOLocalMoveX(18, 0.3f).SetEase(Ease.InOutBack).SetUpdate(true);
         }
         else
         {
             bgr.sprite = sprites[1];
             state.text = "OFF";
             state.color = txtColor[1];
-            Circle.transform.DOLocalMoveX(-18, 0.3f);
+            Circle.transform.DOLocalMoveX(-18, 0.3f).SetEase(Ease.InOutBack).SetUpdate(true);
             TurnOff?.Invoke();
         }
     }

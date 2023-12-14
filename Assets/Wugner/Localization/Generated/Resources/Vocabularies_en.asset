@@ -394,3 +394,154 @@ MonoBehaviour:
     Language: en
     FontName: 
     Content: Sorry error suggestion system
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Are you new to star battle?
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Donec a massa id elit porttior mollis. Nunc malesuada vel arcu et fringilla.
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Teach me the basic rules
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Done
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Ok,I got it
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Touch once to place a dot
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Touch again to make it a start
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Touch again to reset star
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Awesome, now you nkow how to control the game fields
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Dots are used to mark fields where no stars can be placed
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 'Let''s continue with the rules.
+
+      Can place 2 star in this region?
+      But the carefull, they are not allowed to touch!'
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Awesome, that was easy!
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Stars are not allowed to touch, even not diagonally
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: This region is a bit trickier. Use the dots if you are not sure
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Awesome, you are almost done
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Dots are used to mark fields where no stars can be placed
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Stars are not allowed to touch, even not diagonally
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 'Let me summarize the rules of a normal 2 star battle:'
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Stars are not allowed to touch, even not diagonally
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Each column, row or region must have exactly 2 stars
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 'Be aware, there are slso games with more or less than 2 star
+
+
+      Here
+      you have to change rule 2 accordingly!'
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: You dit it!
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Donec a masa id elit porttior mollis. Nunc malesuada vel arcu et fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Play beginner puzzle

@@ -20,9 +20,11 @@ public class BoxPlayedRecently : MonoBehaviour
     {
         ChangeTheme();
         MyEvent.ChangeTheme += ChangeTheme;
+        MyEvent.UpdataLocalize += UpdateLocalize;
     }
     private void OnDisable()
     {
+        MyEvent.UpdataLocalize -= UpdateLocalize;
         MyEvent.ChangeTheme -= ChangeTheme;
     }
     private void ChangeTheme()
@@ -48,12 +50,16 @@ public class BoxPlayedRecently : MonoBehaviour
 
     }
 
-    
+    public void UpdateLocalize()
+    {
+        nameLevel.text = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(this.typeGame)) + "-" + nameStringLevel;
+    }
+    string nameStringLevel;
     public void SetData( string nameLevel, string dayplay, string state, int timeFinish, int level,  TypeGame typeGame)
     {
-        
-        nameLevel = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(typeGame)) +"-" + nameLevel;
-        this.nameLevel.text = nameLevel;
+
+        this.nameStringLevel = nameLevel;
+        UpdateLocalize();
         this.dayPlay.text = dayplay ;
         this. state.text = state ;
         timeFinishInt = timeFinish;

@@ -411,3 +411,168 @@ MonoBehaviour:
     Language: vi
     FontName: 
     Content: "Xin l\u1ED7i h\u1EC7 th\u1ED1ng g\u1EE3i \xFD l\u1ED7i"
+  - ID: Tut/PreView0M0_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n c\xF3 m\u1EDBi tham gia Star Battle kh\xF4ng?"
+  - ID: Tut/PreView0M0_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: DONEC A MASSA ID elit Porttior Mollis. Nunc malesuada vel arcu et fringilla
+  - ID: Tut/PreView0M0_2
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "D\u1EA1y t\xF4i c\xE1c quy t\u1EAFc c\u01A1 b\u1EA3n"
+  - ID: Tut/PreView0M0_3
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: Xong
+  - ID: Tut/PreView0M0_4
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "OK, t\xF4i \u0111\xE3 hi\u1EC3u n\xF3"
+  - ID: Tut/PreView1M0_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u1EA1m v\xE0o m\u1ED9t l\u1EA7n \u0111\u1EC3 \u0111\u1EB7t m\u1ED9t
+      d\u1EA5u ch\u1EA5m"
+  - ID: Tut/PreView1M0_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u1EA1m v\xE0o m\u1ED9t l\u1EA7n n\u1EEFa \u0111\u1EC3 l\xE0m cho
+      n\xF3 b\u1EAFt \u0111\u1EA7u"
+  - ID: Tut/PreView1M0_2
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u1EA1m v\xE0o l\u1EA1i \u0111\u1EC3 \u0111\u1EB7t l\u1EA1i ng\xF4i
+      sao"
+  - ID: Tut/PreView1M0_3
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Tuy\u1EC7t v\u1EDDi, b\xE2y gi\u1EDD b\u1EA1n kh\xF4ng l\xE0m th\u1EBF
+      n\xE0o \u0111\u1EC3 ki\u1EC3m so\xE1t c\xE1c tr\u01B0\u1EDDng tr\xF2 ch\u01A1i"
+  - ID: Tut/PreView1M1_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c ch\u1EA5m \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3
+      \u0111\xE1nh d\u1EA5u c\xE1c tr\u01B0\u1EDDng m\xE0 kh\xF4ng c\xF3 ng\xF4i
+      sao n\xE0o c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c \u0111\u1EB7t"
+  - ID: Tut/PreView2M0_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\xE3y ti\u1EBFp t\u1EE5c v\u1EDBi c\xE1c quy t\u1EAFc. C\xF3 th\u1EC3
+      \u0111\u1EB7t 2 sao trong khu v\u1EF1c n\xE0y kh\xF4ng? Nh\u01B0ng s\u1EF1
+      c\u1EA9n th\u1EADn, h\u1ECD kh\xF4ng \u0111\u01B0\u1EE3c ph\xE9p ch\u1EA1m
+      v\xE0o!"
+  - ID: Tut/PreView2M0_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Tuy\u1EC7t v\u1EDDi, th\u1EADt d\u1EC5 d\xE0ng!"
+  - ID: Tut/PreView2M1_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c ng\xF4i sao kh\xF4ng \u0111\u01B0\u1EE3c ph\xE9p ch\u1EA1m v\xE0o,
+      th\u1EADm ch\xED kh\xF4ng theo \u0111\u01B0\u1EDDng ch\xE9o"
+  - ID: Tut/PreView3M0_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Khu v\u1EF1c n\xE0y l\xE0 m\u1ED9t ch\xFAt kh\xF3 kh\u0103n h\u01A1n.
+      S\u1EED d\u1EE5ng c\xE1c d\u1EA5u ch\u1EA5m n\u1EBFu b\u1EA1n kh\xF4ng ch\u1EAFc
+      ch\u1EAFn"
+  - ID: Tut/PreView3M0_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Tuy\u1EC7t v\u1EDDi, b\u1EA1n g\u1EA7n nh\u01B0 \u0111\xE3 ho\xE0n
+      th\xE0nh"
+  - ID: Tut/PreView3M1_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c ch\u1EA5m \u0111\u01B0\u1EE3c s\u1EED d\u1EE5ng \u0111\u1EC3
+      \u0111\xE1nh d\u1EA5u c\xE1c tr\u01B0\u1EDDng m\xE0 kh\xF4ng c\xF3 ng\xF4i
+      sao n\xE0o c\xF3 th\u1EC3 \u0111\u01B0\u1EE3c \u0111\u1EB7t"
+  - ID: Tut/PreView3M1_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c ng\xF4i sao kh\xF4ng \u0111\u01B0\u1EE3c ph\xE9p ch\u1EA1m v\xE0o,
+      th\u1EADm ch\xED kh\xF4ng theo \u0111\u01B0\u1EDDng ch\xE9o"
+  - ID: Tut/PreView4_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\xE3y \u0111\u1EC3 t\xF4i t\xF3m t\u1EAFt c\xE1c quy t\u1EAFc c\u1EE7a
+      m\u1ED9t tr\u1EADn chi\u1EBFn 2 sao b\xECnh th\u01B0\u1EDDng:"
+  - ID: Tut/PreView4_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c ng\xF4i sao kh\xF4ng \u0111\u01B0\u1EE3c ph\xE9p ch\u1EA1m v\xE0o,
+      th\u1EADm ch\xED kh\xF4ng theo \u0111\u01B0\u1EDDng ch\xE9o"
+  - ID: Tut/PreView4_2
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "M\u1ED7i c\u1ED9t, h\xE0ng ho\u1EB7c v\xF9ng ph\u1EA3i c\xF3 ch\xEDnh
+      x\xE1c 2 sao"
+  - ID: Tut/PreView4_3
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "H\xE3y l\u01B0u \xFD, c\xF3 c\xE1c tr\xF2 ch\u01A1i SLSO v\u1EDBi nhi\u1EC1u
+      h\u01A1n ho\u1EB7c \xEDt h\u01A1n 2 sao\n\n\u1EDE \u0111\xE2y b\u1EA1n ph\u1EA3i
+      thay \u0111\u1ED5i Quy t\u1EAFc 2 cho ph\xF9 h\u1EE3p!"
+  - ID: Tut/PreView5_0
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n l\xE0m \u0111\u01B0\u1EE3c r\u1ED3i!"
+  - ID: Tut/PreView5_1
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: DONEC A MASA ID elit Porttior Mollis. Nunc malesuada vel arcu et fringila
+  - ID: Tut/PreView5_2
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u01A1i c\xE2u \u0111\u1ED1 ng\u01B0\u1EDDi m\u1EDBi b\u1EAFt \u0111\u1EA7u"
