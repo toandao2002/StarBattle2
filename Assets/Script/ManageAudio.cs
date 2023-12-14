@@ -74,6 +74,13 @@ public class ManageAudio : MonoBehaviour
         settingData.TurnAutoDot();
         
     }
+    public void UpdateTheme()
+    {
+        NameTheme nameTheme = settingData.ChangeTheme();
+        GameConfig.instance.nameTheme = nameTheme;
+
+        MyEvent.ChangeTheme?.Invoke();
+    }
     public void UpdateHaptic()
     {
         settingData.ChangeVibration();

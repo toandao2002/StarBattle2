@@ -100,7 +100,7 @@ public class GameConfig : MonoBehaviour
             instance = this;
              
         }
-        nameTheme = SettingData.GetSetting().theme;
+        nameTheme =(NameTheme) SettingData.GetSetting().theme;
         
         
     }

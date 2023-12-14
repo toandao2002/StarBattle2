@@ -105,7 +105,7 @@ public class SettingUI : BasePopUP
         }
         
         music.mySwitch.UpdateState(settingData.vibrate);
-        if (settingData.theme == NameTheme.Dark)
+        if (settingData.theme == 1)
         {
             darkmode.mySwitch.UpdateState(true);
         }
@@ -153,12 +153,9 @@ public class SettingUI : BasePopUP
     }
     public void ChangeDarkMode()
     {
-        SettingData settingData = SettingData.GetSetting();
-        
-        NameTheme nameTheme =  settingData.ChangeTheme();
-        GameConfig.instance.nameTheme = nameTheme;
-         
-        MyEvent.ChangeTheme?.Invoke();
+
+        ManageAudio.Instacne.UpdateTheme();
+
     }
 
     public override void ChangeTheme()

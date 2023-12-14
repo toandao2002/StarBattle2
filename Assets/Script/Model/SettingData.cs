@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class SettingData 
 {
     public bool vibrate = true;
     public float soundVolume = 1;
     public float musicVolume = 1;
     public bool autoDot = true;
-    public NameTheme theme;
+    public int theme;
     public static SettingData GetSetting()
     {
         SettingData settingData = Util.ConvertStringToObejct<SettingData>(DataGame.GetDataJson(DataGame.SettingData));
+      
         if(settingData == null)
         {
             settingData = new SettingData();
@@ -20,10 +21,12 @@ public class SettingData
     }
     public void SaveSetingData()
     {
-        string json = Util.ConvertObjectToString(this);
+        Debug.Log(theme);
+        string json = Util.ConvertObjectToString<SettingData>(this);
         DataGame.SetDataJson(DataGame.SettingData, json);
         DataGame.Save();
         MyEvent.UpdateSetingData?.Invoke();
+        
     }
     public void TurnAutoDot()
     {
@@ -47,16 +50,16 @@ public class SettingData
     }
     public NameTheme ChangeTheme()
     {
-        if(theme == NameTheme.Dark)
+        if(theme == 1)
         {
-            theme = NameTheme.White;
+            theme = 0;
            
         }
         else
         {
-            theme = NameTheme.Dark;
+            theme = 1;
         }
         SaveSetingData();
-        return theme;
+        return (NameTheme) theme;
     }
 }
