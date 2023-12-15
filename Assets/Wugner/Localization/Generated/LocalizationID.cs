@@ -8,7 +8,23 @@ namespace Loc
 			/// <summary>
 			/// 
 			/// <summary>
+			public const string ContentSuggetBuyPack = "/ChoseLevel/ContentSuggetBuyPack";
+			/// <summary>
+			/// 
+			/// <summary>
 			public const string GetMorePuzzle = "/ChoseLevel/GetMorePuzzle";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string KeepPlay = "/ChoseLevel/KeepPlay";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string NoThank = "/ChoseLevel/NoThank";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string YouMustKeepPlay = "/ChoseLevel/YouMustKeepPlay";
 		}
 		public static class Common
 		{
@@ -42,6 +58,10 @@ namespace Loc
 			/// <summary>
 			/// 
 			/// <summary>
+			public const string BackToHome = "/GamePlay/BackToHome";
+			/// <summary>
+			/// 
+			/// <summary>
 			public const string Check = "/GamePlay/Check";
 			/// <summary>
 			/// 
@@ -58,7 +78,23 @@ namespace Loc
 			/// <summary>
 			/// 
 			/// <summary>
+			public const string GoNow = "/GamePlay/GoNow";
+			/// <summary>
+			/// 
+			/// <summary>
 			public const string Hint = "/GamePlay/Hint";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string Level = "/GamePlay/Level";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string LevelSolved = "/GamePlay/LevelSolved";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string Next = "/GamePlay/Next";
 			/// <summary>
 			/// 
 			/// <summary>
@@ -67,6 +103,14 @@ namespace Loc
 			/// 
 			/// <summary>
 			public const string ReplayText = "/GamePlay/ReplayText";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string SuggetPlayNewMode = "/GamePlay/SuggetPlayNewMode";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string Time = "/GamePlay/Time";
 			/// <summary>
 			/// 
 			/// <summary>
@@ -271,6 +315,53 @@ namespace Loc
 			/// 
 			/// <summary>
 			public const string ShopText = "/Shop/ShopText";
+		}
+		public static class Sub
+		{
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string ChoseASub = "/Sub/ChoseASub";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string Free10Hints = "/Sub/Free10Hints";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string MonthlyPlan = "/Sub/MonthlyPlan";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PremiumMembership = "/Sub/PremiumMembership";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string PrvacyPolicy = "/Sub/PrvacyPolicy";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string RomoveAds = "/Sub/RomoveAds";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string StartBattle = "/Sub/StartBattle";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string TheAbovePlan = "/Sub/TheAbovePlan";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string UnlockAllLevel = "/Sub/UnlockAllLevel";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string WeeklyPlan = "/Sub/WeeklyPlan";
+			/// <summary>
+			/// 
+			/// <summary>
+			public const string YearPlan = "/Sub/YearPlan";
 		}
 		public static class Tut
 		{

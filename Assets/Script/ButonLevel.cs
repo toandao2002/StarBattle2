@@ -78,7 +78,7 @@ public class ButonLevel : MonoBehaviour
     {
         this.nameState = nameState;
         txtLevel.text = nameLevel.ToString();
-        
+        TimeTxt.gameObject.SetActive(false);
         level = id;
         bool darkMode = GameConfig.instance.nameTheme == NameTheme.Dark;
         switch (nameState)
@@ -129,7 +129,7 @@ public class ButonLevel : MonoBehaviour
     public void ChoseLevel()
     {
         DataLevelUser dataLevelUser = GameConfig.instance.GetDataLevelCommon();
-        if (!dataLevelUser.CheckLevelFinish(GameConfig.instance.typeGame, level))
+        if (!dataLevelUser.CheckLevelCanPlay(GameConfig.instance.typeGame, level))
         {
             PopUpContinuePlay.instance.Show();
             return;

@@ -73,6 +73,33 @@ MonoBehaviour:
     Language: ita
     FontName: 
     Content: Finito
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Devi sbloccare tutti i livelli precedenti per giocare a questo livello.
+      O guardare un annuncio per sbloccare l'ultimo livello
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Sei cos\xEC bravo. Hai giocato tutti i livelli disponibili. Per continuare,
+      si prega di acquistare il nostro nuovo pacchetto di giochi per sbloccare pi\xF9
+      livelli"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: No grazie!
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Continua a giocare
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -192,7 +219,7 @@ MonoBehaviour:
     Remark: 
     Language: ita
     FontName: 
-    Content: "Ottieni livello 0> 1 in modalit\xE0 esperto"
+    Content: "Ottieni livello 0> 1 in modalit\xE0 esperta"
   - ID: Shop/GetLevelInModeGenius
     Type: 0
     Remark: 
@@ -284,6 +311,48 @@ MonoBehaviour:
     Language: ita
     FontName: 
     Content: Guarda AD
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tempo
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Prossimo
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Livello risolto!
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Livello
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Vai, ora
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: "Sei molto bravo, vuoi provare un livello pi\xF9 difficile?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Tornare a casa
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -407,7 +476,8 @@ MonoBehaviour:
     Remark: 
     Language: ita
     FontName: 
-    Content: Donec a Massa ID Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringilla
+    Content: Se non hai mai giocato a Star Battle prima, ti consigliamo di dare un'occhiata
+      alle regole di base
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -437,7 +507,7 @@ MonoBehaviour:
     Remark: 
     Language: ita
     FontName: 
-    Content: Tocca di nuovo per farlo iniziare
+    Content: Tocca di nuovo per renderlo una stella
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -449,7 +519,7 @@ MonoBehaviour:
     Remark: 
     Language: ita
     FontName: 
-    Content: Fantastico, ora tu nkow come controllare i campi di gioco
+    Content: Fantastico, ora sai come controllare i campi di gioco
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -545,3 +615,70 @@ MonoBehaviour:
     Language: ita
     FontName: 
     Content: Gioca al puzzle per principianti
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Battaglia a stella
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Abbonamento premium
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: 'Ha scelto un piano di sottosuolo per sbloccare tutte le funzioni di
+      seguito:'
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Rimuovere gli annunci
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Sblocca i pacchetti di tutti i livelli
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: 10 suggerimenti gratuiti ogni giorno
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Piano settimanale
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Piano mensile
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Piano di 1 anno
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: I piani di cui sopra si rinnoveranno automaticamente
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: ita
+    FontName: 
+    Content: Informativa sulla privacy e termine d'uso

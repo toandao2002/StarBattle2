@@ -24,6 +24,7 @@ public class HandTut : MonoBehaviour
     {
         timeClick = 0.3f;
         rec.DOScale(1f, timeClick).SetEase(Ease.InOutBack).SetLoops(1,LoopType.Yoyo).From(0.8f);
+        
     }
     public void ActionTwoClick()
     {
@@ -56,4 +57,21 @@ public class HandTut : MonoBehaviour
         timeMove = 1f;
         rec.DOMove(posE, timeMove).From(posS).SetEase(Ease.InOutQuart);
     }
+    public void MoveHand(  Vector3 posE)
+    {
+        timeMove = 1f;
+        rec.DOMove(posE, timeMove).SetEase(Ease.InOutQuart);
+    }
+    public void MoveAndClick(Vector3 posE)
+    {
+        StartCoroutine(IeMoveAndClick(posE));
+    }
+    IEnumerator IeMoveAndClick(Vector3 posE)
+    {
+        rec.DOKill();
+        rec.DOMove(posE, timeMove).SetEase(Ease.InOutQuart);
+        yield return new WaitForSeconds(timeMove);
+        ActionClick();
+    }
+
 }

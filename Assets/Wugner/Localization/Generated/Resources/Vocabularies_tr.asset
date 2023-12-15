@@ -73,6 +73,33 @@ MonoBehaviour:
     Language: tr
     FontName: 
     Content: "Bitmi\u015F"
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Bu seviyeyi oynamak i\xE7in \xF6nceki t\xFCm seviyelerin kilidini a\xE7man\u0131z
+      gerekir. Veya en son seviyenin kilidini a\xE7mak i\xE7in bir reklam izleyin"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\xC7ok iyisin. Mevcut t\xFCm seviyeleri oynad\u0131n\u0131z. Devam
+      etmek i\xE7in l\xFCtfen daha fazla seviyenin kilidini a\xE7mak i\xE7in yeni
+      oyun paketimizi sat\u0131n al\u0131n"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Hay\u0131r te\u015Fekk\xFCr ederim!"
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Oynamaya devam etmek
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -284,6 +311,48 @@ MonoBehaviour:
     Language: tr
     FontName: 
     Content: "\u0130zle"
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Zaman
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Sonraki
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Seviye \xE7\xF6z\xFCld\xFC!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: Seviyesi
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Git \u015Fimdi"
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "\xC7ok iyisin, daha zor bir seviye denemek ister misin?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Eve geri d\xF6n"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -359,8 +428,8 @@ MonoBehaviour:
     Remark: 
     Language: tr
     FontName: 
-    Content: "Bu konum bir nokta ile i\u015Faretlenmelidir, \xE7\xFCnk\xFC aksi takdirde
-      belirlenen alan ek y\u0131ld\u0131zlar yerle\u015Ftiremez"
+    Content: "Bu pozisyon bir nokta ile i\u015Faretlenmelidir, \xE7\xFCnk\xFC aksi
+      takdirde belirlenen alan ek y\u0131ld\u0131zlar yerle\u015Ftiremez"
   - ID: Hint/MustMarkDot
     Type: 0
     Remark: 
@@ -406,7 +475,8 @@ MonoBehaviour:
     Remark: 
     Language: tr
     FontName: 
-    Content: Donec A Massa Id Elit Porttior Mollis. Nunc Malesuada Vel Arcu ve Fringilla
+    Content: "Temel kurallara bir g\xF6z atman\u0131z\u0131 tavsiye etmeden \xF6nce
+      hi\xE7 Star Battle oynamad\u0131ysan\u0131z"
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -436,7 +506,7 @@ MonoBehaviour:
     Remark: 
     Language: tr
     FontName: 
-    Content: "Ba\u015Flamak i\xE7in tekrar dokunun"
+    Content: "Y\u0131ld\u0131z yapmak i\xE7in tekrar dokunun"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -449,7 +519,7 @@ MonoBehaviour:
     Language: tr
     FontName: 
     Content: "Harika, \u015Fimdi oyun alanlar\u0131n\u0131 nas\u0131l kontrol edece\u011Finizi
-      d\xFC\u015F\xFCn\xFCn"
+      biliyorsun"
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -549,3 +619,70 @@ MonoBehaviour:
     Language: tr
     FontName: 
     Content: "Yeni ba\u015Flayan bulmaca oyna"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Y\u0131ld\u0131z Sava\u015F\u0131"
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Premium \xFCyelik"
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "A\u015Fa\u011F\u0131daki t\xFCm i\u015Flevlerin kilidini a\xE7mak i\xE7in
+      bir alt iplik plan\u0131 se\xE7in:"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Reklamlar\u0131 kald\u0131rmak"
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "T\xFCm seviye paketlerinin kilidini a\xE7\u0131n"
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Her g\xFCn \xFCcretsiz 10 ipucu"
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Haftal\u0131k plan"
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Ayl\u0131k plan"
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "1 y\u0131ll\u0131k plan"
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Yukar\u0131daki planlar otomatik olarak yenilenecek"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: tr
+    FontName: 
+    Content: "Gizlilik Politikas\u0131 ve Kullan\u0131m S\xFCresi"

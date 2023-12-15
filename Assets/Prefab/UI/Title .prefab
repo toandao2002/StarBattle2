@@ -193,7 +193,7 @@ MonoBehaviour:
   nameTittle: {fileID: 4158416083181570278}
   Bgr: {fileID: 4158416083757148472}
   bgrColors:
-  - {r: 0.25490198, g: 0.5058824, b: 0.80784315, a: 1}
+  - {r: 0.31764707, g: 0.4784314, b: 0.8941177, a: 1}
   - {r: 0.19607845, g: 0.20000002, b: 0.21568629, a: 1}
 --- !u!1 &4158416083757148474
 GameObject:
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25490198, g: 0.5058824, b: 0.80784315, a: 1}
+  m_Color: {r: 0.31764707, g: 0.4784314, b: 0.8941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

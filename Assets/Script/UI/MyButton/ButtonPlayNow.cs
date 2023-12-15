@@ -11,15 +11,25 @@ public class ButtonPlayNow : MonoBehaviour
     public TMP_Text nameLevel;
     int level;
     int timef;
+    TypeGame typeGame;
+    private void Awake()
+    {
+        MyEvent.UpdataLocalize += UpdataLocalize ;
+    }
     public void SetInit(string level)
     {
         this.nameLevel.text = level;
     }
-    public void SetLevel( int level, int timeF)
+    void  UpdataLocalize()
     {
-        this.nameLevel.text =  Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(GameConfig.instance.typeGame)) +"-"+ level;
+        nameLevel.text = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(typeGame)) + "-" + level;
+    }
+    public void SetLevel( int level, int timeF,TypeGame typeGame)
+    {
+        this.typeGame = typeGame ;
         this.level = level;
         this.timef = timeF;
+        UpdataLocalize();
     }
     public void ChoseLevel()
     {
@@ -29,8 +39,13 @@ public class ButtonPlayNow : MonoBehaviour
               PopUpContinuePlay.instance.Show();
               return;
           }*/
-
-
+        bool bought = GameConfig.instance.GetDataPack().CheckLevelHasBeenBought(level, typeGame, GameConfig.instance.levelCommon);
+        if (!bought)
+        {
+            ChoseLevel_2.instance.popUpSuggestBuyPack.Show();
+            return;
+        }
+        GameConfig.instance.SetTypeGame(typeGame);
         GameConfig.instance.SetLevelCurrent(level);
         GameConfig.instance.SetTimeFiishCurrent(timef);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.GamePlay);

@@ -73,6 +73,36 @@ MonoBehaviour:
     Language: vi
     FontName: 
     Content: "Ho\xE0n th\xE0nh"
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n c\u1EA7n m\u1EDF kh\xF3a t\u1EA5t c\u1EA3 c\xE1c c\u1EA5p
+      \u0111\u1ED9 tr\u01B0\u1EDBc \u0111\u1EC3 ch\u01A1i c\u1EA5p \u0111\u1ED9 n\xE0y.
+      Ho\u1EB7c xem m\u1ED9t qu\u1EA3ng c\xE1o \u0111\u1EC3 m\u1EDF kh\xF3a c\u1EA5p
+      \u0111\u1ED9 m\u1EDBi nh\u1EA5t"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n th\u1EADt l\xE0 gi\u1ECFi. B\u1EA1n \u0111\xE3 ch\u01A1i t\u1EA5t
+      c\u1EA3 c\xE1c c\u1EA5p \u0111\u1ED9 c\xF3 s\u1EB5n. \u0110\u1EC3 ti\u1EBFp
+      t\u1EE5c, vui l\xF2ng mua g\xF3i tr\xF2 ch\u01A1i m\u1EDBi c\u1EE7a ch\xFAng
+      t\xF4i \u0111\u1EC3 m\u1EDF kh\xF3a nhi\u1EC1u c\u1EA5p \u0111\u1ED9 h\u01A1n"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Kh\xF4ng, c\u1EA3m \u01A1n!"
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ti\u1EBFp t\u1EE5c ch\u01A1i"
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -288,12 +318,55 @@ MonoBehaviour:
     Language: vi
     FontName: 
     Content: "Xem qu\u1EA3ng c\xE1o"
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Th\u1EDDi gian"
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "K\u1EBF ti\u1EBFp"
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\u1EA5p \u0111\u1ED9 gi\u1EA3i quy\u1EBFt!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "M\u1EE9c \u0111\u1ED9"
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "\u0110i ngay"
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "B\u1EA1n r\u1EA5t t\u1ED1t, b\u1EA1n c\xF3 mu\u1ED1n th\u1EED m\u1ED9t
+      m\u1EE9c \u0111\u1ED9 kh\xF3 kh\u0103n h\u01A1n kh\xF4ng?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Tr\u1EDF v\u1EC1 nh\xE0"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
     Language: vi
     FontName: 
-    Content: "C\xF3 h\u01A1n 2 sao trong h\xE0ng ho\u1EB7c c\u1ED9t"
+    Content: "C\xF3 nhi\u1EC1u h\u01A1n 2 sao trong h\xE0ng ho\u1EB7c c\u1ED9t"
   - ID: Hint/MustTwoWstar
     Type: 0
     Remark: 
@@ -422,7 +495,9 @@ MonoBehaviour:
     Remark: 
     Language: vi
     FontName: 
-    Content: DONEC A MASSA ID elit Porttior Mollis. Nunc malesuada vel arcu et fringilla
+    Content: "N\u1EBFu b\u1EA1n ch\u01B0a bao gi\u1EDD ch\u01A1i Star Battle tr\u01B0\u1EDBc
+      khi ch\xFAng t\xF4i khuy\xEAn b\u1EA1n n\xEAn xem c\xE1c quy t\u1EAFc c\u01A1
+      b\u1EA3n"
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -453,8 +528,8 @@ MonoBehaviour:
     Remark: 
     Language: vi
     FontName: 
-    Content: "Ch\u1EA1m v\xE0o m\u1ED9t l\u1EA7n n\u1EEFa \u0111\u1EC3 l\xE0m cho
-      n\xF3 b\u1EAFt \u0111\u1EA7u"
+    Content: "Ch\u1EA1m v\xE0o m\u1ED9t l\u1EA7n n\u1EEFa \u0111\u1EC3 bi\u1EBFn
+      n\xF3 th\xE0nh m\u1ED9t ng\xF4i sao"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -467,8 +542,8 @@ MonoBehaviour:
     Remark: 
     Language: vi
     FontName: 
-    Content: "Tuy\u1EC7t v\u1EDDi, b\xE2y gi\u1EDD b\u1EA1n kh\xF4ng l\xE0m th\u1EBF
-      n\xE0o \u0111\u1EC3 ki\u1EC3m so\xE1t c\xE1c tr\u01B0\u1EDDng tr\xF2 ch\u01A1i"
+    Content: "Tuy\u1EC7t v\u1EDDi, b\xE2y gi\u1EDD b\u1EA1n \u0111\xE3 bi\u1EBFt
+      c\xE1ch ki\u1EC3m so\xE1t c\xE1c tr\u01B0\u1EDDng tr\xF2 ch\u01A1i"
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -576,3 +651,72 @@ MonoBehaviour:
     Language: vi
     FontName: 
     Content: "Ch\u01A1i c\xE2u \u0111\u1ED1 ng\u01B0\u1EDDi m\u1EDBi b\u1EAFt \u0111\u1EA7u"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Tr\u1EADn chi\u1EBFn sao"
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "T\u01B0 c\xE1ch th\xE0nh vi\xEAn cao c\u1EA5p"
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\u1ECDn m\u1ED9t k\u1EBF ho\u1EA1ch ph\u1EE5 \u0111\u1EC3 m\u1EDF
+      kh\xF3a t\u1EA5t c\u1EA3 c\xE1c ch\u1EE9c n\u0103ng d\u01B0\u1EDBi \u0111\xE2y:"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Lo\u1EA1i b\u1ECF c\xE1c qu\u1EA3ng c\xE1o"
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "M\u1EDF kh\xF3a t\u1EA5t c\u1EA3 c\xE1c g\xF3i c\u1EA5p \u0111\u1ED9"
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "10 g\u1EE3i \xFD mi\u1EC5n ph\xED m\u1ED7i ng\xE0y"
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "K\u1EBF ho\u1EA1ch h\xE0ng tu\u1EA7n"
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "K\u1EBF ho\u1EA1ch h\xE0ng th\xE1ng"
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "K\u1EBF ho\u1EA1ch 1 n\u0103m"
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "C\xE1c k\u1EBF ho\u1EA1ch tr\xEAn s\u1EBD t\u1EF1 \u0111\u1ED9ng gia
+      h\u1EA1n"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: vi
+    FontName: 
+    Content: "Ch\xEDnh s\xE1ch b\u1EA3o m\u1EADt v\xE0 th\u1EDDi h\u1EA1n s\u1EED
+      d\u1EE5ng"

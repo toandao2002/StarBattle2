@@ -36,7 +36,7 @@ public class Board : MonoBehaviour
             float valScale = pos1.x / (pos2.x - 0.5f);
             this.gameObject.transform.localScale = new Vector3(valScale, valScale);
         }
-        
+        MyEvent.UpdataLocalize += ChangeLanguage;
 
     }
 
@@ -486,7 +486,7 @@ public class Board : MonoBehaviour
                     }
                     else
                     {
-                        cells[i][j].DonClick(true);
+                        cells[i][j].DonClick(false);
                     }
                 }
             }

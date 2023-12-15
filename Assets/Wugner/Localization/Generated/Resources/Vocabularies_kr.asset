@@ -73,6 +73,37 @@ MonoBehaviour:
     Language: kr
     FontName: 
     Content: "\uC644\uC131\uB41C"
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC774 \uB808\uBCA8\uC744 \uD50C\uB808\uC774\uD558\uB824\uBA74 \uC774\uC804
+      \uB808\uBCA8\uC744 \uC7A0\uAE08 \uD574\uC81C\uD574\uC57C\uD569\uB2C8\uB2E4.\n\uB610\uB294
+      \uCD5C\uC2E0 \uC218\uC900\uC758 \uC7A0\uAE08\uC744 \uD574\uC81C\uD558\uB824\uBA74
+      \uAD11\uACE0\uB97C\uBCF4\uC2ED\uC2DC\uC624"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2F9\uC2E0\uC740 \uB108\uBB34 \uC88B\uC2B5\uB2C8\uB2E4. \uC0AC\uC6A9
+      \uAC00\uB2A5\uD55C \uBAA8\uB4E0 \uB808\uBCA8\uC744 \uC5F0\uC8FC\uD588\uC2B5\uB2C8\uB2E4.
+      \uACC4\uC18D\uD558\uB824\uBA74 \uC0C8\uB85C\uC6B4 \uAC8C\uC784 \uD329\uC744
+      \uAD6C\uC785\uD558\uC5EC \uB354 \uB9CE\uC740 \uB808\uBCA8\uC744 \uC7A0\uAE08
+      \uD574\uC81C\uD558\uC2ED\uC2DC\uC624."
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC10\uC0AC\uD569\uB2C8\uB2E4!"
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uACC4\uC18D \uB180\uC544\uB77C"
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -187,7 +218,7 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "\uBAA8\uB4DC \uACE0\uAE09\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uAC00\uC838\uC635\uB2C8\uB2E4"
+    Content: "\uBAA8\uB4DC \uACE0\uAE09\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uC5BB\uC2B5\uB2C8\uB2E4"
   - ID: Shop/GetLevelInModeExpert
     Type: 0
     Remark: 
@@ -200,7 +231,7 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "Mode Genius\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uC5BB\uC73C\uC2ED\uC2DC\uC624"
+    Content: "Mode Genius\uC5D0\uC11C \uB808\uBCA8 0> 1\uC744 \uC5BB\uC2B5\uB2C8\uB2E4"
   - ID: Shop/ShopText
     Type: 0
     Remark: 
@@ -289,6 +320,49 @@ MonoBehaviour:
     Language: kr
     FontName: 
     Content: "\uAD11\uACE0\uBCF4\uAE30"
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC2DC\uAC04"
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2E4\uC74C"
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC218\uC900\uC774 \uD574\uACB0\uB418\uC5C8\uC2B5\uB2C8\uB2E4!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC218\uC900"
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC9C0\uAE08 \uC774\uB3D9"
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB2F9\uC2E0\uC740 \uC544\uC8FC \uC88B\uC2B5\uB2C8\uB2E4. \uB354 \uC5B4\uB824\uC6B4
+      \uC218\uC900\uC744 \uC2DC\uB3C4\uD558\uACE0 \uC2F6\uC2B5\uB2C8\uAE4C?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD648\uC73C\uB85C"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -422,8 +496,8 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "Donec a Massa Id Elit Porttior Mollis. \uC218\uB140 malesuada vel arcu
-      et fringilla."
+    Content: "Star Battle\uC744 \uD55C \uC801\uC774 \uC5C6\uB2E4\uBA74 \uAE30\uBCF8
+      \uADDC\uCE59\uC744 \uC0B4\uD3B4 \uBCF4\uB294 \uAC83\uC774 \uC88B\uC2B5\uB2C8\uB2E4."
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -453,7 +527,7 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "\uB2E4\uC2DC \uC2DC\uC791\uD558\uC5EC \uC2DC\uC791\uD558\uC2ED\uC2DC\uC624"
+    Content: "\uB2E4\uC2DC \uB9CC\uC9C0\uAE30 \uC704\uD574 \uADF8\uAC83\uC744 \uB9CC\uC9C0\uC2ED\uC2DC\uC624"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -466,7 +540,7 @@ MonoBehaviour:
     Language: kr
     FontName: 
     Content: "\uB300\uB2E8\uD574, \uC774\uC81C \uAC8C\uC784 \uD544\uB4DC\uB97C \uC81C\uC5B4\uD558\uB294
-      \u200B\u200B\uBC29\uBC95"
+      \u200B\u200B\uBC29\uBC95\uC744 \uC54C\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -494,8 +568,8 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC73C\uB85C\uB3C4 \uB9CC\uC9C0\uC9C0
-      \uBABB\uD569\uB2C8\uB2E4."
+    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC774 \uC544\uB2CC \uB9CC\uC9C0\uB3C4\uB85D
+      \uD5C8\uC6A9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
   - ID: Tut/PreView3M0_0
     Type: 0
     Remark: 
@@ -521,8 +595,8 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC73C\uB85C\uB3C4 \uB9CC\uC9C0\uC9C0
-      \uBABB\uD569\uB2C8\uB2E4."
+    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC774 \uC544\uB2CC \uB9CC\uC9C0\uB3C4\uB85D
+      \uD5C8\uC6A9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
   - ID: Tut/PreView4_0
     Type: 0
     Remark: 
@@ -534,8 +608,8 @@ MonoBehaviour:
     Remark: 
     Language: kr
     FontName: 
-    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC73C\uB85C\uB3C4 \uB9CC\uC9C0\uC9C0
-      \uBABB\uD569\uB2C8\uB2E4."
+    Content: "\uBCC4\uC740 \uB300\uAC01\uC120\uC774 \uC544\uB2CC \uB9CC\uC9C0\uB3C4\uB85D
+      \uD5C8\uC6A9\uB418\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4."
   - ID: Tut/PreView4_2
     Type: 0
     Remark: 
@@ -569,3 +643,71 @@ MonoBehaviour:
     Language: kr
     FontName: 
     Content: "\uCD08\uBCF4\uC790 \uD37C\uC990\uC744 \uD50C\uB808\uC774\uD558\uC2ED\uC2DC\uC624"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC2A4\uD0C0 \uC804\uD22C"
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uD504\uB9AC\uBBF8\uC5C4 \uBA64\uBC84\uC2ED"
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC544\uB798\uC758 \uBAA8\uB4E0 \uAE30\uB2A5\uC744 \uC7A0\uAE08 \uD574\uC81C\uD558\uAE30\uC704\uD55C
+      \uD558\uC704 \uACC4\uC0B0 \uACC4\uD68D\uC744 \uC120\uD0DD\uD588\uC2B5\uB2C8\uB2E4."
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAD11\uACE0\uB97C \uC81C\uAC70\uD558\uB2E4"
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uBAA8\uB4E0 \uB808\uBCA8 \uD329\uC744 \uC7A0\uAE08 \uD574\uC81C\uD558\uC2ED\uC2DC\uC624"
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uB9E4\uC77C \uBB34\uB8CC 10 \uD78C\uD2B8"
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC8FC\uAC04 \uACC4\uD68D"
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC6D4\uAC04 \uACC4\uD68D"
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "1 \uB144 \uACC4\uD68D"
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uC704\uC758 \uACC4\uD68D\uC740 \uC790\uB3D9\uC73C\uB85C \uAC31\uC2E0\uB429\uB2C8\uB2E4"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: kr
+    FontName: 
+    Content: "\uAC1C\uC778 \uC815\uBCF4 \uBCF4\uD638 \uC815\uCC45 \uBC0F \uC0AC\uC6A9
+      \uAE30\uAC04"

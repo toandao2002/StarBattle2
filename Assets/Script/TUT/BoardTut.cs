@@ -250,14 +250,20 @@ public class BoardTut : MonoBehaviour
     {
         if (sizeBoardx == sizeBoardy && sizeBoardy == 1) return false;
         int cntCorrect = 0;
+        bool hasMove = false;
         for (int i = 0; i < sizeBoardx; i++)
         {
             for (int j = 0; j < sizeBoardy; j++)
             {
+                if (cells[i][j].region == 1) continue;
                 if (cells[i][j].statusCell == StatusCell.DoubleClick)
                 {
+                  
                     if (!checkCorrect(cells[i][j].pos))
                     {
+                        TutorialPanel.instance.hand.MoveAndClick(cells[i][j].gameObject.transform.position);
+                      
+                      
                         Debug.Log("ko dung");
                         return false;
                     }
@@ -266,11 +272,34 @@ public class BoardTut : MonoBehaviour
                         cntCorrect++;
                     }
                 }
+                else 
+                {
+                    if (checkCorrect(cells[i][j].pos) &&! hasMove)
+                    {
+                        hasMove = true;
+                        TutorialPanel.instance.hand.MoveAndClick(cells[i][j].gameObject.transform.position);
+                         
+                    }
+                    else
+                    {
+                        if(cells[i][j].statusCell == StatusCell.None&& !hasMove)
+                        {
+
+                            hasMove = true;
+                            TutorialPanel.instance.hand.MoveAndClick(cells[i][j].gameObject.transform.position);
+                          
+                        }
+                    }
+                    
+                }
+
+                
             }
         }
         Debug.Log("Correct");
         return cntCorrect == tutData.posStar.Count;
     }
+    
     #endregion
     #region show wrong
     public void HighLightRegion(Vector2Int pos, int region, List<bool> Check, bool correct)

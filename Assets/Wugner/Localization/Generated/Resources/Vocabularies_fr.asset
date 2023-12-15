@@ -73,6 +73,33 @@ MonoBehaviour:
     Language: fr
     FontName: 
     Content: Fini
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Vous devez d\xE9verrouiller tous les niveaux pr\xE9c\xE9dents pour
+      jouer ce niveau.\nOu regarder une annonce pour d\xE9bloquer le dernier niveau"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Tu es tellement bon. Vous avez jou\xE9 tous les niveaux disponibles.
+      Pour continuer, veuillez acheter notre nouveau pack de jeux pour d\xE9bloquer
+      plus de niveaux"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Non merci!
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Garder le jeu
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -265,13 +292,13 @@ MonoBehaviour:
     Remark: 
     Language: fr
     FontName: 
-    Content: Vous faites un mauvais pas.
+    Content: "Vous faites une mauvaise d\xE9cision."
   - ID: GamePlay/Get10HintsText
     Type: 0
     Remark: 
     Language: fr
     FontName: 
-    Content: Obtenez 10 indices
+    Content: Obtenez 10 conseils
   - ID: GamePlay/PopUpHintContent
     Type: 0
     Remark: 
@@ -287,6 +314,48 @@ MonoBehaviour:
     Language: fr
     FontName: 
     Content: Regarder l'annonce
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Temps
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Suivant
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Niveau r\xE9solu!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Niveau
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Aller maintenant
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Vous \xEAtes tr\xE8s bon, voulez-vous essayer un niveau plus difficile?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "De retour \xE0 la maison"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -410,7 +479,8 @@ MonoBehaviour:
     Remark: 
     Language: fr
     FontName: 
-    Content: Donec A Massa Id Elit Porttior Mollis. Nunc malesuada vel arcu et fringilla.
+    Content: "Si vous n'avez jamais jou\xE9 \xE0 Star Battle avant de recommander
+      de voir les r\xE8gles de base"
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -440,7 +510,7 @@ MonoBehaviour:
     Remark: 
     Language: fr
     FontName: 
-    Content: "Appuyez \xE0 nouveau pour en faire un d\xE9but"
+    Content: "Toucher \xE0 nouveau pour en faire une \xE9toile"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -452,7 +522,7 @@ MonoBehaviour:
     Remark: 
     Language: fr
     FontName: 
-    Content: "G\xE9nial, maintenant vous nkow comment contr\xF4ler les champs de
+    Content: "G\xE9nial, maintenant vous savez comment contr\xF4ler les champs de
       jeu"
   - ID: Tut/PreView1M1_0
     Type: 0
@@ -553,3 +623,70 @@ MonoBehaviour:
     Language: fr
     FontName: 
     Content: "Jouer au puzzle d\xE9butant"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Bataille \xE9toil\xE9e"
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Abonnement premium
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Chose un plan de sous-\xE9clairage pour d\xE9verrouiller toutes les
+      fonctions ci-dessous:"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Supprimez la pub
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "D\xE9verrouiller tous les packs de niveau"
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: 10 conseils gratuits tous les jours
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Plan de la semaine
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Plan mensuel
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Plan 1 an
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: Les plans ci-dessus se renouvellent automatiquement
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: fr
+    FontName: 
+    Content: "Politique de confidentialit\xE9 et terme d'utilisation"

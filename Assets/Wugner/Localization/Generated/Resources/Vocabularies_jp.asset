@@ -73,6 +73,30 @@ MonoBehaviour:
     Language: jp
     FontName: 
     Content: "\u7D42\u4E86\u3057\u305F"
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u3053\u306E\u30EC\u30D9\u30EB\u3092\u30D7\u30EC\u30A4\u3059\u308B\u306B\u306F\u3001\u4EE5\u524D\u306E\u3059\u3079\u3066\u306E\u30EC\u30D9\u30EB\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3059\u308B\u5FC5\u8981\u304C\u3042\u308A\u307E\u3059\u3002\n\u307E\u305F\u306F\u3001\u6700\u65B0\u30EC\u30D9\u30EB\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3059\u308B\u5E83\u544A\u3092\u3054\u89A7\u304F\u3060\u3055\u3044"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u3059\u3054\u304F\u4E0A\u624B\u3002\u5229\u7528\u53EF\u80FD\u306A\u3059\u3079\u3066\u306E\u30EC\u30D9\u30EB\u3092\u30D7\u30EC\u30A4\u3057\u307E\u3057\u305F\u3002\u7D9A\u884C\u3059\u308B\u306B\u306F\u3001\u3088\u308A\u591A\u304F\u306E\u30EC\u30D9\u30EB\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3059\u308B\u305F\u3081\u306B\u65B0\u3057\u3044\u30B2\u30FC\u30E0\u30D1\u30C3\u30AF\u3092\u8CFC\u5165\u3057\u3066\u304F\u3060\u3055\u3044"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u3042\u308A\u304C\u3068\u3046\uFF01"
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u904A\u3073\u7D9A\u3051\u3066\u304F\u3060\u3055\u3044"
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -223,7 +247,7 @@ MonoBehaviour:
     Remark: 
     Language: jp
     FontName: 
-    Content: "\u304A\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3001\u3042\u306A\u305F\u306F\u65B0\u3057\u3044\u30EC\u30D9\u30EB\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3057\u307E\u3057\u305F"
+    Content: "\u304A\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3001\u65B0\u3057\u3044\u30EC\u30D9\u30EB\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3057\u307E\u3057\u305F"
   - ID: Shop/OkeText
     Type: 0
     Remark: 
@@ -284,6 +308,48 @@ MonoBehaviour:
     Language: jp
     FontName: 
     Content: "\u5E83\u544A\u3092\u898B\u308B"
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u6642\u9593"
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u6B21"
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u30EC\u30D9\u30EB\u306F\u89E3\u6C7A\u3057\u307E\u3057\u305F\uFF01"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u30EC\u30D9\u30EB"
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u4ECA\u884C\u304F"
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u3042\u306A\u305F\u306F\u3068\u3066\u3082\u826F\u3044\u3067\u3059\u3001\u3042\u306A\u305F\u306F\u3082\u3063\u3068\u96E3\u3057\u3044\u30EC\u30D9\u30EB\u3092\u8A66\u3057\u3066\u307F\u307E\u305B\u3093\u304B\uFF1F"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u5BB6\u306B\u5E30\u308B"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -397,8 +463,7 @@ MonoBehaviour:
     Remark: 
     Language: jp
     FontName: 
-    Content: "\u30DE\u30C3\u30B5ID\u30A8\u30EA\u30C3\u30C8\u30DD\u30FC\u30C8\u30E2\u30EA\u30B9\u3092donec\u3002
-      Nunc Malesuada Vel Arcu et Fringilla\u3002"
+    Content: "\u57FA\u672C\u7684\u306A\u30EB\u30FC\u30EB\u3092\u898B\u308B\u3053\u3068\u3092\u304A\u52E7\u3081\u3059\u308B\u524D\u306B\u3001\u30B9\u30BF\u30FC\u30D0\u30C8\u30EB\u3092\u30D7\u30EC\u30A4\u3057\u305F\u3053\u3068\u304C\u306A\u3044\u5834\u5408\u306F"
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -428,7 +493,7 @@ MonoBehaviour:
     Remark: 
     Language: jp
     FontName: 
-    Content: "\u3082\u3046\u4E00\u5EA6\u89E6\u308C\u3066\u3001\u305D\u308C\u3092\u59CB\u3081\u307E\u3057\u3087\u3046"
+    Content: "\u3082\u3046\u4E00\u5EA6\u89E6\u308C\u3066\u3001\u305D\u308C\u3092\u661F\u306B\u3057\u307E\u3059"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -440,7 +505,7 @@ MonoBehaviour:
     Remark: 
     Language: jp
     FontName: 
-    Content: "\u7D20\u6674\u3089\u3057\u3044\u3001\u4ECA\u3042\u306A\u305F\u306F\u30B2\u30FC\u30E0\u30D5\u30A3\u30FC\u30EB\u30C9\u3092\u5236\u5FA1\u3059\u308B\u65B9\u6CD5\u3092nkow"
+    Content: "\u7D20\u6674\u3089\u3057\u3044\u3001\u4ECA\u3042\u306A\u305F\u306F\u30B2\u30FC\u30E0\u30D5\u30A3\u30FC\u30EB\u30C9\u3092\u5236\u5FA1\u3059\u308B\u65B9\u6CD5\u3092\u77E5\u3063\u3066\u3044\u307E\u3059"
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -532,3 +597,69 @@ MonoBehaviour:
     Language: jp
     FontName: 
     Content: "\u521D\u5FC3\u8005\u306E\u30D1\u30BA\u30EB\u3092\u518D\u751F\u3057\u307E\u3059"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u30B9\u30BF\u30FC\u30D0\u30C8\u30EB"
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u30D7\u30EC\u30DF\u30A2\u30E0\u4F1A\u54E1"
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u4EE5\u4E0B\u306E\u3059\u3079\u3066\u306E\u6A5F\u80FD\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3059\u308B\u305F\u3081\u306B\u3001\u88DC\u52A9\u8A08\u753B\u3092\u9078\u629E\u3057\u307E\u3059\u3002"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u5E83\u544A\u3092\u524A\u9664"
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u3059\u3079\u3066\u306E\u30EC\u30D9\u30EB\u30D1\u30C3\u30AF\u306E\u30ED\u30C3\u30AF\u3092\u89E3\u9664\u3057\u307E\u3059"
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u6BCE\u65E5\u7121\u6599\u306E10\u30D2\u30F3\u30C8"
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u6BCE\u9031\u306E\u8A08\u753B"
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u6BCE\u6708\u306E\u8A08\u753B"
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "1\u5E74\u8A08\u753B"
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u4E0A\u8A18\u306E\u8A08\u753B\u306F\u81EA\u52D5\u7684\u306B\u66F4\u65B0\u3055\u308C\u307E\u3059"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: jp
+    FontName: 
+    Content: "\u30D7\u30E9\u30A4\u30D0\u30B7\u30FC\u30DD\u30EA\u30B7\u30FC\u3068\u4F7F\u7528\u671F\u9593"

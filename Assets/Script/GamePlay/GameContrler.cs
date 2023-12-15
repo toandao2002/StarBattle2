@@ -158,6 +158,12 @@ public class GameContrler : MonoBehaviour
         SaveData();
         GameManger.instance.manageUi.HidePopUP(NamePopUp.GamePlay,-1);
         GameManger.instance.manageUi.ShowPopUp(NamePopUp.Lobby,1,-1);
+        if (DataGame.GetInt(DataGame.FirstPlayGame) == 0 && DataGame.GetInt(DataGame.ShowFirtSub) == 0)
+        {
+            SubPanel.instance.Show();
+            DataGame.SetInt(DataGame.FirstPlayGame, 1);
+            DataGame.SetInt(DataGame.ShowFirtSub, 1);
+        }
     }  
     
     public void SaveDataBoardDontFinish()

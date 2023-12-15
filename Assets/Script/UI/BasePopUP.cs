@@ -14,6 +14,7 @@ public enum NamePopUp
     GamePlay,
     Tutoria,
     Shop,
+    SubPanel
 }
 public class BasePopUP : MonoBehaviour
 {

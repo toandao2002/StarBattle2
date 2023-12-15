@@ -15,10 +15,16 @@ public class PopUpSuggestBuyPack : BasePopUP
         base.Awake();
 
     }
+    
+    public void ShowShop()
+    {
+        ShopUI.instance.Show();
+        ShopUI.instance.PrePopUP = NamePopUp.ChoseLevel2;
+    }
     public override void Hide(int dir = 1)
     {
         base.Hide(dir);
-        ShopUI.instance.Show();
+        
     }
     public override void Show(object data = null, int dir = 1)
     {
@@ -26,12 +32,7 @@ public class PopUpSuggestBuyPack : BasePopUP
         ChangeTheme();
 
     }
-    public void WatchAdGetHint()
-    {
-        DataGame.SetInt(DataGame.AmountHint, DataGame.GetInt(DataGame.AmountHint) + 3);
-        MyEvent.UpdateDataAmountHint?.Invoke();
-        Hide();
-    }
+   
     public override void ChangeTheme()
     {
         NameTheme theme = GameConfig.instance.nameTheme;

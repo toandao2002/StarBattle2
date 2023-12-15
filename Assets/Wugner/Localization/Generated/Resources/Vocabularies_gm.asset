@@ -73,6 +73,32 @@ MonoBehaviour:
     Language: gm
     FontName: 
     Content: Fertig
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Sie m\xFCssen alle vorherigen Level freischalten, um dieses Level zu
+      spielen. Oder schauen Sie sich eine Anzeige an, um das neueste Level freizuschalten"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Du bist so gut. Sie haben alle verf\xFCgbaren Levels gespielt. Um fortzufahren,
+      kaufen Sie bitte unser neues Spielpaket, um mehr Levels freizuschalten"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Nein Danke!
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Spiel halten
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -216,7 +242,7 @@ MonoBehaviour:
     Remark: 
     Language: gm
     FontName: 
-    Content: "Herzlichen Gl\xFCckwunsch"
+    Content: "Gl\xFCckwunsch"
   - ID: Shop/CongratulationContentText
     Type: 0
     Remark: 
@@ -284,6 +310,48 @@ MonoBehaviour:
     Language: gm
     FontName: 
     Content: AD AD ansehen
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Zeit
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "N\xE4chste"
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Level gel\xF6st!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Ebene
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Geh jetzt
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Du bist sehr gut, willst du ein schwierigeres Niveau ausprobieren?
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Zur\xFCck nach Hause"
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -308,7 +376,7 @@ MonoBehaviour:
     Language: gm
     FontName: 
     Content: "Zellen in Zeilen oder S\xE4ulen sollten mit Punkten markiert sein,
-      weil sie bereits 2 Sterne haben"
+      da sie bereits 2 Sterne haben"
   - ID: Hint/ManyDot
     Type: 0
     Remark: 
@@ -365,29 +433,29 @@ MonoBehaviour:
     Remark: 
     Language: gm
     FontName: 
-    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
-      Zellen nicht genug Sterne
+    Content: "Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht gen\xFCgend Sterne"
   - ID: Hint/DotByRegionAdvance
     Type: 0
     Remark: 
     Language: gm
     FontName: 
-    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
-      Zellen nicht genug Sterne
+    Content: "Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht gen\xFCgend Sterne"
   - ID: Hint/ShoudlColumnAround
     Type: 0
     Remark: 
     Language: gm
     FontName: 
-    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
-      Zellen nicht genug Sterne
+    Content: "Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht gen\xFCgend Sterne"
   - ID: Hint/MarkDotBecauseDontPlaced
     Type: 0
     Remark: 
     Language: gm
     FontName: 
-    Content: Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
-      Zellen nicht genug Sterne
+    Content: "Dieser Ort kann kein Stern sein, andernfalls haben die verbleibenden
+      Zellen nicht gen\xFCgend Sterne"
   - ID: Hint/None
     Type: 0
     Remark: 
@@ -405,7 +473,8 @@ MonoBehaviour:
     Remark: 
     Language: gm
     FontName: 
-    Content: Donec A Massa ID Elit porttior mollis. Nun Maleesuada Vel Arcu et Fringilla
+    Content: Wenn Sie noch nie Star Battle gespielt haben, bevor wir empfehlen, dass
+      Sie sich die Grundregeln ansehen
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -435,7 +504,7 @@ MonoBehaviour:
     Remark: 
     Language: gm
     FontName: 
-    Content: "Ber\xFChren Sie erneut, um es zu einem Start zu machen"
+    Content: "Ber\xFChren Sie wieder, um es zu einem Stern zu machen"
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -447,7 +516,7 @@ MonoBehaviour:
     Remark: 
     Language: gm
     FontName: 
-    Content: Super, jetzt nkow wie man die Spielfelder kontrolliert
+    Content: Super, jetzt wissen Sie, wie man die Spielfelder kontrolliert
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -543,3 +612,70 @@ MonoBehaviour:
     Language: gm
     FontName: 
     Content: "Spielen Sie Anf\xE4nger -Puzzle"
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Sternschlacht
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Premium Mitgliedschaft
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "W\xE4hlen Sie einen Subsciption -Plan aus, um alle folgenden Funktionen
+      freizuschalten:"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Anzeigen entfernen
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Schalte alle Level -Packs frei
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Kostenlos 10 Hinweise jeden Tag
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "W\xF6chentlicher Plan"
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Monatlicher Plan
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: 1 Jahr Plan
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: "Die oben genannten Pl\xE4ne werden automatisch verl\xE4ngert"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: gm
+    FontName: 
+    Content: Datenschutzrichtlinie und Nutzungsdauer

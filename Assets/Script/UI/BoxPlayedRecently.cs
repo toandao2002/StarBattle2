@@ -59,13 +59,13 @@ public class BoxPlayedRecently : MonoBehaviour
     {
 
         this.nameStringLevel = nameLevel;
+        this.typeGame = typeGame; 
         UpdateLocalize();
         this.dayPlay.text = dayplay ;
         this. state.text = state ;
         timeFinishInt = timeFinish;
         this.timeFinish.text = Util.SecondToTimeString(timeFinish);
         this.level = level;
-        this.typeGame = typeGame; 
     }
     public void PlayGame()
     {

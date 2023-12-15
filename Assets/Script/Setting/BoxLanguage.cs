@@ -14,10 +14,18 @@ public class BoxLanguage : BoxSetting
     {
         instance = this;
     }
+   
+    private void OnDisable()
+    {
+        MyEvent.ChangeTheme -= ChangeTheme;
+    }
     private void OnEnable()
     {
+        ChangeTheme();
+        MyEvent.ChangeTheme += ChangeTheme;
         popUP.gameObject.SetActive(false);
         bgrHide.SetActive(false);
+        isOpenPopUp = false;
     }
     public void ShowPopUpChoseLanguage()
     {

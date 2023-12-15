@@ -12,6 +12,12 @@ public static class DataGame
     public static string SettingData = "SettingData";
     public static string AmountHint = "AmountHint";
 
+
+    //
+    public static string ShowFirtSub = "ShowFirtSub";
+    public static string FirstPlayGame = "FirstPlayGame";
+    //
+
     //  first in game show tut
     public static string FTurtorial = "FTurtorial";
 
@@ -118,7 +124,29 @@ public class HistoryPlayed
             historys.RemoveAt(0);
         }
         LevelHistoryPlay level = new LevelHistoryPlay(dataLevel.nameLevel, dataLevel.typeGame, dataLevel.datalevel.dayPlay, dataLevel.datalevel.isfinished, dataLevel.datalevel.timeFinish); ;
-        historys.Add(level);
+        LevelHistoryPlay levelhistory = CheckLevelHasBeenExist(dataLevel);
+
+        if (historys == null)
+        {
+            historys.Add(level);
+            
+        }
+        else
+        {
+            historys.Remove(levelhistory);
+            historys.Add(level);
+        }
+    }
+    public LevelHistoryPlay CheckLevelHasBeenExist(Level dataLevel)
+    {
+        foreach (LevelHistoryPlay i in historys)
+        {
+            if(i.typeGame == dataLevel.typeGame && i.nameLevel == dataLevel.nameLevel)
+            {
+                return i;
+            }
+        }
+        return null;
     }
     public List<LevelHistoryPlay> GetHistorys()
     {

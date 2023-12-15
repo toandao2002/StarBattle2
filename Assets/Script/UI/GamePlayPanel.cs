@@ -12,7 +12,7 @@ public class GamePlayPanel : BasePopUP
     public List<Color> bgrBottomColor;
     public List<TMP_Text> txt;
 
-    public GameObject iconHint;
+    public RectTransform iconHint;
     private void OnEnable()
     {
         MyEvent.UpdateDataAmountHint += SetTextAmountHint;
@@ -62,13 +62,15 @@ public class GamePlayPanel : BasePopUP
     }
     public void SuggestHint()
     {
-        iconHint.transform.DOScale(0.7f, 0.6f).From(0.5f).SetEase(Ease.InOutQuart).SetLoops(-1,LoopType.Yoyo);
+        iconHint.DOScale(0.7f, 0.6f).From(0.6f).SetEase(Ease.InOutQuart).SetLoops(-1,LoopType.Yoyo);
+        iconHint.DOAnchorPos3DY(55, 0.6f).From(40).SetEase(Ease.InOutBack).SetLoops(-1,LoopType.Yoyo);
         
     }
     public void StopSuggestHInt()
     {
-        iconHint.transform.DOKill();
+        iconHint.DOKill();
         iconHint.transform.localScale = new Vector3(0.6f,0.6f,0.6f);
+        iconHint.anchoredPosition = new Vector2(0, 40);
     }
     public TMP_Text amountHint;
     int numHint = 0;
@@ -94,7 +96,7 @@ public class GamePlayPanel : BasePopUP
         {
             PopUpHint.instance.Show();
         }
-        else
+        else if(!GameContrler.instance.board.isFinish)
         {
             numHint -= 1;
             GameContrler.instance.Hint();

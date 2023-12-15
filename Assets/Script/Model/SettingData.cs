@@ -7,7 +7,7 @@ public class SettingData
     public bool vibrate = true;
     public float soundVolume = 1;
     public float musicVolume = 1;
-    public bool autoDot = true;
+    public bool autoDot = false;
     public int theme;
     public static SettingData GetSetting()
     {

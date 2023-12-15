@@ -94,6 +94,9 @@ public class SettingUI : BasePopUP
 
             music.mySwitch.UpdateState(false);
         }
+        vibration.mySwitch.UpdateState(settingData.vibrate);
+        
+       
         if (settingData.soundVolume > 0)
         {
             sound.mySwitch.UpdateState(true);

@@ -64,6 +64,7 @@ public class PopUpGameWin : BasePopUP
         level.text = GameContrler.instance.board.title.nameTittle.text;
         time.text = GameContrler.instance.board.myTime.timeTxt.text;
         StartCoroutine(IeShow());
+        ChangeTheme();
     }
     IEnumerator IeShow()
     {
@@ -91,13 +92,14 @@ public class PopUpGameWin : BasePopUP
         {
 
             BgrMain.sprite = bgrLight;
-            level.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
-            congrate.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
-            time.color = GameConfig.instance.darkMode.colorText[(int)TextColor.Black];
+            level.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            congrate.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
+            time.color = GameConfig.instance.darkMode.colorText[(int)TextColor.White];
             
         }
         if (BgrMain2 != null)
             BgrMain2.sprite = BgrMain.sprite;
 
     }
+    
 }

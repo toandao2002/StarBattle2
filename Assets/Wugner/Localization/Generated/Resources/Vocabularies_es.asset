@@ -73,6 +73,32 @@ MonoBehaviour:
     Language: es
     FontName: 
     Content: Finalizado
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Necesitas desbloquear todos los niveles anteriores para jugar este
+      nivel. O mira un anuncio para desbloquear el \xFAltimo nivel"
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Tu eres muy bueno. Has jugado todos los niveles disponibles. Para continuar,
+      compre nuestro nuevo paquete de juegos para desbloquear m\xE1s niveles"
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "\xA1No gracias!"
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Seguir jugando
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -270,7 +296,7 @@ MonoBehaviour:
     Remark: 
     Language: es
     FontName: 
-    Content: Obtener 10 sugerencias
+    Content: Obtener 10 pistas
   - ID: GamePlay/PopUpHintContent
     Type: 0
     Remark: 
@@ -282,7 +308,49 @@ MonoBehaviour:
     Remark: 
     Language: es
     FontName: 
-    Content: Ver anuncio
+    Content: Mira AD
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Tiempo
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Pr\xF3ximo"
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "\xA1Nivel resuelto!"
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Nivel
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Ve ahora
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Eres muy bueno, \xBFquieres probar un nivel m\xE1s dif\xEDcil?"
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: De vuelta a casa
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -405,7 +473,7 @@ MonoBehaviour:
     Remark: 
     Language: es
     FontName: 
-    Content: Donec A Massa Id Elit Porttior Mollis. Nunc Malesuada Vel Arcu et Fringilla
+    Content: Si nunca antes has jugado a Star Battle Battle
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -435,7 +503,7 @@ MonoBehaviour:
     Remark: 
     Language: es
     FontName: 
-    Content: Toca de nuevo para que sea un comienzo
+    Content: Toque nuevamente para que sea una estrella
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -447,8 +515,7 @@ MonoBehaviour:
     Remark: 
     Language: es
     FontName: 
-    Content: "Impresionante, ahora est\xE1s nkow c\xF3mo controlar los campos de
-      juego"
+    Content: "Impresionante, ahora sabes c\xF3mo controlar los campos de juego"
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -544,3 +611,70 @@ MonoBehaviour:
     Language: es
     FontName: 
     Content: Reproducir rompecabezas para principiantes
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Batalla estrella
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Membresia premium
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Elija un plan de subcipci\xF3n para desbloquear todas las funciones
+      a continuaci\xF3n:"
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Quitar anuncios
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Desbloquear todos los paquetes de nivel
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Gratis 10 sugerencias todos los d\xEDas"
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Plan semanal
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: Plan mensual
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Plan de 1 a\xF1o"
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Los planes anteriores se renovar\xE1n autom\xE1ticamente"
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: es
+    FontName: 
+    Content: "Pol\xEDtica de privacidad y t\xE9rmino de uso"

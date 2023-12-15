@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686420289510629722, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
       propertyPath: m_Name
-      value: PopUpConfirmSuccess
+      value: PopUpConfirmSuccess Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7686420289572238422, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686420289879312894, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7686420289879312895, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7686420289879312895, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7686420289510629720, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
@@ -260,6 +260,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7686420289593956309, guid: 657c327ef0cc1b64fa75351b8b22403a, type: 3}
   m_PrefabInstance: {fileID: 7057556925179108247}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &164744494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818208340605706016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2812c779a1f8ea42b92867c5e0a4a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setAtRuntime: 0
+  _id: Shop/CongratulationText
+  _showPreview: 0
+  _previewLanguage: en
 --- !u!114 &1053414196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,22 +301,6 @@ MonoBehaviour:
   colorBgr:
   - {r: 0.94117653, g: 0.95294124, b: 0.9686275, a: 1}
   - {r: 0.19607845, g: 0.20000002, b: 0.21568629, a: 1}
---- !u!114 &164744494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818208340605706016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2812c779a1f8ea42b92867c5e0a4a98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _setAtRuntime: 0
-  _id: Shop/CongratulationText
-  _showPreview: 0
-  _previewLanguage: en
 --- !u!114 &2067827922
 MonoBehaviour:
   m_ObjectHideFlags: 0

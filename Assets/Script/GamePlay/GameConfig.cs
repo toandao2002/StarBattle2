@@ -18,7 +18,7 @@ public class GameConfig : MonoBehaviour
     public Theme darkMode;
     public Theme lightMode;
 
-
+    
    
     public Dictionary<int, int> idLevelShowSuggest = new Dictionary<int, int>() {
         {4,5 } 
@@ -77,6 +77,11 @@ public class GameConfig : MonoBehaviour
     {
         string path =  GetPathLevel(typeGame,level); 
         levelCurent = Resources.Load<Level>(path);
+    }
+    public Level GetLevelInTypeCur(int level, TypeGame _typeGame)
+    {
+        string path = GetPathLevel(_typeGame, level);
+        return Resources.Load<Level>(path);
     }
     public void SetTimeFiishCurrent(int timeT)
     {

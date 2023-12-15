@@ -73,6 +73,34 @@ MonoBehaviour:
     Language: en
     FontName: 
     Content: Finished
+  - ID: ChoseLevel/YouMustKeepPlay
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 'You need to unlock all previous levels to play this level.
+
+      Or
+      watch an ad to unlock the latest level'
+  - ID: ChoseLevel/ContentSuggetBuyPack
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: You are so good. You have played all the available levels. To continue,
+      please purchase our new game pack to unlock more levels
+  - ID: ChoseLevel/NoThank
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: No thank!
+  - ID: ChoseLevel/KeepPlay
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Keep Play
   - ID: ChoseLevel/GetMorePuzzle
     Type: 0
     Remark: 
@@ -283,6 +311,48 @@ MonoBehaviour:
     Language: en
     FontName: 
     Content: Watch ad
+  - ID: GamePlay/Time
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Time
+  - ID: GamePlay/Next
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Next
+  - ID: GamePlay/LevelSolved
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Level Solved!
+  - ID: GamePlay/Level
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Level
+  - ID: GamePlay/GoNow
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Go Now
+  - ID: GamePlay/SuggetPlayNewMode
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: You're very good, do you want to try a more difficult level?
+  - ID: GamePlay/BackToHome
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Back to home
   - ID: Hint/MoreTwoStar
     Type: 0
     Remark: 
@@ -405,7 +475,8 @@ MonoBehaviour:
     Remark: 
     Language: en
     FontName: 
-    Content: Donec a massa id elit porttior mollis. Nunc malesuada vel arcu et fringilla.
+    Content: If you have never played Star Battle before we recommend that you have
+      a look at the basic rules
   - ID: Tut/PreView0M0_2
     Type: 0
     Remark: 
@@ -435,7 +506,7 @@ MonoBehaviour:
     Remark: 
     Language: en
     FontName: 
-    Content: Touch again to make it a start
+    Content: Touch again to make it a star
   - ID: Tut/PreView1M0_2
     Type: 0
     Remark: 
@@ -447,7 +518,7 @@ MonoBehaviour:
     Remark: 
     Language: en
     FontName: 
-    Content: Awesome, now you nkow how to control the game fields
+    Content: Awesome, now you know how to control the game fields
   - ID: Tut/PreView1M1_0
     Type: 0
     Remark: 
@@ -545,3 +616,69 @@ MonoBehaviour:
     Language: en
     FontName: 
     Content: Play beginner puzzle
+  - ID: Sub/StartBattle
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: STAR BATTLE
+  - ID: Sub/PremiumMembership
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Premium Membership
+  - ID: Sub/ChoseASub
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 'Chose a subsciption plan to unlock all the functions below:'
+  - ID: Sub/RomoveAds
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Remove Ads
+  - ID: Sub/UnlockAllLevel
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: UnLock All Level Packs
+  - ID: Sub/Free10Hints
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Free 10 Hints EVERYDAY
+  - ID: Sub/WeeklyPlan
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Weekly plan
+  - ID: Sub/MonthlyPlan
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Monthly Plan
+  - ID: Sub/YearPlan
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: 1 Year Plan
+  - ID: Sub/TheAbovePlan
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: The above plans will renew automatically
+  - ID: Sub/PrvacyPolicy
+    Type: 0
+    Remark: 
+    Language: en
+    FontName: 
+    Content: Privacy policy and term of use

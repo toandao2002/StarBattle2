@@ -14,6 +14,8 @@ public class Lobby : BasePopUP
     public List<BoxPlayedRecently> boxPlayedRecentlies;
     public List<BoxBigLevelHome> boxBigLevelHomes;
     public GameObject content;
+    LevelHistoryPlay LastLevelPlayed;
+    public ButtonPlayNow buttonPlayNow;
     public override void Awake()
     {
         base.Awake();
@@ -46,6 +48,7 @@ public class Lobby : BasePopUP
     }
     public void HandelData()
     {
+        LastLevelPlayed = null;
         RemoveGarbage();
         DataLevelUser dataLevelComon = GameConfig.instance.GetDataLevelCommon();
 
@@ -76,7 +79,10 @@ public class Lobby : BasePopUP
             for (int i = historyPlayed.historys.Count - 1; i >= 0; i--)
             {
                 var obj = Instantiate(BoxPlayedRecentlyPref, contennt.transform);
-                 
+                if(LastLevelPlayed == null)
+                {
+                    LastLevelPlayed = historyPlayed.historys[i];
+                }
                 try
                 { 
                     obj.SetData(""+ historyPlayed.historys[i].nameLevel, historyPlayed.historys[i].dayPlay,
@@ -92,6 +98,17 @@ public class Lobby : BasePopUP
 
 
             }
+        }
+        if(LastLevelPlayed == null)
+        {
+            buttonPlayNow.SetLevel(1,
+                0,TypeGame.Easy);
+        }
+        else
+        {
+            int levelLastCanPlay = GameConfig.instance.GetDataLevelCommon().GetAmountLevelCanPlayByTypeGame(LastLevelPlayed.typeGame);
+            buttonPlayNow.SetLevel(levelLastCanPlay,
+                GameConfig.instance.GetLevelInTypeCur(levelLastCanPlay, LastLevelPlayed.typeGame).datalevel.timeFinish, LastLevelPlayed.typeGame);
         }
     }
     public void OpenLevelEasy()
@@ -118,6 +135,10 @@ public class Lobby : BasePopUP
         typeGame = TypeGame.Genius; 
         HandleChangePanel();
 
+    }
+    public void OpenSub()
+    {
+        SubPanel.instance.Show();
     }
     public void HandleChangePanel()
     {

@@ -30,7 +30,8 @@ public class GameManger : MonoBehaviour
             DataGame.Save();
         }
         else
-        { 
+        {
+            SubPanel.instance.Show();
         }
     }
     public void Update()

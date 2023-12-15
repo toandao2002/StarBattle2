@@ -122,11 +122,10 @@ public class MyLocalize : MonoBehaviour
         {
             languagesBox[i].bgr.color = Color.white;
             languagesBox[i].text.color = defC;
-        }
-
+        } 
         dict[PlayerPrefs.GetString("Language", "en")].text.color = pickC;
         language.text = dict[PlayerPrefs.GetString("Language", "en")].text.text;
-        dict[PlayerPrefs.GetString("Language", "en")].bgr.color = Color.gray;
+        dict[PlayerPrefs.GetString("Language", "en")].bgr.color = new Color(0.9f, .9f, .9f);
     }
 
 

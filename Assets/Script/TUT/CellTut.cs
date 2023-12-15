@@ -302,6 +302,24 @@ public class CellTut : MonoBehaviour
             Debug.Log("win ");
             MyEvent.CheckWinTut?.Invoke();
         }
+        /*if (board.checkCorrect(pos))
+        {
+            Vector2Int otherPosCorrect ;
+            
+            foreach(Vector2Int i in TutorialPanel.instance.GetTutDatCur().posStar)
+            {
+                if(i!= pos)
+                {
+                    otherPosCorrect = i;
+                    CellTut cell = board.cells[otherPosCorrect.x][otherPosCorrect.y];
+                    if ( cell.statusCell != StatusCell.DoubleClick){
+                        TutorialPanel.instance.hand.MoveHand(cell.gameObject.transform.position);
+                        TutorialPanel.instance.hand.ActionTwoClick();
+                    }
+                }
+            }
+
+        }*/
     }
     #endregion
 

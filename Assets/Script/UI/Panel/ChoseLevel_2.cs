@@ -9,11 +9,7 @@ public class ChoseLevel_2 : BasePopUP
     
     public static ChoseLevel_2 instance;
     public PopUpSuggestBuyPack popUpSuggestBuyPack;
-    public override void Awake()
-    {
-        base.Awake();
-        instance = this;
-    }
+   
     
     public ButonLevel btnLevelPrefab;
     public List<ButonLevel> btnLevels; 
@@ -21,6 +17,12 @@ public class ChoseLevel_2 : BasePopUP
     public List<Level> levels;
     public GameObject BoxShopPref;
     public ButtonPlayNow buttonPlayNow;
+    public override void Awake()
+    {
+        base.Awake();
+        instance = this;
+        MyEvent.UpdataLocalize += ChangeLanguage;
+    }
     public void RemoveGarbage()
     {
        /* for(int  i=content.transform.childCount-1;i>=0; i--)
@@ -109,7 +111,10 @@ public class ChoseLevel_2 : BasePopUP
                     //btnLevels[i].SetTime(0);
                 }
             }
-            buttonPlayNow.SetLevel(levelFinishLast+1, timeFinishLast);
+
+            int levelLastCanPlay = GameConfig.instance.GetDataLevelCommon().GetAmountLevelCanPlayByTypeGame(GameConfig.instance.typeGame);
+            buttonPlayNow.SetLevel(levelLastCanPlay,
+                GameConfig.instance.GetLevelInTypeCur(levelLastCanPlay,GameConfig.instance.typeGame).datalevel.timeFinish,GameConfig.instance.typeGame);
             HideReduntantItem(levels.Count);
             Instantiate(BoxShopPref, content.transform);
         }
