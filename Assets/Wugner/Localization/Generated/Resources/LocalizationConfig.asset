@@ -12,62 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c85617316549e948ad627155d64b1f2, type: 3}
   m_Name: LocalizationConfig
   m_EditorClassIdentifier: 
-  _languageSettings:
-  - Language: en
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: vi
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: jp
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: es
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: ita
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: kr
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: gm
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: ru
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: in
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: fr
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: tr
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  - Language: ar
-    DisplayName: 
-    DefaultFont: {fileID: 11400000, guid: f87815a26562ad54380093b02749c9d1, type: 2}
-    DefaultFontName: 
-  _localizeExcelFiles:
-  - {fileID: 4900000, guid: bd71bcc0f886b5d4f94b167ef65876c3, type: 3}
-  _localizeExcelFilePaths:
-  - 
+  _languageSettings: []
+  _localizeExcelFiles: []
+  _localizeExcelFilePaths: []
   _allFonts: []
-  _idConstantNameSpace: Loc
-  _idConstantClassName: ID
+  _idConstantNameSpace: 
+  _idConstantClassName: 
   _customSpriteManager: 
   _customFontManager: 
   _customVocabularyManager: 

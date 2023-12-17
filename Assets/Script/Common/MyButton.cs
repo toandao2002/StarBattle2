@@ -7,9 +7,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEditor;
 using System;
-public class ButtonAttribute : Attribute
-{
-}
+
 public class MyButton : Button
 {
     bool Delay = true;

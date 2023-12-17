@@ -16,8 +16,8 @@ MonoBehaviour:
   - nameSubLevel: Beginner-1
     isNeedBuy: 0
     levels:
-    - {fileID: 11400000, guid: 6c753476add0b4a4db9b58d1d33ee5cd, type: 2}
     - {fileID: 11400000, guid: cb88aa1189ff4cd4f823b0c657bccf40, type: 2}
+    - {fileID: 11400000, guid: 6c753476add0b4a4db9b58d1d33ee5cd, type: 2}
     - {fileID: 11400000, guid: 89515b6f19686ac47affab060857a21b, type: 2}
     - {fileID: 11400000, guid: e1073deab7d73004dbd0325f16ae23c4, type: 2}
     - {fileID: 11400000, guid: 916ed01022e666e4aaf3c3700c5f74dd, type: 2}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1216765696111549125}
   - component: {fileID: 6228490748827517178}
   - component: {fileID: 8955376670484798929}
+  - component: {fileID: 7704385164170672358}
   m_Layer: 5
   m_Name: BtnBuy
   m_TagString: Untagged
@@ -29,6 +30,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349618861090992735}
   - {fileID: 7551770066196636319}
@@ -150,6 +152,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7704385164170672358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119896326934525813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: battlestar_beginner_2
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  onProductFetched:
+    m_PersistentCalls:
+      m_Calls: []
+  button: {fileID: 1216765696111549125}
 --- !u!1 &700806811544420232
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +208,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5979263237998684300}
   m_RootOrder: 0
@@ -253,6 +284,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2267572433025510018}
   m_RootOrder: 0
@@ -328,6 +360,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2267572433025510018}
   m_RootOrder: 1
@@ -462,6 +495,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2267572433025510018}
   m_RootOrder: 2
@@ -596,6 +630,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5979263237998684300}
   m_RootOrder: 1
@@ -730,6 +765,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5979263237998684300}
   m_RootOrder: 2
@@ -804,6 +840,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6885573151910258949}
   - {fileID: 498415657618623840}
@@ -845,3 +882,8 @@ MonoBehaviour:
   colorBgr:
   - {fileID: 21300000, guid: 93bbf8c15ff0b1d43805f827b65bf314, type: 3}
   - {fileID: 21300000, guid: 978195631327d6c4eaf0250fd9b0ecb2, type: 3}
+  levelFrom: 50
+  levelEnd: 100
+  typeGame: 0
+  idPack: 2
+  iap: {fileID: 7704385164170672358}

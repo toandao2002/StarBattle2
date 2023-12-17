@@ -19,7 +19,7 @@ public class HandTut : MonoBehaviour
     {
         posInit = rec.position;
     }
-    [Button]
+  
     public void ActionClick()
     {
         timeClick = 0.3f;

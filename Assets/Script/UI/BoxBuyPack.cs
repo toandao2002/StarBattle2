@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.Purchasing;
 public class BoxBuyPack : MonoBehaviour
 {
     public SubLevel sublevel;
@@ -18,13 +18,18 @@ public class BoxBuyPack : MonoBehaviour
     public Sprite bgrBtnGray;
     public List<Sprite> colorBgr;
 
-    private TypeGame typeGame;
+    public int levelFrom;
+    public int levelEnd;
+    public  TypeGame typeGame;
     private DataPack dataPack;
-    private int idPack;
+    public int idPack;
+    public CodelessIAPButton iap;
+
     private void OnEnable()
     {
         MyEvent.ChangeTheme += ChangeTheme;
         ChangeTheme();
+        UpdateData();
     }
     private void OnDisable()
     {
@@ -45,6 +50,23 @@ public class BoxBuyPack : MonoBehaviour
 
         }
         return "404";
+    }
+    public void UpdateData()
+    {
+        if(DataGame.GetInt(DataGame.IapPack + iap.productId) == 1)
+        {
+            gameObject.SetActive(false);
+        }
+        namePack.text = Util.GetLocalizeRealString(Util.GetIdLocalLizeTypeGame(typeGame)) + " pack " + (idPack);
+        string buf = Util.GetLocalizeRealString(GetIdContentShop(typeGame));
+
+        int indexS = buf.LastIndexOf("0");
+        buf = buf.Replace("0", " ");
+        buf = buf.Insert(indexS, levelFrom + "");
+        int indexE = buf.LastIndexOf("1");
+        buf = buf.Substring(0, indexE) + buf.Substring(indexE + 1);
+        buf = buf.Insert(indexE, levelEnd + "");
+        contecnPack.text = buf;
     }
     public void init(bool canBuy, SubLevel subLevel, TypeGame typeGame, DataPack datapack, int idPack, int levelFrom, int levelEnd)
     {

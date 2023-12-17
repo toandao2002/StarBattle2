@@ -44,4 +44,5 @@ public class GameManger : MonoBehaviour
             Debug.Log("back");
         }
     }
+    
 }

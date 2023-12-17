@@ -30,8 +30,8 @@ public class ShopUI : BasePopUP
     public override void Show(object data = null, int dir = 1)
     {
         base.Show(data, dir);
-        RemoveGarbage();
-        SetData();
+        /*RemoveGarbage();
+        SetData();*/
         preAction = (Action)Delegate.Combine(MyEvent.ClickBack);
         MyEvent.ClickBack = Back;
         ChangeTheme();

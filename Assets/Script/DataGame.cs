@@ -24,6 +24,7 @@ public static class DataGame
     // shop
     public static string Datapack = "Datapack";
 
+    public static string IapPack = "IapPack";
     public static string GetDataJson(string key)
     {
         return PlayerPrefs.GetString(key);
